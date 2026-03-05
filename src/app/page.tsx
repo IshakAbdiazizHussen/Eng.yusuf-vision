@@ -1,5 +1,11 @@
 import Image from "next/image"
-import { ArrowRight, Facebook, Instagram, Tiktok, Youtube } from "lucide-react"
+import {
+  ArrowRight,
+  Facebook,
+  Instagram,
+  Music2,
+  Youtube,
+} from "lucide-react"
 
 export default function Home() {
   return (
@@ -15,6 +21,7 @@ export default function Home() {
       />
 
       <div className="relative mx-auto w-full max-w-[1520px] px-6 pb-0 pt-4">
+        {/* Navigation section start */}
         <nav className="flex items-center gap-8">
           <a href="#" className="flex items-center gap-2 pl-1" aria-label="Home">
             <span className="h-7 w-4 -rotate-[32deg] rounded-full border-[2.5px] border-[#1d6cff]" />
@@ -24,7 +31,7 @@ export default function Home() {
           <ul className="ml-auto flex items-center justify-center gap-2 rounded-xl bg-[#d5deed] px-7 py-2.5 text-[#1d6cff]">
             <li className="flex items-center gap-2">
               <a
-                href="#"
+                href="/about"
                 className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
               >
                 About
@@ -69,10 +76,11 @@ export default function Home() {
           </ul>
         </nav>
 
+        {/* Hero section start: portrait, intro text, buttons, and partners */}
         <section className="mt-5 grid grid-cols-[500px_1fr] items-end gap-10 pt-8">
           <div className="mb-0 h-[690px] w-full max-w-[500px] overflow-hidden">
             <Image
-              src="/yuyu.png"
+              src="/Yuyu.png"
               alt="Eng Yuyu portrait"
               width={526}
               height={628}
@@ -163,6 +171,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Stats and social proof section start */}
         <section className="mb-8 mb-8 pb-10">
           <div className="rounded-[44px] bg-gray-200 px-10 py-12 backdrop-blur-[1px]">
             <div className="grid grid-cols-4 gap-8">
@@ -210,53 +219,220 @@ export default function Home() {
             Learners Worldwide.
           </h2>
 
-          <div className="mx-auto mt-10 max-w-[1120px] rounded-[44px] bg-[#ccd5e4] px-12 py-12">
-            <div className="grid grid-cols-2 gap-x-24 gap-y-12">
-              <div className="flex items-center gap-5">
-                <div className="flex h-22 w-32 items-center justify-center rounded-[26px] bg-[#ff0000]">
-                  <Youtube className="h-11 w-11 text-white" fill="currentColor" strokeWidth={1.8} />
+          {/* Social platforms metrics container start */}
+          <div className="mx-auto mt-10 max-w-[1320px] rounded-[44px] bg-[#ccd5e4] px-14 py-14">
+            <div className="grid grid-cols-2 gap-x-28 gap-y-14">
+              <div className="flex items-center gap-6">
+                <div className="flex h-24 w-44 items-center justify-center rounded-[28px] bg-[#ff0e0e]">
+                  <Youtube className="h-12 w-12 text-white" fill="currentColor" strokeWidth={1.8} />
                 </div>
                 <div>
-                  <p className="text-[18px] leading-none text-[#161616]">YouTube Subscribers</p>
+                  <p className="text-[22px] leading-none text-[#161616]">Subscribers</p>
                   <h3 className="mt-2 text-[64px] font-bold leading-none text-black">155k+</h3>
                 </div>
               </div>
 
-              <div className="flex items-center gap-5">
-                <div className="flex h-22 w-22 items-center justify-center rounded-full bg-[#111111]">
-                  <Tiktok className="h-11 w-11 text-white" strokeWidth={2.2} />
+              <div className="flex items-center gap-6">
+                <div className="flex h-24 w-24 items-center justify-center">
+                  <Music2 className="h-16 w-16 text-[#1f1b20]" strokeWidth={3} />
                 </div>
                 <div>
-                  <p className="text-[18px] leading-none text-[#161616]">TikTok Followers</p>
+                  <p className="text-[22px] leading-none text-[#161616]">Followers</p>
                   <h3 className="mt-2 text-[64px] font-bold leading-none text-black">513.9k+</h3>
                 </div>
               </div>
 
-              <div className="flex items-center gap-5">
-                <div className="relative h-22 w-22 rounded-[26px] bg-[linear-gradient(135deg,#fbc700_0%,#ff6a00_35%,#ff0068_70%,#7c2cff_100%)]">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Instagram className="h-10 w-10 text-white" strokeWidth={2.2} />
+              <div className="flex items-center gap-6">
+                <div className="relative h-24 w-24 rounded-[28px] bg-[linear-gradient(135deg,#fbc700_0%,#ff6a00_35%,#ff0068_70%,#7c2cff_100%)] p-2">
+                  <div className="flex h-full w-full items-center justify-center rounded-[22px] bg-white">
+                    <Instagram className="h-11 w-11 text-[#ff2a54]" strokeWidth={2.6} />
                   </div>
                 </div>
                 <div>
-                  <p className="text-[18px] leading-none text-[#161616]">
-                    Instagram Followers
-                  </p>
+                  <p className="text-[22px] leading-none text-[#161616]">Followers</p>
                   <h3 className="mt-2 text-[64px] font-bold leading-none text-black">56k+</h3>
                 </div>
               </div>
 
-              <div className="flex items-center gap-5">
-                <div className="flex h-22 w-22 items-center justify-center rounded-full bg-[#2577e7]">
-                  <Facebook className="h-11 w-11 text-white" fill="currentColor" strokeWidth={1.8} />
+              <div className="flex items-center gap-6">
+                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[#2577e7]">
+                  <Facebook className="h-14 w-14 text-white" fill="currentColor" strokeWidth={1.8} />
                 </div>
                 <div>
-                  <p className="text-[18px] leading-none text-[#161616]">Facebook Followers</p>
+                  <p className="text-[22px] leading-none text-[#161616]">Followers</p>
                   <h3 className="mt-2 text-[64px] font-bold leading-none text-black">290k+</h3>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* About section start: profile details, mission, and impact */}
+          <section className="mt-16 grid grid-cols-[560px_1fr] gap-12">
+            <div className="flex h-full flex-col">
+              <Image
+                src="/engY.png"
+                alt="About Eng Yuyu"
+                width={526}
+                height={628}
+                className="h-auto w-full max-w-[540px] object-contain mix-blend-multiply"
+              />
+              <div className="mt-0 w-full max-w-[540px] flex-1 rounded-[56px] bg-[#ccd5e4]" />
+            </div>
+
+            <div className="max-w-[1120px] pt-3">
+              <div className="mb-8 flex gap-5">
+                <span className="inline-flex h-[54px] items-center rounded-2xl bg-[#dfdfdf] px-10 text-[20px] font-semibold text-black">
+                  Tech Influencer
+                </span>
+                <span className="inline-flex h-[54px] items-center rounded-2xl bg-[#dbe5f7] px-10 text-[20px] font-semibold text-[#1d6cff]">
+                  Digital Creator
+                </span>
+              </div>
+
+              <h2 className="text-[64px] font-bold leading-none text-[#1d6cff]">About Me</h2>
+              <h3 className="mt-5 text-[54px] font-bold leading-[1.08] text-black">
+                Making technology simple, useful, and accessible for everyone.
+              </h3>
+
+              <p className="mt-7 text-[22px] leading-[1.24] text-[#141414]">
+                I&apos;m Yusuf Mohamed Osman (Eng Yuyu) - a tech educator,
+                content creator, and digital awareness advocate focused on
+                helping people understand and use technology without fear or
+                confusion.
+              </p>
+
+              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+                Over the past years, I&apos;ve built a growing digital community
+                by breaking down complex tech topics into simple, practical ideas
+                that anyone can apply in daily life.
+              </p>
+
+              <h4 className="mt-8 text-[52px] font-bold leading-none text-black">My Mission</h4>
+              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+                My mission is straightforward:
+                <br />
+                to help people use technology with confidence, protect their
+                digital lives, and benefit from innovation instead of being
+                overwhelmed by it.
+                <br />
+                Technology should serve people - not confuse them.
+              </p>
+
+              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">What I Do</h4>
+              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+                Through short videos, tutorials, talks, and events, I focus on:
+                <br />
+                Everyday smartphone tips (iPhone &amp; Android)
+                <br />
+                Digital security and privacy awareness
+                <br />
+                Artificial Intelligence explained simply
+                <br />
+                Content creation and digital skills
+                <br />
+                Helping people turn ideas into real opportunities
+                <br />
+                Everything I share is practical, honest, and tested in real
+                life.
+              </p>
+
+              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">
+                Why I Started
+              </h4>
+              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+                When I began, I noticed a big gap:
+                <br />
+                many people were using technology daily, yet didn&apos;t fully
+                understand how it worked or how to protect themselves online.
+                <br />
+                I made it a personal commitment to share clear, useful, and
+                trustworthy tech knowledge, especially for the Somali community
+                and anyone navigating the digital world.
+              </p>
+
+              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">
+                Community Impact
+              </h4>
+              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+                Today, more than 1 million people follow my content across
+                social platforms.
+                <br />
+                I&apos;ve published hundreds of educational videos, hosted live
+                events, and delivered tech education that reaches millions.
+                <br />
+                This journey has been built on consistency, patience, and
+                community trust.
+              </p>
+
+              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">
+                Beyond Content
+              </h4>
+              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+                I regularly participate in:
+                <br />
+                Tech talks and workshops
+                <br />
+                Digital education programs
+                <br />
+                Community events and conferences
+                <br />
+                I also collaborate with brands and organizations that align
+                with education, innovation, and positive digital impact.
+              </p>
+
+              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">
+                Looking Ahead
+              </h4>
+              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+                Technology evolves fast - and so do we.
+                <br />
+                I&apos;m committed to continuing this journey by:
+                <br />
+                Improving content quality
+                <br />
+                Expanding educational formats
+                <br />
+                Reaching more communities
+                <br />
+                Preparing people for the future of digital life
+              </p>
+
+              <p className="mt-10 text-[58px] font-bold leading-[1.12] text-black">
+                Thank you for being part of this journey.
+                <br />
+                The learning never stops.
+              </p>
+            </div>
+          </section>
+
+          {/* Join community section start */}
+          <section className="mt-14">
+            <div className="mx-auto flex max-w-[1420px] items-center justify-between rounded-[44px] bg-[#ccd5e4] px-14 py-10">
+              <div className="max-w-[780px]">
+                <h3 className="text-[28px] font-bold leading-none text-black">Join the Community</h3>
+                <p className="mt-3 text-[22px] leading-[1.24] text-[#141414]">
+                  Millions are already learning tech the simple way.
+                  <br />
+                  Follow, watch, and grow with us across platforms.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="flex h-12 w-18 items-center justify-center rounded-[14px] bg-[#ff0e0e]">
+                  <Youtube className="h-6 w-6 text-white" fill="currentColor" />
+                </div>
+                <Music2 className="h-10 w-10 text-[#1f1b20]" strokeWidth={3} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2577e7]">
+                  <Facebook className="h-8 w-8 text-white" fill="currentColor" />
+                </div>
+                <div className="relative h-14 w-14 rounded-[16px] bg-[linear-gradient(135deg,#fbc700_0%,#ff6a00_35%,#ff0068_70%,#7c2cff_100%)] p-1">
+                  <div className="flex h-full w-full items-center justify-center rounded-[12px] bg-white">
+                    <Instagram className="h-7 w-7 text-[#ff2a54]" strokeWidth={2.4} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
       </div>
     </main>
