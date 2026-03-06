@@ -1,9 +1,9 @@
 import Image from "next/image"
-import { ArrowRight, Facebook, Instagram, Link2, Music2, Youtube } from "lucide-react"
+import { ArrowRight, Link2 } from "lucide-react"
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f3f4f6]">
+    <main id="top" className="relative min-h-screen overflow-hidden bg-[#f3f4f6]">
       <div
         className="pointer-events-none absolute right-0 top-0 h-full w-[62%]"
         style={{
@@ -14,9 +14,9 @@ export default function Home() {
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-[1520px] px-6 pb-0 pt-4">
-        <nav className="flex items-center gap-8">
-          <a href="#" className="flex items-center gap-2 pl-1" aria-label="Home">
+      <div className="relative mx-auto w-full max-w-[1520px] px-6 pb-0 pt-28">
+        <nav className="fixed left-1/2 top-4 z-50 flex w-[calc(100%-3rem)] max-w-[1520px] -translate-x-1/2 items-center gap-8 rounded-[24px] bg-[#f3f4f6]/95 px-6 py-3 backdrop-blur-sm">
+          <a href="#top" className="flex items-center gap-2 pl-1" aria-label="Home">
             <span className="h-7 w-4 -rotate-[32deg] rounded-full border-[2.5px] border-[#1d6cff]" />
             <span className="h-14 w-8 -rotate-[32deg] rounded-lg bg-[#1d6cff]" />
           </a>
@@ -24,7 +24,7 @@ export default function Home() {
           <ul className="ml-auto flex items-center justify-center gap-2 rounded-xl bg-[#d5deed] px-7 py-2.5 text-[#1d6cff]">
             <li className="flex items-center gap-2">
               <a
-                href="/about"
+                href="#about"
                 className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
               >
                 About
@@ -33,7 +33,7 @@ export default function Home() {
             </li>
             <li className="flex items-center gap-2">
               <a
-                href="#"
+                href="#watch"
                 className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
               >
                 Watch
@@ -42,7 +42,7 @@ export default function Home() {
             </li>
             <li className="flex items-center gap-2">
               <a
-                href="#"
+                href="#tech-blog"
                 className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
               >
                 Tech Blog
@@ -51,7 +51,7 @@ export default function Home() {
             </li>
             <li className="flex items-center gap-2">
               <a
-                href="#"
+                href="#events"
                 className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
               >
                 Events
@@ -60,7 +60,7 @@ export default function Home() {
             </li>
             <li className="flex items-center">
               <a
-                href="#"
+                href="#impact"
                 className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
               >
                 Impact
@@ -213,9 +213,16 @@ export default function Home() {
           <div className="mx-auto mt-10 max-w-[1320px] rounded-[44px] bg-[#ccd5e4] px-14 py-14">
             <div className="grid grid-cols-2 gap-x-28 gap-y-14">
               <div className="flex items-center gap-6">
-                <div className="flex h-24 w-44 items-center justify-center rounded-[28px] bg-[#ff0e0e]">
-                  <Youtube className="h-12 w-12 text-white" fill="currentColor" strokeWidth={1.8} />
-                </div>
+                <div className="flex h-[89px] w-[124px] items-center justify-center overflow-hidden bg-transparent">
+                <Image
+                  src="/youtubeRemoving.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[89px] w-[124px] object-contain"
+                />
+              </div>
+
                 <div>
                   <p className="text-[22px] leading-none text-[#161616]">Subscribers</p>
                   <h3 className="mt-2 text-[64px] font-bold leading-none text-black">155k+</h3>
@@ -223,9 +230,14 @@ export default function Home() {
               </div>
 
               <div className="flex items-center gap-6">
-                <div className="flex h-24 w-24 items-center justify-center">
-                  <Music2 className="h-16 w-16 text-[#1f1b20]" strokeWidth={3} />
-                </div>
+                <div>
+                <Image
+                  src="/Tiktok.png"
+                  alt="Tiktok"
+                  width={124}
+                  height={89}
+                  className="h-[89px] w-[124px] object-contain"/>
+              </div>
                 <div>
                   <p className="text-[22px] leading-none text-[#161616]">Followers</p>
                   <h3 className="mt-2 text-[64px] font-bold leading-none text-black">513.9k+</h3>
@@ -233,10 +245,16 @@ export default function Home() {
               </div>
 
               <div className="flex items-center gap-6">
-                <div className="relative h-24 w-24 rounded-[28px] bg-[linear-gradient(135deg,#fbc700_0%,#ff6a00_35%,#ff0068_70%,#7c2cff_100%)] p-2">
-                  <div className="flex h-full w-full items-center justify-center rounded-[22px] bg-white">
-                    <Instagram className="h-11 w-11 text-[#ff2a54]" strokeWidth={2.6} />
-                  </div>
+                <div className="">
+                <div>
+                <Image
+                  src="/Instgram.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[89px] w-[124px] object-contain"/>
+              </div>
+
                 </div>
                 <div>
                   <p className="text-[22px] leading-none text-[#161616]">Followers</p>
@@ -245,9 +263,14 @@ export default function Home() {
               </div>
 
               <div className="flex items-center gap-6">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[#2577e7]">
-                  <Facebook className="h-14 w-14 text-white" fill="currentColor" strokeWidth={1.8} />
-                </div>
+                <div>
+                <Image
+                  src="/Facebook.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[89px] w-[124px] object-contain"/>
+              </div>
                 <div>
                   <p className="text-[22px] leading-none text-[#161616]">Followers</p>
                   <h3 className="mt-2 text-[64px] font-bold leading-none text-black">290k+</h3>
@@ -256,7 +279,7 @@ export default function Home() {
             </div>
           </div>
 
-          <section className="mt-60 grid grid-cols-[560px_1fr] gap-12">
+          <section id="about" className="mt-60 grid scroll-mt-24 grid-cols-[560px_1fr] gap-12">
             <div className="flex h-full flex-col">
               <Image
                 src="/engY.png"
@@ -407,40 +430,40 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-5 text-[#111111]">
-                <a
-                  href="#"
-                  aria-label="YouTube"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Youtube className="h-14 w-14 text-[#ff0000]" fill="currentColor" strokeWidth={1.8} />
-                </a>
-                <a
-                  href="#"
-                  aria-label="TikTok"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Music2 className="h-12 w-12" strokeWidth={2.5} />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Facebook"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Facebook className="h-14 w-14 text-[#1877f2]" fill="currentColor" strokeWidth={1.8} />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Instagram"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Instagram className="h-14 w-14 text-[#e1306c]" strokeWidth={2.2} />
-                </a>
+              <div className="flex items-center gap- text-[#111111]">
+                <Image
+                  src="/youtubeRemoving.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"
+                />
+
+                <Image
+                  src="/Tiktok.png"
+                  alt="Tiktok"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"/>
+
+                <Image
+                  src="/Facebook.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"/>
+
+                <Image
+                  src="/Instgram.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"/>
               </div>
             </div>
           </section>
 
-          <section className="mt-28 px-6 py-8 text-center">
+          <section id="watch" className="mt-28 scroll-mt-24 px-6 py-8 text-center">
             <h2 className="text-[58px] font-bold leading-none text-[#1d6cff]">
               WATCH &amp; LEARN
             </h2>
@@ -450,7 +473,7 @@ export default function Home() {
             </p>
           </section>
 
-          <section className="mt-8 rounded-[44px] bg-[#dbe2ec] px-8 py-10 md:px-12 md:py-12">
+          <section id="events" className="mt-8 scroll-mt-32 rounded-[44px] bg-[#dbe2ec] px-8 py-10 md:px-12 md:py-12">
             <div className="grid gap-12 xl:grid-cols-[1.7fr_0.9fr]">
               <div>
                 <h3 className="mb-8 text-center text-[34px] font-light text-black">
@@ -517,35 +540,36 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-5 text-[#111111]">
-                <a
-                  href="#"
-                  aria-label="YouTube"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Youtube className="h-14 w-14 text-[#ff0000]" fill="currentColor" strokeWidth={1.8} />
-                </a>
-                <a
-                  href="#"
-                  aria-label="TikTok"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Music2 className="h-12 w-12" strokeWidth={2.5} />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Facebook"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Facebook className="h-14 w-14 text-[#1877f2]" fill="currentColor" strokeWidth={1.8} />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Instagram"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Instagram className="h-14 w-14 text-[#e1306c]" strokeWidth={2.2} />
-                </a>
+              <div className="flex items-center gap-2 text-[#111111]">
+                <Image
+                  src="/youtubeRemoving.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"
+                />
+
+                <Image
+                  src="/Tiktok.png"
+                  alt="Tiktok"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"/>
+
+                <Image
+                  src="/Facebook.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"/>
+
+                <Image
+                  src="/Instgram.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"/>
+
               </div>
             </div>
           </section>
@@ -659,7 +683,7 @@ export default function Home() {
             </div>
     </section>
 
-        <section className="mt-40 px-6 py-6 text-center">
+        <section id="tech-blog" className="mt-40 scroll-mt-24 px-6 py-6 text-center">
                 <h2 className="text-[62px] font-bold leading-none text-blue-500">
                   Tech Blog
                 </h2>
@@ -690,7 +714,7 @@ export default function Home() {
                 </h3>
 
                 <div className="mt-6 flex items-center justify-between text-[22px] text-black md:text-[30px]">
-                  <span>7min Read</span>
+                  <span className="font-light">7min Read</span>
                   <span className="inline-flex items-center gap-3">
                     <Link2 className="rotate-500 h-7 w-7 md:h-8 md:w-8" />
                     Share
@@ -799,7 +823,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="mt-12 w-screen bg-[#156BF7] text-white relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
+          <section id="impact" className="mt-12 scroll-mt-32 w-screen bg-[#156BF7] text-white relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
           <div className="grid min-h-[785px] gap-12 px-10 py-12 md:px-16 md:py-16 xl:grid-cols-[1fr_500px] xl:items-center">
             <div className="max-w-[620px] self-center ml-[120px]">
               <div className="mb-12">
@@ -825,22 +849,36 @@ export default function Home() {
                   Find me here
                 </h3>
 
-                <div className="flex items-center gap-3">
-                  <a href="#" aria-label="YouTube" className="transition-opacity hover:opacity-85">
-                    <Youtube className="h-[56px] w-[56px] text-white" fill="currentColor" strokeWidth={1.8} />
-                  </a>
+                <div className="flex items-center ">
+                  <Image
+                  src="/youtubeRemoving.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"
+                />
 
-                  <a href="#" aria-label="Instagram" className="transition-opacity hover:opacity-85">
-                    <Instagram className="h-[42px] w-[42px] text-white" strokeWidth={2.4} />
-                  </a>
+                <Image
+                  src="/Tiktok.png"
+                  alt="Tiktok"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain"/>
 
-                  <a href="#" aria-label="TikTok" className="transition-opacity hover:opacity-85">
-                    <Music2 className="h-[42px] w-[42px] text-white" strokeWidth={2.8} />
-                  </a>
+                <Image
+                  src="/Facebook.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain bg-white rounded-full"/>
 
-                  <a href="#" aria-label="Facebook" className="transition-opacity hover:opacity-85">
-                    <Facebook className="h-[42px] w-[42px] text-white" fill="currentColor" strokeWidth={1.8} />
-                  </a>
+                <Image
+                  src="/Instgram.png"
+                  alt="YouTube"
+                  width={124}
+                  height={89}
+                  className="h-[60px] w-[62px] object-contain "/>
+
                 </div>
               </div>
             </div>
