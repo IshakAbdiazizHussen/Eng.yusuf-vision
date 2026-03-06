@@ -204,7 +204,7 @@ export default function Home() {
             </div>
           </div>
 
-          <h2 className="mt-12 text-center text-[72px] font-bold leading-[1.05] text-[#1d6cff]">
+          <h2 className="mt-20 text-center text-7xl font-bold leading-[1.05] text-blue-600">
             Empowering 1M+ Somali Tech
             <br />
             Learners Worldwide.
@@ -256,7 +256,7 @@ export default function Home() {
             </div>
           </div>
 
-          <section className="mt-16 grid grid-cols-[560px_1fr] gap-12">
+          <section className="mt-60 grid grid-cols-[560px_1fr] gap-12">
             <div className="flex h-full flex-col">
               <Image
                 src="/engY.png"
@@ -393,7 +393,173 @@ export default function Home() {
               </p>
             </div>
           </section>
+
+          <section className="mt-12 rounded-[40px] bg-[#dbe2ec] px-8 py-10 md:px-14">
+            <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-[640px]">
+                <h2 className="text-[42px] font-bold leading-none text-black">
+                  Join the Community
+                </h2>
+                <p className="mt-4 text-[24px] leading-[1.3] text-[#1f1f1f]">
+                  Millions are already learning tech the simple way.
+                  <br />
+                  Follow, watch, and grow with us across platforms.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-5 text-[#111111]">
+                <a
+                  href="#"
+                  aria-label="YouTube"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Youtube className="h-14 w-14 text-[#ff0000]" fill="currentColor" strokeWidth={1.8} />
+                </a>
+                <a
+                  href="#"
+                  aria-label="TikTok"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Music2 className="h-12 w-12" strokeWidth={2.5} />
+                </a>
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Facebook className="h-14 w-14 text-[#1877f2]" fill="currentColor" strokeWidth={1.8} />
+                </a>
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Instagram className="h-14 w-14 text-[#e1306c]" strokeWidth={2.2} />
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section className="mt-28 px-6 py-8 text-center">
+            <h2 className="text-[58px] font-bold leading-none text-[#1d6cff]">
+              WATCH &amp; LEARN
+            </h2>
+            <p className="mx-auto mt-5 max-w-[1080px] text-[28px] font-semibold leading-[1.25] text-black">
+              Short, practical tech videos designed to make technology simple,
+              useful, and accessible for everyone.
+            </p>
+          </section>
+
+          <section className="mt-8 rounded-[44px] bg-[#dbe2ec] px-8 py-10 md:px-12 md:py-12">
+            <div className="grid gap-12 xl:grid-cols-[1.7fr_0.9fr]">
+              <div>
+                <h3 className="mb-8 text-center text-[34px] font-medium text-black">
+                  Featured Videos
+                </h3>
+
+                <div className="grid gap-x-12 gap-y-14 md:grid-cols-2">
+                  {[
+                    { platform: "YouTube", shape: "h-[260px] rounded-[30px]" },
+                    { platform: "Facebook", shape: "h-[260px] rounded-[30px]" },
+                    { platform: "Tiktok", shape: "h-[380px] max-w-[265px] rounded-[30px]" },
+                    { platform: "Instagram", shape: "h-[380px] max-w-[265px] rounded-[30px]" },
+                  ].map((video, index) => (
+                    <div key={`${video.platform}-${index}`}>
+                      <div
+                        className={`w-full border-[3px] border-[#1d6cff] bg-transparent ${video.shape}`}
+                      />
+                      <h4 className="mt-6 max-w-[420px] text-2xl font-semibold leading-[1.02] text-black">
+                        How AI Is Quietly
+                        <br />
+                        Changing Everyday Life
+                      </h4>
+                      <p className="mt-4 text-[22px] leading-[1.1] text-[#1a1a1a]">
+                        Platform: {video.platform}
+                        <br />
+                        Duration: 6:12
+                      </p>
+                      <a
+                        href="#"
+                        className="mt-6 inline-flex h-[58px] min-w-[270px] items-center justify-center rounded-[18px] bg-[#1d6cff] px-8 text-[28px] font-bold leading-none text-white transition-opacity hover:opacity-90"
+                      >
+                        Watch Now
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="mb-8 text-center text-4xl font-bold leading-none text-[#1d6cff]">
+                  Partners
+                </h3>
+                <div className="flex flex-col gap-14">
+                  <div className="h-[540px] rounded-[42px] bg-[#1d6cff]" />
+                  <div className="h-[540px] rounded-[42px] bg-[#1d6cff]" />
+                </div>
+              </div>
+            </div>
+          </section>
+
         </section>
+
+
+        <section className="mt-12 rounded-[40px] bg-[#dbe2ec] px-8 py-10 md:px-14">
+            <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+              <div className="max-w-[640px]">
+                <h2 className="text-[42px] font-bold leading-none text-black">
+                  Join the Community
+                </h2>
+                <p className="mt-4 text-[24px] leading-[1.3] text-[#1f1f1f]">
+                  Millions are already learning tech the simple way.
+                  <br />
+                  Follow, watch, and grow with us across platforms.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-5 text-[#111111]">
+                <a
+                  href="#"
+                  aria-label="YouTube"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Youtube className="h-14 w-14 text-[#ff0000]" fill="currentColor" strokeWidth={1.8} />
+                </a>
+                <a
+                  href="#"
+                  aria-label="TikTok"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Music2 className="h-12 w-12" strokeWidth={2.5} />
+                </a>
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Facebook className="h-14 w-14 text-[#1877f2]" fill="currentColor" strokeWidth={1.8} />
+                </a>
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Instagram className="h-14 w-14 text-[#e1306c]" strokeWidth={2.2} />
+                </a>
+              </div>
+            </div>
+          </section>
+
+
+          <section className="mt-40 px-6 py-6 text-center">
+            <h2 className="text-[62px] font-bold leading-none text-blue-500">
+              Tech Blog
+            </h2>
+            <p className="mt-3 text-[32px] font-bold leading-none text-black">
+              Simple tech, real impact
+            </p>
+          </section>
+
       </div>
     </main>
   )
