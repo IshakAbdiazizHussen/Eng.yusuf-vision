@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowRight, Facebook, Instagram, Music2, Youtube } from "lucide-react"
+import { ArrowRight, Facebook, Instagram, Link2, Music2, Youtube } from "lucide-react"
 
 export default function Home() {
   return (
@@ -453,7 +453,7 @@ export default function Home() {
           <section className="mt-8 rounded-[44px] bg-[#dbe2ec] px-8 py-10 md:px-12 md:py-12">
             <div className="grid gap-12 xl:grid-cols-[1.7fr_0.9fr]">
               <div>
-                <h3 className="mb-8 text-center text-[34px] font-medium text-black">
+                <h3 className="mb-8 text-center text-[34px] font-light text-black">
                   Featured Videos
                 </h3>
 
@@ -560,7 +560,246 @@ export default function Home() {
             </p>
           </section>
 
-      </div>
+          <section className="mt-8 rounded-[44px] bg-[#dbe2ec] px-8 py-10 md:px-12 md:py-12">
+            <h3 className="text-center text-4xl font-bold leading-none text-black">
+              Categories
+            </h3>
+            <p className="mt-6 text-center text-[24px] leading-[1.25] text-black md:text-[32px]">
+              All | Tech News | Tutorials &amp; How-To | Digital Security | AI
+              &amp; Future Tech | Content Creation | Reviews
+            </p>
+
+            <div className="mt-12 grid gap-12 xl:grid-cols-[1.7fr_0.9fr]">
+              <div className="grid gap-x-12 gap-y-14 md:grid-cols-2">
+                {Array.from({ length: 4 }).map((_, index) => (
+                  <div key={index}>
+                    <div className="flex h-[260px] w-full items-start rounded-[30px] border-[3px] border-[#1d6cff] p-6">
+                      <span className="text-[38px] font-bold leading-none text-[#1d6cff]">
+                        y
+                      </span>
+                    </div>
+                    <h4 className="mt-6 max-w-460 text-2xl font-semibold leading-[1.08] text-black">
+                      Digniin Muhiim ah oo ku
+                      <br />
+                      Socota Dadka Weli
+                      <br />
+                      Adeegsada Windows 10!
+                    </h4>
+                    <a
+                      href="#"
+                      className="mt-6 inline-flex h-[58px] min-w-[282px] items-center justify-center gap-4 rounded-[18px] bg-blue-600 
+                                px-8 text-[28px] font-bold leading-none text-white transition-opacity hover:opacity-90"
+                    >
+                      Learn More <ArrowRight className="h-7 w-9" />
+                    </a>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-14">
+                  <div className="h-[540px] rounded-[42px] bg-[#1d6cff]" />
+                  <div className="h-[540px] rounded-[42px] bg-[#1d6cff]" />
+                </div>
+            </div>
+          </section>
+
+        <section className="mt-10 rounded-[36px] bg-[#dfe6f1] px-8 py-8 md:px-10 md:py-9">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-[760px]">
+                <h3 className="text-[30px] font-bold leading-none tracking-[-0.02em] text-black md:text-[38px]">
+                  Join My Newsletter
+                </h3>
+
+                <p className="mt-4 max-w-[700px] text-[18px] leading-[1.15] tracking-[-0.01em] text-[#1d1d1d] md:text-[24px]">
+                  Get practical tech tips, digital safety guides,
+                  <br />
+                  and AI insights straight to your inbox.
+                </p>
+
+                <div className="mt-7 flex flex-col gap-4 md:flex-row md:items-center">
+            <div
+              className="flex h-[72px] w-full md:w-[500px] lg:w-[540px] items-center rounded-[22px] bg-[#f5f5f5]
+              px-8 text-[24px] font-semibold leading-none text-black shrink-0">
+              Your Email
+            </div>
+
+            <a
+              href="#"
+              className="inline-flex h-[72px] w-full md:w-[260px] items-center justify-center rounded-[22px]
+              bg-[#156BF7] px-8 text-[24px] font-bold leading-none text-white shrink-0">
+              Subscribe
+            </a>
+          </div>
+              </div>
+
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative h-[160px] w-[160px]">
+                  <div className="absolute inset-0 rounded-full bg-[#0A84FF]" />
+                  <div className="absolute inset-[16px] rounded-full bg-white" />
+                  <div className="absolute bottom-[18px] left-[28px] h-[22px] w-[22px] rotate-[38deg] rounded-[6px] bg-white" />
+
+                  <div className="absolute left-1/2 top-1/2 flex h-[66px] w-[66px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[16px] bg-[#156BF7]">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-[32px] w-[32px]"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg" >
+                      <rect x="3" y="5" width="18" height="14" rx="2.5" fill="#1D5FEA" />
+                      <path
+                        d="M5.5 7.5L12 12.8L18.5 7.5"
+                        stroke="#2E7BFF"
+                        strokeWidth="1.7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+
+        <section className="mt-40 px-6 py-6 text-center">
+                <h2 className="text-[62px] font-bold leading-none text-blue-500">
+                  Tech Blog
+                </h2>
+                <p className="mt-3 text-[32px] font-bold leading-none text-black">
+                  Insights, tutorials, and digital awareness content for the somali community and beyond
+                </p>
+          </section>
+
+          <section className="mt-8 rounded-[44px] bg-[#dbe2ec] px-8 py-10 md:px-12 md:py-12">
+            <div className="grid gap-12 xl:grid-cols-[1.7fr_0.9fr]">
+              <div>
+                <p className="mb-8 text-center text-2xl font-light text-black md:text-[30px]">
+                  December 22, 2025 | Security
+                </p>
+
+                <div className="relative h-[320px] w-full rounded-[34px] border-[4px] border-[#1d6cff] bg-transparent">
+                  <div className="absolute left-6 top-6 flex items-center justify-center rounded-full">
+                    <span className="text-[34px] font-bold leading-none text-[#1d6cff]">
+                      y
+                    </span>
+                  </div>
+                </div>
+
+                <h3 className="mt-8 max-w-[980px] text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-black md:text-[72px]">
+                  How AI Is Changing the Way
+                  <br />
+                  Somalis Learn Technology
+                </h3>
+
+                <div className="mt-6 flex items-center justify-between text-[22px] text-black md:text-[30px]">
+                  <span>7min Read</span>
+                  <span className="inline-flex items-center gap-3">
+                    <Link2 className="rotate-500 h-7 w-7 md:h-8 md:w-8" />
+                    Share
+                  </span>
+                </div>
+
+                <p className="mt-8 max-w-[980px] text-[28px] leading-[1.18] tracking-[-0.02em] text-black font-light">
+                  Artificial Intelligence is no longer the future - it&apos;s
+                  <br />
+                  already shaping how we learn, work, and create.
+                  <br />
+                  Here&apos;s what that means for our community.
+                </p>
+
+                <h4 className="mt-14 text-2xl font-semibold text-[#1d6cff] md:text-[42px]">
+                  Latest Articles...
+                </h4>
+
+                <div className="mt-8 grid gap-8 md:grid-cols-3">
+                  {Array.from({ length: 3 }).map((_, index) => (
+                    <div key={index}>
+                      <div className="h-[220px] rounded-[24px] border-[3px] border-[#1d6cff] bg-transparent" />
+                      <h5 className="mt-4 text-[22px] font-semibold leading-[1.15] text-black">
+                        Digniin Muhiim ah oo ku
+                        <br />
+                        Socota Dadka Weli
+                        <br />
+                        Adeegsada Windows 10!
+                      </h5>
+                      <a
+                        href="#"
+                        className="mt-4 inline-flex h-[46px] min-w-[184px] items-center justify-center rounded-[14px] bg-[#1d6cff] px-6 text-[18px] font-bold text-white"
+                      >
+                        Learn More
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="mb-8 text-center text-3xl font-bold leading-none text-[#1d6cff] md:text-[64px]">
+                  Partners
+                </h3>
+                <div className="flex flex-col gap-14">
+                  <div className="h-[540px] rounded-[42px] bg-[#1d6cff]" />
+                  <div className="h-[540px] rounded-[42px] bg-[#1d6cff]" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="mt-10 rounded-[36px] bg-[#dfe6f1] px-8 py-8 md:px-10 md:py-9">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-[760px]">
+                <h3 className="text-[30px] font-bold leading-none tracking-[-0.02em] text-black md:text-[38px]">
+                  Join My Newsletter
+                </h3>
+
+                <p className="mt-4 max-w-[700px] text-[18px] leading-[1.15] tracking-[-0.01em] text-[#1d1d1d] md:text-[24px]">
+                  Get practical tech tips, digital safety guides,
+                  <br />
+                  and AI insights straight to your inbox.
+                </p>
+
+                <div className="mt-7 flex flex-col gap-4 md:flex-row md:items-center">
+            <div
+              className="flex h-[72px] w-full md:w-[500px] lg:w-[540px] items-center rounded-[22px] bg-[#f5f5f5]
+              px-8 text-[24px] font-semibold leading-none text-black shrink-0">
+              Your Email
+            </div>
+
+            <a
+              href="#"
+              className="inline-flex h-[72px] w-full md:w-[260px] items-center justify-center rounded-[22px]
+              bg-[#156BF7] px-8 text-[24px] font-bold leading-none text-white shrink-0">
+              Subscribe
+            </a>
+          </div>
+              </div>
+
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative h-[160px] w-[160px]">
+                  <div className="absolute inset-0 rounded-full bg-[#0A84FF]" />
+                  <div className="absolute inset-[16px] rounded-full bg-white" />
+                  <div className="absolute bottom-[18px] left-[28px] h-[22px] w-[22px] rotate-[38deg] rounded-[6px] bg-white" />
+
+                  <div className="absolute left-1/2 top-1/2 flex h-[66px] w-[66px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[16px] bg-[#156BF7]">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-[32px] w-[32px]"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg" >
+                      <rect x="3" y="5" width="18" height="14" rx="2.5" fill="#1D5FEA" />
+                      <path
+                        d="M5.5 7.5L12 12.8L18.5 7.5"
+                        stroke="#2E7BFF"
+                        strokeWidth="1.7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+    
+    </div>
     </main>
   )
 }
