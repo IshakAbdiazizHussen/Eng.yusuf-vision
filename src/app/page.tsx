@@ -797,8 +797,97 @@ export default function Home() {
                 </div>
               </div>
             </div>
-    </section>
-    
+          </section>
+
+          <section className="mt-12 w-screen bg-[#156BF7] text-white relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
+          <div className="grid min-h-[785px] gap-12 px-10 py-12 md:px-16 md:py-16 xl:grid-cols-[1fr_500px] xl:items-center">
+            <div className="max-w-[620px] self-center ml-[120px]">
+              <div className="mb-12">
+                <span className="text-[64px] font-bold leading-none text-white">y</span>
+              </div>
+
+              <h2 className="text-[38px] font-bold leading-[1.05] tracking-[-0.02em] md:text-[54px]">
+                My Goal is Simple:
+              </h2>
+
+              <p className="mt-5 max-w-[610px] text-[24px] leading-[1.18] tracking-[-0.01em] text-white md:text-[30px]">
+                Lorem ipsum dolor sit amet, consectetuer
+                <br />
+                adipiscing elit, sed diam nonummy nibh
+                <br />
+                euismod tincidunt ut laoreet dolore
+                <br />
+                magna aliquam
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center">
+                <h3 className="text-[34px] font-bold leading-none md:text-[42px]">
+                  Find me here
+                </h3>
+
+                <div className="flex items-center gap-3">
+                  <a href="#" aria-label="YouTube" className="transition-opacity hover:opacity-85">
+                    <Youtube className="h-[56px] w-[56px] text-white" fill="currentColor" strokeWidth={1.8} />
+                  </a>
+
+                  <a href="#" aria-label="Instagram" className="transition-opacity hover:opacity-85">
+                    <Instagram className="h-[42px] w-[42px] text-white" strokeWidth={2.4} />
+                  </a>
+
+                  <a href="#" aria-label="TikTok" className="transition-opacity hover:opacity-85">
+                    <Music2 className="h-[42px] w-[42px] text-white" strokeWidth={2.8} />
+                  </a>
+
+                  <a href="#" aria-label="Facebook" className="transition-opacity hover:opacity-85">
+                    <Facebook className="h-[42px] w-[42px] text-white" fill="currentColor" strokeWidth={1.8} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full max-w-[500px] justify-self-center xl:justify-self-end xl:mr-[120px]">
+              <div className="rounded-[42px] bg-[#DDE4EE] px-11 py-10 md:px-11 md:py-11">
+                <div>
+                  <label className="block text-[24px] font-bold leading-none text-black">
+                    Name
+                  </label>
+                  <div className="mt-4 flex h-[50px] items-center rounded-[14px] bg-[#F7F7F7] px-6 text-[17px] 
+                  font-normal text-[#B9B9B9]">
+                    Full Name
+                  </div>
+                </div>
+
+                <div className="mt-5">
+                  <label className="block text-[24px] font-bold leading-none text-black">
+                    Email
+                  </label>
+                  <div className="mt-4 flex h-[50px] items-center rounded-[14px] bg-[#F7F7F7] px-6 text-[17px] 
+                  font-normal text-[#B9B9B9]">
+                    Your Email
+                  </div>
+                </div>
+
+                <div className="mt-5">
+                  <label className="block text-[24px] font-bold leading-none text-black">
+                    Message
+                  </label>
+                  <div className="mt-4 flex h-[87px] items-start rounded-[14px] bg-[#F7F7F7] px-6 py-4 text-[17px] 
+                  font-normal text-[#B9B9B9]">
+                    Describe what can i help you
+                  </div>
+                </div>
+
+                <a
+                  href="#"
+                  className="mt-7 inline-flex h-[53px] w-full items-center justify-center rounded-[16px] bg-[#156BF7] 
+                  text-[22px] font-bold leading-none text-white transition-opacity hover:opacity-90"
+                >
+                  Send Message
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
     </div>
     </main>
   )
