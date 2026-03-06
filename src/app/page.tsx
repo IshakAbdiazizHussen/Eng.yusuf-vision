@@ -81,7 +81,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="max-w-[820px] pb-8 ml-38 mb-18">
+          <div className="max-w-[820px] pb-8 ml-38 mb-30">
             <h1 className="text-8xl font-bold leading-[0.95] text-[#1d6cff]">Eng Yuyu</h1>
             <p className="mt-2 text-[62px] font-medium leading-[1.02] text-[#0a0a0a]">
               Tech Content Creator.
@@ -214,13 +214,20 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-x-28 gap-y-14">
               <div className="flex items-center gap-6">
                 <div className="flex h-[89px] w-[124px] items-center justify-center overflow-hidden bg-transparent">
-                <Image
-                  src="/youtubeRemoving.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[89px] w-[124px] object-contain"
-                />
+                <a
+                  href="https://www.youtube.com/@engyuyu"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu YouTube channel"
+                >
+                  <Image
+                    src="/youtubeRemoving.png"
+                    alt="YouTube"
+                    width={124}
+                    height={89}
+                    className="h-[89px] w-[124px] object-contain"
+                  />
+                </a>
               </div>
 
                 <div>
@@ -431,13 +438,20 @@ export default function Home() {
               </div>
 
               <div className="flex items-center gap- text-[#111111]">
-                <Image
-                  src="/youtubeRemoving.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"
-                />
+                <a
+                  href="https://www.youtube.com/@engyuyu"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu YouTube channel"
+                >
+                  <Image
+                    src="/youtubeRemoving.png"
+                    alt="YouTube"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain"
+                  />
+                </a>
 
                 <Image
                   src="/Tiktok.png"
@@ -541,13 +555,20 @@ export default function Home() {
               </div>
 
               <div className="flex items-center gap-2 text-[#111111]">
-                <Image
-                  src="/youtubeRemoving.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"
-                />
+                <a
+                  href="https://www.youtube.com/@engyuyu"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu YouTube channel"
+                >
+                  <Image
+                    src="/youtubeRemoving.png"
+                    alt="YouTube"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain"
+                  />
+                </a>
 
                 <Image
                   src="/Tiktok.png"
@@ -640,20 +661,20 @@ export default function Home() {
                   and AI insights straight to your inbox.
                 </p>
 
-                <div className="mt-7 flex flex-col gap-4 md:flex-row md:items-center">
-            <div
-              className="flex h-[72px] w-full md:w-[500px] lg:w-[540px] items-center rounded-[22px] bg-[#f5f5f5]
-              px-8 text-[24px] font-semibold leading-none text-black shrink-0">
-              Your Email
-            </div>
+                <form className="mt-7 flex flex-col gap-4 md:flex-row md:items-center">
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="h-[72px] w-full rounded-[22px] bg-[#f5f5f5] px-8 text-[24px] font-semibold leading-none text-black outline-none placeholder:text-[#8f8f8f] md:w-[500px] lg:w-[540px]"
+                  />
 
-            <a
-              href="#"
-              className="inline-flex h-[72px] w-full md:w-[260px] items-center justify-center rounded-[22px]
-              bg-[#156BF7] px-8 text-[24px] font-bold leading-none text-white shrink-0">
-              Subscribe
-            </a>
-          </div>
+                  <button
+                    type="submit"
+                    className="inline-flex h-[72px] w-full items-center justify-center rounded-[22px] bg-[#156BF7] px-8 text-[24px] font-bold leading-none text-white transition-opacity hover:opacity-90 md:w-[260px]"
+                  >
+                    Subscribe
+                  </button>
+                </form>
               </div>
 
               <div className="flex justify-center lg:justify-end">
@@ -850,13 +871,20 @@ export default function Home() {
                 </h3>
 
                 <div className="flex items-center ">
-                  <Image
-                  src="/youtubeRemoving.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"
-                />
+                  <a
+                    href="https://www.youtube.com/@engyuyu"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Open Eng Yuyu YouTube channel"
+                  >
+                    <Image
+                      src="/youtubeRemoving.png"
+                      alt="YouTube"
+                      width={124}
+                      height={89}
+                      className="h-[60px] w-[62px] object-contain"
+                    />
+                  </a>
 
                 <Image
                   src="/Tiktok.png"
@@ -889,39 +917,41 @@ export default function Home() {
                   <label className="block text-[24px] font-bold leading-none text-black">
                     Name
                   </label>
-                  <div className="mt-4 flex h-[50px] items-center rounded-[14px] bg-[#F7F7F7] px-6 text-[17px] 
-                  font-normal text-[#B9B9B9]">
-                    Full Name
-                  </div>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="mt-4 h-[50px] w-full rounded-[14px] bg-[#F7F7F7] px-6 text-[17px] font-normal text-black outline-none placeholder:text-[#B9B9B9]"
+                  />
                 </div>
 
                 <div className="mt-5">
                   <label className="block text-[24px] font-bold leading-none text-black">
                     Email
                   </label>
-                  <div className="mt-4 flex h-[50px] items-center rounded-[14px] bg-[#F7F7F7] px-6 text-[17px] 
-                  font-normal text-[#B9B9B9]">
-                    Your Email
-                  </div>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="mt-4 h-[50px] w-full rounded-[14px] bg-[#F7F7F7] px-6 text-[17px] font-normal text-black outline-none placeholder:text-[#B9B9B9]"
+                  />
                 </div>
 
                 <div className="mt-5">
                   <label className="block text-[24px] font-bold leading-none text-black">
                     Message
                   </label>
-                  <div className="mt-4 flex h-[87px] items-start rounded-[14px] bg-[#F7F7F7] px-6 py-4 text-[17px] 
-                  font-normal text-[#B9B9B9]">
-                    Describe what can i help you
-                  </div>
+                  <textarea
+                    placeholder="Describe what can i help you"
+                    className="mt-4 h-[87px] w-full resize-none rounded-[14px] bg-[#F7F7F7] px-6 py-4 text-[17px] font-normal text-black outline-none placeholder:text-[#B9B9B9]"
+                  />
                 </div>
 
-                <a
-                  href="#"
+                <button
+                  type="button"
                   className="mt-7 inline-flex h-[53px] w-full items-center justify-center rounded-[16px] bg-[#156BF7] 
                   text-[22px] font-bold leading-none text-white transition-opacity hover:opacity-90"
                 >
                   Send Message
-                </a>
+                </button>
               </div>
             </div>
           </div>
