@@ -238,12 +238,20 @@ export default function Home() {
 
               <div className="flex items-center gap-6">
                 <div>
-                <Image
-                  src="/Tiktok.png"
-                  alt="Tiktok"
-                  width={124}
-                  height={89}
-                  className="h-[89px] w-[124px] object-contain"/>
+                <a
+                  href="https://www.tiktok.com/@eng_yuyu"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu TikTok profile"
+                >
+                  <Image
+                    src="/Tiktok.png"
+                    alt="Tiktok"
+                    width={124}
+                    height={89}
+                    className="h-[89px] w-[124px] object-contain"
+                  />
+                </a>
               </div>
                 <div>
                   <p className="text-[22px] leading-none text-[#161616]">Followers</p>
@@ -453,12 +461,20 @@ export default function Home() {
                   />
                 </a>
 
-                <Image
-                  src="/Tiktok.png"
-                  alt="Tiktok"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"/>
+                <a
+                  href="https://www.tiktok.com/@eng_yuyu"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu TikTok profile"
+                >
+                  <Image
+                    src="/Tiktok.png"
+                    alt="Tiktok"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain"
+                  />
+                </a>
 
                 <Image
                   src="/Facebook.png"
@@ -570,12 +586,20 @@ export default function Home() {
                   />
                 </a>
 
-                <Image
-                  src="/Tiktok.png"
-                  alt="Tiktok"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"/>
+                <a
+                  href="https://www.tiktok.com/@eng_yuyu"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu TikTok profile"
+                >
+                  <Image
+                    src="/Tiktok.png"
+                    alt="Tiktok"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain"
+                  />
+                </a>
 
                 <Image
                   src="/Facebook.png"
@@ -886,12 +910,20 @@ export default function Home() {
                     />
                   </a>
 
-                <Image
-                  src="/Tiktok.png"
-                  alt="Tiktok"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"/>
+                <a
+                  href="https://www.tiktok.com/@eng_yuyu"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu TikTok profile"
+                >
+                  <Image
+                    src="/Tiktok.png"
+                    alt="Tiktok"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain"
+                  />
+                </a>
 
                 <Image
                   src="/Facebook.png"
