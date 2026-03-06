@@ -1,11 +1,5 @@
 import Image from "next/image"
-import {
-  ArrowRight,
-  Facebook,
-  Instagram,
-  Music2,
-  Youtube,
-} from "lucide-react"
+import { ArrowRight, Facebook, Instagram, Music2, Youtube } from "lucide-react"
 
 export default function Home() {
   return (
@@ -21,7 +15,6 @@ export default function Home() {
       />
 
       <div className="relative mx-auto w-full max-w-[1520px] px-6 pb-0 pt-4">
-        {/* Navigation section start */}
         <nav className="flex items-center gap-8">
           <a href="#" className="flex items-center gap-2 pl-1" aria-label="Home">
             <span className="h-7 w-4 -rotate-[32deg] rounded-full border-[2.5px] border-[#1d6cff]" />
@@ -76,7 +69,6 @@ export default function Home() {
           </ul>
         </nav>
 
-        {/* Hero section start: portrait, intro text, buttons, and partners */}
         <section className="mt-5 grid grid-cols-[500px_1fr] items-end gap-10 pt-8">
           <div className="mb-0 h-[690px] w-full max-w-[500px] overflow-hidden">
             <Image
@@ -171,7 +163,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Stats and social proof section start */}
         <section className="mb-8 mb-8 pb-10">
           <div className="rounded-[44px] bg-gray-200 px-10 py-12 backdrop-blur-[1px]">
             <div className="grid grid-cols-4 gap-8">
@@ -219,7 +210,6 @@ export default function Home() {
             Learners Worldwide.
           </h2>
 
-          {/* Social platforms metrics container start */}
           <div className="mx-auto mt-10 max-w-[1320px] rounded-[44px] bg-[#ccd5e4] px-14 py-14">
             <div className="grid grid-cols-2 gap-x-28 gap-y-14">
               <div className="flex items-center gap-6">
@@ -266,7 +256,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* About section start: profile details, mission, and impact */}
           <section className="mt-16 grid grid-cols-[560px_1fr] gap-12">
             <div className="flex h-full flex-col">
               <Image
@@ -397,40 +386,11 @@ export default function Home() {
                 Preparing people for the future of digital life
               </p>
 
-              <p className="mt-10 text-[58px] font-bold leading-[1.12] text-black">
+              <p className="mt-15 text-3xl font-bold text-black">
                 Thank you for being part of this journey.
                 <br />
                 The learning never stops.
               </p>
-            </div>
-          </section>
-
-          {/* Join community section start */}
-          <section className="mt-14">
-            <div className="mx-auto flex max-w-[1420px] items-center justify-between rounded-[44px] bg-[#ccd5e4] px-14 py-10">
-              <div className="max-w-[780px]">
-                <h3 className="text-[28px] font-bold leading-none text-black">Join the Community</h3>
-                <p className="mt-3 text-[22px] leading-[1.24] text-[#141414]">
-                  Millions are already learning tech the simple way.
-                  <br />
-                  Follow, watch, and grow with us across platforms.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-18 items-center justify-center rounded-[14px] bg-[#ff0e0e]">
-                  <Youtube className="h-6 w-6 text-white" fill="currentColor" />
-                </div>
-                <Music2 className="h-10 w-10 text-[#1f1b20]" strokeWidth={3} />
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2577e7]">
-                  <Facebook className="h-8 w-8 text-white" fill="currentColor" />
-                </div>
-                <div className="relative h-14 w-14 rounded-[16px] bg-[linear-gradient(135deg,#fbc700_0%,#ff6a00_35%,#ff0068_70%,#7c2cff_100%)] p-1">
-                  <div className="flex h-full w-full items-center justify-center rounded-[12px] bg-white">
-                    <Instagram className="h-7 w-7 text-[#ff2a54]" strokeWidth={2.4} />
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
         </section>
