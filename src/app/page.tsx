@@ -15,7 +15,7 @@ export default function Home() {
       />
 
       <div className="relative mx-auto w-full max-w-[1520px] px-6 pb-0 pt-28">
-        <nav className="fixed left-1/2 top-4 z-50 flex w-[calc(100%-3rem)] max-w-[1520px] -translate-x-1/2 items-center gap-8 rounded-[24px] bg-[#f3f4f6]/95 px-6 py-3 backdrop-blur-sm">
+        <nav className="fixed left-1/2 top-4 z-50 flex w-[calc(100%-3rem)] max-w-[1520px] -translate-x-1/2 items-center gap-8 px-6 py-3">
           <a href="#top" className="flex items-center gap-2 pl-1" aria-label="Home">
             <span className="h-7 w-4 -rotate-[32deg] rounded-full border-[2.5px] border-[#1d6cff]" />
             <span className="h-14 w-8 -rotate-[32deg] rounded-lg bg-[#1d6cff]" />
