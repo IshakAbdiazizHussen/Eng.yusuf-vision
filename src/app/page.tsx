@@ -14,61 +14,61 @@ export default function Home() {
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-24 sm:px-6">
-        <nav className="fixed left-1/2 top-3 z-50 flex w-[calc(100%-1.5rem)] max-w-[1520px] -translate-x-1/2 items-center gap-4 px-3 py-2 sm:top-4 sm:w-[calc(100%-3rem)] sm:gap-8 sm:px-6 sm:py-3">
+      <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-8 sm:px-6 sm:pt-24">
+        <nav className="sticky top-3 z-50 flex w-full flex-col gap-3 px-1 py-2 sm:fixed sm:left-1/2 sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:flex-row sm:items-center sm:gap-8 sm:px-6 sm:py-3">
           <Image
             src="/Eng Yuyu Logo-21.png"
             alt="Eng Yuyu Logo"
             width={124}
             height={89}
-            className="h-[54px] w-[78px] object-contain sm:h-[89px] sm:w-[124px]"
+            className="h-[44px] w-[64px] object-contain sm:h-[89px] sm:w-[124px]"
             style={{
               filter:
                 "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
             }}
           />
 
-          <ul className="ml-auto flex max-w-[calc(100%-96px)] items-center justify-start gap-2 overflow-x-auto rounded-xl bg-[#d5deed] px-4 py-2 text-[#1d6cff] scrollbar-none sm:max-w-none sm:justify-center sm:px-7 sm:py-2.5">
+          <ul className="flex w-full flex-wrap items-center justify-center gap-x-2 gap-y-2 rounded-[22px] bg-[#d5deed] px-3 py-3 text-[#1d6cff] sm:ml-auto sm:w-auto sm:max-w-none sm:flex-nowrap sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5">
             <li className="flex items-center gap-2">
               <a
                 href="#about"
-                className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
+                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 About
               </a>
-              <span className="text-[14px] font-medium text-[#1d6cff]/90">|</span>
+              <span className="hidden text-[14px] font-medium text-[#1d6cff]/90 sm:inline">|</span>
             </li>
             <li className="flex items-center gap-2">
               <a
                 href="#watch"
-                className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
+                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 Watch
               </a>
-              <span className="text-[14px] font-medium text-[#1d6cff]/90">|</span>
+              <span className="hidden text-[14px] font-medium text-[#1d6cff]/90 sm:inline">|</span>
             </li>
             <li className="flex items-center gap-2">
               <a
                 href="#tech-blog"
-                className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
+                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 Tech Blog
               </a>
-              <span className="text-[14px] font-medium text-[#1d6cff]/90">|</span>
+              <span className="hidden text-[14px] font-medium text-[#1d6cff]/90 sm:inline">|</span>
             </li>
             <li className="flex items-center gap-2">
               <a
                 href="#events"
-                className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
+                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 Events
               </a>
-              <span className="text-[14px] font-medium text-[#1d6cff]/90">|</span>
+              <span className="hidden text-[14px] font-medium text-[#1d6cff]/90 sm:inline">|</span>
             </li>
             <li className="flex items-center">
               <a
                 href="#impact"
-                className="px-2 text-[14px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80"
+                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 Impact
               </a>
@@ -76,23 +76,23 @@ export default function Home() {
           </ul>
         </nav>
 
-        <section className="mt-5 grid grid-cols-1 items-end gap-10 pt-8 lg:grid-cols-[minmax(0,500px)_1fr]">
-          <div className="mx-auto h-[420px] w-full max-w-[500px] overflow-hidden sm:h-[520px] lg:mx-0 lg:h-[690px]">
+        <section className="mt-3 grid grid-cols-1 items-end gap-8 pt-4 lg:mt-5 lg:gap-10 lg:pt-8 lg:grid-cols-[minmax(0,500px)_1fr]">
+          <div className="mx-auto h-[320px] w-full max-w-[360px] overflow-hidden sm:h-[520px] sm:max-w-[500px] lg:mx-0 lg:h-[690px]">
             <Image
               src="/yuyu.png"
               alt="Eng Yuyu portrait"
               width={526}
               height={628}
-              className="h-full w-full object-cover object-top mix-blend-multiply"
+              className="h-full w-full object-contain object-top mix-blend-multiply sm:object-cover"
               priority
             />
           </div>
 
           <div className="max-w-[820px] pb-4 lg:mb-30 lg:ml-38 lg:pb-8">
-            <h1 className="text-5xl font-bold leading-[0.95] text-[#1d6cff] sm:text-6xl lg:text-8xl">
+            <h1 className="text-[64px] font-bold leading-[0.95] text-[#1d6cff] sm:text-6xl lg:text-8xl">
               Eng Yuyu
             </h1>
-            <p className="mt-2 text-2xl font-light leading-[1.02] text-[#0a0a0a] sm:text-3xl">
+            <p className="mt-2 text-xl font-light leading-[1.02] text-[#0a0a0a] sm:text-3xl">
               Tech Content Creator.
             </p>
 
@@ -115,7 +115,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold leading-none text-[#1d6cff] sm:text-[40px] lg:text-[50px]">
                 Partners
               </h2>
-              <div className="mt-4 flex flex-wrap items-end gap-8 lg:gap-10">
+              <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:flex lg:flex-wrap lg:items-end lg:gap-10">
                 <div className="flex flex-col items-center justify-end gap-1">
                   <div className="h-[94px] w-[132px] overflow-hidden">
                     <Image
@@ -944,9 +944,9 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="impact" className="mt-12 scroll-mt-32 w-screen bg-[#156BF7] text-white relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
-          <div className="grid min-h-[785px] gap-12 px-10 py-12 md:px-16 md:py-16 xl:grid-cols-[1fr_500px] xl:items-center">
-            <div className="max-w-[620px] self-center ml-[120px]">
+          <section id="impact" className="relative left-1/2 right-1/2 mt-12 ml-[-50vw] mr-[-50vw] w-screen scroll-mt-32 bg-[#156BF7] text-white">
+          <div className="grid min-h-[785px] gap-10 px-6 py-10 md:px-16 md:py-16 xl:grid-cols-[1fr_500px] xl:items-center">
+            <div className="max-w-[620px] self-center xl:ml-[120px]">
               <div className="mb-5">
                 <Image
                   src="/Eng Yuyu Logo-21.png"
@@ -957,11 +957,11 @@ export default function Home() {
                 />
               </div>
 
-              <h2 className="text-3xl font-bold leading-[1.05] tracking-[-0.02em]">
+              <h2 className="text-[38px] font-bold leading-[1.05] tracking-[-0.02em] md:text-[48px]">
                 My Goal is Simple:
               </h2>
 
-              <p className="mt-5 max-w-[610px] text-[28px] font-light leading-[1.18] tracking-[-0.01em] text-white md:text-[30px]">
+              <p className="mt-5 max-w-[610px] text-[22px] font-light leading-[1.18] tracking-[-0.01em] text-white md:text-[30px]">
                 Lorem ipsum dolor sit amet, consectetuer
                 <br />
                 adipiscing elit, sed diam nonummy nibh
@@ -971,8 +971,8 @@ export default function Home() {
                 magna aliquam
               </p>
 
-              <div className="mt-12 flex flex-col gap-4 md:flex-row md:items-center">
-                <h3 className="text-2xl font-bold leading-none ">
+              <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center">
+                <h3 className="text-[28px] font-bold leading-none md:text-2xl">
                   Find me here
                 </h3>
 
@@ -988,7 +988,7 @@ export default function Home() {
                       alt="YouTube"
                       width={124}
                       height={89}
-                      className="h-[60px] w-[62px] object-contain"
+                      className="h-[50px] w-[52px] object-contain md:h-[60px] md:w-[62px]"
                     />
                   </a>
 
@@ -1003,7 +1003,7 @@ export default function Home() {
                       alt="Instagram"
                       width={124}
                       height={89}
-                      className="h-[60px] w-[62px] object-contain"
+                      className="h-[50px] w-[52px] object-contain md:h-[60px] md:w-[62px]"
                     />
                   </a>
 
@@ -1018,7 +1018,7 @@ export default function Home() {
                       alt="Tiktok"
                       width={124}
                       height={89}
-                      className="h-[60px] w-[62px] object-contain"
+                      className="h-[50px] w-[52px] object-contain md:h-[60px] md:w-[62px]"
                     />
                   </a>
 
@@ -1033,7 +1033,7 @@ export default function Home() {
                       alt="Facebook"
                       width={124}
                       height={89}
-                      className="h-[60px] w-[62px] object-contain bg-white rounded-full"
+                      className="h-[50px] w-[52px] rounded-full bg-white object-contain md:h-[60px] md:w-[62px]"
                     />
                   </a>
 
@@ -1042,9 +1042,9 @@ export default function Home() {
             </div>
 
             <div className="w-full max-w-[500px] justify-self-center xl:justify-self-end xl:mr-[120px]">
-              <div className="rounded-[42px] bg-[#DDE4EE] px-11 py-10 md:px-11 md:py-11">
+              <div className="rounded-[32px] bg-[#DDE4EE] px-6 py-8 md:rounded-[42px] md:px-11 md:py-11">
                 <div>
-                  <label className="block text-[24px] font-bold leading-none text-black">
+                  <label className="block text-[20px] font-bold leading-none text-black md:text-[24px]">
                     Name
                   </label>
                   <input
@@ -1055,7 +1055,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-5">
-                  <label className="block text-[24px] font-bold leading-none text-black">
+                  <label className="block text-[20px] font-bold leading-none text-black md:text-[24px]">
                     Email
                   </label>
                   <input
@@ -1066,7 +1066,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-5">
-                  <label className="block text-[24px] font-bold leading-none text-black">
+                  <label className="block text-[20px] font-bold leading-none text-black md:text-[24px]">
                     Message
                   </label>
                   <textarea
