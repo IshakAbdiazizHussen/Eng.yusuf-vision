@@ -16,10 +16,17 @@ export default function Home() {
 
       <div className="relative mx-auto w-full max-w-[1520px] px-6 pb-0 pt-28">
         <nav className="fixed left-1/2 top-4 z-50 flex w-[calc(100%-3rem)] max-w-[1520px] -translate-x-1/2 items-center gap-8 px-6 py-3">
-          <a href="#top" className="flex items-center gap-2 pl-1" aria-label="Home">
-            <span className="h-7 w-4 -rotate-[32deg] rounded-full border-[2.5px] border-[#1d6cff]" />
-            <span className="h-14 w-8 -rotate-[32deg] rounded-lg bg-[#1d6cff]" />
-          </a>
+          <Image
+            src="/Eng Yuyu Logo-21.png"
+            alt="Eng Yuyu Logo"
+            width={124}
+            height={89}
+            className="h-[89px] w-[124px] object-contain"
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
+            }}
+          />
 
           <ul className="ml-auto flex items-center justify-center gap-2 rounded-xl bg-[#d5deed] px-7 py-2.5 text-[#1d6cff]">
             <li className="flex items-center gap-2">
@@ -83,7 +90,7 @@ export default function Home() {
 
           <div className="max-w-[820px] pb-8 ml-38 mb-30">
             <h1 className="text-8xl font-bold leading-[0.95] text-[#1d6cff]">Eng Yuyu</h1>
-            <p className="mt-2 text-[62px] font-medium leading-[1.02] text-[#0a0a0a]">
+            <p className="mt-2 text-3xl font-light leading-[1.02] text-[#0a0a0a]">
               Tech Content Creator.
             </p>
 
@@ -693,9 +700,17 @@ export default function Home() {
                 {Array.from({ length: 4 }).map((_, index) => (
                   <div key={index}>
                     <div className="flex h-[260px] w-full items-start rounded-[30px] border-[3px] border-[#1d6cff] p-6">
-                      <span className="text-[38px] font-bold leading-none text-[#1d6cff]">
-                        y
-                      </span>
+                      <Image
+            src="/Eng Yuyu Logo-21.png"
+            alt="Eng Yuyu Logo"
+            width={124}
+            height={89}
+            className="h-[89px] w-[124px] object-contain"
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
+            }}
+          />
                     </div>
                     <h4 className="mt-6 max-w-460 text-2xl font-semibold leading-[1.08] text-black">
                       Digniin Muhiim ah oo ku
@@ -796,9 +811,17 @@ export default function Home() {
 
                 <div className="relative h-[320px] w-full rounded-[34px] border-[4px] border-[#1d6cff] bg-transparent">
                   <div className="absolute left-6 top-6 flex items-center justify-center rounded-full">
-                    <span className="text-[34px] font-bold leading-none text-[#1d6cff]">
-                      y
-                    </span>
+                    <Image
+            src="/Eng Yuyu Logo-21.png"
+            alt="Eng Yuyu Logo"
+            width={124}
+            height={89}
+            className="h-[89px] w-[124px] object-contain"
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
+            }}
+          />
                   </div>
                 </div>
 
@@ -922,7 +945,13 @@ export default function Home() {
           <div className="grid min-h-[785px] gap-12 px-10 py-12 md:px-16 md:py-16 xl:grid-cols-[1fr_500px] xl:items-center">
             <div className="max-w-[620px] self-center ml-[120px]">
               <div className="mb-12">
-                <span className="text-[64px] font-bold leading-none text-white">y</span>
+                <Image
+                src="/Eng Yuyu Logo-21.png"
+                alt="Eng Yuyu Logo"
+                width={124}
+                height={89}
+                className="h-[89px] w-[124px] object-contain invert brightness-0 mr-15"
+              />
               </div>
 
               <h2 className="text-2xl font-bold leading-[1.05] tracking-[-0.02em] md:text-3xl">
