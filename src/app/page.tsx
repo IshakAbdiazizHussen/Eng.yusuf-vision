@@ -15,7 +15,7 @@ export default function Home() {
       />
 
       <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-8 sm:px-6 sm:pt-24">
-        <nav className="sticky top-3 z-50 flex w-full flex-col gap-3 px-1 py-2 sm:fixed sm:left-1/2 sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:flex-row sm:items-center sm:gap-8 sm:px-6 sm:py-3">
+        <nav className="sticky top-3 z-50 flex w-full items-center gap-3 px-1 py-2 sm:fixed sm:left-1/2 sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:px-6 sm:py-3">
           <Image
             src="/Eng Yuyu Logo-21.png"
             alt="Eng Yuyu Logo"
@@ -28,7 +28,7 @@ export default function Home() {
             }}
           />
 
-          <ul className="flex w-full flex-wrap items-center justify-center gap-x-2 gap-y-2 rounded-[22px] bg-[#d5deed] px-3 py-3 text-[#1d6cff] sm:ml-auto sm:w-auto sm:max-w-none sm:flex-nowrap sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5">
+          <ul className="ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] bg-[#d5deed] px-3 py-3 text-[#1d6cff] sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5">
             <li className="flex items-center gap-2">
               <a
                 href="#about"
