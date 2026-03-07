@@ -262,12 +262,20 @@ export default function Home() {
               <div className="flex items-center gap-6">
                 <div className="">
                 <div>
-                <Image
-                  src="/Instgram.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[89px] w-[124px] object-contain"/>
+                <a
+                  href="https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu Instagram profile"
+                >
+                  <Image
+                    src="/Instgram.png"
+                    alt="Instagram"
+                    width={124}
+                    height={89}
+                    className="h-[89px] w-[124px] object-contain"
+                  />
+                </a>
               </div>
 
                 </div>
@@ -501,12 +509,20 @@ export default function Home() {
                   />
                 </a>
 
-                <Image
-                  src="/Instgram.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"/>
+                <a
+                  href="https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu Instagram profile"
+                >
+                  <Image
+                    src="/Instgram.png"
+                    alt="Instagram"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain"
+                  />
+                </a>
               </div>
             </div>
           </section>
@@ -634,12 +650,20 @@ export default function Home() {
                   />
                 </a>
 
-                <Image
-                  src="/Instgram.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"/>
+                <a
+                  href="https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu Instagram profile"
+                >
+                  <Image
+                    src="/Instgram.png"
+                    alt="Instagram"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain"
+                  />
+                </a>
 
               </div>
             </div>
@@ -966,12 +990,20 @@ export default function Home() {
                   />
                 </a>
 
-                <Image
-                  src="/Instgram.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain "/>
+                <a
+                  href="https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu Instagram profile"
+                >
+                  <Image
+                    src="/Instgram.png"
+                    alt="Instagram"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain "
+                  />
+                </a>
 
                 </div>
               </div>
