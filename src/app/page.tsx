@@ -14,8 +14,8 @@ export default function Home() {
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-24 sm:px-6">
-        <nav className="fixed left-1/2 top-3 z-50 flex w-[calc(100%-1.5rem)] max-w-[1520px] -translate-x-1/2 items-center gap-3 px-1 py-2 sm:top-4 sm:w-[calc(100%-3rem)] sm:gap-8 sm:px-6 sm:py-3">
+      <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-28 sm:px-6 sm:pt-24">
+        <nav className="fixed inset-x-0 top-0 z-50 flex items-center gap-3 bg-[#f3f4f6]/96 px-4 py-3 backdrop-blur-sm sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:bg-transparent sm:px-6 sm:py-3 sm:backdrop-blur-0">
           <Image
             src="/Eng Yuyu Logo-21.png"
             alt="Eng Yuyu Logo"
