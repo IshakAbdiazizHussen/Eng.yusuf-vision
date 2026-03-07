@@ -14,21 +14,21 @@ export default function Home() {
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-[1520px] px-6 pb-0 pt-28">
-        <nav className="fixed left-1/2 top-4 z-50 flex w-[calc(100%-3rem)] max-w-[1520px] -translate-x-1/2 items-center gap-8 px-6 py-3">
+      <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-24 sm:px-6">
+        <nav className="fixed left-1/2 top-3 z-50 flex w-[calc(100%-1.5rem)] max-w-[1520px] -translate-x-1/2 items-center gap-4 px-3 py-2 sm:top-4 sm:w-[calc(100%-3rem)] sm:gap-8 sm:px-6 sm:py-3">
           <Image
             src="/Eng Yuyu Logo-21.png"
             alt="Eng Yuyu Logo"
             width={124}
             height={89}
-            className="h-[89px] w-[124px] object-contain"
+            className="h-[54px] w-[78px] object-contain sm:h-[89px] sm:w-[124px]"
             style={{
               filter:
                 "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
             }}
           />
 
-          <ul className="ml-auto flex items-center justify-center gap-2 rounded-xl bg-[#d5deed] px-7 py-2.5 text-[#1d6cff]">
+          <ul className="ml-auto flex max-w-[calc(100%-96px)] items-center justify-start gap-2 overflow-x-auto rounded-xl bg-[#d5deed] px-4 py-2 text-[#1d6cff] sm:max-w-none sm:justify-center sm:px-7 sm:py-2.5">
             <li className="flex items-center gap-2">
               <a
                 href="#about"
@@ -76,8 +76,8 @@ export default function Home() {
           </ul>
         </nav>
 
-        <section className="mt-5 grid grid-cols-[500px_1fr] items-end gap-10 pt-8">
-          <div className="mb-0 h-[690px] w-full max-w-[500px] overflow-hidden">
+        <section className="mt-5 grid grid-cols-1 items-end gap-10 pt-8 lg:grid-cols-[minmax(0,500px)_1fr]">
+          <div className="mx-auto h-[420px] w-full max-w-[500px] overflow-hidden sm:h-[520px] lg:mx-0 lg:h-[690px]">
             <Image
               src="/Yuyu.png"
               alt="Eng Yuyu portrait"
@@ -88,30 +88,34 @@ export default function Home() {
             />
           </div>
 
-          <div className="max-w-[820px] pb-8 ml-38 mb-30">
-            <h1 className="text-8xl font-bold leading-[0.95] text-[#1d6cff]">Eng Yuyu</h1>
-            <p className="mt-2 text-3xl font-light leading-[1.02] text-[#0a0a0a]">
+          <div className="max-w-[820px] pb-4 lg:mb-30 lg:ml-38 lg:pb-8">
+            <h1 className="text-5xl font-bold leading-[0.95] text-[#1d6cff] sm:text-6xl lg:text-8xl">
+              Eng Yuyu
+            </h1>
+            <p className="mt-2 text-2xl font-light leading-[1.02] text-[#0a0a0a] sm:text-3xl">
               Tech Content Creator.
             </p>
 
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <a
                 href="#"
-                className="inline-flex h-[52px] min-w-[300px] items-center justify-center gap-2 rounded-2xl bg-[#e3eaf7] px-6 text-[18px] font-semibold leading-none text-[#1d6cff] whitespace-nowrap transition-opacity hover:opacity-85"
+                className="inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-[#e3eaf7] px-6 text-[16px] font-semibold leading-none text-[#1d6cff] whitespace-nowrap transition-opacity hover:opacity-85 sm:min-w-[260px] sm:text-[18px] lg:min-w-[300px]"
               >
                 Watch Latest Videos <ArrowRight className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="inline-flex h-[52px] min-w-[300px] items-center justify-center gap-2 rounded-2xl bg-[#1d6cff] px-6 text-[18px] font-semibold leading-none text-white whitespace-nowrap transition-opacity hover:opacity-90"
+                className="inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-[#1d6cff] px-6 text-[16px] font-semibold leading-none text-white whitespace-nowrap transition-opacity hover:opacity-90 sm:min-w-[260px] sm:text-[18px] lg:min-w-[300px]"
               >
                 For Collaboration <ArrowRight className="h-5 w-5" />
               </a>
             </div>
 
             <div className="mt-12">
-              <h2 className="text-[50px] font-bold leading-none text-[#1d6cff]">Partners</h2>
-              <div className="mt-4 flex items-end gap-10">
+              <h2 className="text-3xl font-bold leading-none text-[#1d6cff] sm:text-[40px] lg:text-[50px]">
+                Partners
+              </h2>
+              <div className="mt-4 flex flex-wrap items-end gap-8 lg:gap-10">
                 <div className="flex flex-col items-center justify-end gap-1">
                   <div className="h-[94px] w-[132px] overflow-hidden">
                     <Image
@@ -170,40 +174,40 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mb-8 mb-8 pb-10">
+        <section className="mb-8 pb-10">
           <div className="rounded-[44px] bg-gray-200 px-10 py-12 backdrop-blur-[1px]">
-            <div className="grid grid-cols-4 gap-8">
-              <div className="flex h-[170px] items-center justify-center rounded-[26px] border-[5px] border-[#1d6cff]">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="flex h-[150px] items-center justify-center rounded-[26px] border-[5px] border-[#1d6cff] sm:h-[170px]">
                 <div className="flex flex-col items-center text-center">
-                  <h3 className="text-[52px] font-bold leading-none text-[#1d6cff]">600+</h3>
-                  <p className="mt-1 text-[17px] font-medium leading-none text-[#1d6cff]">
+                  <h3 className="text-[42px] font-bold leading-none text-[#1d6cff] sm:text-[52px]">600+</h3>
+                  <p className="mt-1 text-[15px] font-medium leading-none text-[#1d6cff] sm:text-[17px]">
                     Tech Videos
                   </p>
                 </div>
               </div>
 
-              <div className="flex h-[170px] items-center justify-center rounded-[26px] border-[5px] border-[#1d6cff]">
+              <div className="flex h-[150px] items-center justify-center rounded-[26px] border-[5px] border-[#1d6cff] sm:h-[170px]">
                 <div className="flex flex-col items-center text-center">
-                  <h3 className="text-[52px] font-bold leading-none text-[#1d6cff]">25+</h3>
-                  <p className="mt-1 text-[17px] font-medium leading-none text-[#1d6cff]">
+                  <h3 className="text-[42px] font-bold leading-none text-[#1d6cff] sm:text-[52px]">25+</h3>
+                  <p className="mt-1 text-[15px] font-medium leading-none text-[#1d6cff] sm:text-[17px]">
                     Countries
                   </p>
                 </div>
               </div>
 
-              <div className="flex h-[170px] items-center justify-center rounded-[26px] border-[5px] border-[#1d6cff]">
+              <div className="flex h-[150px] items-center justify-center rounded-[26px] border-[5px] border-[#1d6cff] sm:h-[170px]">
                 <div className="flex flex-col items-center text-center">
-                  <h3 className="text-[52px] font-bold leading-none text-[#1d6cff]">27+</h3>
-                  <p className="mt-1 text-[17px] font-medium leading-none text-[#1d6cff]">
+                  <h3 className="text-[42px] font-bold leading-none text-[#1d6cff] sm:text-[52px]">27+</h3>
+                  <p className="mt-1 text-[15px] font-medium leading-none text-[#1d6cff] sm:text-[17px]">
                     Million Views
                   </p>
                 </div>
               </div>
 
-              <div className="flex h-[170px] items-center justify-center rounded-[26px] border-[5px] border-[#1d6cff]">
+              <div className="flex h-[150px] items-center justify-center rounded-[26px] border-[5px] border-[#1d6cff] sm:h-[170px]">
                 <div className="flex flex-col items-center text-center">
-                  <h3 className="text-[52px] font-bold leading-none text-[#1d6cff]">10+</h3>
-                  <p className="mt-1 text-[17px] font-medium leading-none text-[#1d6cff]">
+                  <h3 className="text-[42px] font-bold leading-none text-[#1d6cff] sm:text-[52px]">10+</h3>
+                  <p className="mt-1 text-[15px] font-medium leading-none text-[#1d6cff] sm:text-[17px]">
                     Collaborations
                   </p>
                 </div>
@@ -211,14 +215,14 @@ export default function Home() {
             </div>
           </div>
 
-          <h2 className="mt-20 text-center text-7xl font-bold leading-[1.05] text-blue-600">
+          <h2 className="mt-20 text-center text-4xl font-bold leading-[1.05] text-blue-600 sm:text-6xl lg:text-7xl">
             Empowering 1M+ Somali Tech
             <br />
             Learners Worldwide.
           </h2>
 
-          <div className="mx-auto mt-10 max-w-[1320px] rounded-[44px] bg-[#ccd5e4] px-14 py-14">
-            <div className="grid grid-cols-2 gap-x-28 gap-y-14">
+          <div className="mx-auto mt-10 max-w-[1320px] rounded-[44px] bg-[#ccd5e4] px-6 py-10 sm:px-10 md:px-14 md:py-14">
+            <div className="grid grid-cols-1 gap-x-28 gap-y-10 md:grid-cols-2 md:gap-y-14">
               <div className="flex items-center gap-6">
                 <div className="flex h-[89px] w-[124px] items-center justify-center overflow-hidden bg-transparent">
                 <a
@@ -238,8 +242,8 @@ export default function Home() {
               </div>
 
                 <div>
-                  <p className="text-[22px] leading-none text-[#161616]">Subscribers</p>
-                  <h3 className="mt-2 text-[64px] font-bold leading-none text-black">155k+</h3>
+                  <p className="text-[18px] leading-none text-[#161616] sm:text-[22px]">Subscribers</p>
+                  <h3 className="mt-2 text-[42px] font-bold leading-none text-black sm:text-[64px]">155k+</h3>
                 </div>
               </div>
 
@@ -261,8 +265,8 @@ export default function Home() {
                 </a>
               </div>
                 <div>
-                  <p className="text-[22px] leading-none text-[#161616]">Followers</p>
-                  <h3 className="mt-2 text-[64px] font-bold leading-none text-black">513.9k+</h3>
+                  <p className="text-[18px] leading-none text-[#161616] sm:text-[22px]">Followers</p>
+                  <h3 className="mt-2 text-[42px] font-bold leading-none text-black sm:text-[64px]">513.9k+</h3>
                 </div>
               </div>
 
@@ -287,8 +291,8 @@ export default function Home() {
 
                 </div>
                 <div>
-                  <p className="text-[22px] leading-none text-[#161616]">Followers</p>
-                  <h3 className="mt-2 text-[64px] font-bold leading-none text-black">56k+</h3>
+                  <p className="text-[18px] leading-none text-[#161616] sm:text-[22px]">Followers</p>
+                  <h3 className="mt-2 text-[42px] font-bold leading-none text-black sm:text-[64px]">56k+</h3>
                 </div>
               </div>
 
@@ -310,33 +314,33 @@ export default function Home() {
                 </a>
               </div>
                 <div>
-                  <p className="text-[22px] leading-none text-[#161616]">Followers</p>
-                  <h3 className="mt-2 text-[64px] font-bold leading-none text-black">290k+</h3>
+                  <p className="text-[18px] leading-none text-[#161616] sm:text-[22px]">Followers</p>
+                  <h3 className="mt-2 text-[42px] font-bold leading-none text-black sm:text-[64px]">290k+</h3>
                 </div>
               </div>
             </div>
           </div>
 
-          <section id="about" className="mt-60 grid scroll-mt-24 grid-cols-[560px_1fr] gap-12">
+          <section id="about" className="mt-20 grid scroll-mt-24 grid-cols-1 gap-10 xl:mt-60 xl:grid-cols-[560px_1fr] xl:gap-12">
             <div className="flex h-full flex-col">
               <Image
                 src="/engY.png"
                 alt="About Eng Yuyu"
                 width={526}
                 height={628}
-                className="h-auto w-full max-w-[540px] object-contain mix-blend-multiply"
+                className="mx-auto h-auto w-full max-w-[540px] object-contain mix-blend-multiply xl:mx-0"
               />
-              <div className="mt-0 w-full max-w-[540px] flex-1 rounded-[56px] bg-[#ccd5e4]" />
+              <div className="mt-0 hidden w-full max-w-[540px] flex-1 rounded-[56px] bg-[#ccd5e4] xl:block" />
             </div>
 
             {/* About section */}
 
             <div className="max-w-[1120px] pt-3">
-              <div className="mb-8 flex gap-5">
-                <span className="inline-flex h-14 items-center rounded-2xl bg-[#dfdfdf] px-10 text-[20px] font-semibold text-black">
+              <div className="mb-8 flex flex-wrap gap-3 sm:gap-5">
+                <span className="inline-flex h-12 items-center rounded-2xl bg-[#dfdfdf] px-6 text-[16px] font-semibold text-black sm:h-14 sm:px-10 sm:text-[20px]">
                   Tech Influencer
                 </span>
-                <span className="inline-flex h-14 items-center rounded-2xl bg-[#dbe5f7] px-10 text-[20px] font-semibold text-[#1d6cff]">
+                <span className="inline-flex h-12 items-center rounded-2xl bg-[#dbe5f7] px-6 text-[16px] font-semibold text-[#1d6cff] sm:h-14 sm:px-10 sm:text-[20px]">
                   Digital Creator
                 </span>
               </div>
