@@ -279,12 +279,20 @@ export default function Home() {
 
               <div className="flex items-center gap-6">
                 <div>
-                <Image
-                  src="/Facebook.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[89px] w-[124px] object-contain"/>
+                <a
+                  href="https://www.facebook.com/share/189a6Qbxfk/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu Facebook page"
+                >
+                  <Image
+                    src="/Facebook.png"
+                    alt="Facebook"
+                    width={124}
+                    height={89}
+                    className="h-[89px] w-[124px] object-contain"
+                  />
+                </a>
               </div>
                 <div>
                   <p className="text-[22px] leading-none text-[#161616]">Followers</p>
@@ -478,12 +486,20 @@ export default function Home() {
                   />
                 </a>
 
-                <Image
-                  src="/Facebook.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"/>
+                <a
+                  href="https://www.facebook.com/share/189a6Qbxfk/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu Facebook page"
+                >
+                  <Image
+                    src="/Facebook.png"
+                    alt="Facebook"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain"
+                  />
+                </a>
 
                 <Image
                   src="/Instgram.png"
@@ -603,12 +619,20 @@ export default function Home() {
                   />
                 </a>
 
-                <Image
-                  src="/Facebook.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain"/>
+                <a
+                  href="https://www.facebook.com/share/189a6Qbxfk/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu Facebook page"
+                >
+                  <Image
+                    src="/Facebook.png"
+                    alt="Facebook"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain"
+                  />
+                </a>
 
                 <Image
                   src="/Instgram.png"
@@ -927,12 +951,20 @@ export default function Home() {
                   />
                 </a>
 
-                <Image
-                  src="/Facebook.png"
-                  alt="YouTube"
-                  width={124}
-                  height={89}
-                  className="h-[60px] w-[62px] object-contain bg-white rounded-full"/>
+                <a
+                  href="https://www.facebook.com/share/189a6Qbxfk/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Eng Yuyu Facebook page"
+                >
+                  <Image
+                    src="/Facebook.png"
+                    alt="Facebook"
+                    width={124}
+                    height={89}
+                    className="h-[60px] w-[62px] object-contain bg-white rounded-full"
+                  />
+                </a>
 
                 <Image
                   src="/Instgram.png"
