@@ -306,36 +306,38 @@ export default function Home() {
               <div className="mt-0 w-full max-w-[540px] flex-1 rounded-[56px] bg-[#ccd5e4]" />
             </div>
 
+            {/* About section */}
+
             <div className="max-w-[1120px] pt-3">
               <div className="mb-8 flex gap-5">
-                <span className="inline-flex h-[54px] items-center rounded-2xl bg-[#dfdfdf] px-10 text-[20px] font-semibold text-black">
+                <span className="inline-flex h-14 items-center rounded-2xl bg-[#dfdfdf] px-10 text-[20px] font-semibold text-black">
                   Tech Influencer
                 </span>
-                <span className="inline-flex h-[54px] items-center rounded-2xl bg-[#dbe5f7] px-10 text-[20px] font-semibold text-[#1d6cff]">
+                <span className="inline-flex h-14 items-center rounded-2xl bg-[#dbe5f7] px-10 text-[20px] font-semibold text-[#1d6cff]">
                   Digital Creator
                 </span>
               </div>
 
-              <h2 className="text-[64px] font-bold leading-none text-[#1d6cff]">About Me</h2>
-              <h3 className="mt-5 text-[54px] font-bold leading-[1.08] text-black">
+              <h2 className="text-5xl font-bold leading-none text-[#1d6cff]">About Me</h2>
+              <h3 className="mt-5 text-2xl font-bold leading-[1.08] text-black">
                 Making technology simple, useful, and accessible for everyone.
               </h3>
 
-              <p className="mt-7 text-[22px] leading-[1.24] text-[#141414]">
+              <p className="mt-7 text-xl font-light leading-[1.24] text-[#141414]">
                 I&apos;m Yusuf Mohamed Osman (Eng Yuyu) - a tech educator,
                 content creator, and digital awareness advocate focused on
                 helping people understand and use technology without fear or
                 confusion.
               </p>
 
-              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+              <p className="mt-4 text-xl font-light leading-[1.24] text-[#141414]">
                 Over the past years, I&apos;ve built a growing digital community
                 by breaking down complex tech topics into simple, practical ideas
                 that anyone can apply in daily life.
               </p>
 
-              <h4 className="mt-8 text-[52px] font-bold leading-none text-black">My Mission</h4>
-              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+              <h4 className="mt-8 text-2xl font-sans font-bold leading-none text-black">My Mission</h4>
+              <p className="mt-4 text-xl font-light leading-[1.24] text-[#141414]">
                 My mission is straightforward:
                 <br />
                 to help people use technology with confidence, protect their
@@ -345,8 +347,8 @@ export default function Home() {
                 Technology should serve people - not confuse them.
               </p>
 
-              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">What I Do</h4>
-              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+              <h4 className="mt-10 text-2xl font-bold leading-none text-black">What I Do</h4>
+              <p className="mt-4 text-xl font-light leading-[1.24] text-[#141414]">
                 Through short videos, tutorials, talks, and events, I focus on:
                 <br />
                 Everyday smartphone tips (iPhone &amp; Android)
@@ -363,10 +365,10 @@ export default function Home() {
                 life.
               </p>
 
-              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">
+              <h4 className="mt-10 text-2xl font-bold leading-none text-black">
                 Why I Started
               </h4>
-              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+              <p className="mt-4 text-xl font-light leading-[1.24] text-[#141414]">
                 When I began, I noticed a big gap:
                 <br />
                 many people were using technology daily, yet didn&apos;t fully
@@ -377,10 +379,10 @@ export default function Home() {
                 and anyone navigating the digital world.
               </p>
 
-              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">
+              <h4 className="mt-10 text-2xl font-bold leading-none text-black">
                 Community Impact
               </h4>
-              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+              <p className="mt-4 text-xl font-light leading-[1.24] text-[#141414]">
                 Today, more than 1 million people follow my content across
                 social platforms.
                 <br />
@@ -391,10 +393,10 @@ export default function Home() {
                 community trust.
               </p>
 
-              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">
+              <h4 className="mt-10 text-2xl font-bold leading-none text-black">
                 Beyond Content
               </h4>
-              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+              <p className="mt-4 text-xl font-light leading-[1.24] text-[#141414]">
                 I regularly participate in:
                 <br />
                 Tech talks and workshops
@@ -407,10 +409,10 @@ export default function Home() {
                 with education, innovation, and positive digital impact.
               </p>
 
-              <h4 className="mt-10 text-[52px] font-bold leading-none text-black">
+              <h4 className="mt-10 text-2xl font-bold leading-none text-black">
                 Looking Ahead
               </h4>
-              <p className="mt-4 text-[22px] leading-[1.24] text-[#141414]">
+              <p className="mt-4 text-xl font-light leading-[1.24] text-[#141414]">
                 Technology evolves fast - and so do we.
                 <br />
                 I&apos;m committed to continuing this journey by:
@@ -424,7 +426,7 @@ export default function Home() {
                 Preparing people for the future of digital life
               </p>
 
-              <p className="mt-15 text-3xl font-bold text-black">
+              <p className="mt-15 text-2xl font-bold text-black">
                 Thank you for being part of this journey.
                 <br />
                 The learning never stops.
@@ -435,10 +437,10 @@ export default function Home() {
           <section className="mt-12 rounded-[40px] bg-[#dbe2ec] px-8 py-10 md:px-14">
             <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
               <div className="max-w-[640px]">
-                <h2 className="text-[42px] font-bold leading-none text-black">
+                <h2 className="text-2xl font-bold leading-none text-black">
                   Join the Community
                 </h2>
-                <p className="mt-4 text-[24px] leading-[1.3] text-[#1f1f1f]">
+                <p className="mt-4 text-xl font-light leading-[1.3] text-[#1f1f1f]">
                   Millions are already learning tech the simple way.
                   <br />
                   Follow, watch, and grow with us across platforms.
@@ -526,7 +528,7 @@ export default function Home() {
                         <br />
                         Changing Everyday Life
                       </h4>
-                      <p className="mt-4 text-[22px] leading-[1.1] text-[#1a1a1a]">
+                      <p className="mt-4 text-xl font-light leading-[1.1] text-[#1a1a1a]">
                         Platform: {video.platform}
                         <br />
                         Duration: 6:12
@@ -560,10 +562,10 @@ export default function Home() {
         <section className="mt-12 rounded-[40px] bg-[#dbe2ec] px-8 py-10 md:px-14">
             <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
               <div className="max-w-[640px]">
-                <h2 className="text-[42px] font-bold leading-none text-black">
+                <h2 className="text-2xl font-bold leading-none text-black">
                   Join the Community
                 </h2>
-                <p className="mt-4 text-[24px] leading-[1.3] text-[#1f1f1f]">
+                <p className="mt-4 text-xl font-light leading-[1.3] text-[#1f1f1f]">
                   Millions are already learning tech the simple way.
                   <br />
                   Follow, watch, and grow with us across platforms.
@@ -633,7 +635,7 @@ export default function Home() {
             <h3 className="text-center text-4xl font-bold leading-none text-black">
               Categories
             </h3>
-            <p className="mt-6 text-center text-[24px] leading-[1.25] text-black md:text-[32px]">
+            <p className="mt-6 text-center text-xl font-light leading-[1.25] text-black md:text-[32px]">
               All | Tech News | Tutorials &amp; How-To | Digital Security | AI
               &amp; Future Tech | Content Creation | Reviews
             </p>
@@ -675,11 +677,11 @@ export default function Home() {
         <section className="mt-10 rounded-[36px] bg-[#dfe6f1] px-8 py-8 md:px-10 md:py-9">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[760px]">
-                <h3 className="text-[30px] font-bold leading-none tracking-[-0.02em] text-black md:text-[38px]">
+                <h3 className="text-2xl font-bold leading-none tracking-[-0.02em] text-black ]">
                   Join My Newsletter
                 </h3>
 
-                <p className="mt-4 max-w-[700px] text-[18px] leading-[1.15] tracking-[-0.01em] text-[#1d1d1d] md:text-[24px]">
+                <p className="mt-4 max-w-[700px] text-xl font-light leading-[1.15] tracking-[-0.01em] text-[#1d1d1d] md:text-[24px]">
                   Get practical tech tips, digital safety guides,
                   <br />
                   and AI insights straight to your inbox.
@@ -689,7 +691,7 @@ export default function Home() {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="h-[72px] w-full rounded-[22px] bg-[#f5f5f5] px-8 text-[24px] font-semibold leading-none text-black outline-none placeholder:text-[#8f8f8f] md:w-[500px] lg:w-[540px]"
+                    className="h-18 w-full rounded-[22px] bg-[#f5f5f5] px-8 text-2xl font-semibold leading-none text-black outline-none  md:w-[500px] lg:w-[540px]"
                   />
 
                   <button
@@ -732,7 +734,7 @@ export default function Home() {
                 <h2 className="text-[62px] font-bold leading-none text-blue-500">
                   Tech Blog
                 </h2>
-                <p className="mt-3 text-[32px] font-bold leading-none text-black">
+                <p className="mt-3 text-2xl font-bold leading-none text-black">
                   Insights, tutorials, and digital awareness content for the somali community and beyond
                 </p>
           </section>
@@ -752,7 +754,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <h3 className="mt-8 max-w-[980px] text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-black md:text-[72px]">
+                <h3 className="mt-8 max-w-980 text-xl font-semibold leading-[1.08] tracking-[-0.03em] text-black md:text-5xl">
                   How AI Is Changing the Way
                   <br />
                   Somalis Learn Technology
@@ -760,13 +762,13 @@ export default function Home() {
 
                 <div className="mt-6 flex items-center justify-between text-[22px] text-black md:text-[30px]">
                   <span className="font-light">7min Read</span>
-                  <span className="inline-flex items-center gap-3">
+                  <span className="inline-flex font-light items-center gap-3">
                     <Link2 className="rotate-500 h-7 w-7 md:h-8 md:w-8" />
                     Share
                   </span>
                 </div>
 
-                <p className="mt-8 max-w-[980px] text-[28px] leading-[1.18] tracking-[-0.02em] text-black font-light">
+                <p className="mt-8 max-w-980 text-2xl leading-[1.18] tracking-[-0.02em] text-black font-light">
                   Artificial Intelligence is no longer the future - it&apos;s
                   <br />
                   already shaping how we learn, work, and create.
@@ -774,7 +776,7 @@ export default function Home() {
                   Here&apos;s what that means for our community.
                 </p>
 
-                <h4 className="mt-14 text-2xl font-semibold text-[#1d6cff] md:text-[42px]">
+                <h4 className="mt-14 text-2xl font-semibold text-blue-600 md:text-2xl">
                   Latest Articles...
                 </h4>
 
@@ -782,7 +784,7 @@ export default function Home() {
                   {Array.from({ length: 3 }).map((_, index) => (
                     <div key={index}>
                       <div className="h-[220px] rounded-[24px] border-[3px] border-[#1d6cff] bg-transparent" />
-                      <h5 className="mt-4 text-[22px] font-semibold leading-[1.15] text-black">
+                      <h5 className="mt-4 text-xl font-semibold leading-[1.15] text-black">
                         Digniin Muhiim ah oo ku
                         <br />
                         Socota Dadka Weli
@@ -815,11 +817,11 @@ export default function Home() {
           <section className="mt-10 rounded-[36px] bg-[#dfe6f1] px-8 py-8 md:px-10 md:py-9">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[760px]">
-                <h3 className="text-[30px] font-bold leading-none tracking-[-0.02em] text-black md:text-[38px]">
+                <h3 className="text-2xl font-bold leading-none tracking-[-0.02em] text-black md:text-[38px]">
                   Join My Newsletter
                 </h3>
 
-                <p className="mt-4 max-w-[700px] text-[18px] leading-[1.15] tracking-[-0.01em] text-[#1d1d1d] md:text-[24px]">
+                <p className="mt-4 max-w-700 text-xl font-light leading-[1.15] tracking-[-0.01em] text-[#1d1d1d] md:text-[24px]">
                   Get practical tech tips, digital safety guides,
                   <br />
                   and AI insights straight to your inbox.
@@ -875,11 +877,11 @@ export default function Home() {
                 <span className="text-[64px] font-bold leading-none text-white">y</span>
               </div>
 
-              <h2 className="text-[38px] font-bold leading-[1.05] tracking-[-0.02em] md:text-[54px]">
+              <h2 className="text-2xl font-bold leading-[1.05] tracking-[-0.02em] md:text-3xl">
                 My Goal is Simple:
               </h2>
 
-              <p className="mt-5 max-w-[610px] text-[24px] leading-[1.18] tracking-[-0.01em] text-white md:text-[30px]">
+              <p className="mt-5 max-w-[610px] text-xl font-light leading-[1.18] tracking-[-0.01em] text-white md:text-2xl">
                 Lorem ipsum dolor sit amet, consectetuer
                 <br />
                 adipiscing elit, sed diam nonummy nibh
@@ -890,7 +892,7 @@ export default function Home() {
               </p>
 
               <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center">
-                <h3 className="text-[34px] font-bold leading-none md:text-[42px]">
+                <h3 className="text-xl font-bold leading-none md:text-2xl">
                   Find me here
                 </h3>
 
