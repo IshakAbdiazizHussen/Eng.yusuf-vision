@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import { ArrowRight, Link2 } from "lucide-react"
 
@@ -602,7 +600,6 @@ export default function Home() {
           </section>
 
         </section>
-
 
         <section className="mt-12 rounded-[40px] bg-[#dbe2ec] px-8 py-10 md:px-14">
             <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
