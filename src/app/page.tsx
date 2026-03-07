@@ -944,21 +944,21 @@ export default function Home() {
           <section id="impact" className="mt-12 scroll-mt-32 w-screen bg-[#156BF7] text-white relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw]">
           <div className="grid min-h-[785px] gap-12 px-10 py-12 md:px-16 md:py-16 xl:grid-cols-[1fr_500px] xl:items-center">
             <div className="max-w-[620px] self-center ml-[120px]">
-              <div className="mb-12">
+              <div className="mb-5">
                 <Image
-                src="/Eng Yuyu Logo-21.png"
-                alt="Eng Yuyu Logo"
-                width={124}
-                height={89}
-                className="h-[89px] w-[124px] object-contain invert brightness-0 mr-15"
-              />
+                  src="/Eng Yuyu Logo-21.png"
+                  alt="Eng Yuyu Logo"
+                  width={124}
+                  height={89}
+                  className="mt-1 h-[56px] w-[80px] object-contain invert brightness-0 md:h-[62px] md:w-[88px]"
+                />
               </div>
 
-              <h2 className="text-2xl font-bold leading-[1.05] tracking-[-0.02em] md:text-3xl">
+              <h2 className="text-3xl font-bold leading-[1.05] tracking-[-0.02em]">
                 My Goal is Simple:
               </h2>
 
-              <p className="mt-5 max-w-[610px] text-xl font-light leading-[1.18] tracking-[-0.01em] text-white md:text-2xl">
+              <p className="mt-5 max-w-[610px] text-[28px] font-light leading-[1.18] tracking-[-0.01em] text-white md:text-[30px]">
                 Lorem ipsum dolor sit amet, consectetuer
                 <br />
                 adipiscing elit, sed diam nonummy nibh
@@ -968,12 +968,12 @@ export default function Home() {
                 magna aliquam
               </p>
 
-              <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center">
-                <h3 className="text-xl font-bold leading-none md:text-2xl">
+              <div className="mt-12 flex flex-col gap-4 md:flex-row md:items-center">
+                <h3 className="text-2xl font-bold leading-none ">
                   Find me here
                 </h3>
 
-                <div className="flex items-center ">
+                <div className="flex items-center gap-2 md:gap-3">
                   <a
                     href="https://www.youtube.com/@engyuyu"
                     target="_blank"
@@ -989,50 +989,50 @@ export default function Home() {
                     />
                   </a>
 
-                <a
-                  href="https://www.tiktok.com/@eng_yuyu"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Open Eng Yuyu TikTok profile"
-                >
-                  <Image
-                    src="/Tiktok.png"
-                    alt="Tiktok"
-                    width={124}
-                    height={89}
-                    className="h-[60px] w-[62px] object-contain"
-                  />
-                </a>
+                  <a
+                    href="https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Open Eng Yuyu Instagram profile"
+                  >
+                    <Image
+                      src="/Instgram.png"
+                      alt="Instagram"
+                      width={124}
+                      height={89}
+                      className="h-[60px] w-[62px] object-contain"
+                    />
+                  </a>
 
-                <a
-                  href="https://www.facebook.com/share/189a6Qbxfk/?mibextid=wwXIfr"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Open Eng Yuyu Facebook page"
-                >
-                  <Image
-                    src="/Facebook.png"
-                    alt="Facebook"
-                    width={124}
-                    height={89}
-                    className="h-[60px] w-[62px] object-contain bg-white rounded-full"
-                  />
-                </a>
+                  <a
+                    href="https://www.tiktok.com/@eng_yuyu"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Open Eng Yuyu TikTok profile"
+                  >
+                    <Image
+                      src="/Tiktok.png"
+                      alt="Tiktok"
+                      width={124}
+                      height={89}
+                      className="h-[60px] w-[62px] object-contain"
+                    />
+                  </a>
 
-                <a
-                  href="https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Open Eng Yuyu Instagram profile"
-                >
-                  <Image
-                    src="/Instgram.png"
-                    alt="Instagram"
-                    width={124}
-                    height={89}
-                    className="h-[60px] w-[62px] object-contain "
-                  />
-                </a>
+                  <a
+                    href="https://www.facebook.com/share/189a6Qbxfk/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Open Eng Yuyu Facebook page"
+                  >
+                    <Image
+                      src="/Facebook.png"
+                      alt="Facebook"
+                      width={124}
+                      height={89}
+                      className="h-[60px] w-[62px] object-contain bg-white rounded-full"
+                    />
+                  </a>
 
                 </div>
               </div>
