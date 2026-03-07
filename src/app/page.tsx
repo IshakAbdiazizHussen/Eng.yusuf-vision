@@ -110,7 +110,7 @@ export default function Home() {
         <section className="mt-5 grid grid-cols-1 items-end gap-10 pt-8 lg:grid-cols-[minmax(0,500px)_1fr]">
           <div className="mx-auto h-[420px] w-full max-w-[500px] overflow-hidden sm:h-[520px] lg:mx-0 lg:h-[690px]">
             <Image
-              src="/Yuyu.png"
+              src="/yuyu.png"
               alt="Eng Yuyu portrait"
               width={526}
               height={628}
