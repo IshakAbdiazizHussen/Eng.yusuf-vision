@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { ArrowRight, Link2 } from "lucide-react"
 
@@ -28,38 +30,7 @@ export default function Home() {
             }}
           />
 
-          <details className="ml-auto sm:hidden">
-            <summary className="flex h-11 min-w-[96px] cursor-pointer list-none items-center justify-center rounded-xl bg-[#d5deed] px-4 text-[14px] font-semibold text-[#1d6cff]">
-              Menu
-            </summary>
-
-            <div className="absolute right-3 top-16 w-[220px] rounded-2xl bg-[#d5deed] p-3 text-[#1d6cff] shadow-lg">
-              <div className="mb-2 flex justify-end">
-                <span className="rounded-lg bg-white/60 px-3 py-1 text-[12px] font-semibold">
-                  Close
-                </span>
-              </div>
-              <div className="flex flex-col gap-2">
-                <a href="#about" className="rounded-lg px-3 py-2 text-[14px] font-semibold hover:bg-white/40">
-                  About
-                </a>
-                <a href="#watch" className="rounded-lg px-3 py-2 text-[14px] font-semibold hover:bg-white/40">
-                  Watch
-                </a>
-                <a href="#tech-blog" className="rounded-lg px-3 py-2 text-[14px] font-semibold hover:bg-white/40">
-                  Tech Blog
-                </a>
-                <a href="#events" className="rounded-lg px-3 py-2 text-[14px] font-semibold hover:bg-white/40">
-                  Events
-                </a>
-                <a href="#impact" className="rounded-lg px-3 py-2 text-[14px] font-semibold hover:bg-white/40">
-                  Impact
-                </a>
-              </div>
-            </div>
-          </details>
-
-          <ul className="ml-auto hidden max-w-[calc(100%-96px)] items-center justify-start gap-2 overflow-x-auto rounded-xl bg-[#d5deed] px-4 py-2 text-[#1d6cff] sm:flex sm:max-w-none sm:justify-center sm:px-7 sm:py-2.5">
+          <ul className="ml-auto flex max-w-[calc(100%-96px)] items-center justify-start gap-2 overflow-x-auto rounded-xl bg-[#d5deed] px-4 py-2 text-[#1d6cff] scrollbar-none sm:max-w-none sm:justify-center sm:px-7 sm:py-2.5">
             <li className="flex items-center gap-2">
               <a
                 href="#about"
