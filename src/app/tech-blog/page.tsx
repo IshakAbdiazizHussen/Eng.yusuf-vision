@@ -200,7 +200,7 @@ export default function TechBlogPage() {
               alt="Eng Yuyu Logo"
               width={124}
               height={89}
-              className="h-[54px] w-[72px] object-contain md:h-[68px] md:w-[90px]"
+              className="h-[78px] w-[104px] object-contain md:h-[104px] md:w-[136px]"
             />
 
             <h2 className="mt-10 text-4xl font-bold leading-[1.05] text-white md:mt-12 ">
@@ -218,7 +218,7 @@ export default function TechBlogPage() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-2 md:mt-12 md:gap-3">
-              <span className="text-2xl font-bold leading-none text-white ">
+              <span className="mr-1 text-2xl font-bold leading-none text-white ">
                 Find me here
               </span>
 
@@ -226,14 +226,14 @@ export default function TechBlogPage() {
                 href="https://www.youtube.com/@engyuyu"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[42px] w-[58px] items-center justify-center transition-opacity hover:opacity-90 md:h-[48px] md:w-[64px]"
+                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[46px] md:w-[46px]"
               >
                 <Image
                   src="/youtubeRemoving.png"
                   alt="YouTube"
-                  width={30}
-                  height={22}
-                  className="h-[20px] w-[28px] object-contain md:h-[24px] md:w-[32px]"
+                  width={32}
+                  height={32}
+                  className="h-[32px] w-[32px] object-contain md:h-[36px] md:w-[36px]"
                 />
               </a>
 
@@ -241,14 +241,14 @@ export default function TechBlogPage() {
                 href="https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[48px] md:w-[48px]"
+                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[46px] md:w-[46px]"
               >
                 <Image
                   src="/Instgram.png"
                   alt="Instagram"
-                  width={42}
-                  height={42}
-                  className="h-full w-full object-contain"
+                  width={32}
+                  height={32}
+                  className="h-[32px] w-[32px] object-contain md:h-[36px] md:w-[36px]"
                 />
               </a>
 
@@ -256,14 +256,14 @@ export default function TechBlogPage() {
                 href="https://www.tiktok.com/@eng_yuyu"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[48px] md:w-[48px]"
+                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[46px] md:w-[46px]"
               >
                 <Image
                   src="/Tiktok.png"
                   alt="TikTok"
-                  width={42}
-                  height={42}
-                  className="h-full w-full object-contain"
+                  width={32}
+                  height={32}
+                  className="h-[32px] w-[32px] object-contain md:h-[36px] md:w-[36px]"
                 />
               </a>
 
@@ -271,14 +271,14 @@ export default function TechBlogPage() {
                 href="https://www.facebook.com/share/189a6Qbxfk/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[48px] md:w-[48px]"
+                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[46px] md:w-[46px]"
               >
                 <Image
                   src="/Facebook.png"
                   alt="Facebook"
-                  width={42}
-                  height={42}
-                  className="h-full w-full object-contain"
+                  width={32}
+                  height={32}
+                  className="h-[32px] w-[32px] object-contain md:h-[36px] md:w-[36px]"
                   style={{ filter: "brightness(0) invert(1)" }}
                 />
               </a>
