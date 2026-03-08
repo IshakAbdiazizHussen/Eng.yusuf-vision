@@ -29,9 +29,7 @@ export default function Home() {
 
       <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-28 sm:px-6 sm:pt-24">
         <nav
-          className={`fixed inset-x-0 top-0 z-50 flex items-center gap-3 px-4 py-3 sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:bg-transparent sm:px-6 sm:py-3 ${
-            darkMode ? "bg-[#111111]/96" : "bg-[#f3f4f6]/96"
-          }`}
+          className="fixed inset-x-0 top-0 z-50 flex items-center gap-3 px-4 py-3 sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:bg-transparent sm:px-6 sm:py-3"
         >
           <Link href="/about" aria-label="Go to About page">
             <Image
@@ -80,21 +78,15 @@ export default function Home() {
               <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
-              <Link
-                href="/events"
-                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
-              >
+              <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
                 Events
-              </Link>
+              </span>
               <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center">
-              <Link
-                href="/impact"
-                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
-              >
+              <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
                 Impact
-              </Link>
+              </span>
             </li>
           </ul>
 
@@ -711,123 +703,6 @@ export default function Home() {
               </div>
             </div>
           </section>
-
-
-          <section className="mt-40 px-6 py-6 text-center">
-            <h2 className="text-[62px] font-bold leading-none text-[#1d6cff]">
-              Tech Blog
-            </h2>
-            <p className="mt-3 text-[32px] font-bold leading-none text-black">
-              Simple tech, real impact
-            </p>
-          </section>
-
-          <section className="mt-8 rounded-[44px] bg-[#dbe2ec] px-8 py-10 md:px-12 md:py-12">
-            <h3 className="text-center text-4xl font-bold leading-none text-black">
-              Categories
-            </h3>
-            <p className="mt-6 text-center text-xl font-light leading-[1.25] text-black md:text-[32px]">
-              All | Tech News | Tutorials &amp; How-To | Digital Security | AI
-              &amp; Future Tech | Content Creation | Reviews
-            </p>
-
-            <div className="mt-12 grid gap-12 xl:grid-cols-[1.7fr_0.9fr]">
-              <div className="grid gap-x-12 gap-y-14 md:grid-cols-2">
-                {Array.from({ length: 4 }).map((_, index) => (
-                  <div key={index}>
-                    <div className="flex h-[260px] w-full items-start rounded-[30px] border-[3px] border-[#1d6cff] p-6">
-                      <Image
-            src="/Eng Yuyu Logo-21.png"
-            alt="Eng Yuyu Logo"
-            width={124}
-            height={89}
-            className="h-[89px] w-[124px] object-contain"
-            style={{
-              filter:
-                "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
-            }}
-          />
-                    </div>
-                    <h4 className="mt-6 max-w-[460px] text-2xl font-semibold leading-[1.08] text-black">
-                      Digniin Muhiim ah oo ku
-                      <br />
-                      Socota Dadka Weli
-                      <br />
-                      Adeegsada Windows 10!
-                    </h4>
-                    <a
-                      href="#"
-                      className="mt-6 inline-flex h-[58px] min-w-[282px] items-center justify-center gap-4 rounded-[18px] bg-[#1d6cff] px-8 text-[28px] font-bold leading-none text-white transition-opacity hover:opacity-90"
-                    >
-                      Learn More <ArrowRight className="h-7 w-9" />
-                    </a>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col gap-14">
-                  <div className="h-[540px] rounded-[42px] bg-[#1d6cff]" />
-                  <div className="h-[540px] rounded-[42px] bg-[#1d6cff]" />
-                </div>
-            </div>
-          </section>
-
-        <section className="mt-10 rounded-[36px] bg-[#dfe6f1] px-8 py-8 md:px-10 md:py-9">
-            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-[760px]">
-                <h3 className="text-2xl font-bold leading-none tracking-[-0.02em] text-black">
-                  Join My Newsletter
-                </h3>
-
-                <p className="mt-4 max-w-[700px] text-xl font-light leading-[1.15] tracking-[-0.01em] text-[#1d1d1d] md:text-[24px]">
-                  Get practical tech tips, digital safety guides,
-                  <br />
-                  and AI insights straight to your inbox.
-                </p>
-
-                <form className="mt-7 flex flex-col gap-4 md:flex-row md:items-center">
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="h-[72px] w-full rounded-[22px] bg-[#f5f5f5] px-8 text-2xl font-semibold leading-none text-black outline-none md:w-[500px] lg:w-[540px]"
-                  />
-
-                  <button
-                    type="submit"
-                    className="inline-flex h-[72px] w-full items-center justify-center rounded-[22px] bg-[#156BF7] px-8 text-[24px] font-bold leading-none text-white transition-opacity hover:opacity-90 md:w-[260px]"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-              </div>
-
-              <div className="flex justify-center lg:justify-end">
-                <div className="relative h-[160px] w-[160px]">
-                  <div className="absolute inset-0 rounded-full bg-[#0A84FF]" />
-                  <div className="absolute inset-[16px] rounded-full bg-white" />
-                  <div className="absolute bottom-[18px] left-[28px] h-[22px] w-[22px] rotate-[38deg] rounded-[6px] bg-white" />
-
-                  <div className="absolute left-1/2 top-1/2 flex h-[66px] w-[66px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[16px] bg-[#156BF7]">
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="h-[32px] w-[32px]"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg" >
-                      <rect x="3" y="5" width="18" height="14" rx="2.5" fill="#1D5FEA" />
-                      <path
-                        d="M5.5 7.5L12 12.8L18.5 7.5"
-                        stroke="#2E7BFF"
-                        strokeWidth="1.7"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-    </section>
-
         <section id="tech-blog" className="mt-40 scroll-mt-24 px-6 py-6 text-center">
                 <h2 className="text-[62px] font-bold leading-none text-[#1d6cff]">
                   Tech Blog

@@ -9,8 +9,6 @@ const navItems = [
   { href: "/about", label: "About" },
   { href: "/watch", label: "Watch" },
   { href: "/tech-blog", label: "Tech Blog" },
-  { href: "/events", label: "Events" },
-  { href: "/impact", label: "Impact" },
 ]
 
 export function SiteNav() {
@@ -19,9 +17,7 @@ export function SiteNav() {
 
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-50 flex items-center gap-3 px-4 py-3 sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:px-6 sm:py-3 ${
-        darkMode ? "bg-[#111111]/96" : "bg-[#f3f4f6]/96"
-      }`}
+      className="fixed inset-x-0 top-0 z-50 flex items-center gap-3 px-4 py-3 sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:px-6 sm:py-3"
     >
       <Link href="/about" aria-label="Go to About page">
         <Image
@@ -63,6 +59,17 @@ export function SiteNav() {
             ) : null}
           </li>
         ))}
+        <li className="flex items-center gap-2">
+          <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
+            Events
+          </span>
+          <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+        </li>
+        <li className="flex items-center">
+          <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
+            Impact
+          </span>
+        </li>
       </ul>
 
       <button
