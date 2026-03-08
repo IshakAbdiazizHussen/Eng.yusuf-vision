@@ -48,7 +48,7 @@ export default function Home() {
 
           <ul
             className={`ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] px-3 py-3 sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5 ${
-              darkMode ? "bg-white text-black" : "bg-[#111111] text-white"
+              darkMode ? "bg-white text-black" : "bg-[#d5deed] text-[#1d6cff]"
             }`}
           >
             <li className="flex items-center gap-2">
@@ -58,7 +58,7 @@ export default function Home() {
               >
                 About
               </a>
-              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-white/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <a
@@ -67,7 +67,7 @@ export default function Home() {
               >
                 Watch
               </a>
-              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-white/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <a
@@ -76,7 +76,7 @@ export default function Home() {
               >
                 Tech Blog
               </a>
-              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-white/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <a
@@ -85,7 +85,7 @@ export default function Home() {
               >
                 Events
               </a>
-              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-white/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center">
               <a
@@ -506,7 +506,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex items-center gap- text-[#111111]">
+              <div className="flex items-center gap-2 text-[#111111]">
                 <a
                   href="https://www.youtube.com/@engyuyu"
                   target="_blank"
@@ -713,7 +713,7 @@ export default function Home() {
 
 
           <section className="mt-40 px-6 py-6 text-center">
-            <h2 className="text-[62px] font-bold leading-none text-blue-500">
+            <h2 className="text-[62px] font-bold leading-none text-[#1d6cff]">
               Tech Blog
             </h2>
             <p className="mt-3 text-[32px] font-bold leading-none text-black">
@@ -747,7 +747,7 @@ export default function Home() {
             }}
           />
                     </div>
-                    <h4 className="mt-6 max-w-460 text-2xl font-semibold leading-[1.08] text-black">
+                    <h4 className="mt-6 max-w-[460px] text-2xl font-semibold leading-[1.08] text-black">
                       Digniin Muhiim ah oo ku
                       <br />
                       Socota Dadka Weli
@@ -756,8 +756,7 @@ export default function Home() {
                     </h4>
                     <a
                       href="#"
-                      className="mt-6 inline-flex h-[58px] min-w-[282px] items-center justify-center gap-4 rounded-[18px] bg-blue-600 
-                                px-8 text-[28px] font-bold leading-none text-white transition-opacity hover:opacity-90"
+                      className="mt-6 inline-flex h-[58px] min-w-[282px] items-center justify-center gap-4 rounded-[18px] bg-[#1d6cff] px-8 text-[28px] font-bold leading-none text-white transition-opacity hover:opacity-90"
                     >
                       Learn More <ArrowRight className="h-7 w-9" />
                     </a>
@@ -775,7 +774,7 @@ export default function Home() {
         <section className="mt-10 rounded-[36px] bg-[#dfe6f1] px-8 py-8 md:px-10 md:py-9">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[760px]">
-                <h3 className="text-2xl font-bold leading-none tracking-[-0.02em] text-black ]">
+                <h3 className="text-2xl font-bold leading-none tracking-[-0.02em] text-black">
                   Join My Newsletter
                 </h3>
 
@@ -789,7 +788,7 @@ export default function Home() {
                   <input
                     type="email"
                     placeholder="Your Email"
-                    className="h-18 w-full rounded-[22px] bg-[#f5f5f5] px-8 text-2xl font-semibold leading-none text-black outline-none  md:w-[500px] lg:w-[540px]"
+                    className="h-[72px] w-full rounded-[22px] bg-[#f5f5f5] px-8 text-2xl font-semibold leading-none text-black outline-none md:w-[500px] lg:w-[540px]"
                   />
 
                   <button
@@ -829,7 +828,7 @@ export default function Home() {
     </section>
 
         <section id="tech-blog" className="mt-40 scroll-mt-24 px-6 py-6 text-center">
-                <h2 className="text-[62px] font-bold leading-none text-blue-500">
+                <h2 className="text-[62px] font-bold leading-none text-[#1d6cff]">
                   Tech Blog
                 </h2>
                 <p className="mt-3 text-2xl font-bold leading-none text-black">
@@ -860,7 +859,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <h3 className="mt-8 max-w-980 text-xl font-semibold leading-[1.08] tracking-[-0.03em] text-black md:text-5xl">
+                <h3 className="mt-8 max-w-[980px] text-xl font-semibold leading-[1.08] tracking-[-0.03em] text-black md:text-5xl">
                   How AI Is Changing the Way
                   <br />
                   Somalis Learn Technology
@@ -869,12 +868,12 @@ export default function Home() {
                 <div className="mt-6 flex items-center justify-between text-[22px] text-black md:text-[30px]">
                   <span className="font-light">7min Read</span>
                   <span className="inline-flex font-light items-center gap-3">
-                    <Link2 className="rotate-500 h-7 w-7 md:h-8 md:w-8" />
+                    <Link2 className="h-7 w-7 rotate-45 md:h-8 md:w-8" />
                     Share
                   </span>
                 </div>
 
-                <p className="mt-8 max-w-980 text-2xl leading-[1.18] tracking-[-0.02em] text-black font-light">
+                <p className="mt-8 max-w-[980px] text-2xl leading-[1.18] tracking-[-0.02em] text-black font-light">
                   Artificial Intelligence is no longer the future - it&apos;s
                   <br />
                   already shaping how we learn, work, and create.
@@ -882,7 +881,7 @@ export default function Home() {
                   Here&apos;s what that means for our community.
                 </p>
 
-                <h4 className="mt-14 text-2xl font-semibold text-blue-600 md:text-2xl">
+                <h4 className="mt-14 text-2xl font-semibold text-[#1d6cff] md:text-2xl">
                   Latest Articles...
                 </h4>
 
@@ -927,7 +926,7 @@ export default function Home() {
                   Join My Newsletter
                 </h3>
 
-                <p className="mt-4 max-w-700 text-xl font-light leading-[1.15] tracking-[-0.01em] text-[#1d1d1d] md:text-[24px]">
+                <p className="mt-4 max-w-[700px] text-xl font-light leading-[1.15] tracking-[-0.01em] text-[#1d1d1d] md:text-[24px]">
                   Get practical tech tips, digital safety guides,
                   <br />
                   and AI insights straight to your inbox.
