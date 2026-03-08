@@ -22,7 +22,7 @@ export default function Home() {
         style={{
           backgroundImage:
             isDark
-              ? "radial-gradient(circle, rgba(255,255,255,0.08) 1.2px, transparent 1.9px)"
+              ? "radial-gradient(circle, rgba(29,108,255,0.14) 1.2px, transparent 1.9px)"
               : "radial-gradient(circle, rgba(29,108,255,0.08) 1.2px, transparent 1.9px)",
           backgroundSize: "20px 20px",
           backgroundPosition: "0 0",
@@ -49,7 +49,7 @@ export default function Home() {
 
           <ul
             className={`ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] px-3 py-3 sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5 ${
-              isDark ? "bg-white text-black" : "bg-[#d5deed] text-[#1d6cff]"
+              isDark ? "bg-[#d9e2f2] text-[#0f1724]" : "bg-[#d5deed] text-[#1d6cff]"
             }`}
           >
             <li className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export default function Home() {
               >
                 About
               </Link>
-              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <Link
@@ -68,7 +68,7 @@ export default function Home() {
               >
                 Watch
               </Link>
-              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <Link
@@ -77,13 +77,13 @@ export default function Home() {
               >
                 Tech Blog
               </Link>
-              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
                 Events
               </span>
-              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center">
               <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
@@ -102,7 +102,7 @@ export default function Home() {
               alt="Eng Yuyu portrait"
               width={526}
               height={628}
-              className="h-full w-full object-contain object-top mix-blend-multiply sm:object-cover"
+              className="h-full w-full object-contain object-top mix-blend-multiply dark:mix-blend-normal sm:object-cover"
               priority
             />
           </div>
@@ -347,7 +347,7 @@ export default function Home() {
                 alt="About Eng Yuyu"
                 width={526}
                 height={628}
-                className="mx-auto h-auto w-full max-w-[540px] object-contain mix-blend-multiply xl:mx-0"
+                className="mx-auto h-auto w-full max-w-[540px] object-contain mix-blend-multiply dark:mix-blend-normal xl:mx-0"
               />
               <div className="mt-0 hidden w-full max-w-[540px] flex-1 rounded-[56px] bg-[#ccd5e4] xl:block" />
             </div>

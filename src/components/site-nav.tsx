@@ -37,7 +37,7 @@ export function SiteNav() {
 
       <ul
         className={`ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] px-3 py-3 sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5 ${
-          isDark ? "bg-white text-black" : "bg-[#d5deed] text-[#1d6cff]"
+          isDark ? "bg-[#d9e2f2] text-[#0f1724]" : "bg-[#d5deed] text-[#1d6cff]"
         }`}
       >
         {navItems.map((item, index) => (
@@ -53,7 +53,7 @@ export function SiteNav() {
             {index < navItems.length - 1 ? (
               <span
                 className={`hidden text-[14px] font-medium sm:inline ${
-                  isDark ? "text-black/60" : "text-[#1d6cff]/70"
+                  isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"
                 }`}
               >
                 |
@@ -65,7 +65,7 @@ export function SiteNav() {
           <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
             Events
           </span>
-          <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+          <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
         </li>
         <li className="flex items-center">
           <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">

@@ -125,3 +125,44 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .dark .text-black {
+    color: #ffffff !important;
+  }
+
+  .dark .text-\[\#1d1d1d\] {
+    color: #dbe7ff !important;
+  }
+
+  .dark .text-\[\#141414\],
+  .dark .text-\[\#1a1a1a\] {
+    color: #d2ddf5 !important;
+  }
+
+  .dark .text-\[\#0a0a0a\],
+  .dark .text-\[\#0d7069\],
+  .dark .text-\[\#173968\] {
+    color: #ffffff !important;
+  }
+
+  .dark .bg-\[\#dbe2ec\],
+  .dark .bg-\[\#ccd5e4\],
+  .dark .bg-\[\#d5deed\],
+  .dark .bg-gray-200 {
+    background-color: #182335 !important;
+  }
+
+  .dark .bg-\[\#dfdfdf\],
+  .dark .bg-\[\#dbe5f7\],
+  .dark .bg-\[\#f5f5f5\],
+  .dark .bg-\[\#F7F7F7\] {
+    background-color: #0f1724 !important;
+  }
+
+  .dark .placeholder\:text-\[\#8f8f8f\]::placeholder,
+  .dark .placeholder\:text-\[\#b1b1b1\]::placeholder,
+  .dark .placeholder\:text-\[\#B9B9B9\]::placeholder {
+    color: #9fb0cf !important;
+  }
+}
