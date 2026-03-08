@@ -22,7 +22,7 @@ export default function Home() {
               alt="Eng Yuyu Logo"
               width={124}
               height={89}
-              className="h-[58px] w-[88px] object-contain sm:h-[108px] sm:w-[148px]"
+              className="h-[62px] w-[112px] object-contain sm:h-[116px] sm:w-[176px]"
               style={{
                 filter:
                   "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
