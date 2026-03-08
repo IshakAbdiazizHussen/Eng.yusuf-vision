@@ -1,21 +1,37 @@
+"use client"
+
 import Image from "next/image"
+import { useState } from "react"
 import { ArrowRight, Link2 } from "lucide-react"
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false)
+
   return (
-    <main id="top" className="relative min-h-screen overflow-hidden bg-[#f3f4f6]">
+    <main
+      id="top"
+      className={`relative min-h-screen overflow-hidden ${
+        darkMode ? "bg-[#111111] text-white" : "bg-[#f3f4f6]"
+      }`}
+    >
       <div
         className="pointer-events-none absolute right-0 top-0 h-full w-[62%]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(29,108,255,0.08) 1.2px, transparent 1.9px)",
+            darkMode
+              ? "radial-gradient(circle, rgba(255,255,255,0.08) 1.2px, transparent 1.9px)"
+              : "radial-gradient(circle, rgba(29,108,255,0.08) 1.2px, transparent 1.9px)",
           backgroundSize: "20px 20px",
           backgroundPosition: "0 0",
         }}
       />
 
       <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-28 sm:px-6 sm:pt-24">
-        <nav className="fixed inset-x-0 top-0 z-50 flex items-center gap-3 bg-[#f3f4f6]/96 px-4 py-3 backdrop-blur-sm sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:bg-transparent sm:px-6 sm:py-3 sm:backdrop-blur-0">
+        <nav
+          className={`fixed inset-x-0 top-0 z-50 flex items-center gap-3 px-4 py-3 backdrop-blur-sm sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:bg-transparent sm:px-6 sm:py-3 sm:backdrop-blur-0 ${
+            darkMode ? "bg-[#111111]/96" : "bg-[#f3f4f6]/96"
+          }`}
+        >
           <a href="#about" aria-label="Go to About section">
             <Image
               src="/Eng Yuyu Logo-21.png"
@@ -30,7 +46,11 @@ export default function Home() {
             />
           </a>
 
-          <ul className="ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] bg-[#d5deed] px-3 py-3 text-[#1d6cff] sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5">
+          <ul
+            className={`ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] px-3 py-3 sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5 ${
+              darkMode ? "bg-white text-black" : "bg-[#111111] text-white"
+            }`}
+          >
             <li className="flex items-center gap-2">
               <a
                 href="#about"
@@ -38,7 +58,7 @@ export default function Home() {
               >
                 About
               </a>
-              <span className="hidden text-[14px] font-medium text-[#1d6cff]/90 sm:inline">|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-white/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <a
@@ -47,7 +67,7 @@ export default function Home() {
               >
                 Watch
               </a>
-              <span className="hidden text-[14px] font-medium text-[#1d6cff]/90 sm:inline">|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-white/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <a
@@ -56,7 +76,7 @@ export default function Home() {
               >
                 Tech Blog
               </a>
-              <span className="hidden text-[14px] font-medium text-[#1d6cff]/90 sm:inline">|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-white/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <a
@@ -65,7 +85,7 @@ export default function Home() {
               >
                 Events
               </a>
-              <span className="hidden text-[14px] font-medium text-[#1d6cff]/90 sm:inline">|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-white/70"}`}>|</span>
             </li>
             <li className="flex items-center">
               <a
@@ -76,6 +96,16 @@ export default function Home() {
               </a>
             </li>
           </ul>
+
+          <button
+            type="button"
+            onClick={() => setDarkMode((value) => !value)}
+            className={`shrink-0 rounded-xl px-4 py-2 text-[13px] font-semibold transition-opacity hover:opacity-85 sm:text-[14px] ${
+              darkMode ? "bg-[#1d6cff] text-white" : "bg-[#d5deed] text-[#1d6cff]"
+            }`}
+          >
+            {darkMode ? "Light" : "Dark"}
+          </button>
         </nav>
 
         <section className="mt-3 grid grid-cols-1 items-end gap-8 pt-4 lg:mt-5 lg:gap-10 lg:pt-8 lg:grid-cols-[minmax(0,500px)_1fr]">
@@ -94,7 +124,7 @@ export default function Home() {
             <h1 className="text-[64px] font-bold leading-[0.95] text-[#1d6cff] sm:text-6xl lg:text-8xl">
               Eng Yuyu
             </h1>
-            <p className="mt-2 text-xl font-light leading-[1.02] text-[#0a0a0a] sm:text-3xl">
+            <p className="mt-2 text-4xl font-light leading-[1.02] text-black">
               Tech Content Creator.
             </p>
 
@@ -121,7 +151,7 @@ export default function Home() {
                 <div className="flex flex-col items-center justify-end gap-1">
                   <div className="h-[94px] w-[132px] overflow-hidden">
                     <Image
-                      src="/keshflip icon.png"
+                      src="/premier_bank-removebg-preview.png"
                       alt="Premier Bank"
                       width={132}
                       height={94}
@@ -137,7 +167,7 @@ export default function Home() {
                 <div className="flex items-end gap-3">
                   <div className="h-[94px] w-[112px] overflow-hidden">
                     <Image
-                      src="/hoopay wallet logo.jpg.jpeg"
+                      src="/amka_-removebg-preview.png"
                       alt="Amka icon"
                       width={112}
                       height={94}
@@ -154,7 +184,7 @@ export default function Home() {
                 <div className="flex items-end gap-3">
                   <div className="h-[96px] w-[96px] overflow-hidden">
                     <Image
-                      src="/Sanguuni Electronics Logos.png"
+                      src="/fudeydiye-removebg-preview.png"
                       alt="Fudaydiye"
                       width={96}
                       height={96}
