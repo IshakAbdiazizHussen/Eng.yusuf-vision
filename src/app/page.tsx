@@ -29,7 +29,7 @@ export default function Home() {
 
       <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-28 sm:px-6 sm:pt-24">
         <nav
-          className={`fixed inset-x-0 top-0 z-50 flex items-center gap-3 px-4 py-3 backdrop-blur-sm sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:bg-transparent sm:px-6 sm:py-3 sm:backdrop-blur-0 ${
+          className={`fixed inset-x-0 top-0 z-50 flex items-center gap-3 px-4 py-3 sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:bg-transparent sm:px-6 sm:py-3 ${
             darkMode ? "bg-[#111111]/96" : "bg-[#f3f4f6]/96"
           }`}
         >
