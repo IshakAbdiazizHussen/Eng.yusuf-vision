@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 import { ArrowRight, Link2 } from "lucide-react"
 
@@ -32,7 +33,7 @@ export default function Home() {
             darkMode ? "bg-[#111111]/96" : "bg-[#f3f4f6]/96"
           }`}
         >
-          <a href="#about" aria-label="Go to About section">
+          <Link href="/about" aria-label="Go to About page">
             <Image
               src="/Eng Yuyu Logo-21.png"
               alt="Eng Yuyu Logo"
@@ -44,7 +45,7 @@ export default function Home() {
                   "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
               }}
             />
-          </a>
+          </Link>
 
           <ul
             className={`ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] px-3 py-3 sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5 ${
@@ -52,48 +53,48 @@ export default function Home() {
             }`}
           >
             <li className="flex items-center gap-2">
-              <a
-                href="#about"
+              <Link
+                href="/about"
                 className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 About
-              </a>
+              </Link>
               <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
-              <a
-                href="#watch"
+              <Link
+                href="/watch"
                 className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 Watch
-              </a>
+              </Link>
               <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
-              <a
-                href="#tech-blog"
+              <Link
+                href="/tech-blog"
                 className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 Tech Blog
-              </a>
+              </Link>
               <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
-              <a
-                href="#events"
+              <Link
+                href="/events"
                 className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 Events
-              </a>
+              </Link>
               <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center">
-              <a
-                href="#impact"
+              <Link
+                href="/impact"
                 className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
               >
                 Impact
-              </a>
+              </Link>
             </li>
           </ul>
 
