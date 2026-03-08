@@ -2,24 +2,26 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
 import { ArrowRight, Link2 } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
+import { useTheme } from "@/components/theme-provider"
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false)
+  const { theme } = useTheme()
+  const isDark = theme === "dark"
 
   return (
     <main
       id="top"
       className={`relative min-h-screen overflow-hidden ${
-        darkMode ? "bg-[#111111] text-white" : "bg-[#f3f4f6]"
+        isDark ? "bg-[#111111] text-white" : "bg-[#f3f4f6]"
       }`}
     >
       <div
         className="pointer-events-none absolute right-0 top-0 h-full w-[62%]"
         style={{
           backgroundImage:
-            darkMode
+            isDark
               ? "radial-gradient(circle, rgba(255,255,255,0.08) 1.2px, transparent 1.9px)"
               : "radial-gradient(circle, rgba(29,108,255,0.08) 1.2px, transparent 1.9px)",
           backgroundSize: "20px 20px",
@@ -47,7 +49,7 @@ export default function Home() {
 
           <ul
             className={`ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] px-3 py-3 sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5 ${
-              darkMode ? "bg-white text-black" : "bg-[#d5deed] text-[#1d6cff]"
+              isDark ? "bg-white text-black" : "bg-[#d5deed] text-[#1d6cff]"
             }`}
           >
             <li className="flex items-center gap-2">
@@ -57,7 +59,7 @@ export default function Home() {
               >
                 About
               </Link>
-              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <Link
@@ -66,7 +68,7 @@ export default function Home() {
               >
                 Watch
               </Link>
-              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <Link
@@ -75,13 +77,13 @@ export default function Home() {
               >
                 Tech Blog
               </Link>
-              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center gap-2">
               <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
                 Events
               </span>
-              <span className={`hidden text-[14px] font-medium sm:inline ${darkMode ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
+              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-black/60" : "text-[#1d6cff]/70"}`}>|</span>
             </li>
             <li className="flex items-center">
               <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
@@ -90,15 +92,7 @@ export default function Home() {
             </li>
           </ul>
 
-          <button
-            type="button"
-            onClick={() => setDarkMode((value) => !value)}
-            className={`shrink-0 rounded-xl px-4 py-2 text-[13px] font-semibold transition-opacity hover:opacity-85 sm:text-[14px] ${
-              darkMode ? "bg-[#1d6cff] text-white" : "bg-[#d5deed] text-[#1d6cff]"
-            }`}
-          >
-            {darkMode ? "Light" : "Dark"}
-          </button>
+          <ThemeToggle />
         </nav>
 
         <section className="mt-3 grid grid-cols-1 items-end gap-8 pt-4 lg:mt-5 lg:gap-10 lg:pt-8 lg:grid-cols-[minmax(0,500px)_1fr]">

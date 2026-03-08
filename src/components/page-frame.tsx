@@ -9,7 +9,7 @@ export function PageFrame({
   flushBottom?: boolean
 }) {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f3f4f6]">
+    <main className="relative min-h-screen overflow-hidden bg-[#f3f4f6] text-black transition-colors dark:bg-[#111111] dark:text-white">
       <div
         className="pointer-events-none absolute right-0 top-0 h-full w-[62%]"
         style={{
