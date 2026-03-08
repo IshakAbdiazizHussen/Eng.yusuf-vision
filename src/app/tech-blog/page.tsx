@@ -203,7 +203,7 @@ export default function TechBlogPage() {
               className="h-[78px] w-[104px] object-contain md:h-[104px] md:w-[136px]"
             />
 
-            <h2 className="mt-10 text-4xl font-bold leading-[1.05] text-white md:mt-12 ">
+            <h2 className="mt-3 text-4xl font-bold leading-[1.05] text-white md:mt-4 ">
               My Goal is Simple:
             </h2>
 
