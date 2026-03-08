@@ -932,20 +932,22 @@ export default function Home() {
                   and AI insights straight to your inbox.
                 </p>
 
-                <div className="mt-7 flex flex-col gap-4 md:flex-row md:items-center">
-            <div
-              className="flex h-[72px] w-full md:w-[500px] lg:w-[540px] items-center rounded-[22px] bg-[#f5f5f5]
-              px-8 text-[24px] font-semibold leading-none text-black shrink-0">
-              Your Email
-            </div>
+                <form className="mt-7 flex flex-col gap-4 md:flex-row md:items-center">
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    suppressHydrationWarning
+                    className="h-[72px] w-full rounded-[22px] bg-[#f5f5f5] px-8 text-[24px] font-semibold leading-none text-black outline-none placeholder:text-[#8f8f8f] md:w-[500px] lg:w-[540px]"
+                  />
 
-            <a
-              href="#"
-              className="inline-flex h-[72px] w-full md:w-[260px] items-center justify-center rounded-[22px]
-              bg-[#156BF7] px-8 text-[24px] font-bold leading-none text-white shrink-0">
-              Subscribe
-            </a>
-          </div>
+                  <button
+                    type="submit"
+                    suppressHydrationWarning
+                    className="inline-flex h-[72px] w-full items-center justify-center rounded-[22px] bg-[#156BF7] px-8 text-[24px] font-bold leading-none text-white transition-opacity hover:opacity-90 md:w-[260px]"
+                  >
+                    Subscribe
+                  </button>
+                </form>
               </div>
 
               <div className="flex justify-center lg:justify-end">
@@ -1081,6 +1083,7 @@ export default function Home() {
                   <input
                     type="text"
                     placeholder="Full Name"
+                    suppressHydrationWarning
                     className="mt-4 h-[50px] w-full rounded-[14px] bg-[#F7F7F7] px-6 text-[17px] font-normal text-black outline-none placeholder:text-[#B9B9B9]"
                   />
                 </div>
@@ -1092,6 +1095,7 @@ export default function Home() {
                   <input
                     type="email"
                     placeholder="Your Email"
+                    suppressHydrationWarning
                     className="mt-4 h-[50px] w-full rounded-[14px] bg-[#F7F7F7] px-6 text-[17px] font-normal text-black outline-none placeholder:text-[#B9B9B9]"
                   />
                 </div>
@@ -1102,12 +1106,14 @@ export default function Home() {
                   </label>
                   <textarea
                     placeholder="Describe what can i help you"
+                    suppressHydrationWarning
                     className="mt-4 h-[87px] w-full resize-none rounded-[14px] bg-[#F7F7F7] px-6 py-4 text-[17px] font-normal text-black outline-none placeholder:text-[#B9B9B9]"
                   />
                 </div>
 
                 <button
                   type="button"
+                  suppressHydrationWarning
                   className="mt-7 inline-flex h-[53px] w-full items-center justify-center rounded-[16px] bg-[#156BF7] 
                   text-[22px] font-bold leading-none text-white transition-opacity hover:opacity-90"
                 >
