@@ -1,7 +1,13 @@
 import type { ReactNode } from "react"
 import { SiteNav } from "./site-nav"
 
-export function PageFrame({ children }: { children: ReactNode }) {
+export function PageFrame({
+  children,
+  flushBottom = false,
+}: {
+  children: ReactNode
+  flushBottom?: boolean
+}) {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#f3f4f6]">
       <div
@@ -14,7 +20,11 @@ export function PageFrame({ children }: { children: ReactNode }) {
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-12 pt-28 sm:px-6 sm:pt-24">
+      <div
+        className={`relative mx-auto w-full max-w-[1520px] px-4 pt-28 sm:px-6 sm:pt-24 ${
+          flushBottom ? "pb-0" : "pb-12"
+        }`}
+      >
         <SiteNav />
         {children}
       </div>

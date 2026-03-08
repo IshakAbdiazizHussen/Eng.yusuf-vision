@@ -45,7 +45,7 @@ export default function TechBlogPage() {
   )
 
   return (
-    <PageFrame>
+    <PageFrame flushBottom>
       <section className="mt-10 px-6 py-6 text-center">
         <h1 className="text-4xl font-bold leading-none text-[#1d6cff] sm:text-[62px]">
           Tech Blog
@@ -192,8 +192,8 @@ export default function TechBlogPage() {
 
       {newsletterSection}
 
-      <section className="mt-10 rounded-[0px_0px_36px_36px] bg-[#156bf7] px-8 py-16 md:px-14 md:py-24">
-        <div className="grid gap-14 xl:grid-cols-[1.18fr_0.9fr] xl:items-center">
+      <section className="relative left-1/2 right-1/2 mt-10 ml-[-50vw] mr-[-50vw] w-screen bg-[#156bf7] px-8 py-16 md:px-14 md:py-24">
+        <div className="mx-auto grid w-full max-w-[1520px] gap-14 xl:grid-cols-[1.18fr_0.9fr] xl:items-center">
           <div className="max-w-[720px] xl:pl-6">
             <Image
               src="/Eng Yuyu Logo-21.png"
@@ -203,11 +203,11 @@ export default function TechBlogPage() {
               className="h-[54px] w-[72px] object-contain md:h-[68px] md:w-[90px]"
             />
 
-            <h2 className="mt-10 text-[34px] font-bold leading-[1.05] text-white md:mt-12 md:text-[58px]">
+            <h2 className="mt-10 text-4xl font-bold leading-[1.05] text-white md:mt-12 ">
               My Goal is Simple:
             </h2>
 
-            <p className="mt-6 max-w-[680px] text-[21px] font-light leading-[1.18] text-white md:text-[34px]">
+            <p className="mt-6 max-w-[680px] text-3xl font-light leading-[1.18] text-white ">
               Lorem ipsum dolor sit amet, consectetuer
               <br />
               adipiscing elit, sed diam nonummy nibh
@@ -217,8 +217,8 @@ export default function TechBlogPage() {
               magna aliquam
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4 md:mt-12 md:gap-4">
-              <span className="text-[28px] font-bold leading-none text-white md:text-[40px]">
+            <div className="mt-10 flex flex-wrap items-center gap-2 md:mt-12 md:gap-3">
+              <span className="text-2xl font-bold leading-none text-white ">
                 Find me here
               </span>
 
@@ -226,7 +226,7 @@ export default function TechBlogPage() {
                 href="https://www.youtube.com/@engyuyu"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[42px] w-[58px] items-center justify-center rounded-[12px] bg-white text-[#156bf7] transition-opacity hover:opacity-90 md:h-[48px] md:w-[64px]"
+                className="inline-flex h-[42px] w-[58px] items-center justify-center transition-opacity hover:opacity-90 md:h-[48px] md:w-[64px]"
               >
                 <Image
                   src="/youtubeRemoving.png"
@@ -279,6 +279,7 @@ export default function TechBlogPage() {
                   width={42}
                   height={42}
                   className="h-full w-full object-contain"
+                  style={{ filter: "brightness(0) invert(1)" }}
                 />
               </a>
             </div>
