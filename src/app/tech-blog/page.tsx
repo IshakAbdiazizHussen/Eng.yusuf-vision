@@ -192,22 +192,22 @@ export default function TechBlogPage() {
 
       {newsletterSection}
 
-      <section className="relative left-1/2 right-1/2 mt-10 ml-[-50vw] mr-[-50vw] w-screen bg-[#156bf7] px-8 py-16 md:px-14 md:py-24">
-        <div className="mx-auto grid w-full max-w-[1520px] gap-14 xl:grid-cols-[1.18fr_0.9fr] xl:items-center">
-          <div className="max-w-[720px] xl:pl-6">
+      <section className="relative left-1/2 right-1/2 mt-10 ml-[-50vw] mr-[-50vw] w-screen bg-[#156bf7] px-8 py-14 md:px-14 md:py-20">
+        <div className="mx-auto grid w-full max-w-[1520px] gap-12 xl:grid-cols-[1.2fr_0.95fr] xl:items-center">
+          <div className="max-w-[760px]">
             <Image
               src="/Eng Yuyu Logo-21.png"
               alt="Eng Yuyu Logo"
               width={124}
               height={89}
-              className="h-[78px] w-[104px] object-contain md:h-[104px] md:w-[136px]"
+              className="h-[76px] w-[104px] object-contain md:h-[96px] md:w-[132px]"
             />
 
-            <h2 className="mt-3 text-4xl font-bold leading-[1.05] text-white md:mt-4 ">
+            <h2 className="mt-10 text-3xl font-bold leading-[1.05] text-white ">
               My Goal is Simple:
             </h2>
 
-            <p className="mt-6 max-w-[680px] text-3xl font-light leading-[1.18] text-white ">
+            <p className="mt-6 max-w-[720px] text-2xl font-light leading-[1.2] text-white ">
               Lorem ipsum dolor sit amet, consectetuer
               <br />
               adipiscing elit, sed diam nonummy nibh
@@ -217,8 +217,8 @@ export default function TechBlogPage() {
               magna aliquam
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-2 md:mt-12 md:gap-3">
-              <span className="mr-1 text-2xl font-bold leading-none text-white ">
+            <div className="mt-10 flex flex-wrap items-center gap-1 md:mt-12 md:gap-2">
+              <span className="text-[28px] font-bold leading-none text-white md:text-[44px]">
                 Find me here
               </span>
 
@@ -226,14 +226,14 @@ export default function TechBlogPage() {
                 href="https://www.youtube.com/@engyuyu"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[46px] md:w-[46px]"
+                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[54px] md:w-[54px]"
               >
                 <Image
                   src="/youtubeRemoving.png"
                   alt="YouTube"
                   width={32}
                   height={32}
-                  className="h-[32px] w-[32px] object-contain md:h-[36px] md:w-[36px]"
+                  className="h-[32px] w-[32px] object-contain md:h-[40px] md:w-[40px]"
                 />
               </a>
 
@@ -241,14 +241,14 @@ export default function TechBlogPage() {
                 href="https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[46px] md:w-[46px]"
+                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[54px] md:w-[54px]"
               >
                 <Image
                   src="/Instgram.png"
                   alt="Instagram"
                   width={32}
                   height={32}
-                  className="h-[32px] w-[32px] object-contain md:h-[36px] md:w-[36px]"
+                  className="h-[32px] w-[32px] object-contain md:h-[40px] md:w-[40px]"
                 />
               </a>
 
@@ -256,14 +256,14 @@ export default function TechBlogPage() {
                 href="https://www.tiktok.com/@eng_yuyu"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[46px] md:w-[46px]"
+                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[54px] md:w-[54px]"
               >
                 <Image
                   src="/Tiktok.png"
                   alt="TikTok"
                   width={32}
                   height={32}
-                  className="h-[32px] w-[32px] object-contain md:h-[36px] md:w-[36px]"
+                  className="h-[32px] w-[32px] object-contain md:h-[40px] md:w-[40px]"
                 />
               </a>
 
@@ -271,52 +271,52 @@ export default function TechBlogPage() {
                 href="https://www.facebook.com/share/189a6Qbxfk/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[46px] md:w-[46px]"
+                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[54px] md:w-[54px]"
               >
                 <Image
                   src="/Facebook.png"
                   alt="Facebook"
                   width={32}
                   height={32}
-                  className="h-[32px] w-[32px] object-contain md:h-[36px] md:w-[36px]"
+                  className="h-[32px] w-[32px] object-contain md:h-[40px] md:w-[40px]"
                   style={{ filter: "brightness(0) invert(1)" }}
                 />
               </a>
             </div>
           </div>
 
-          <div className="mx-auto w-full max-w-[540px] rounded-[38px] bg-[#dbe2ec] px-8 py-9 md:px-12 md:py-12">
+          <div className="mx-auto w-full max-w-[500px] rounded-[36px] bg-[#dbe2ec] px-8 py-9 md:px-10 md:py-10">
             <form className="flex flex-col">
-              <label className="text-[22px] font-bold text-black md:text-[26px]">
+              <label className="text-[22px] font-bold text-black md:text-[28px]">
                 Name
               </label>
               <input
                 type="text"
                 placeholder="Full Name"
-                className="mt-4 h-[62px] rounded-[16px] bg-[#f5f5f5] px-6 text-[20px] text-black outline-none placeholder:text-[#b1b1b1] md:h-[68px] md:text-[20px]"
+                className="mt-4 h-[62px] rounded-[16px] bg-[#f5f5f5] px-6 text-[20px] text-black outline-none placeholder:text-[#b1b1b1] md:h-[72px] md:text-[22px]"
               />
 
-              <label className="mt-6 text-[22px] font-bold text-black md:text-[26px]">
+              <label className="mt-7 text-[22px] font-bold text-black md:text-[28px]">
                 Email
               </label>
               <input
                 type="email"
                 placeholder="Your Email"
-                className="mt-4 h-[62px] rounded-[16px] bg-[#f5f5f5] px-6 text-[20px] text-black outline-none placeholder:text-[#b1b1b1] md:h-[68px] md:text-[20px]"
+                className="mt-4 h-[62px] rounded-[16px] bg-[#f5f5f5] px-6 text-[20px] text-black outline-none placeholder:text-[#b1b1b1] md:h-[72px] md:text-[22px]"
               />
 
-              <label className="mt-6 text-[22px] font-bold text-black md:text-[26px]">
+              <label className="mt-7 text-[22px] font-bold text-black md:text-[28px]">
                 Message
               </label>
               <textarea
                 placeholder="Describe what can i help you"
                 rows={4}
-                className="mt-4 min-h-[124px] rounded-[16px] bg-[#f5f5f5] px-6 py-5 text-[20px] text-black outline-none placeholder:text-[#b1b1b1] md:min-h-[132px] md:text-[20px]"
+                className="mt-4 min-h-[124px] rounded-[16px] bg-[#f5f5f5] px-6 py-5 text-[20px] text-black outline-none placeholder:text-[#b1b1b1] md:min-h-[146px] md:text-[22px]"
               />
 
               <button
                 type="submit"
-                className="mt-8 inline-flex h-[58px] items-center justify-center rounded-[16px] bg-[#156bf7] text-[22px] font-bold leading-none text-white transition-opacity hover:opacity-90 md:h-[66px] md:text-[24px]"
+                className="mt-7 inline-flex h-[58px] items-center justify-center rounded-[16px] bg-[#156bf7] text-[22px] font-bold leading-none text-white transition-opacity hover:opacity-90 md:h-[72px] md:text-[28px]"
               >
                 Send Message
               </button>
