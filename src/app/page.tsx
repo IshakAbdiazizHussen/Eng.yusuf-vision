@@ -16,17 +16,19 @@ export default function Home() {
 
       <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-28 sm:px-6 sm:pt-24">
         <nav className="fixed inset-x-0 top-0 z-50 flex items-center gap-3 bg-[#f3f4f6]/96 px-4 py-3 backdrop-blur-sm sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:bg-transparent sm:px-6 sm:py-3 sm:backdrop-blur-0">
-          <Image
-            src="/Eng Yuyu Logo-21.png"
-            alt="Eng Yuyu Logo"
-            width={124}
-            height={89}
-            className="h-[44px] w-[64px] object-contain sm:h-[89px] sm:w-[124px]"
-            style={{
-              filter:
-                "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
-            }}
-          />
+          <a href="#about" aria-label="Go to About section">
+            <Image
+              src="/Eng Yuyu Logo-21.png"
+              alt="Eng Yuyu Logo"
+              width={124}
+              height={89}
+              className="h-[58px] w-[88px] object-contain sm:h-[108px] sm:w-[148px]"
+              style={{
+                filter:
+                  "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
+              }}
+            />
+          </a>
 
           <ul className="ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] bg-[#d5deed] px-3 py-3 text-[#1d6cff] sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5">
             <li className="flex items-center gap-2">
@@ -119,7 +121,7 @@ export default function Home() {
                 <div className="flex flex-col items-center justify-end gap-1">
                   <div className="h-[94px] w-[132px] overflow-hidden">
                     <Image
-                      src="/premier_bank-removebg-preview.png"
+                      src="/keshflip icon.png"
                       alt="Premier Bank"
                       width={132}
                       height={94}
@@ -135,7 +137,7 @@ export default function Home() {
                 <div className="flex items-end gap-3">
                   <div className="h-[94px] w-[112px] overflow-hidden">
                     <Image
-                      src="/amka_-removebg-preview.png"
+                      src="/hoopay wallet logo.jpg.jpeg"
                       alt="Amka icon"
                       width={112}
                       height={94}
@@ -152,7 +154,7 @@ export default function Home() {
                 <div className="flex items-end gap-3">
                   <div className="h-[96px] w-[96px] overflow-hidden">
                     <Image
-                      src="/fudeydiye-removebg-preview.png"
+                      src="/Sanguuni Electronics Logos.png"
                       alt="Fudaydiye"
                       width={96}
                       height={96}
@@ -321,7 +323,7 @@ export default function Home() {
             </div>
           </div>
 
-          <section id="about" className="mt-20 grid scroll-mt-24 grid-cols-1 gap-10 xl:mt-60 xl:grid-cols-[560px_1fr] xl:gap-12">
+          <section id="about" className="mt-20 grid scroll-mt-40 grid-cols-1 gap-10 xl:mt-60 xl:grid-cols-[560px_1fr] xl:gap-12">
             <div className="flex h-full flex-col">
               <Image
                 src="/engY.png"
