@@ -91,16 +91,16 @@ function MilestoneCard({
     <article className="relative flex flex-col items-center">
       {topLayout ? (
         <>
-          <h2 className="mb-5 text-center text-[32px] font-bold leading-none tracking-[-0.03em] text-[#156bf7] xl:text-[42px]">
+          <h2 className="mb-5 text-center text-[32px] font-bold leading-none tracking-[-0.03em] text-[#156bf7] dark:text-[#3f8cff] xl:text-[42px]">
             {date}
           </h2>
 
           <div className="relative w-full pt-9">
-            <div className="absolute left-1/2 top-0 h-11 w-11 -translate-x-1/2 rounded-full bg-[#156bf7]" />
-            <div className={`absolute left-[2px] h-11 w-11 rounded-full bg-[#156bf7] ${sideDotClass}`} />
-            <div className={`absolute right-[2px] h-11 w-11 rounded-full bg-[#156bf7] ${sideDotClass}`} />
+            <div className="absolute left-1/2 top-0 h-11 w-11 -translate-x-1/2 rounded-full bg-[#156bf7] dark:bg-[#2c7cff]" />
+            <div className={`absolute left-[2px] h-11 w-11 rounded-full bg-[#156bf7] dark:bg-[#2c7cff] ${sideDotClass}`} />
+            <div className={`absolute right-[2px] h-11 w-11 rounded-full bg-[#156bf7] dark:bg-[#2c7cff] ${sideDotClass}`} />
 
-            <div className={`mx-auto flex min-h-[930px] w-full max-w-[372px] flex-col items-center border-[18px] border-[#156bf7] bg-[#dfe5ef] px-8 ${shellClass}`}>
+            <div className={`mx-auto flex min-h-[930px] w-full max-w-[372px] flex-col items-center border-[18px] border-[#156bf7] bg-[#dfe5ef] px-8 dark:border-[#2c7cff] dark:bg-[#1d2236] ${shellClass}`}>
               <div className={`mx-auto flex h-[235px] w-[235px] shrink-0 self-center items-center justify-center rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] ${badgeClasses(variant)}`}>
                 <div className="text-center">
                   <div className="text-[68px] font-extrabold leading-none tracking-[-0.05em]">
@@ -112,11 +112,11 @@ function MilestoneCard({
                 </div>
               </div>
 
-              <h3 className="mt-10 whitespace-pre-line text-center text-[31px] font-bold leading-[1.02] tracking-[-0.03em] text-[#156bf7]">
+              <h3 className="mt-10 whitespace-pre-line text-center text-[31px] font-bold leading-[1.02] tracking-[-0.03em] text-[#156bf7] dark:text-[#3f8cff]">
                 {title}
               </h3>
 
-              <p className="mx-auto mt-10 max-w-[258px] text-center text-[20px] leading-[1.32] tracking-[-0.02em] text-[#111111]">
+              <p className="mx-auto mt-10 max-w-[258px] text-center text-[20px] leading-[1.32] tracking-[-0.02em] text-[#111111] dark:text-[#e5ebf8]">
                 {description}
               </p>
             </div>
@@ -125,16 +125,16 @@ function MilestoneCard({
       ) : (
         <>
           <div className="relative w-full pb-9">
-            <div className="absolute bottom-0 left-1/2 h-11 w-11 -translate-x-1/2 rounded-full bg-[#156bf7]" />
-            <div className={`absolute left-[2px] h-11 w-11 rounded-full bg-[#156bf7] ${sideDotClass}`} />
-            <div className={`absolute right-[2px] h-11 w-11 rounded-full bg-[#156bf7] ${sideDotClass}`} />
+            <div className="absolute bottom-0 left-1/2 h-11 w-11 -translate-x-1/2 rounded-full bg-[#156bf7] dark:bg-[#2c7cff]" />
+            <div className={`absolute left-[2px] h-11 w-11 rounded-full bg-[#156bf7] dark:bg-[#2c7cff] ${sideDotClass}`} />
+            <div className={`absolute right-[2px] h-11 w-11 rounded-full bg-[#156bf7] dark:bg-[#2c7cff] ${sideDotClass}`} />
 
-            <div className={`mx-auto flex min-h-[930px] w-full max-w-[372px] flex-col items-center border-[18px] border-[#156bf7] bg-[#dfe5ef] px-8 ${shellClass}`}>
-              <h3 className="whitespace-pre-line text-center text-[31px] font-bold leading-[1.02] tracking-[-0.03em] text-[#156bf7]">
+            <div className={`mx-auto flex min-h-[930px] w-full max-w-[372px] flex-col items-center border-[18px] border-[#156bf7] bg-[#dfe5ef] px-8 dark:border-[#2c7cff] dark:bg-[#1d2236] ${shellClass}`}>
+              <h3 className="whitespace-pre-line text-center text-[31px] font-bold leading-[1.02] tracking-[-0.03em] text-[#156bf7] dark:text-[#3f8cff]">
                 {title}
               </h3>
 
-              <p className="mx-auto mt-10 max-w-[258px] text-center text-[20px] leading-[1.32] tracking-[-0.02em] text-[#111111]">
+              <p className="mx-auto mt-10 max-w-[258px] text-center text-[20px] leading-[1.32] tracking-[-0.02em] text-[#111111] dark:text-[#e5ebf8]">
                 {description}
               </p>
 
@@ -151,7 +151,7 @@ function MilestoneCard({
             </div>
           </div>
 
-          <h2 className="mt-4 text-center text-[32px] font-bold leading-none tracking-[-0.03em] text-[#156bf7] xl:text-[42px]">
+          <h2 className="mt-4 text-center text-[32px] font-bold leading-none tracking-[-0.03em] text-[#156bf7] dark:text-[#3f8cff] xl:text-[42px]">
             {date}
           </h2>
         </>
@@ -162,12 +162,12 @@ function MilestoneCard({
 
 export default function ImpactPage() {
   return (
-    <main className="min-h-screen bg-[#f5f5f5] text-black">
+    <main className="min-h-screen bg-[#f5f5f5] text-black dark:bg-[#171b2b] dark:text-white">
       <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-12 pt-32 sm:px-6 sm:pt-28">
         <SiteNav />
 
         <section className="px-2 pb-10 pt-8 sm:px-4">
-          <h1 className="text-center text-5xl font-bold leading-[0.96] tracking-[-0.05em] text-[#156bf7] ">
+          <h1 className="text-center text-5xl font-bold leading-[0.96] tracking-[-0.05em] text-[#156bf7] dark:text-[#2c7cff] ">
             My Milestones From 2022
           </h1>
 
@@ -180,7 +180,7 @@ export default function ImpactPage() {
 
         <section className="mx-auto mt-10 max-w-[1360px] pb-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.6fr]">
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9">
+            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
               <div className="flex justify-center">
                 <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
                   <Target className="h-14 w-14 text-white" strokeWidth={2.5} />
@@ -189,7 +189,7 @@ export default function ImpactPage() {
               <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
                 My Mission
               </h2>
-              <p className="mt-7 text-[18px] leading-[1.3] tracking-[-0.02em] text-[#151515]">
+              <p className="mt-7 text-[18px] leading-[1.3] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
                 My mission is straightforward:
                 <br />
                 to help people use technology with confidence, protect their
@@ -200,7 +200,7 @@ export default function ImpactPage() {
               </p>
             </article>
 
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9">
+            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
               <div className="flex justify-center">
                 <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
                   <CircleHelp className="h-14 w-14 text-white" strokeWidth={2.5} />
@@ -209,7 +209,7 @@ export default function ImpactPage() {
               <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
                 What I Do
               </h2>
-              <div className="mt-7 text-[18px] leading-[1.38] tracking-[-0.02em] text-[#151515]">
+              <div className="mt-7 text-[18px] leading-[1.38] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
                 <p>Through short videos, tutorials, talks, and events, I focus on:</p>
                 <p>Everyday smartphone tips (iPhone &amp; Android)</p>
                 <p>Digital security and privacy awareness</p>
@@ -222,7 +222,7 @@ export default function ImpactPage() {
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[1.6fr_0.95fr]">
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9">
+            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
               <div className="flex justify-center">
                 <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
                   <Lightbulb className="h-14 w-14 text-white" strokeWidth={2.5} />
@@ -231,7 +231,7 @@ export default function ImpactPage() {
               <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
                 Why I Started
               </h2>
-              <div className="mt-7 text-[18px] leading-[1.34] tracking-[-0.02em] text-[#151515]">
+              <div className="mt-7 text-[18px] leading-[1.34] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
                 <p>When I began, I noticed a big gap:</p>
                 <p className="mt-5">
                   many people were using technology daily, yet didn&apos;t fully
@@ -245,7 +245,7 @@ export default function ImpactPage() {
               </div>
             </article>
 
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9">
+            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
               <div className="flex justify-center">
                 <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
                   <Share2 className="h-14 w-14 text-white" strokeWidth={2.5} />
@@ -254,7 +254,7 @@ export default function ImpactPage() {
               <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
                 Community Impact
               </h2>
-              <div className="mt-7 text-[18px] leading-[1.34] tracking-[-0.02em] text-[#151515]">
+              <div className="mt-7 text-[18px] leading-[1.34] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
                 <p>Today, more than 1 million people follow my content across social platforms.</p>
                 <p className="mt-5">
                   I&apos;ve published hundreds of educational videos, hosted live
@@ -269,7 +269,7 @@ export default function ImpactPage() {
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.6fr]">
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9">
+            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
               <div className="flex justify-center">
                 <div className="flex h-[110px] w-[110px] items-center justify-center rounded-[24px] bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
                   <FileText className="h-14 w-14 text-white" strokeWidth={2.5} />
@@ -278,7 +278,7 @@ export default function ImpactPage() {
               <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
                 Beyond Content
               </h2>
-              <div className="mt-7 text-[18px] leading-[1.3] tracking-[-0.02em] text-[#151515]">
+              <div className="mt-7 text-[18px] leading-[1.3] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
                 <p>I regularly participate in:</p>
                 <p>Tech talks and workshops</p>
                 <p>Digital education programs</p>
@@ -290,7 +290,7 @@ export default function ImpactPage() {
               </div>
             </article>
 
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9">
+            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
               <div className="flex justify-center">
                 <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
                   <Share2 className="h-14 w-14 -rotate-45 text-white" strokeWidth={2.5} />
@@ -299,7 +299,7 @@ export default function ImpactPage() {
               <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
                 Looking Ahead
               </h2>
-              <div className="mt-7 text-center text-[18px] leading-[1.34] tracking-[-0.02em] text-[#151515]">
+              <div className="mt-7 text-center text-[18px] leading-[1.34] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
                 <p>Technology evolves fast - and so do we.</p>
                 <p>I&apos;m committed to continuing this journey by:</p>
                 <p>Improving content quality</p>
@@ -310,13 +310,13 @@ export default function ImpactPage() {
             </article>
           </div>
 
-          <section id="contact" className="mt-8 rounded-[34px] bg-[#dfe5ef] px-10 py-8">
+          <section id="contact" className="mt-8 rounded-[34px] bg-[#dfe5ef] px-10 py-8 dark:bg-[#1d2236]">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[620px]">
-                <h2 className="text-[26px] font-bold leading-none text-black">
+                <h2 className="text-[26px] font-bold leading-none text-black dark:text-white">
                   Join the Community
                 </h2>
-                <p className="mt-4 text-[18px] leading-[1.28] text-[#151515]">
+                <p className="mt-4 text-[18px] leading-[1.28] text-[#151515] dark:text-[#e5ebf8]">
                   Millions are already learning tech the simple way. Follow,
                   watch, and grow with us across platforms.
                 </p>
@@ -331,7 +331,7 @@ export default function ImpactPage() {
             </div>
           </section>
 
-          <section className="mx-auto mt-8 max-w-[1100px] rounded-[34px] bg-[#f5f5f5] px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+          <section className="mx-auto mt-8 max-w-[1100px] rounded-[34px] bg-[#f5f5f5] px-6 py-10 dark:bg-[#1b1f30] sm:px-10 lg:px-14 lg:py-14">
             <h2 className="text-center text-[56px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff] sm:text-[72px]">
               Impact
             </h2>
@@ -347,7 +347,7 @@ export default function ImpactPage() {
               </div>
             </div>
 
-            <div className="mx-auto mt-10 max-w-[760px] text-[20px] leading-[1.34] tracking-[-0.02em] text-[#111111] sm:text-[24px]">
+            <div className="mx-auto mt-10 max-w-[760px] text-[20px] leading-[1.34] tracking-[-0.02em] text-[#111111] dark:text-[#e5ebf8] sm:text-[24px]">
               <p>
                 Technology is powerful - but impact is what truly matters.
                 Over the years, Eng Yuyu has focused on creating meaningful

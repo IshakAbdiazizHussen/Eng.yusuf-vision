@@ -1,4 +1,8 @@
 import Image from "next/image"
+import {
+  ContactMessageForm,
+  NewsletterSignupForm,
+} from "@/components/contact-page-forms"
 import { PageFrame } from "@/components/page-frame"
 
 const socialLinks = {
@@ -40,70 +44,7 @@ export default function ContactPage() {
                 Simple Contact Form
               </h2>
 
-              <form className="mt-6 space-y-4">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <label className="block">
-                    <span className="text-[12px] font-semibold text-[#1b1b1b]">
-                      First Name <span className="text-[#ef4444]">*</span>
-                    </span>
-                    <input
-                      type="text"
-                      placeholder="First name here"
-                      className="mt-2 h-[44px] w-full rounded-[4px] border border-[#e3e3e3] bg-[#f2f4f7] px-3 text-[12px] text-black outline-none placeholder:text-[#8b8b8b]"
-                    />
-                  </label>
-                  <label className="block">
-                    <span className="text-[12px] font-semibold text-[#1b1b1b]">
-                      Last Name <span className="text-[#ef4444]">*</span>
-                    </span>
-                    <input
-                      type="text"
-                      placeholder="Last name here"
-                      className="mt-2 h-[44px] w-full rounded-[4px] border border-[#e3e3e3] bg-[#f2f4f7] px-3 text-[12px] text-black outline-none placeholder:text-[#8b8b8b]"
-                    />
-                  </label>
-                </div>
-
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <label className="block">
-                    <span className="text-[12px] font-semibold text-[#1b1b1b]">
-                      Email Address <span className="text-[#ef4444]">*</span>
-                    </span>
-                    <input
-                      type="email"
-                      placeholder="Add email"
-                      className="mt-2 h-[44px] w-full rounded-[4px] border border-[#e3e3e3] bg-[#f2f4f7] px-3 text-[12px] text-black outline-none placeholder:text-[#8b8b8b]"
-                    />
-                  </label>
-                  <label className="block">
-                    <span className="text-[12px] font-semibold text-[#1b1b1b]">
-                      Subject <span className="text-[#ef4444]">*</span>
-                    </span>
-                    <input
-                      type="text"
-                      placeholder="How can we help you?"
-                      className="mt-2 h-[44px] w-full rounded-[4px] border border-[#e3e3e3] bg-[#f2f4f7] px-3 text-[12px] text-black outline-none placeholder:text-[#8b8b8b]"
-                    />
-                  </label>
-                </div>
-
-                <label className="block">
-                  <span className="text-[12px] font-semibold text-[#1b1b1b]">
-                    Comments / Questions <span className="text-[#ef4444]">*</span>
-                  </span>
-                  <textarea
-                    placeholder="Comments"
-                    className="mt-2 h-[126px] w-full resize-none rounded-[4px] border border-[#e3e3e3] bg-[#f2f4f7] px-3 py-3 text-[12px] text-black outline-none placeholder:text-[#8b8b8b]"
-                  />
-                </label>
-
-                <button
-                  type="submit"
-                  className="inline-flex h-[34px] items-center justify-center rounded-[4px] bg-[#156ff3] px-5 text-[12px] font-medium text-white transition-opacity hover:opacity-90"
-                >
-                  Send Message
-                </button>
-              </form>
+              <ContactMessageForm />
             </section>
 
             <section className="h-fit rounded-[16px] bg-[#dfe4eb] px-8 py-9">
@@ -144,19 +85,7 @@ export default function ContactPage() {
                   and AI insights straight to your inbox.
                 </p>
 
-                <form className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="h-[48px] w-full rounded-[2px] border border-[#e2e2e2] bg-[#f7f7f5] px-4 text-[14px] text-black outline-none placeholder:text-[#676767] sm:max-w-[360px]"
-                  />
-                  <button
-                    type="submit"
-                    className="inline-flex h-[48px] min-w-[84px] items-center justify-center rounded-[4px] bg-[#156ff3] px-6 text-[16px] font-semibold text-white transition-opacity hover:opacity-90"
-                  >
-                    Submit
-                  </button>
-                </form>
+                <NewsletterSignupForm />
               </div>
 
               <div className="flex justify-center lg:justify-end">
