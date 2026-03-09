@@ -28,14 +28,14 @@ export function SiteNav() {
           : "border-black/6 bg-[#f3f3f3]/96"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-[1320px] flex-wrap items-center justify-between gap-4 lg:grid lg:grid-cols-[180px_1fr_130px] lg:gap-8">
+      <div className="mx-auto flex w-full max-w-[1320px] flex-wrap items-center justify-between gap-4 lg:grid lg:grid-cols-[220px_1fr_130px] lg:gap-8">
         <Link href="/" aria-label="Go to homepage" className="justify-self-start">
           <Image
             src="/Eng Yuyu Logo-21.png"
             alt="Eng Yuyu Logo"
-            width={124}
+            width={304}
             height={89}
-            className="h-[54px] w-[92px] object-contain sm:h-[62px] sm:w-[104px]"
+            className="h-[66px] w-[200px] object-contain sm:h-[76px] sm:w-[140px]"
             style={{
               filter:
                 "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
