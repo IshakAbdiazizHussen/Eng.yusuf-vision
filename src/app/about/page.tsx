@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Target } from "lucide-react"
+import { CircleHelp, Lightbulb, Target } from "lucide-react"
 import { PageFrame } from "@/components/page-frame"
 
 export default function AboutPage() {
@@ -75,6 +75,123 @@ export default function AboutPage() {
                 <div className="flex h-[78px] w-[78px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[0_8px_18px_rgba(29,108,255,0.2)] sm:h-[92px] sm:w-[92px]">
                   <Target className="h-10 w-10 text-[#ffd54a] sm:h-12 sm:w-12" strokeWidth={2.5} />
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative left-1/2 right-1/2 mt-6 ml-[-50vw] mr-[-50vw] w-screen bg-[#dfe5ef] px-6 py-12 sm:px-10 lg:px-16">
+        <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-10 lg:grid-cols-[520px_1fr] lg:gap-14">
+          <div className="flex justify-center">
+            <div className="flex h-[250px] w-[250px] items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#50b6ff_0%,#1777f7_58%,#0a56d5_100%)] shadow-[inset_0_10px_22px_rgba(255,255,255,0.26),0_10px_20px_rgba(29,108,255,0.16)] sm:h-[300px] sm:w-[300px]">
+              <CircleHelp className="h-36 w-36 text-white/90 sm:h-44 sm:w-44" strokeWidth={2} />
+            </div>
+          </div>
+
+          <div className="max-w-[760px]">
+            <h2 className="text-[58px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff]">
+              What I Do
+            </h2>
+            <div className="mt-6 space-y-3 text-[22px] leading-[1.5] tracking-[-0.02em] text-black sm:text-[24px]">
+              <p>Through short videos, tutorials, talks, and events, I focus on:</p>
+              <p>Everyday smartphone tips (iPhone &amp; Android)</p>
+              <p>Digital security and privacy awareness</p>
+              <p>Artificial intelligence explained simply</p>
+              <p>Content creation and digital skills</p>
+              <p>Helping people turn ideas into real opportunities</p>
+              <p>Everything I share is practical, honest, and tested in real life.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-14 grid max-w-[1180px] grid-cols-1 items-center gap-12 px-4 pb-10 sm:px-0 lg:grid-cols-[1fr_380px]">
+        <div className="max-w-[760px]">
+          <h2 className="text-[58px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff]">
+            Why I Started
+          </h2>
+          <div className="mt-6 space-y-5 text-[22px] leading-[1.5] tracking-[-0.02em] text-black sm:text-[24px]">
+            <p>When I began, I noticed a big gap:</p>
+            <p>
+              many people were using technology daily, yet didn&apos;t fully
+              understand how it worked or how to protect themselves online.
+            </p>
+            <p>
+              I made it a personal commitment to share clear, useful, and
+              trustworthy tech knowledge, especially for the Somali community
+              and anyone navigating the digital world.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex justify-center lg:justify-end">
+          <div className="flex h-[250px] w-[250px] items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#4b96ff_0%,#2a73ec_58%,#1d5fde_100%)] shadow-[inset_0_10px_22px_rgba(255,255,255,0.26),0_10px_20px_rgba(29,108,255,0.16)] sm:h-[300px] sm:w-[300px]">
+            <Lightbulb className="h-28 w-28 text-white sm:h-32 sm:w-32" strokeWidth={2.3} />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative left-1/2 right-1/2 mt-6 ml-[-50vw] mr-[-50vw] w-screen">
+        <div className="bg-[#dfe4eb] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+          <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-y-10 lg:grid-cols-[430px_1fr] lg:gap-x-24">
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative h-[240px] w-[240px] rounded-full bg-[radial-gradient(circle_at_50%_28%,#5a97f2_0%,#3a7fe8_48%,#0050cf_76%,#0044b3_100%)] shadow-[inset_0_10px_20px_rgba(255,255,255,0.18),inset_0_-12px_16px_rgba(0,61,170,0.45),0_6px_14px_rgba(13,86,209,0.18)] sm:h-[270px] sm:w-[270px]">
+                <div className="absolute left-1/2 top-[52px] h-[50px] w-[50px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.28)] sm:top-[58px] sm:h-[52px] sm:w-[52px]" />
+                <div className="absolute bottom-[62px] left-[56px] h-[50px] w-[50px] rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.28)] sm:bottom-[70px] sm:left-[62px] sm:h-[52px] sm:w-[52px]" />
+                <div className="absolute bottom-[56px] right-[56px] h-[50px] w-[50px] rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.28)] sm:bottom-[64px] sm:right-[62px] sm:h-[52px] sm:w-[52px]" />
+                <div className="absolute left-[71px] top-[92px] h-[58px] w-[20px] rotate-[16deg] rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.24)] sm:left-[80px] sm:top-[103px]" />
+                <div className="absolute right-[71px] top-[92px] h-[58px] w-[20px] rotate-[-16deg] rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.24)] sm:right-[80px] sm:top-[103px]" />
+                <div className="absolute bottom-[58px] left-1/2 h-[16px] w-[52px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.24)] sm:bottom-[66px] sm:h-[18px] sm:w-[56px]" />
+              </div>
+            </div>
+
+            <div className="max-w-[560px]">
+              <h2 className="text-[34px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff] sm:text-[40px]">
+                Community Impact
+              </h2>
+              <div className="mt-6 space-y-2 text-[20px] leading-[1.55] tracking-[-0.02em] text-black sm:text-[23px]">
+                <p>Today, more than 1 million people follow my content across social platforms.</p>
+                <p>
+                  I&apos;ve published hundreds of educational videos, hosted live
+                  events, and delivered tech education that reaches millions.
+                </p>
+                <p>
+                  This journey has been built on consistency, patience, and
+                  community trust.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#f3f3f3] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+          <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-y-10 lg:grid-cols-[1fr_430px] lg:gap-x-24">
+            <div className="max-w-[620px] lg:justify-self-start lg:pl-2">
+              <h2 className="text-[34px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff] sm:text-[40px]">
+                Beyond Content
+              </h2>
+              <div className="mt-6 space-y-2 text-[20px] leading-[1.55] tracking-[-0.02em] text-black sm:text-[23px]">
+                <p>I regularly participate in:</p>
+                <p className="pt-3">Tech talks and workshops</p>
+                <p>Digital education programs</p>
+                <p>Community events and conferences</p>
+                <p className="pt-5">
+                  I also collaborate with brands and organizations that align
+                  with education, innovation, and positive digital impact.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex justify-center lg:justify-center">
+              <div className="relative h-[250px] w-[250px] sm:h-[280px] sm:w-[280px]">
+                <div className="absolute left-1/2 top-[6px] h-[170px] w-[170px] -translate-x-1/2 rounded-[18px] bg-[linear-gradient(180deg,#1871ee_0%,#0d67e6_100%)] shadow-[inset_0_8px_16px_rgba(255,255,255,0.18),0_5px_10px_rgba(24,113,238,0.18)] sm:h-[182px] sm:w-[182px]">
+                  <div className="absolute left-1/2 top-[32px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
+                  <div className="absolute left-1/2 top-[64px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
+                  <div className="absolute left-1/2 top-[96px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
+                  <div className="absolute left-1/2 top-[128px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
+                </div>
+                <div className="absolute left-1/2 top-[150px] h-[74px] w-[40px] -translate-x-[8px] skew-x-[-28deg] rounded-b-[14px] bg-[linear-gradient(180deg,#1871ee_0%,#0d67e6_100%)] shadow-[0_5px_10px_rgba(24,113,238,0.2)] sm:top-[162px] sm:h-[82px] sm:w-[42px]" />
               </div>
             </div>
           </div>
