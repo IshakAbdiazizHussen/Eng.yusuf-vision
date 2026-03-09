@@ -27,10 +27,10 @@ export default function AboutPage() {
 
           <div className="max-w-[760px]">
             <div className="mb-8 flex flex-wrap gap-4">
-              <span className="inline-flex h-12 items-center rounded-full bg-white/60 px-6 text-[18px] font-semibold text-[#1d6cff]">
+              <span className="inline-flex h-12 items-center rounded-full bg-white/60 px-6 text-[18px] font-semibold text-[#1d6cff] dark:bg-[#1d6cff] dark:text-white">
                 Tech Influencer
               </span>
-              <span className="inline-flex h-12 items-center rounded-full bg-white/60 px-6 text-[18px] font-semibold text-[#1d6cff]">
+              <span className="inline-flex h-12 items-center rounded-full bg-white/60 px-6 text-[18px] font-semibold text-[#1d6cff] dark:bg-[#1d6cff] dark:text-white">
                 Digital Creator
               </span>
             </div>
