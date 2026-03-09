@@ -105,20 +105,22 @@ export default function Home() {
                 Partner With:
               </h2>
               <div className="relative mt-7 overflow-hidden">
-                <div className="partner-marquee flex w-max items-center gap-8 sm:gap-10">
+                <div className="partner-marquee flex w-max items-center gap-5 sm:gap-5">
                   {marqueePartners.map((partner, index) => (
                     <div
                       key={`${partner.id}-${index}`}
-                      className="flex h-[108px] min-w-[220px] items-center justify-center"
+                      className="flex h-[108px] shrink-0 items-center justify-center"
                     >
                       {partner.id === "sanguuni" ? (
-                        <Image
-                          src="/Sanguuni Electronics Logos.png"
-                          alt="Sanguuni"
-                          width={280}
-                          height={110}
-                          className="h-[72px] w-auto object-contain"
-                        />
+                        <div className="flex items-center gap-3">
+                          <Image
+                            src="/Sanguuni Electronics Logos.png"
+                            alt="Sanguuni"
+                            width={280}
+                            height={110}
+                            className="h-[84px] w-auto object-contain"
+                          />
+                        </div>
                       ) : null}
 
                       {partner.id === "taran" ? (
@@ -151,9 +153,15 @@ export default function Home() {
                             alt="Amka"
                             width={500}
                             height={499}
-                            className="h-[72px] w-[72px] object-contain"
+                            className={`h-[72px] w-[72px] object-contain ${
+                              isDark ? "invert brightness-0" : "brightness-0 saturate-0"
+                            }`}
                           />
-                          <div className="leading-none text-[#2f2929]">
+                          <div
+                            className={`leading-none ${
+                              isDark ? "text-white" : "text-[#2f2929]"
+                            }`}
+                          >
                             <div className="text-[36px] font-semibold tracking-[-0.04em]">
                               amka
                             </div>
