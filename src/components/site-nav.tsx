@@ -12,7 +12,7 @@ const navItems = [
   { href: "/tech-blog", label: "Tech News" },
   { href: "/events", label: "Event" },
   { href: "/impact", label: "Impact" },
-  { href: "/impact#contact", label: "My Contacts" },
+  { href: "/contact", label: "My Contacts" },
 ]
 
 export function SiteNav() {

@@ -2,9 +2,16 @@ import Image from "next/image"
 import { CircleHelp, Lightbulb, Target } from "lucide-react"
 import { PageFrame } from "@/components/page-frame"
 
+const socialLinks = {
+  youtube: "https://www.youtube.com/@engyuyu",
+  tiktok: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
+  instagram: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
+  facebook: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
+}
+
 export default function AboutPage() {
   return (
-    <PageFrame>
+    <PageFrame flushBottom>
       <section className="relative left-1/2 right-1/2 mt-2 ml-[-50vw] mr-[-50vw] w-screen bg-[#dfe5ef] px-6 py-10 sm:px-10 lg:px-16 lg:py-14">
         <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-10 lg:grid-cols-[520px_1fr] lg:gap-14">
           <div className="flex justify-center lg:justify-end">
@@ -194,6 +201,109 @@ export default function AboutPage() {
                 <div className="absolute left-1/2 top-[150px] h-[74px] w-[40px] -translate-x-[8px] skew-x-[-28deg] rounded-b-[14px] bg-[linear-gradient(180deg,#1871ee_0%,#0d67e6_100%)] shadow-[0_5px_10px_rgba(24,113,238,0.2)] sm:top-[162px] sm:h-[82px] sm:w-[42px]" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] mt-0 w-screen">
+        <div className="bg-[#dfe4eb] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+          <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-y-10 lg:grid-cols-[430px_1fr] lg:gap-x-24">
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative h-[240px] w-[240px] rounded-full bg-[radial-gradient(circle_at_50%_28%,#1f80f3_0%,#0d6de8_48%,#075ee2_76%,#0854d3_100%)] shadow-[inset_0_3px_8px_rgba(255,255,255,0.25),inset_0_-10px_18px_rgba(0,74,194,0.35),0_6px_14px_rgba(13,86,209,0.15)] sm:h-[270px] sm:w-[270px]">
+                <svg
+                  viewBox="0 0 120 120"
+                  className="absolute left-1/2 top-1/2 h-[132px] w-[132px] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_4px_5px_rgba(0,0,0,0.28)] sm:h-[148px] sm:w-[148px]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M32 83C36 60 49 41 75 28L74 19C86 20 96 24 104 31C102 42 95 52 83 61L82 53C59 63 44 77 36 92Z"
+                    fill="#efefef"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div className="max-w-[560px]">
+              <h2 className="text-[34px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff] sm:text-[40px]">
+                Looking Ahead
+              </h2>
+              <div className="mt-6 space-y-2 text-[20px] leading-[1.55] tracking-[-0.02em] text-black sm:text-[23px]">
+                <p>Technology evolves fast and so do we.</p>
+                <p>I&apos;m committed to continuing this journey by:</p>
+                <p className="pt-3">Improving content quality</p>
+                <p>Expanding educational formats</p>
+                <p>Reaching more communities</p>
+                <p>Preparing people for the future of digital life</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#f3f3f3] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+          <div className="mx-auto w-full max-w-[980px] rounded-[22px] bg-[#dfe4eb] px-10 py-12 sm:px-14 sm:py-14">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-[470px]">
+                <h2 className="text-[28px] font-bold leading-none tracking-[-0.03em] text-black sm:text-[32px]">
+                  Join the Community
+                </h2>
+                <p className="mt-5 text-[20px] leading-[1.32] tracking-[-0.02em] text-[#151515] sm:text-[22px]">
+                  Millions are already learning tech the simple way. Follow,
+                  watch, and grow with us across platforms.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 sm:gap-3">
+                <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+                  <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[44px] w-auto object-contain sm:h-[50px]" />
+                </a>
+                <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+                  <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[44px] w-auto object-contain sm:h-[50px]" />
+                </a>
+                <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+                  <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[44px] w-auto object-contain sm:h-[50px]" />
+                </a>
+                <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+                  <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[44px] w-auto object-contain sm:h-[50px]" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#156ff3] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-18">
+          <div className="mx-auto flex w-full max-w-[980px] flex-col items-center text-center">
+            <Image
+              src="/Eng Yuyu Logo-21.png"
+              alt="Eng Yuyu Logo"
+              width={300}
+              height={120}
+              className="h-[70px] w-auto object-contain sm:h-[82px]"
+              style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
+            />
+
+            <p className="mt-6 max-w-[760px] text-[18px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[20px]">
+              My Goal is Simple: to Educate, Inspire and Connect people through
+              technology: One video, one idea and one innovation at a time.....
+            </p>
+
+            <div className="mt-10 flex items-center gap-4 sm:gap-5">
+              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+                <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              </a>
+              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+                <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              </a>
+              <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+                <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              </a>
+              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+                <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              </a>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-16 w-screen border-t border-white/55 pt-7 text-center text-[16px] tracking-[-0.02em] text-white/95">
+            © 2025 Eng Yuyu Media - All Rights Reserved.
           </div>
         </div>
       </section>

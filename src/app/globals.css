@@ -141,7 +141,12 @@
   }
 
   .dark .text-\[\#141414\],
-  .dark .text-\[\#1a1a1a\] {
+  .dark .text-\[\#151515\],
+  .dark .text-\[\#161616\],
+  .dark .text-\[\#171717\],
+  .dark .text-\[\#181818\],
+  .dark .text-\[\#1a1a1a\],
+  .dark .text-\[\#1b1b1b\] {
     color: #d2ddf5 !important;
   }
 
@@ -152,22 +157,36 @@
   }
 
   .dark .bg-\[\#dbe2ec\],
+  .dark .bg-\[\#dfe4eb\],
+  .dark .bg-\[\#dfe5ef\],
   .dark .bg-\[\#ccd5e4\],
   .dark .bg-\[\#d5deed\],
   .dark .bg-gray-200 {
-    background-color: #182335 !important;
+    background-color: #1d2133 !important;
   }
 
   .dark .bg-\[\#dfdfdf\],
   .dark .bg-\[\#dbe5f7\],
+  .dark .bg-\[\#f2f4f7\],
   .dark .bg-\[\#f5f5f5\],
+  .dark .bg-\[\#f7f7f5\],
   .dark .bg-\[\#F7F7F7\] {
-    background-color: #0f1724 !important;
+    background-color: #171b2b !important;
+  }
+
+  .dark .border-\[\#e2e2e2\],
+  .dark .border-\[\#e3e3e3\] {
+    border-color: #313a57 !important;
+  }
+
+  .dark .border-black\/6 {
+    border-color: rgb(93 110 151 / 0.2) !important;
   }
 
   .dark .placeholder\:text-\[\#8f8f8f\]::placeholder,
   .dark .placeholder\:text-\[\#b1b1b1\]::placeholder,
-  .dark .placeholder\:text-\[\#B9B9B9\]::placeholder {
+  .dark .placeholder\:text-\[\#B9B9B9\]::placeholder,
+  .dark .placeholder\:text-\[\#676767\]::placeholder {
     color: #9fb0cf !important;
   }
 }
