@@ -47,7 +47,7 @@ export default function ImpactPage() {
             </div>
           </div>
 
-          <div className="w-full max-w-[500px] justify-self-center xl:justify-self-end">
+          <div id="contact" className="w-full max-w-[500px] justify-self-center xl:justify-self-end">
             <div className="rounded-[32px] bg-[#DDE4EE] px-6 py-8 md:rounded-[42px] md:px-11 md:py-11">
               <div>
                 <label className="block text-[20px] font-bold leading-none text-black md:text-[24px]">

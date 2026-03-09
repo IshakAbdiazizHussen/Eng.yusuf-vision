@@ -1,9 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { ArrowRight, Link2 } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { SiteNav } from "@/components/site-nav"
 import { useTheme } from "@/components/theme-provider"
 
 export default function Home() {
@@ -14,172 +13,158 @@ export default function Home() {
     <main
       id="top"
       className={`relative min-h-screen overflow-hidden ${
-        isDark ? "bg-[#111111] text-white" : "bg-[#f3f4f6]"
+        isDark ? "bg-[#191d2b] text-white" : "bg-[#f3f4f6]"
       }`}
     >
       <div
-        className="pointer-events-none absolute right-0 top-0 h-full w-[62%]"
+        className={`pointer-events-none absolute inset-0 ${
+          isDark ? "opacity-100" : "right-0 top-0 h-full w-[62%]"
+        }`}
         style={{
           backgroundImage:
             isDark
-              ? "radial-gradient(circle, rgba(29,108,255,0.14) 1.2px, transparent 1.9px)"
+              ? "radial-gradient(circle, rgba(110,126,170,0.20) 1.4px, transparent 1.9px)"
               : "radial-gradient(circle, rgba(29,108,255,0.08) 1.2px, transparent 1.9px)",
-          backgroundSize: "20px 20px",
-          backgroundPosition: "0 0",
+          backgroundSize: isDark ? "25px 25px" : "20px 20px",
+          backgroundPosition: isDark ? "center top" : "0 0",
+          maskImage: isDark
+            ? "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.9) 12%, rgba(0,0,0,0.9) 88%, transparent 100%)"
+            : undefined,
+          WebkitMaskImage: isDark
+            ? "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.9) 12%, rgba(0,0,0,0.9) 88%, transparent 100%)"
+            : undefined,
         }}
       />
+      {isDark ? (
+        <div className="pointer-events-none absolute inset-x-0 top-[140px] h-px bg-[#314060]" />
+      ) : null}
 
-      <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-28 sm:px-6 sm:pt-24">
-        <nav
-          className="fixed inset-x-0 top-0 z-50 flex items-center gap-3 px-4 py-3 sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:bg-transparent sm:px-6 sm:py-3"
-        >
-          <Link href="/about" aria-label="Go to About page">
-            <Image
-              src="/Eng Yuyu Logo-21.png"
-              alt="Eng Yuyu Logo"
-              width={124}
-              height={89}
-              className="h-[62px] w-[112px] object-contain sm:h-[116px] sm:w-[176px]"
-              style={{
-                filter:
-                  "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
-              }}
-            />
-          </Link>
+      <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-0 pt-32 sm:px-6 sm:pt-28">
+        <SiteNav />
 
-          <ul
-            className={`ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] px-3 py-3 sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5 ${
-              isDark ? "bg-[#d9e2f2] text-[#0f1724]" : "bg-[#d5deed] text-[#1d6cff]"
-            }`}
-          >
-            <li className="flex items-center gap-2">
-              <Link
-                href="/about"
-                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
-              >
-                About
-              </Link>
-              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Link
-                href="/watch"
-                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
-              >
-                Watch
-              </Link>
-              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Link
-                href="/tech-blog"
-                className="px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px]"
-              >
-                Tech Blog
-              </Link>
-              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
-                Events
-              </span>
-              <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
-            </li>
-            <li className="flex items-center">
-              <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
-                Impact
-              </span>
-            </li>
-          </ul>
-
-          <ThemeToggle />
-        </nav>
-
-        <section className="mt-3 grid grid-cols-1 items-end gap-8 pt-4 lg:mt-5 lg:gap-10 lg:pt-8 lg:grid-cols-[minmax(0,500px)_1fr]">
-          <div className="mx-auto h-[320px] w-full max-w-[360px] overflow-hidden sm:h-[520px] sm:max-w-[500px] lg:mx-0 lg:h-[690px]">
+        <section className={`mt-3 grid grid-cols-1 items-end gap-8 pt-4 lg:mt-5 lg:pt-8 lg:grid-cols-[minmax(0,560px)_1fr] ${
+          isDark ? "lg:gap-4" : "lg:gap-10"
+        }`}>
+          <div className={`mx-auto h-[320px] w-full max-w-[360px] overflow-hidden sm:h-[520px] sm:max-w-[500px] lg:h-[760px] ${
+            isDark ? "lg:mx-0 lg:max-w-[620px]" : "lg:mx-0"
+          }`}>
             <Image
               src="/yuyu.png"
               alt="Eng Yuyu portrait"
               width={526}
               height={628}
-              className="h-full w-full object-contain object-top mix-blend-multiply dark:mix-blend-normal sm:object-cover"
+              className={`h-full w-full object-contain object-top sm:object-cover ${
+                isDark
+                  ? "scale-[1.34] object-[58%_top] drop-shadow-[0_20px_44px_rgba(0,0,0,0.26)] sm:scale-[1.22] lg:scale-[1.3] lg:object-[62%_top]"
+                  : "rounded-[28px] mix-blend-multiply dark:mix-blend-normal"
+              }`}
               priority
             />
           </div>
 
-          <div className="max-w-[820px] pb-4 lg:mb-30 lg:ml-38 lg:pb-8">
-            <h1 className="text-[64px] font-bold leading-[0.95] text-[#1d6cff] sm:text-6xl lg:text-8xl">
-              Eng Yuyu
+          <div className={`max-w-[840px] pb-4 lg:pb-8 ${isDark ? "lg:mb-20 lg:-ml-2" : "lg:mb-30 lg:ml-38"}`}>
+            <h1 className={`font-bold leading-[0.95] sm:text-6xl lg:text-[58px] ${
+              isDark ? "max-w-[760px] text-[48px] text-white lg:leading-[0.95]" : "text-[64px] text-[#1d6cff] lg:text-8xl"
+            }`}>
+              {isDark ? "Eng Yuyu, The Tech Content Creator" : "Eng Yuyu"}
             </h1>
-            <p className="mt-2 text-4xl font-light leading-[1.02] text-black">
-              Tech Content Creator.
+            {isDark ? null : (
+              <p className="mt-2 text-4xl font-light leading-[1.02] text-black">
+                Tech Content Creator.
+              </p>
+            )}
+
+            <p className={`mt-6 max-w-[860px] font-light ${
+              isDark
+                ? "text-[24px] leading-[1.55] text-white/88 lg:text-[28px]"
+                : "text-xl leading-[1.55] text-[#171717] lg:text-2xl"
+            }`}>
+              {isDark
+                ? "I’m Yusuf Mohamed (Eng Yuyu), a Somali Tech Influencer, Digital Creator, and Educator with a mission to make technology simple, practical, and empowering for everyone."
+                : "I’m Yusuf Mohamed Osman (Eng Yuyu), a tech educator and digital creator making technology simple, practical, and useful for everyday life."}
             </p>
 
-            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+            <div className={`mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center ${isDark ? "sm:gap-6" : ""}`}>
               <a
                 href="#"
-                className="inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-[#e3eaf7] px-6 text-[16px] font-semibold leading-none text-[#1d6cff] whitespace-nowrap transition-opacity hover:opacity-85 sm:min-w-[260px] sm:text-[18px] lg:min-w-[300px]"
+                className={`inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-2xl px-6 text-[16px] font-semibold leading-none whitespace-nowrap transition-opacity hover:opacity-85 sm:min-w-[260px] sm:text-[18px] lg:min-w-[300px] ${
+                  isDark
+                    ? "h-[84px] rounded-[22px] bg-[#3b87f6] text-white shadow-[0_18px_34px_rgba(59,135,246,0.24)] lg:min-w-[336px] lg:text-[20px]"
+                    : "bg-[#e3eaf7] text-[#1d6cff]"
+                }`}
               >
                 Watch Latest Videos <ArrowRight className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-2xl bg-[#1d6cff] px-6 text-[16px] font-semibold leading-none text-white whitespace-nowrap transition-opacity hover:opacity-90 sm:min-w-[260px] sm:text-[18px] lg:min-w-[300px]"
+                className={`inline-flex h-[52px] w-full items-center justify-center gap-2 rounded-2xl px-6 text-[16px] font-semibold leading-none text-white whitespace-nowrap transition-opacity hover:opacity-90 sm:min-w-[260px] sm:text-[18px] lg:min-w-[300px] ${
+                  isDark
+                    ? "h-[84px] rounded-[22px] bg-[#3b87f6] shadow-[0_18px_34px_rgba(59,135,246,0.24)] lg:min-w-[288px] lg:text-[20px]"
+                    : "bg-[#1d6cff]"
+                }`}
               >
                 For Collaboration <ArrowRight className="h-5 w-5" />
               </a>
             </div>
 
-            <div className="mt-12">
-              <h2 className="text-3xl font-bold leading-none text-[#1d6cff] sm:text-[40px] lg:text-[50px]">
-                Partners
+            <div className={`mt-12 ${isDark ? "max-w-[860px]" : ""}`}>
+              <h2 className={`font-bold leading-none ${
+                isDark ? "text-[28px] text-white lg:text-[34px]" : "text-3xl text-[#1d6cff] sm:text-[40px] lg:text-[50px]"
+              }`}>
+                {isDark ? "Partner With:" : "Partners"}
               </h2>
-              <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:flex lg:flex-wrap lg:items-end lg:gap-10">
-                <div className="flex flex-col items-center justify-end gap-1">
-                  <div className="h-[94px] w-[132px] overflow-hidden">
+              <div className={`mt-6 grid gap-6 ${
+                isDark ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap lg:items-end lg:gap-10"
+              }`}>
+                <div className={`flex items-center justify-center gap-1 ${
+                  isDark ? "min-h-[112px] rounded-[16px] bg-white px-6 py-5" : "flex-col justify-end"
+                }`}>
+                  <div className={`${isDark ? "h-[60px] w-[170px]" : "h-[94px] w-[132px]"} overflow-hidden`}>
                     <Image
                       src="/premier_bank-removebg-preview.png"
                       alt="Premier Bank"
                       width={132}
                       height={94}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain"
                       style={{ clipPath: "inset(18% 14% 18% 14%)" }}
                     />
                   </div>
-                  <p className="text-center text-[16px] font-semibold leading-none tracking-tight text-[#173968]">
+                  <p className={`text-center font-semibold leading-none tracking-tight ${
+                    isDark ? "hidden" : "text-[16px] text-[#173968]"
+                  }`}>
                     premier bank
                   </p>
                 </div>
 
-                <div className="flex items-end gap-3">
-                  <div className="h-[94px] w-[112px] overflow-hidden">
+                <div className={`flex items-center ${isDark ? "min-h-[112px] justify-center rounded-[16px] bg-white px-6 py-5" : "items-end gap-3"}`}>
+                  <div className={`${isDark ? "h-[58px] w-[220px]" : "h-[94px] w-[112px]"} overflow-hidden`}>
                     <Image
                       src="/amka_-removebg-preview.png"
                       alt="Amka icon"
                       width={112}
                       height={94}
-                      className="h-full w-full object-cover brightness-0 saturate-0"
+                      className={`h-full w-full ${isDark ? "object-contain" : "object-cover brightness-0 saturate-0"}`}
                       style={{ clipPath: "inset(15%)" }}
                     />
                   </div>
-                  <div className="mr-1 leading-none text-[#0a0a0a]">
+                  <div className={`mr-1 leading-none text-[#0a0a0a] ${isDark ? "hidden" : ""}`}>
                     <h3 className="text-[42px] font-semibold tracking-tight">amka</h3>
                     <p className="-mt-1 text-[40px] font-extralight tracking-wide">Stock</p>
                   </div>
                 </div>
 
-                <div className="flex items-end gap-3">
-                  <div className="h-[96px] w-[96px] overflow-hidden">
+                <div className={`flex items-center ${isDark ? "min-h-[112px] justify-center rounded-[16px] bg-white px-6 py-5" : "items-end gap-3"}`}>
+                  <div className={`${isDark ? "h-[62px] w-[220px]" : "h-[96px] w-[96px]"} overflow-hidden`}>
                     <Image
                       src="/fudeydiye-removebg-preview.png"
                       alt="Fudaydiye"
                       width={96}
                       height={96}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain"
                       style={{ clipPath: "inset(26%)" }}
                     />
                   </div>
-                  <div className="leading-none text-[#0d7069]">
+                  <div className={`leading-none text-[#0d7069] ${isDark ? "hidden" : ""}`}>
                     <h4 className="whitespace-nowrap text-[46px] font-semibold tracking-tight">
                       Fudaydiye
                     </h4>
@@ -347,7 +332,7 @@ export default function Home() {
                 alt="About Eng Yuyu"
                 width={526}
                 height={628}
-                className="mx-auto h-auto w-full max-w-[540px] object-contain mix-blend-multiply dark:mix-blend-normal xl:mx-0"
+                className="mx-auto h-auto w-full max-w-[540px] rounded-[28px] object-contain mix-blend-multiply dark:mix-blend-normal xl:mx-0"
               />
               <div className="mt-0 hidden w-full max-w-[540px] flex-1 rounded-[56px] bg-[#ccd5e4] xl:block" />
             </div>

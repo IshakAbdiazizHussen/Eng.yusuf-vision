@@ -21,7 +21,7 @@ export function PageFrame({
       />
 
       <div
-        className={`relative mx-auto w-full max-w-[1520px] px-4 pt-28 sm:px-6 sm:pt-24 ${
+        className={`relative mx-auto w-full max-w-[1520px] px-4 pt-32 sm:px-6 sm:pt-28 ${
           flushBottom ? "pb-0" : "pb-12"
         }`}
       >

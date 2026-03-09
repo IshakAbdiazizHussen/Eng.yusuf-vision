@@ -19,22 +19,23 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | null>(null)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") {
-      return "light"
-    }
+  const [theme, setTheme] = useState<Theme>("light")
 
-    const savedTheme = window.localStorage.getItem("eng-yuyu-theme")
-    if (savedTheme === "dark" || savedTheme === "light") {
-      return savedTheme
-    }
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      const savedTheme = window.localStorage.getItem("eng-yuyu-theme")
+      if (savedTheme === "dark" || savedTheme === "light") {
+        setTheme(savedTheme)
+        return
+      }
 
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark"
-    }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        setTheme("dark")
+      }
+    })
 
-    return "light"
-  })
+    return () => window.cancelAnimationFrame(frame)
+  }, [])
 
   useEffect(() => {
     const root = document.documentElement

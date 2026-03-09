@@ -7,9 +7,12 @@ import { ThemeToggle } from "./theme-toggle"
 import { useTheme } from "./theme-provider"
 
 const navItems = [
-  { href: "/about", label: "About" },
-  { href: "/watch", label: "Watch" },
-  { href: "/tech-blog", label: "Tech Blog" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About me" },
+  { href: "/tech-blog", label: "Tech News" },
+  { href: "/events", label: "Event" },
+  { href: "/impact", label: "Impact" },
+  { href: "/impact#contact", label: "My Contacts" },
 ]
 
 export function SiteNav() {
@@ -19,62 +22,56 @@ export function SiteNav() {
 
   return (
     <nav
-      className="fixed inset-x-0 top-0 z-50 flex items-center gap-3 px-4 py-3 sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-3rem)] sm:max-w-[1520px] sm:-translate-x-1/2 sm:gap-8 sm:px-6 sm:py-3"
+      className={`fixed inset-x-0 top-0 z-50 border-b px-4 py-4 backdrop-blur-sm transition-colors sm:px-6 ${
+        isDark
+          ? "border-[#2b3555] bg-[#171b29]/96"
+          : "border-black/6 bg-[#f3f3f3]/96"
+      }`}
     >
-      <Link href="/about" aria-label="Go to About page">
-        <Image
-          src="/Eng Yuyu Logo-21.png"
-          alt="Eng Yuyu Logo"
-          width={124}
-          height={89}
-          className="h-[62px] w-[112px] object-contain sm:h-[116px] sm:w-[176px]"
-          style={{
-            filter:
-              "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
-          }}
-        />
-      </Link>
+      <div className="mx-auto flex w-full max-w-[1320px] flex-wrap items-center justify-between gap-4 lg:grid lg:grid-cols-[180px_1fr_130px] lg:gap-8">
+        <Link href="/" aria-label="Go to homepage" className="justify-self-start">
+          <Image
+            src="/Eng Yuyu Logo-21.png"
+            alt="Eng Yuyu Logo"
+            width={124}
+            height={89}
+            className="h-[54px] w-[92px] object-contain sm:h-[62px] sm:w-[104px]"
+            style={{
+              filter:
+                "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
+            }}
+          />
+        </Link>
 
-      <ul
-        className={`ml-auto flex min-w-0 flex-1 items-center justify-start gap-2 overflow-x-auto rounded-[22px] px-3 py-3 sm:w-auto sm:max-w-none sm:flex-none sm:justify-center sm:rounded-xl sm:px-7 sm:py-2.5 ${
-          isDark ? "bg-[#d9e2f2] text-[#0f1724]" : "bg-[#d5deed] text-[#1d6cff]"
-        }`}
-      >
-        {navItems.map((item, index) => (
-          <li key={item.href} className="flex items-center gap-2">
-            <Link
-              href={item.href}
-              className={`px-2 text-[13px] font-semibold leading-none tracking-tight transition-opacity hover:opacity-80 sm:text-[14px] ${
-                pathname === item.href ? "opacity-100" : "opacity-80"
-              }`}
-            >
-              {item.label}
-            </Link>
-            {index < navItems.length - 1 ? (
-              <span
-                className={`hidden text-[14px] font-medium sm:inline ${
-                  isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"
-                }`}
-              >
-                |
-              </span>
-            ) : null}
-          </li>
-        ))}
-        <li className="flex items-center gap-2">
-          <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
-            Events
-          </span>
-          <span className={`hidden text-[14px] font-medium sm:inline ${isDark ? "text-[#0f1724]/60" : "text-[#1d6cff]/70"}`}>|</span>
-        </li>
-        <li className="flex items-center">
-          <span className="px-2 text-[13px] font-semibold leading-none tracking-tight opacity-80 sm:text-[14px]">
-            Impact
-          </span>
-        </li>
-      </ul>
+        <ul className="order-3 flex w-full min-w-0 items-center justify-start gap-6 overflow-x-auto pt-1 text-[#121212] lg:order-2 lg:w-auto lg:justify-center lg:gap-11 lg:overflow-visible dark:text-[#26e3ff]">
+          {navItems.map((item) => {
+            const isActive = item.href === "/"
+              ? pathname === "/"
+              : item.href.includes("#")
+                ? false
+                : pathname === item.href
 
-      <ThemeToggle />
+            return (
+              <li key={item.href} className="shrink-0">
+                <Link
+                  href={item.href}
+                  className={`inline-flex border-b-[3px] px-1 pb-3 text-[15px] font-semibold tracking-[-0.02em] transition-colors hover:text-[#1d6cff] lg:text-[17px] ${
+                    isActive
+                      ? "border-[#1d6cff] text-[#1d6cff] dark:text-[#26e3ff]"
+                      : "border-transparent dark:text-[#26e3ff]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+
+        <div className="order-2 ml-auto lg:order-3 lg:ml-0 lg:justify-self-end">
+          <ThemeToggle />
+        </div>
+      </div>
     </nav>
   )
 }

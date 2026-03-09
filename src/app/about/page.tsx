@@ -11,7 +11,7 @@ export default function AboutPage() {
             alt="About Eng Yuyu"
             width={526}
             height={628}
-            className="mx-auto h-auto w-full max-w-[540px] object-contain mix-blend-multiply dark:mix-blend-normal xl:mx-0"
+            className="mx-auto h-auto w-full max-w-[540px] rounded-[28px] object-contain mix-blend-multiply dark:mix-blend-normal xl:mx-0"
           />
           <div className="mt-0 hidden w-full max-w-[540px] flex-1 rounded-[56px] bg-[#ccd5e4] xl:block" />
         </div>
