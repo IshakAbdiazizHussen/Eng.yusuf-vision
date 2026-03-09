@@ -128,7 +128,7 @@
 
 @layer utilities {
   .partner-marquee {
-    animation: partner-marquee 18s linear infinite;
+    animation: partner-marquee 14s linear infinite;
     will-change: transform;
   }
 
@@ -178,6 +178,6 @@
   }
 
   to {
-    transform: translateX(calc(-50% - 1.25rem));
+    transform: translateX(calc(-50% - 1rem));
   }
 }

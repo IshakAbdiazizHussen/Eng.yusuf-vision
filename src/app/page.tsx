@@ -13,11 +13,9 @@ const stats = [
 ]
 
 const partnerItems = [
-  { id: "sanguuni", label: "Sanguuni" },
   { id: "taran", label: "Taran App" },
   { id: "keshflip", label: "Keshflip" },
   { id: "amka", label: "Amka Stock" },
-  { id: "premier", label: "Premier Bank" },
 ]
 
 export default function Home() {
@@ -60,8 +58,8 @@ export default function Home() {
 
           <div className="max-w-[760px] pb-4 lg:pb-16">
             <h1
-              className={`max-w-[720px] text-[42px] font-bold leading-[0.98] tracking-[-0.03em] sm:text-[58px] lg:text-[66px] ${
-                isDark ? "text-white" : "text-black"
+              className={`max-w-[720px] text-3xl font-semibold leading-[0.98] tracking-[-0.03em] lg:text-[66px] mt-12 ${
+                isDark ? "text-white" : " text-black"
               }`}
             >
               Eng Yuyu, The Tech Content Creator
@@ -105,32 +103,20 @@ export default function Home() {
                 Partner With:
               </h2>
               <div className="relative mt-7 overflow-hidden">
-                <div className="partner-marquee flex w-max items-center gap-5 sm:gap-5">
+                <div className="partner-marquee flex w-max items-center gap-8 sm:gap-10">
                   {marqueePartners.map((partner, index) => (
                     <div
                       key={`${partner.id}-${index}`}
-                      className="flex h-[108px] shrink-0 items-center justify-center"
+                      className="flex h-[94px] shrink-0 items-center justify-center"
                     >
-                      {partner.id === "sanguuni" ? (
-                        <div className="flex items-center gap-3">
-                          <Image
-                            src="/Sanguuni Electronics Logos.png"
-                            alt="Sanguuni"
-                            width={280}
-                            height={110}
-                            className="h-[84px] w-auto object-contain"
-                          />
-                        </div>
-                      ) : null}
-
                       {partner.id === "taran" ? (
-                        <div className="flex items-center gap-4">
-                          <div className="relative flex h-[74px] w-[74px] items-center justify-center rounded-full border-[5px] border-[#2db85b] text-[34px] font-bold text-[#185eac]">
+                        <div className="flex items-center gap-3">
+                          <div className="relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-[5px] border-[#2db85b] text-[31px] font-bold text-[#185eac]">
                             <span className="absolute -left-[3px] top-[5px] h-3 w-3 rounded-full bg-[#185eac]" />
                             <span className="absolute -right-[3px] bottom-[6px] h-3 w-3 rounded-full bg-[#185eac]" />
                             T
                           </div>
-                          <span className="text-[32px] font-semibold tracking-[-0.03em] text-[#1b4e8f]">
+                          <span className="text-[31px] font-semibold tracking-[-0.03em] text-[#1b4e8f]">
                             Taran <span className="text-[#2db85b]">App</span>
                           </span>
                         </div>
@@ -142,7 +128,7 @@ export default function Home() {
                           alt="Keshflip"
                           width={3282}
                           height={823}
-                          className="h-[54px] w-auto object-contain"
+                          className="h-[50px] w-auto object-contain"
                         />
                       ) : null}
 
@@ -153,7 +139,7 @@ export default function Home() {
                             alt="Amka"
                             width={500}
                             height={499}
-                            className={`h-[72px] w-[72px] object-contain ${
+                            className={`h-[92px] w-[92px] object-contain ${
                               isDark ? "invert brightness-0" : "brightness-0 saturate-0"
                             }`}
                           />
@@ -162,28 +148,13 @@ export default function Home() {
                               isDark ? "text-white" : "text-[#2f2929]"
                             }`}
                           >
-                            <div className="text-[36px] font-semibold tracking-[-0.04em]">
+                            <div className="text-3xl font-semibold tracking-[-0.04em]">
                               amka
                             </div>
-                            <div className="mt-1 text-[34px] font-light tracking-[-0.04em]">
+                            <div className="mt-1 text-3xl font-light tracking-[-0.04em]">
                               stock
                             </div>
                           </div>
-                        </div>
-                      ) : null}
-
-                      {partner.id === "premier" ? (
-                        <div className="flex flex-col items-center justify-center">
-                          <Image
-                            src="/premier_bank-removebg-preview.png"
-                            alt="Premier Bank"
-                            width={220}
-                            height={110}
-                            className="h-[62px] w-auto object-contain"
-                          />
-                          <span className="mt-1 text-[18px] font-semibold leading-none text-[#173968]">
-                            premier bank
-                          </span>
                         </div>
                       ) : null}
                     </div>
