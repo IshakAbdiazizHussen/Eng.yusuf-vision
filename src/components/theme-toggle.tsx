@@ -1,11 +1,18 @@
 "use client"
 
+import { useSyncExternalStore } from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "./theme-provider"
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
-  const isDark = theme === "dark"
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  )
+
+  const isDark = mounted && theme === "dark"
 
   return (
     <button

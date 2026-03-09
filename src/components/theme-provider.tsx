@@ -18,29 +18,41 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null)
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light")
+function getInitialTheme(): Theme {
+  if (typeof window === "undefined") {
+    return "light"
+  }
 
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      const savedTheme = window.localStorage.getItem("eng-yuyu-theme")
-      if (savedTheme === "dark" || savedTheme === "light") {
-        setTheme(savedTheme)
-        return
-      }
+  const savedTheme = window.localStorage.getItem("eng-yuyu-theme")
+  if (savedTheme === "dark" || savedTheme === "light") {
+    return savedTheme
+  }
 
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setTheme("dark")
-      }
-    })
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light"
+}
 
-    return () => window.cancelAnimationFrame(frame)
-  }, [])
+export function ThemeProvider({
+  children,
+  initialTheme = "light",
+}: {
+  children: ReactNode
+  initialTheme?: Theme
+}) {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") {
+      return initialTheme
+    }
+
+    return getInitialTheme()
+  })
 
   useEffect(() => {
     const root = document.documentElement
     root.classList.toggle("dark", theme === "dark")
     window.localStorage.setItem("eng-yuyu-theme", theme)
+    document.cookie = `eng-yuyu-theme=${theme}; path=/; max-age=31536000; samesite=lax`
   }, [theme])
 
   const value = useMemo(

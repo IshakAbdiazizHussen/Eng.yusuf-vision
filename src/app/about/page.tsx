@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-10 lg:grid-cols-[520px_1fr] lg:gap-14">
           <div className="flex justify-center lg:justify-end">
             <Image
-              src="/yuyu-removebg-preview.png"
+              src="/engY-removebg-preview.png"
               alt="About Eng Yuyu"
               width={900}
               height={1200}
@@ -27,10 +27,10 @@ export default function AboutPage() {
 
           <div className="max-w-[760px]">
             <div className="mb-8 flex flex-wrap gap-4">
-              <span className="inline-flex h-12 items-center rounded-full bg-white/60 px-6 text-[18px] font-semibold text-[#1d6cff] dark:bg-[#1d6cff] dark:text-white">
+              <span className="inline-flex h-12 items-center rounded-full bg-[#eef4ff] px-6 text-[18px] font-semibold text-[#1d6cff] dark:bg-[#1d6cff] dark:text-white">
                 Tech Influencer
               </span>
-              <span className="inline-flex h-12 items-center rounded-full bg-white/60 px-6 text-[18px] font-semibold text-[#1d6cff] dark:bg-[#1d6cff] dark:text-white">
+              <span className="inline-flex h-12 items-center rounded-full bg-[#eef4ff] px-6 text-[18px] font-semibold text-[#1d6cff] dark:bg-[#1d6cff] dark:text-white">
                 Digital Creator
               </span>
             </div>
@@ -172,13 +172,13 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="bg-[#f3f3f3] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+        <div className="bg-[#f3f3f3] px-6 py-16 dark:bg-[#1b1f30] sm:px-10 lg:px-16 lg:py-20">
           <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-y-10 lg:grid-cols-[1fr_430px] lg:gap-x-24">
             <div className="max-w-[620px] lg:justify-self-start lg:pl-2">
               <h2 className="text-[34px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff] sm:text-[40px]">
                 Beyond Content
               </h2>
-              <div className="mt-6 space-y-2 text-[20px] leading-[1.55] tracking-[-0.02em] text-black sm:text-[23px]">
+              <div className="mt-6 space-y-2 text-[20px] leading-[1.55] tracking-[-0.02em] text-black dark:text-[#f2f5fb] sm:text-[23px]">
                 <p>I regularly participate in:</p>
                 <p className="pt-3">Tech talks and workshops</p>
                 <p>Digital education programs</p>
@@ -193,10 +193,10 @@ export default function AboutPage() {
             <div className="flex justify-center lg:justify-center">
               <div className="relative h-[250px] w-[250px] sm:h-[280px] sm:w-[280px]">
                 <div className="absolute left-1/2 top-[6px] h-[170px] w-[170px] -translate-x-1/2 rounded-[18px] bg-[linear-gradient(180deg,#1871ee_0%,#0d67e6_100%)] shadow-[inset_0_8px_16px_rgba(255,255,255,0.18),0_5px_10px_rgba(24,113,238,0.18)] sm:h-[182px] sm:w-[182px]">
-                  <div className="absolute left-1/2 top-[32px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
-                  <div className="absolute left-1/2 top-[64px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
-                  <div className="absolute left-1/2 top-[96px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
-                  <div className="absolute left-1/2 top-[128px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
+                  <div className="absolute left-1/2 top-[32px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#f1f1f1] shadow-[0_4px_8px_rgba(0,0,0,0.3)] dark:bg-[#f1f1f1]" />
+                  <div className="absolute left-1/2 top-[64px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#f1f1f1] shadow-[0_4px_8px_rgba(0,0,0,0.3)] dark:bg-[#f1f1f1]" />
+                  <div className="absolute left-1/2 top-[96px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#f1f1f1] shadow-[0_4px_8px_rgba(0,0,0,0.3)] dark:bg-[#f1f1f1]" />
+                  <div className="absolute left-1/2 top-[128px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#f1f1f1] shadow-[0_4px_8px_rgba(0,0,0,0.3)] dark:bg-[#f1f1f1]" />
                 </div>
                 <div className="absolute left-1/2 top-[150px] h-[74px] w-[40px] -translate-x-[8px] skew-x-[-28deg] rounded-b-[14px] bg-[linear-gradient(180deg,#1871ee_0%,#0d67e6_100%)] shadow-[0_5px_10px_rgba(24,113,238,0.2)] sm:top-[162px] sm:h-[82px] sm:w-[42px]" />
               </div>
@@ -239,14 +239,14 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="bg-[#f3f3f3] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
-          <div className="mx-auto w-full max-w-[980px] rounded-[22px] bg-[#dfe4eb] px-10 py-12 sm:px-14 sm:py-14">
+        <div className="bg-[#f3f3f3] px-6 py-16 dark:bg-[#171b2b] sm:px-10 lg:px-16 lg:py-20">
+          <div className="mx-auto w-full max-w-[980px] rounded-[22px] bg-[#dfe4eb] px-10 py-12 dark:bg-[#1b1f30] sm:px-14 sm:py-14">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[470px]">
-                <h2 className="text-[28px] font-bold leading-none tracking-[-0.03em] text-black sm:text-[32px]">
+                <h2 className="text-[28px] font-bold leading-none tracking-[-0.03em] text-black dark:text-white sm:text-[32px]">
                   Join the Community
                 </h2>
-                <p className="mt-5 text-[20px] leading-[1.32] tracking-[-0.02em] text-[#151515] sm:text-[22px]">
+                <p className="mt-5 text-[20px] leading-[1.32] tracking-[-0.02em] text-[#151515] dark:text-[#e6ecf8] sm:text-[22px]">
                   Millions are already learning tech the simple way. Follow,
                   watch, and grow with us across platforms.
                 </p>
