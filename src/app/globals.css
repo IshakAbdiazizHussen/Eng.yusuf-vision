@@ -127,6 +127,11 @@
 }
 
 @layer utilities {
+  .partner-marquee {
+    animation: partner-marquee 18s linear infinite;
+    will-change: transform;
+  }
+
   .dark .text-black {
     color: #ffffff !important;
   }
@@ -164,5 +169,15 @@
   .dark .placeholder\:text-\[\#b1b1b1\]::placeholder,
   .dark .placeholder\:text-\[\#B9B9B9\]::placeholder {
     color: #9fb0cf !important;
+  }
+}
+
+@keyframes partner-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 1.25rem));
   }
 }
