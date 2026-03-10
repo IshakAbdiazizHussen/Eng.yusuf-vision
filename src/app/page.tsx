@@ -1,8 +1,15 @@
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa"
 import { PageFrame } from "@/components/page-frame"
 
 const partners = ["taran", "keshflip", "amka"]
+const socialLinks = {
+  youtube: "https://www.youtube.com/@engyuyu",
+  tiktok: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
+  instagram: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
+  facebook: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
+}
 
 function PartnerLogo({ partner }: { partner: string }) {
   if (partner === "taran") {
@@ -115,8 +122,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      
       <section className="mx-auto mb-10 max-w-[1310px]">
-        <div className="rounded-[34px] bg-[#dce3ee] px-8 py-14 dark:bg-[#25314b] sm:px-12 lg:px-18">
+        <div className="rounded-[34px] bg-gray-300 px-8 py-14 dark:bg-[#25314b] sm:px-12 lg:px-18">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
             <div className="flex h-[190px] items-center justify-center rounded-[14px] border-[4px] border-[#1d6cff] dark:border-[#4c8fff]">
               <div className="text-center">
@@ -164,6 +172,101 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className="mx-auto mt-8 max-w-[1320px] px-4 pb-8 sm:px-6">
+        <div className="mx-auto max-w-[820px] text-center">
+          <h2 className="text-[36px] font-bold leading-[1.15] tracking-[-0.04em] text-black dark:text-white sm:text-[48px]">
+            Empowering 1M+ Somali Tech
+            <br />
+            Learners Worldwide
+          </h2>
+
+          <div className="mt-10 rounded-[16px] bg-gray-300 px-8 py-10 dark:bg-[#25314b] sm:px-12">
+            <div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
+              <div className="flex items-center gap-5">
+                <a
+                  href={socialLinks.youtube}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="YouTube"
+                  className="flex h-[58px] w-[78px] items-center justify-center rounded-[18px] bg-[#ff1307] text-white"
+                >
+                  <FaYoutube className="h-8 w-8" />
+                </a>
+                <div className="text-left">
+                  <p className="text-[20px] leading-none text-[#121212] dark:text-white">
+                    Subscribers
+                  </p>
+                  <p className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white">
+                    148k+
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-5">
+                <a
+                  href={socialLinks.tiktok}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="TikTok"
+                  className="text-[#161616] dark:text-white"
+                >
+                  <FaTiktok className="h-14 w-14" />
+                </a>
+                <div className="text-left">
+                  <p className="text-[20px] leading-none text-[#121212] dark:text-white">
+                    Followers
+                  </p>
+                  <p className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white">
+                    506.3k+
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-5">
+                <a
+                  href={socialLinks.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook"
+                  className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-[#1d6cff] text-white"
+                >
+                  <FaFacebookF className="h-10 w-10" />
+                </a>
+                <div className="text-left">
+                  <p className="text-[20px] leading-none text-[#121212] dark:text-white">
+                    Followers
+                  </p>
+                  <p className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white">
+                    276k+
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-5">
+                <a
+                  href={socialLinks.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="flex h-[64px] w-[64px] items-center justify-center rounded-[18px] bg-[radial-gradient(circle_at_30%_110%,#fdf497_0%,#fdf497_8%,#fd5949_30%,#d6249f_60%,#285AEB_100%)] text-white"
+                >
+                  <FaInstagram className="h-9 w-9" />
+                </a>
+                <div className="text-left">
+                  <p className="text-[20px] leading-none text-[#121212] dark:text-white">
+                    Followers
+                  </p>
+                  <p className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white">
+                    276k+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </PageFrame>
   )
 }

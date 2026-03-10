@@ -201,40 +201,39 @@ export default function ContactPage() {
           </section>
         </div>
 
-        <div className="relative bg-[#156ff3] px-6 py-16 text-white dark:bg-[#0f1730] sm:px-10 lg:px-16 lg:py-18">
-          <div className="absolute inset-x-0 bottom-0 hidden h-full dark:block dark:bg-[radial-gradient(circle_at_top,rgba(38,179,255,0.16),transparent_34%),linear-gradient(180deg,#121935_0%,#0d1328_100%)]" />
+        <div className="bg-[#1f5db8] px-6 py-14 text-white sm:px-10 lg:px-16 lg:py-16">
           <div className="mx-auto flex w-full max-w-[980px] flex-col items-center text-center">
             <Image
               src="/Eng Yuyu Logo-21.png"
               alt="Eng Yuyu Logo"
               width={300}
               height={120}
-              className="h-[70px] w-auto object-contain sm:h-[82px]"
+              className="h-[66px] w-auto object-contain sm:h-[76px]"
               style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
             />
 
-            <p className="mt-6 max-w-[760px] text-[18px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[20px]">
+            <p className="mt-5 max-w-[760px] text-[17px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[18px]">
               My Goal is Simple: to Educate, Inspire and Connect people through
               technology: One video, one idea and one innovation at a time.....
             </p>
 
-            <div className="mt-10 flex items-center gap-4 sm:gap-5">
-              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="dark:rounded-[10px] dark:border dark:border-[#2556b9] dark:bg-[#182246] dark:p-3">
-                <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            <div className="mt-8 flex items-center gap-4 sm:gap-5">
+              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+                <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
               </a>
-              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="dark:rounded-[10px] dark:border dark:border-[#2556b9] dark:bg-[#182246] dark:p-3">
-                <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+                <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
               </a>
-              <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="dark:rounded-[10px] dark:border dark:border-[#2556b9] dark:bg-[#182246] dark:p-3">
-                <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+                <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
               </a>
-              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="dark:rounded-[10px] dark:border dark:border-[#2556b9] dark:bg-[#182246] dark:p-3">
-                <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+                <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
               </a>
             </div>
           </div>
 
-          <div className="mx-auto mt-16 w-screen border-t border-white/55 pt-7 text-center text-[16px] tracking-[-0.02em] text-white/95 dark:border-[#26335f] dark:text-[#dbe7ff]">
+          <div className="mx-auto mt-12 w-screen border-t border-white/35 pt-6 text-center text-[16px] tracking-[-0.02em] text-white/95">
             © 2025 Eng Yuyu Media - All Rights Reserved.
           </div>
         </div>

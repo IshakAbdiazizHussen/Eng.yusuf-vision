@@ -27,10 +27,10 @@ export default function AboutPage() {
 
           <div className="max-w-[760px]">
             <div className="mb-8 flex flex-wrap gap-4">
-              <span className="inline-flex h-12 items-center rounded-full bg-[#eef4ff] px-6 text-[18px] font-semibold text-[#1d6cff] dark:bg-[#1d6cff] dark:text-white">
+              <span className="inline-flex h-12 items-center rounded-full bg-[#eef4ff] px-6 text-[18px] font-semibold text-[#1d6cff] transition-colors hover:bg-white hover:text-[#0f54c6] dark:bg-[#1d6cff] dark:text-white dark:hover:bg-[#3b87f6] dark:hover:text-white">
                 Tech Influencer
               </span>
-              <span className="inline-flex h-12 items-center rounded-full bg-[#eef4ff] px-6 text-[18px] font-semibold text-[#1d6cff] dark:bg-[#1d6cff] dark:text-white">
+              <span className="inline-flex h-12 items-center rounded-full bg-[#eef4ff] px-6 text-[18px] font-semibold text-[#1d6cff] transition-colors hover:bg-white hover:text-[#0f54c6] dark:bg-[#1d6cff] dark:text-white dark:hover:bg-[#3b87f6] dark:hover:text-white">
                 Digital Creator
               </span>
             </div>
