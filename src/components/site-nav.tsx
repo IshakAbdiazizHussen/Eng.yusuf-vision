@@ -30,17 +30,19 @@ export function SiteNav() {
     >
       <div className="mx-auto flex w-full max-w-[1320px] flex-wrap items-center justify-between gap-4 lg:grid lg:grid-cols-[220px_1fr_130px] lg:gap-8">
         <Link href="/" aria-label="Go to homepage" className="justify-self-start">
-          <Image
-            src="/Eng Yuyu Logo-21.png"
-            alt="Eng Yuyu Logo"
-            width={304}
-            height={89}
-            className="h-[66px] w-[200px] object-contain sm:h-[76px] sm:w-[140px]"
-            style={{
-              filter:
-                "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
-            }}
-          />
+          <div className="flex h-[70px] w-[70px] items-center justify-center overflow-hidden sm:h-[80px] sm:w-[80px]">
+            <Image
+              src="/Eng Yuyu Logo-21.png"
+              alt="Eng Yuyu Logo"
+              width={344}
+              height={89}
+              className="h-auto w-full scale-[2.35] object-contain sm:scale-[2.5]"
+              style={{
+                filter:
+                  "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",
+              }}
+            />
+          </div>
         </Link>
 
         <ul className="order-3 flex w-full min-w-0 items-center justify-start gap-6 overflow-x-auto pt-1 text-[#121212] lg:order-2 lg:w-auto lg:justify-center lg:gap-11 lg:overflow-visible dark:text-[#26e3ff]">
@@ -55,8 +57,7 @@ export function SiteNav() {
               <li key={item.href} className="shrink-0">
                 <Link
                   href={item.href}
-                  className={`inline-flex border-b-[3px] px-1 pb-3 text-6xl font-semibold tracking-[-0.02em] 
-                    transition-colors hover:text-blue-600 lg:text-[17px] ${
+                  className={`inline-flex border-b-[3px] px-1 pb-3 text-[15px] font-semibold tracking-[-0.02em] transition-colors hover:text-blue-600 lg:text-[17px] ${
                     isActive
                       ? "border-[#1d6cff] text-[#1d6cff] dark:border-[#27b3ff] dark:text-white"
                       : "border-transparent dark:text-[#8fdfff] dark:hover:text-white"

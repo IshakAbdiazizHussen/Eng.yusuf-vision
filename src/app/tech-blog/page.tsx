@@ -2,6 +2,13 @@ import { ArrowRight, Link2 } from "lucide-react"
 import Image from "next/image"
 import { PageFrame } from "@/components/page-frame"
 
+const socialLinks = {
+  youtube: "https://www.youtube.com/@engyuyu",
+  tiktok: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
+  instagram: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
+  facebook: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
+}
+
 export default function TechBlogPage() {
   const newsletterSection = (
     <section className="mt-10 rounded-[44px] bg-[#dbe2ec] px-8 py-10 md:px-14 md:py-12">
@@ -106,7 +113,7 @@ export default function TechBlogPage() {
         </div>
       </section>
 
-      <section className="mt-8 rounded-[44px] bg-[#dbe2ec] px-6 py-8 sm:px-8 md:px-12 md:py-12">
+      <section className="mt-8 rounded-[44px] bg-[#dbe2ec] dark:bg-black px-6 py-8 sm:px-8 md:px-12 md:py-12">
         <div className="grid gap-10 xl:grid-cols-[1.75fr_0.85fr]">
           <div className="max-w-[760px]">
             <p className="mb-6 text-center text-xl font-light text-black sm:mb-8 sm:text-[30px]">
@@ -192,138 +199,43 @@ export default function TechBlogPage() {
 
       {newsletterSection}
 
-      <section className="relative left-1/2 right-1/2 mt-10 ml-[-50vw] mr-[-50vw] w-screen bg-[#156bf7] px-8 py-14 md:px-14 md:py-20">
-        <div className="mx-auto grid w-full max-w-[1520px] gap-12 xl:grid-cols-[1.2fr_0.95fr] xl:items-center">
-          <div className="max-w-[760px]">
-            <Image
-              src="/Eng Yuyu Logo-21.png"
-              alt="Eng Yuyu Logo"
-              width={124}
-              height={89}
-              className="h-[76px] w-[104px] object-contain md:h-[96px] md:w-[132px]"
-            />
+      <div className="mt-12 relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen bg-[#156ff3] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-18">
+        <div className="mx-auto flex w-full max-w-[980px] flex-col items-center text-center">
+          <Image
+            src="/Eng Yuyu Logo-21.png"
+            alt="Eng Yuyu Logo"
+            width={300}
+            height={120}
+            className="h-[70px] w-auto object-contain sm:h-[82px]"
+            style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
+          />
 
-            <h2 className="mt-10 text-3xl font-bold leading-[1.05] text-white ">
-              My Goal is Simple:
-            </h2>
+          <p className="mt-6 max-w-[760px] text-[18px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[20px]">
+            My Goal is Simple: to Educate, Inspire and Connect people through
+            technology: One video, one idea and one innovation at a time.....
+          </p>
 
-            <p className="mt-6 max-w-[720px] text-2xl font-light leading-[1.2] text-white ">
-              Lorem ipsum dolor sit amet, consectetuer
-              <br />
-              adipiscing elit, sed diam nonummy nibh
-              <br />
-              euismod tincidunt ut laoreet dolore
-              <br />
-              magna aliquam
-            </p>
-
-            <div className="mt-10 flex flex-wrap items-center gap-1 md:mt-12 md:gap-2">
-              <span className="text-[28px] font-bold leading-none text-white md:text-[44px]">
-                Find me here
-              </span>
-
-              <a
-                href="https://www.youtube.com/@engyuyu"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[54px] md:w-[54px]"
-              >
-                <Image
-                  src="/youtubeRemoving.png"
-                  alt="YouTube"
-                  width={32}
-                  height={32}
-                  className="h-[32px] w-[32px] object-contain md:h-[40px] md:w-[40px]"
-                />
-              </a>
-
-              <a
-                href="https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[54px] md:w-[54px]"
-              >
-                <Image
-                  src="/Instgram.png"
-                  alt="Instagram"
-                  width={32}
-                  height={32}
-                  className="h-[32px] w-[32px] object-contain md:h-[40px] md:w-[40px]"
-                />
-              </a>
-
-              <a
-                href="https://www.tiktok.com/@eng_yuyu"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[54px] md:w-[54px]"
-              >
-                <Image
-                  src="/Tiktok.png"
-                  alt="TikTok"
-                  width={32}
-                  height={32}
-                  className="h-[32px] w-[32px] object-contain md:h-[40px] md:w-[40px]"
-                />
-              </a>
-
-              <a
-                href="https://www.facebook.com/share/189a6Qbxfk/?mibextid=wwXIfr"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-[42px] w-[42px] items-center justify-center transition-opacity hover:opacity-90 md:h-[54px] md:w-[54px]"
-              >
-                <Image
-                  src="/Facebook.png"
-                  alt="Facebook"
-                  width={32}
-                  height={32}
-                  className="h-[32px] w-[32px] object-contain md:h-[40px] md:w-[40px]"
-                  style={{ filter: "brightness(0) invert(1)" }}
-                />
-              </a>
-            </div>
-          </div>
-
-          <div className="mx-auto w-full max-w-[500px] rounded-[36px] bg-[#dbe2ec] px-8 py-9 md:px-10 md:py-10">
-            <form className="flex flex-col">
-              <label className="text-[22px] font-bold text-black md:text-[28px]">
-                Name
-              </label>
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="mt-4 h-[62px] rounded-[16px] bg-[#f5f5f5] px-6 text-[20px] text-black outline-none placeholder:text-[#b1b1b1] md:h-[72px] md:text-[22px]"
-              />
-
-              <label className="mt-7 text-[22px] font-bold text-black md:text-[28px]">
-                Email
-              </label>
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="mt-4 h-[62px] rounded-[16px] bg-[#f5f5f5] px-6 text-[20px] text-black outline-none placeholder:text-[#b1b1b1] md:h-[72px] md:text-[22px]"
-              />
-
-              <label className="mt-7 text-[22px] font-bold text-black md:text-[28px]">
-                Message
-              </label>
-              <textarea
-                placeholder="Describe what can i help you"
-                rows={4}
-                className="mt-4 min-h-[124px] rounded-[16px] bg-[#f5f5f5] px-6 py-5 text-[20px] text-black outline-none placeholder:text-[#b1b1b1] md:min-h-[146px] md:text-[22px]"
-              />
-
-              <button
-                type="submit"
-                className="mt-7 inline-flex h-[58px] items-center justify-center rounded-[16px] bg-[#156bf7] text-[22px] font-bold leading-none text-white transition-opacity hover:opacity-90 md:h-[72px] md:text-[28px]"
-              >
-                Send Message
-              </button>
-            </form>
+          <div className="mt-10 flex items-center gap-4 sm:gap-5">
+            <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+              <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            </a>
+            <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+              <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            </a>
+            <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+              <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            </a>
+            <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+              <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            </a>
           </div>
         </div>
-      </section>
+
+        <div className="mx-auto mt-16 w-full border-t border-white/55 pt-7 text-center text-[16px] tracking-[-0.02em] text-white/95">
+          © 2025 Eng Yuyu Media - All Rights Reserved.
+        </div>
+      </div>
+            
     </PageFrame>
   )
 }

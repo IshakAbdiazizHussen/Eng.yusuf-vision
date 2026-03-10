@@ -1,6 +1,12 @@
 import Image from "next/image"
-import { CircleHelp, FileText, Lightbulb, MessageCircleMore, Share2, Target } from "lucide-react"
 import { SiteNav } from "@/components/site-nav"
+
+const socialLinks = {
+  youtube: "https://www.youtube.com/@engyuyu",
+  tiktok: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
+  instagram: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
+  facebook: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
+}
 
 const milestones = [
   {
@@ -8,9 +14,11 @@ const milestones = [
     title: "100K Facebook\nFollowers",
     description:
       "This was the moment I realized people truly connected with what I was creating. Hitting 100,000 Facebook followers pushed me to believe in my journey and keep going.",
-    badge: "100K",
-    badgeLabel: "followers",
-    variant: "blue",
+    badgeTop: "Thank you",
+    badgeMain: "100K",
+    badgeBottom: "FOLLOWERS",
+    circleClass:
+      "bg-[radial-gradient(circle_at_35%_25%,#3ea0ff_0%,#0f66ef_50%,#0a43bb_100%)] text-[#ffca1c]",
     position: "top",
   },
   {
@@ -18,19 +26,23 @@ const milestones = [
     title: "100K Youtube\nSubscribers",
     description:
       "Reaching 100,000 subscribers on YouTube felt like a dream becoming real. It showed me that consistency pays off and that my videos were starting to make an impact.",
-    badge: "100K",
-    badgeLabel: "subscribers",
-    variant: "red",
+    badgeTop: "",
+    badgeMain: "100K",
+    badgeBottom: "THANK YOU SUBSCRIBERS",
+    circleClass:
+      "bg-[radial-gradient(circle_at_35%_25%,#ff6b6b_0%,#cc101b_56%,#7c0000_100%)] text-[#ff1f2d]",
     position: "bottom",
   },
   {
     date: "Jan 2025",
     title: "4 Million\nYoutube Views",
     description:
-      "Crossing 4 million views reminded me that every upload counted. People were not just watching, they were returning, sharing, and growing with the channel.",
-    badge: "4M",
-    badgeLabel: "views",
-    variant: "pink",
+      "Crossing 4 million views reminded me that every upload counted. People were not just watching they were returning, sharing, and growing with the channel.",
+    badgeTop: "Thank You",
+    badgeMain: "4M",
+    badgeBottom: "Views",
+    circleClass:
+      "bg-[radial-gradient(circle_at_35%_25%,#ff5c72_0%,#ef001f_54%,#99000e_100%)] text-[#ff9a00]",
     position: "top",
   },
   {
@@ -38,9 +50,11 @@ const milestones = [
     title: "300 Million\nTikTok Views",
     description:
       "Hitting 300 million views on TikTok was unreal. It proved that creativity and authenticity could reach millions, even in seconds.",
-    badge: "300M",
-    badgeLabel: "TikTok Views",
-    variant: "dark",
+    badgeTop: "THANK YOU!",
+    badgeMain: "300M",
+    badgeBottom: "TikTok Views",
+    circleClass:
+      "bg-[radial-gradient(circle_at_35%_25%,#2f2f2f_0%,#141414_62%,#000000_100%)] text-[#e5e5e5]",
     position: "bottom",
   },
   {
@@ -48,306 +62,152 @@ const milestones = [
     title: "500K TikTok\nFollowers",
     description:
       "Reaching half a million TikTok followers was a powerful milestone. It showed me how far the journey had come and motivated me to keep creating bigger and better content.",
-    badge: "500K",
-    badgeLabel: "Followers",
-    variant: "silver",
+    badgeTop: "Thank You for",
+    badgeMain: "500K",
+    badgeBottom: "Followers",
+    circleClass:
+      "bg-[radial-gradient(circle_at_35%_25%,#ffffff_0%,#f1f1f1_58%,#d9d9d9_100%)] text-[#3b5257]",
     position: "top",
   },
 ]
 
-function badgeClasses(variant: string) {
-  switch (variant) {
-    case "blue":
-      return "bg-[radial-gradient(circle_at_35%_30%,#4d94ff_0%,#0f61eb_52%,#0842b8_100%)] text-[#ffd23d]"
-    case "red":
-      return "bg-[radial-gradient(circle_at_35%_30%,#ff7b90_0%,#d91220_50%,#7e0000_100%)] text-[#ff2b2b]"
-    case "pink":
-      return "bg-[radial-gradient(circle_at_35%_30%,#ff7994_0%,#fa0020_50%,#99000e_100%)] text-[#ff9a00]"
-    case "dark":
-      return "bg-[radial-gradient(circle_at_35%_30%,#3b3b3b_0%,#131313_62%,#000000_100%)] text-[#e9e9e9]"
-    case "silver":
-      return "bg-[radial-gradient(circle_at_35%_30%,#ffffff_0%,#f0f0f0_60%,#dadada_100%)] text-[#3a5556]"
-    default:
-      return "bg-[#1d6cff] text-white"
-  }
-}
-
-function MilestoneCard({
+function TimelineCard({
   date,
   title,
   description,
-  badge,
-  badgeLabel,
-  variant,
+  badgeTop,
+  badgeMain,
+  badgeBottom,
+  circleClass,
   position,
 }: (typeof milestones)[number]) {
-  const topLayout = position === "top"
-  const sideDotClass = topLayout ? "top-[285px]" : "bottom-[285px]"
-  const shellClass = topLayout
-    ? "rounded-t-[210px] rounded-b-[110px] border-b-0 pb-10 pt-8"
-    : "rounded-t-[110px] rounded-b-[210px] border-t-0 pb-8 pt-10"
+  const isTop = position === "top"
 
   return (
-    <article className="relative flex flex-col items-center">
-      {topLayout ? (
-        <>
-          <h2 className="mb-5 text-center text-[32px] font-bold leading-none tracking-[-0.03em] text-[#156bf7] dark:text-[#3f8cff] xl:text-[42px]">
-            {date}
-          </h2>
+    <article className="flex flex-col items-center">
+      {isTop ? (
+        <h2 className="mb-5 text-center text-[34px] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
+          {date}
+        </h2>
+      ) : null}
 
-          <div className="relative w-full pt-9">
-            <div className="absolute left-1/2 top-0 h-11 w-11 -translate-x-1/2 rounded-full bg-[#156bf7] dark:bg-[#2c7cff]" />
-            <div className={`absolute left-[2px] h-11 w-11 rounded-full bg-[#156bf7] dark:bg-[#2c7cff] ${sideDotClass}`} />
-            <div className={`absolute right-[2px] h-11 w-11 rounded-full bg-[#156bf7] dark:bg-[#2c7cff] ${sideDotClass}`} />
+      <div className={`relative w-full max-w-[356px] ${isTop ? "pt-8" : "pb-8"}`}>
+        {isTop ? (
+          <>
+            <div className="absolute left-1/2 top-0 h-[46px] w-[46px] -translate-x-1/2 rounded-full bg-[#156ff3]" />
+            <div className="absolute left-0 top-[262px] h-[46px] w-[46px] rounded-full bg-[#156ff3]" />
+            <div className="absolute right-0 top-[262px] h-[46px] w-[46px] rounded-full bg-[#156ff3]" />
+          </>
+        ) : (
+          <>
+            <div className="absolute left-0 bottom-[262px] h-[46px] w-[46px] rounded-full bg-[#156ff3]" />
+            <div className="absolute right-0 bottom-[262px] h-[46px] w-[46px] rounded-full bg-[#156ff3]" />
+            <div className="absolute bottom-0 left-1/2 h-[46px] w-[46px] -translate-x-1/2 rounded-full bg-[#156ff3]" />
+          </>
+        )}
 
-            <div className={`mx-auto flex min-h-[930px] w-full max-w-[372px] flex-col items-center border-[18px] border-[#156bf7] bg-[#dfe5ef] px-8 dark:border-[#2c7cff] dark:bg-[#1d2236] ${shellClass}`}>
-              <div className={`mx-auto flex h-[235px] w-[235px] shrink-0 self-center items-center justify-center rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] ${badgeClasses(variant)}`}>
+        <div
+          className={`min-h-[820px] rounded-[180px] border-[18px] border-[#156ff3] bg-[#dfe4eb] px-8 dark:border-[#4c8fff] dark:bg-[#25314b] ${
+            isTop
+              ? "rounded-b-[92px] border-b-0 pt-8 pb-10"
+              : "rounded-t-[92px] border-t-0 pt-10 pb-8"
+          }`}
+        >
+          {isTop ? (
+            <>
+              <div className={`mx-auto flex h-[260px] w-[260px] items-center justify-center rounded-full ${circleClass}`}>
                 <div className="text-center">
-                  <div className="text-[68px] font-extrabold leading-none tracking-[-0.05em]">
-                    {badge}
-                  </div>
-                  <div className="mt-2 text-[18px] font-medium tracking-[0.12em] text-white/90">
-                    {badgeLabel}
-                  </div>
+                  <p className="text-[14px] italic text-white/95">{badgeTop || " "}</p>
+                  <p className="mt-3 text-[72px] font-extrabold leading-none tracking-[-0.06em]">
+                    {badgeMain}
+                  </p>
+                  <p className="mt-2 text-[16px] font-semibold tracking-[0.18em] text-white/90">
+                    {badgeBottom}
+                  </p>
                 </div>
               </div>
 
-              <h3 className="mt-10 whitespace-pre-line text-center text-[31px] font-bold leading-[1.02] tracking-[-0.03em] text-[#156bf7] dark:text-[#3f8cff]">
+              <h3 className="mt-10 whitespace-pre-line text-center text-[32px] font-bold leading-[1.02] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
                 {title}
               </h3>
-
-              <p className="mx-auto mt-10 max-w-[258px] text-center text-[20px] leading-[1.32] tracking-[-0.02em] text-[#111111] dark:text-[#e5ebf8]">
+              <p className="mx-auto mt-10 max-w-[244px] text-center text-[19px] leading-[1.34] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8]">
                 {description}
               </p>
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="relative w-full pb-9">
-            <div className="absolute bottom-0 left-1/2 h-11 w-11 -translate-x-1/2 rounded-full bg-[#156bf7] dark:bg-[#2c7cff]" />
-            <div className={`absolute left-[2px] h-11 w-11 rounded-full bg-[#156bf7] dark:bg-[#2c7cff] ${sideDotClass}`} />
-            <div className={`absolute right-[2px] h-11 w-11 rounded-full bg-[#156bf7] dark:bg-[#2c7cff] ${sideDotClass}`} />
-
-            <div className={`mx-auto flex min-h-[930px] w-full max-w-[372px] flex-col items-center border-[18px] border-[#156bf7] bg-[#dfe5ef] px-8 dark:border-[#2c7cff] dark:bg-[#1d2236] ${shellClass}`}>
-              <h3 className="whitespace-pre-line text-center text-[31px] font-bold leading-[1.02] tracking-[-0.03em] text-[#156bf7] dark:text-[#3f8cff]">
+            </>
+          ) : (
+            <>
+              <h3 className="whitespace-pre-line text-center text-[32px] font-bold leading-[1.02] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
                 {title}
               </h3>
-
-              <p className="mx-auto mt-10 max-w-[258px] text-center text-[20px] leading-[1.32] tracking-[-0.02em] text-[#111111] dark:text-[#e5ebf8]">
+              <p className="mx-auto mt-10 max-w-[244px] text-center text-[19px] leading-[1.34] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8]">
                 {description}
               </p>
 
-              <div className={`mx-auto mt-10 flex h-[235px] w-[235px] shrink-0 self-center items-center justify-center rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] ${badgeClasses(variant)}`}>
+              <div className={`mx-auto mt-10 flex h-[260px] w-[260px] items-center justify-center rounded-full ${circleClass}`}>
                 <div className="text-center">
-                  <div className="text-[68px] font-extrabold leading-none tracking-[-0.05em]">
-                    {badge}
-                  </div>
-                  <div className="mt-2 text-[18px] font-medium tracking-[0.12em] text-white/90">
-                    {badgeLabel}
-                  </div>
+                  <p className="text-[14px] italic text-white/95">{badgeTop || " "}</p>
+                  <p className="mt-3 text-[72px] font-extrabold leading-none tracking-[-0.06em]">
+                    {badgeMain}
+                  </p>
+                  <p className="mt-2 text-[16px] font-semibold tracking-[0.12em] text-white/90">
+                    {badgeBottom}
+                  </p>
                 </div>
               </div>
-            </div>
-          </div>
+            </>
+          )}
+        </div>
+      </div>
 
-          <h2 className="mt-4 text-center text-[32px] font-bold leading-none tracking-[-0.03em] text-[#156bf7] dark:text-[#3f8cff] xl:text-[42px]">
-            {date}
-          </h2>
-        </>
-      )}
+      {!isTop ? (
+        <h2 className="mt-5 text-center text-[34px] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
+          {date}
+        </h2>
+      ) : null}
     </article>
   )
 }
 
 export default function ImpactPage() {
   return (
-    <main className="min-h-screen bg-[#f5f5f5] text-black dark:bg-[#171b2b] dark:text-white">
+    <main className="min-h-screen bg-[#f5f5f5] text-white dark:bg-[#171b2b] dark:text-white">
       <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-12 pt-32 sm:px-6 sm:pt-28">
         <SiteNav />
 
-        <section className="px-2 pb-10 pt-8 sm:px-4">
-          <h1 className="text-center text-5xl font-bold leading-[0.96] tracking-[-0.05em] text-[#156bf7] dark:text-[#2c7cff] ">
+        <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen px-2 py-8 sm:px-4">
+          <h1 className="text-center text-[58px] font-bold leading-[0.96] tracking-[-0.05em] text-[#156ff3] sm:text-[72px] lg:text-[86px]">
             My Milestones From 2022
           </h1>
 
-          <div className="mx-auto mt-14 grid max-w-[1860px] grid-cols-1 gap-8 lg:grid-cols-5 lg:items-start lg:gap-5 xl:gap-7">
+          <div className="mx-auto mt-16 flex w-full max-w-[1960px] items-start justify-center gap-5 px-8 2xl:px-10">
             {milestones.map((milestone) => (
-              <MilestoneCard key={`${milestone.date}-${milestone.title}`} {...milestone} />
+              <TimelineCard
+                key={`${milestone.date}-${milestone.title}`}
+                {...milestone}
+              />
             ))}
           </div>
         </section>
 
-        <section className="mx-auto mt-10 max-w-[1360px] pb-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.6fr]">
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
-              <div className="flex justify-center">
-                <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
-                  <Target className="h-14 w-14 text-white" strokeWidth={2.5} />
-                </div>
-              </div>
-              <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
-                My Mission
-              </h2>
-              <p className="mt-7 text-[18px] leading-[1.3] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
-                My mission is straightforward:
-                <br />
-                to help people use technology with confidence, protect their
-                digital lives, and benefit from innovation instead of being
-                overwhelmed by it.
-                <br />
-                Technology should serve people - not confuse them.
-              </p>
-            </article>
-
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
-              <div className="flex justify-center">
-                <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
-                  <CircleHelp className="h-14 w-14 text-white" strokeWidth={2.5} />
-                </div>
-              </div>
-              <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
-                What I Do
-              </h2>
-              <div className="mt-7 text-[18px] leading-[1.38] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
-                <p>Through short videos, tutorials, talks, and events, I focus on:</p>
-                <p>Everyday smartphone tips (iPhone &amp; Android)</p>
-                <p>Digital security and privacy awareness</p>
-                <p>Artificial Intelligence explained simply</p>
-                <p>Content creation and digital skills</p>
-                <p>Helping people turn ideas into real opportunities</p>
-                <p>Everything I share is practical, honest, and tested in real life</p>
-              </div>
-            </article>
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[1.6fr_0.95fr]">
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
-              <div className="flex justify-center">
-                <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
-                  <Lightbulb className="h-14 w-14 text-white" strokeWidth={2.5} />
-                </div>
-              </div>
-              <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
-                Why I Started
-              </h2>
-              <div className="mt-7 text-[18px] leading-[1.34] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
-                <p>When I began, I noticed a big gap:</p>
-                <p className="mt-5">
-                  many people were using technology daily, yet didn&apos;t fully
-                  understand how it worked or how to protect themselves online.
-                </p>
-                <p className="mt-5">
-                  I made it a personal commitment to share clear, useful, and
-                  trustworthy tech knowledge, especially for the Somali
-                  community and anyone navigating the digital world.
-                </p>
-              </div>
-            </article>
-
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
-              <div className="flex justify-center">
-                <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
-                  <Share2 className="h-14 w-14 text-white" strokeWidth={2.5} />
-                </div>
-              </div>
-              <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
-                Community Impact
-              </h2>
-              <div className="mt-7 text-[18px] leading-[1.34] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
-                <p>Today, more than 1 million people follow my content across social platforms.</p>
-                <p className="mt-5">
-                  I&apos;ve published hundreds of educational videos, hosted live
-                  events, and delivered tech education that reaches millions.
-                </p>
-                <p className="mt-5">
-                  This journey has been built on consistency, patience, and
-                  community trust.
-                </p>
-              </div>
-            </article>
-          </div>
-
-          <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.6fr]">
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
-              <div className="flex justify-center">
-                <div className="flex h-[110px] w-[110px] items-center justify-center rounded-[24px] bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
-                  <FileText className="h-14 w-14 text-white" strokeWidth={2.5} />
-                </div>
-              </div>
-              <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
-                Beyond Content
-              </h2>
-              <div className="mt-7 text-[18px] leading-[1.3] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
-                <p>I regularly participate in:</p>
-                <p>Tech talks and workshops</p>
-                <p>Digital education programs</p>
-                <p>Community events and conferences</p>
-                <p className="mt-4">
-                  I also collaborate with brands and organizations that align
-                  with education, innovation, and positive digital impact.
-                </p>
-              </div>
-            </article>
-
-            <article className="rounded-[36px] bg-[#dfe5ef] px-10 py-9 dark:bg-[#1d2236]">
-              <div className="flex justify-center">
-                <div className="flex h-[110px] w-[110px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[inset_0_3px_8px_rgba(255,255,255,0.3)]">
-                  <Share2 className="h-14 w-14 -rotate-45 text-white" strokeWidth={2.5} />
-                </div>
-              </div>
-              <h2 className="mt-8 text-center text-[36px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff]">
-                Looking Ahead
-              </h2>
-              <div className="mt-7 text-center text-[18px] leading-[1.34] tracking-[-0.02em] text-[#151515] dark:text-[#e5ebf8]">
-                <p>Technology evolves fast - and so do we.</p>
-                <p>I&apos;m committed to continuing this journey by:</p>
-                <p>Improving content quality</p>
-                <p>Expanding educational formats</p>
-                <p>Reaching more communities</p>
-                <p>Preparing people for the future of digital life</p>
-              </div>
-            </article>
-          </div>
-
-          <section id="contact" className="mt-8 rounded-[34px] bg-[#dfe5ef] px-10 py-8 dark:bg-[#1d2236]">
-            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-[620px]">
-                <h2 className="text-[26px] font-bold leading-none text-black dark:text-white">
-                  Join the Community
-                </h2>
-                <p className="mt-4 text-[18px] leading-[1.28] text-[#151515] dark:text-[#e5ebf8]">
-                  Millions are already learning tech the simple way. Follow,
-                  watch, and grow with us across platforms.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <Image src="/youtubeRemoving.png" alt="YouTube" width={70} height={50} className="h-[46px] w-auto object-contain" />
-                <Image src="/Tiktok.png" alt="TikTok" width={52} height={52} className="h-[46px] w-auto object-contain" />
-                <Image src="/Facebook.png" alt="Facebook" width={52} height={52} className="h-[46px] w-auto object-contain" />
-                <Image src="/Instgram.png" alt="Instagram" width={52} height={52} className="h-[46px] w-auto object-contain" />
-              </div>
-            </div>
-          </section>
-
-          <section className="mx-auto mt-8 max-w-[1100px] rounded-[34px] bg-[#f5f5f5] px-6 py-10 dark:bg-[#1b1f30] sm:px-10 lg:px-14 lg:py-14">
-            <h2 className="text-center text-[56px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff] sm:text-[72px]">
+        <section className="mx-auto max-w-[980px] px-4 pb-16 pt-6 mt-15">
+          <div className="mx-auto max-w-[720px]">
+            <h2 className="text-center text-[56px] font-bold leading-none tracking-[-0.05em] text-[#156ff3] sm:text-[72px]">
               Impact
             </h2>
 
-            <div className="mt-8 flex justify-center">
-              <div className="relative flex h-[260px] w-[260px] items-center justify-center rounded-[40%] bg-[linear-gradient(145deg,#1fb2ff_0%,#0f76ff_45%,#0f57ff_100%)] shadow-[inset_0_10px_30px_rgba(255,255,255,0.28),0_16px_30px_rgba(29,108,255,0.22)] sm:h-[320px] sm:w-[320px]">
-                <div className="relative flex h-[190px] w-[190px] items-center justify-center rounded-[38%] bg-white shadow-[inset_0_10px_25px_rgba(0,0,0,0.07)] sm:h-[230px] sm:w-[230px]">
-                  <MessageCircleMore className="h-20 w-20 text-[#1d6cff] sm:h-24 sm:w-24" strokeWidth={2.5} />
-                  <div className="absolute right-[54px] top-[46px] flex h-14 w-14 items-center justify-center rounded-full bg-[#1d6cff] shadow-[0_10px_18px_rgba(29,108,255,0.22)] sm:right-[62px] sm:top-[54px] sm:h-16 sm:w-16">
-                    <span className="text-[34px] text-white sm:text-[40px]">★</span>
+            <div className="mt-10 flex justify-center">
+              <div className="relative flex h-[260px] w-[260px] items-center justify-center rounded-[38%] bg-[linear-gradient(145deg,#11b6ff_0%,#0d85ff_38%,#175dff_72%,#0e95ff_100%)] shadow-[inset_0_10px_30px_rgba(255,255,255,0.24),0_14px_26px_rgba(29,108,255,0.2)] sm:h-[320px] sm:w-[320px]">
+                <div className="relative flex h-[200px] w-[200px] items-center justify-center rounded-[36%] bg-[radial-gradient(circle,#ffffff_0%,#f7f7f7_52%,#ebebeb_100%)] shadow-[0_16px_36px_rgba(0,0,0,0.08)] sm:h-[246px] sm:w-[246px]">
+                  <div className="relative flex h-[92px] w-[92px] items-center justify-center rounded-[30%] bg-[linear-gradient(180deg,#1686ff_0%,#0d63f4_100%)] shadow-[0_14px_22px_rgba(13,99,244,0.28)] sm:h-[112px] sm:w-[112px]">
+                    <div className="absolute left-[18px] top-[18px] h-[56px] w-[56px] rounded-full bg-transparent shadow-[0_0_0_9999px_transparent] sm:left-[22px] sm:top-[22px]" />
+                    <div className="relative h-[44px] w-[44px] bg-[#0f72ff] [clip-path:polygon(50%_0%,61%_34%,98%_38%,71%_59%,79%_94%,50%_73%,21%_94%,29%_59%,2%_38%,39%_34%)] sm:h-[54px] sm:w-[54px]" />
                   </div>
+                  <div className="absolute bottom-[20px] left-[42px] h-[30px] w-[30px] rounded-full bg-white sm:bottom-[26px] sm:left-[52px]" />
                 </div>
               </div>
             </div>
 
-            <div className="mx-auto mt-10 max-w-[760px] text-[20px] leading-[1.34] tracking-[-0.02em] text-[#111111] dark:text-[#e5ebf8] sm:text-[24px]">
+            <div className="mt-12 text-[22px] leading-[1.36] tracking-[-0.02em] text-[#121212] sm:text-[26px]">
               <p>
                 Technology is powerful - but impact is what truly matters.
                 Over the years, Eng Yuyu has focused on creating meaningful
@@ -356,7 +216,7 @@ export default function ImpactPage() {
               </p>
 
               <div className="mt-10">
-                <h3 className="text-[34px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff] sm:text-[42px]">
+                <h3 className="text-[34px] font-bold leading-none tracking-[-0.03em] text-[#156ff3] sm:text-[44px]">
                   By the Numbers
                 </h3>
                 <div className="mt-5 space-y-1">
@@ -367,10 +227,10 @@ export default function ImpactPage() {
                 </div>
               </div>
 
-              <div className="mt-8 h-[5px] w-full max-w-[470px] bg-[#1d6cff]" />
+              <div className="mt-8 h-[5px] w-full max-w-[470px] bg-[#156ff3]" />
 
               <div className="mt-8">
-                <h3 className="text-[34px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff] sm:text-[42px]">
+                <h3 className="text-[34px] font-bold leading-none tracking-[-0.03em] text-[#156ff3] sm:text-[44px]">
                   Real Impact
                 </h3>
                 <div className="mt-5 space-y-1">
@@ -386,22 +246,63 @@ export default function ImpactPage() {
                 </div>
               </div>
 
-              <div className="mt-8 h-[5px] w-full max-w-[470px] bg-[#1d6cff]" />
+              <div className="mt-8 h-[5px] w-full max-w-[470px] bg-[#156ff3]" />
 
               <div className="mt-8">
-                <h3 className="text-[34px] font-bold leading-none tracking-[-0.03em] text-[#1d6cff] sm:text-[42px]">
+                <h3 className="text-[34px] font-bold leading-none tracking-[-0.03em] text-[#156ff3] sm:text-[44px]">
                   Community First
                 </h3>
                 <div className="mt-5 space-y-1">
-                  <p>Every piece of content, event, or collaboration is</p>
-                  <p>created with the community in mind.</p>
-                  <p>The goal has always been simple: give back through</p>
-                  <p>knowledge.</p>
+                  <p>
+                    Every piece of content, event, or collaboration is created
+                    with the community in mind.
+                  </p>
+                  <p>
+                    The goal has always been simple: give back through
+                    knowledge.
+                  </p>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </section>
+
+        <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen bg-[#156ff3] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-18">
+          <div className="mx-auto flex w-full max-w-[980px] flex-col items-center text-center">
+            <Image
+              src="/Eng Yuyu Logo-21.png"
+              alt="Eng Yuyu Logo"
+              width={300}
+              height={120}
+              className="h-[70px] w-auto object-contain sm:h-[82px]"
+              style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
+            />
+
+            <p className="mt-6 max-w-[760px] text-[18px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[20px]">
+              My Goal is Simple: to Educate, Inspire and Connect people through
+              technology: One video, one idea and one innovation at a time.....
+            </p>
+
+            <div className="mt-10 flex items-center gap-4 sm:gap-5">
+              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+                <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              </a>
+              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+                <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              </a>
+              <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+                <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              </a>
+              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+                <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              </a>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-16 w-full border-t border-white/55 pt-7 text-center text-[16px] tracking-[-0.02em] text-white/95">
+            © 2025 Eng Yuyu Media - All Rights Reserved.
+          </div>
+        </div>
       </div>
     </main>
   )

@@ -267,6 +267,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen bg-[#156ff3] px-6 py-16 text-white 
+              sm:px-10 lg:px-16 lg:py-18">
+        <div className="mx-auto flex w-full max-w-[980px] flex-col items-center text-center">
+          <Image
+            src="/Eng Yuyu Logo-21.png"
+            alt="Eng Yuyu Logo"
+            width={300}
+            height={120}
+            className="h-[70px] w-auto object-contain sm:h-[82px]"
+            style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
+          />
+
+          <p className="mt-6 max-w-[760px] text-[18px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[20px]">
+            My Goal is Simple: to Educate, Inspire and Connect people through
+            technology: One video, one idea and one innovation at a time.....
+          </p>
+
+          <div className="mt-10 flex items-center gap-4 sm:gap-5">
+            <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+              <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            </a>
+            <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+              <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            </a>
+            <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+              <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            </a>
+            <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+              <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            </a>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-16 w-full border-t border-white/55 pt-7 text-center text-[16px] tracking-[-0.02em] text-white/95">
+          © 2025 Eng Yuyu Media - All Rights Reserved.
+        </div>
+      </div>
+
     </PageFrame>
   )
 }
