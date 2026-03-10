@@ -86,70 +86,74 @@ function TimelineCard({
   return (
     <article className="flex flex-col items-center">
       {isTop ? (
-        <h2 className="mb-5 text-center text-[34px] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
+        <h2 className="mb-4 text-center text-[clamp(24px,2vw,34px)] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
           {date}
         </h2>
       ) : null}
 
-      <div className={`relative w-full max-w-[356px] ${isTop ? "pt-8" : "pb-8"}`}>
+      <div
+        className={`relative w-full max-w-[clamp(200px,18vw,300px)] ${
+          isTop ? "pt-[clamp(28px,3vw,46px)]" : "pb-[clamp(28px,3vw,46px)]"
+        }`}
+      >
         {isTop ? (
           <>
-            <div className="absolute left-1/2 top-0 h-[46px] w-[46px] -translate-x-1/2 rounded-full bg-[#156ff3]" />
-            <div className="absolute left-0 top-[262px] h-[46px] w-[46px] rounded-full bg-[#156ff3]" />
-            <div className="absolute right-0 top-[262px] h-[46px] w-[46px] rounded-full bg-[#156ff3]" />
+            <div className="absolute left-1/2 top-0 h-[clamp(28px,3vw,46px)] w-[clamp(28px,3vw,46px)] -translate-x-1/2 rounded-full bg-[#156ff3]" />
+            <div className="absolute left-0 top-[clamp(150px,14vw,262px)] h-[clamp(28px,3vw,46px)] w-[clamp(28px,3vw,46px)] rounded-full bg-[#156ff3]" />
+            <div className="absolute right-0 top-[clamp(150px,14vw,262px)] h-[clamp(28px,3vw,46px)] w-[clamp(28px,3vw,46px)] rounded-full bg-[#156ff3]" />
           </>
         ) : (
           <>
-            <div className="absolute left-0 bottom-[262px] h-[46px] w-[46px] rounded-full bg-[#156ff3]" />
-            <div className="absolute right-0 bottom-[262px] h-[46px] w-[46px] rounded-full bg-[#156ff3]" />
-            <div className="absolute bottom-0 left-1/2 h-[46px] w-[46px] -translate-x-1/2 rounded-full bg-[#156ff3]" />
+            <div className="absolute left-0 bottom-[clamp(150px,14vw,262px)] h-[clamp(28px,3vw,46px)] w-[clamp(28px,3vw,46px)] rounded-full bg-[#156ff3]" />
+            <div className="absolute right-0 bottom-[clamp(150px,14vw,262px)] h-[clamp(28px,3vw,46px)] w-[clamp(28px,3vw,46px)] rounded-full bg-[#156ff3]" />
+            <div className="absolute bottom-0 left-1/2 h-[clamp(28px,3vw,46px)] w-[clamp(28px,3vw,46px)] -translate-x-1/2 rounded-full bg-[#156ff3]" />
           </>
         )}
 
         <div
-          className={`min-h-[820px] rounded-[180px] border-[18px] border-[#156ff3] bg-[#dfe4eb] px-8 dark:border-[#4c8fff] dark:bg-[#25314b] ${
+          className={`min-h-[clamp(520px,52vw,820px)] rounded-[clamp(90px,9vw,180px)] border-[clamp(10px,1vw,18px)] border-[#156ff3] bg-[#dfe4eb] px-[clamp(14px,1.6vw,32px)] dark:border-[#4c8fff] dark:bg-[#25314b] ${
             isTop
-              ? "rounded-b-[92px] border-b-0 pt-8 pb-10"
-              : "rounded-t-[92px] border-t-0 pt-10 pb-8"
+              ? "rounded-b-[clamp(52px,5vw,92px)] border-b-0 pt-[clamp(16px,1.8vw,32px)] pb-[clamp(16px,1.8vw,40px)]"
+              : "rounded-t-[clamp(52px,5vw,92px)] border-t-0 pt-[clamp(16px,1.8vw,40px)] pb-[clamp(16px,1.8vw,32px)]"
           }`}
         >
           {isTop ? (
             <>
-              <div className={`mx-auto flex h-[260px] w-[260px] items-center justify-center rounded-full ${circleClass}`}>
+              <div className={`mx-auto flex h-[clamp(150px,14vw,260px)] w-[clamp(150px,14vw,260px)] items-center justify-center rounded-full ${circleClass}`}>
                 <div className="text-center">
-                  <p className="text-[14px] italic text-white/95">{badgeTop || " "}</p>
-                  <p className="mt-3 text-[72px] font-extrabold leading-none tracking-[-0.06em]">
+                  <p className="text-[clamp(10px,0.9vw,14px)] italic text-white/95">{badgeTop || " "}</p>
+                  <p className="mt-3 text-[clamp(42px,4vw,72px)] font-extrabold leading-none tracking-[-0.06em]">
                     {badgeMain}
                   </p>
-                  <p className="mt-2 text-[16px] font-semibold tracking-[0.18em] text-white/90">
+                  <p className="mt-2 text-[clamp(10px,0.9vw,16px)] font-semibold tracking-[0.12em] text-white/90">
                     {badgeBottom}
                   </p>
                 </div>
               </div>
 
-              <h3 className="mt-10 whitespace-pre-line text-center text-[32px] font-bold leading-[1.02] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
+              <h3 className="mt-[clamp(20px,2vw,40px)] whitespace-pre-line text-center text-[clamp(22px,1.9vw,32px)] font-bold leading-[1.02] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
                 {title}
               </h3>
-              <p className="mx-auto mt-10 max-w-[244px] text-center text-[19px] leading-[1.34] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8]">
+              <p className="mx-auto mt-[clamp(20px,2vw,40px)] max-w-[clamp(160px,13vw,244px)] text-center text-[clamp(14px,1vw,19px)] leading-[1.34] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8]">
                 {description}
               </p>
             </>
           ) : (
             <>
-              <h3 className="whitespace-pre-line text-center text-[32px] font-bold leading-[1.02] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
+              <h3 className="whitespace-pre-line text-center text-[clamp(22px,1.9vw,32px)] font-bold leading-[1.02] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
                 {title}
               </h3>
-              <p className="mx-auto mt-10 max-w-[244px] text-center text-[19px] leading-[1.34] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8]">
+              <p className="mx-auto mt-[clamp(20px,2vw,40px)] max-w-[clamp(160px,13vw,244px)] text-center text-[clamp(14px,1vw,19px)] leading-[1.34] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8]">
                 {description}
               </p>
 
-              <div className={`mx-auto mt-10 flex h-[260px] w-[260px] items-center justify-center rounded-full ${circleClass}`}>
+              <div className={`mx-auto mt-[clamp(20px,2vw,40px)] flex h-[clamp(150px,14vw,260px)] w-[clamp(150px,14vw,260px)] items-center justify-center rounded-full ${circleClass}`}>
                 <div className="text-center">
-                  <p className="text-[14px] italic text-white/95">{badgeTop || " "}</p>
-                  <p className="mt-3 text-[72px] font-extrabold leading-none tracking-[-0.06em]">
+                  <p className="text-[clamp(10px,0.9vw,14px)] italic text-white/95">{badgeTop || " "}</p>
+                  <p className="mt-3 text-[clamp(42px,4vw,72px)] font-extrabold leading-none tracking-[-0.06em]">
                     {badgeMain}
                   </p>
-                  <p className="mt-2 text-[16px] font-semibold tracking-[0.12em] text-white/90">
+                  <p className="mt-2 text-[clamp(10px,0.9vw,16px)] font-semibold tracking-[0.12em] text-white/90">
                     {badgeBottom}
                   </p>
                 </div>
@@ -160,7 +164,7 @@ function TimelineCard({
       </div>
 
       {!isTop ? (
-        <h2 className="mt-5 text-center text-[34px] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
+        <h2 className="mt-4 text-center text-[clamp(24px,2vw,34px)] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff]">
           {date}
         </h2>
       ) : null}
@@ -174,12 +178,12 @@ export default function ImpactPage() {
       <div className="relative mx-auto w-full max-w-[1520px] px-4 pb-12 pt-32 sm:px-6 sm:pt-28">
         <SiteNav />
 
-        <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen px-2 py-8 sm:px-4">
+        <section className="px-2 py-8 sm:px-4">
           <h1 className="text-center text-[58px] font-bold leading-[0.96] tracking-[-0.05em] text-[#156ff3] sm:text-[72px] lg:text-[86px]">
             My Milestones From 2022
           </h1>
 
-          <div className="mx-auto mt-16 flex w-full max-w-[1960px] items-start justify-center gap-5 px-8 2xl:px-10">
+          <div className="mx-auto mt-16 grid max-w-[1520px] grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-5 xl:items-start xl:gap-4">
             {milestones.map((milestone) => (
               <TimelineCard
                 key={`${milestone.date}-${milestone.title}`}
