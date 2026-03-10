@@ -57,8 +57,8 @@ export function SiteNav() {
                   href={item.href}
                   className={`inline-flex border-b-[3px] px-1 pb-3 text-[15px] font-semibold tracking-[-0.02em] transition-colors hover:text-[#1d6cff] lg:text-[17px] ${
                     isActive
-                      ? "border-[#1d6cff] text-[#1d6cff] dark:text-[#26e3ff]"
-                      : "border-transparent dark:text-[#26e3ff]"
+                      ? "border-[#1d6cff] text-[#1d6cff] dark:border-[#27b3ff] dark:text-white"
+                      : "border-transparent dark:text-[#8fdfff] dark:hover:text-white"
                   }`}
                 >
                   {item.label}
