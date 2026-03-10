@@ -1,8 +1,4 @@
 import Image from "next/image"
-import {
-  ContactMessageForm,
-  NewsletterSignupForm,
-} from "@/components/contact-page-forms"
 import { PageFrame } from "@/components/page-frame"
 
 const socialLinks = {
@@ -16,8 +12,15 @@ export default function ContactPage() {
   return (
     <PageFrame flushBottom>
       <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] mt-0 w-screen">
-        <div className="overflow-hidden bg-[#156ff3] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-18">
-          <div className="absolute inset-0 opacity-45">
+        <div className="overflow-hidden bg-[#156ff3] px-6 py-16 text-white dark:bg-[#0b49c4] sm:px-10 lg:px-16 lg:py-18">
+          <div
+            className="absolute inset-0 hidden bg-cover bg-center opacity-60 dark:block"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, rgba(7,50,163,0.88), rgba(29,105,223,0.72)), url('/engY.png')",
+            }}
+          />
+          <div className="absolute inset-0 opacity-45 dark:hidden">
             <div className="absolute -left-10 top-[-30px] h-[240px] w-[240px] rounded-full bg-white/16 blur-[38px]" />
             <div className="absolute left-[20%] top-[-40px] h-[260px] w-[120px] rotate-[20deg] rounded-full bg-white/18 blur-[24px]" />
             <div className="absolute left-[38%] top-[-12px] h-[220px] w-[260px] rounded-full bg-white/14 blur-[46px]" />
@@ -37,65 +40,158 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="bg-[#f3f3f3] px-6 py-14 sm:px-10 lg:px-16 lg:py-16">
+        <div className="bg-[#f3f3f3] px-6 py-14 dark:bg-[#171b2b] sm:px-10 lg:px-16 lg:py-16">
           <div className="mx-auto grid w-full max-w-[920px] grid-cols-1 gap-5 lg:grid-cols-[1.08fr_0.92fr]">
-            <section className="rounded-[16px] border border-[#77a9ff] bg-[#f7f7f5] px-8 py-8">
-              <h2 className="text-[24px] font-bold leading-none tracking-[-0.03em] text-[#161616]">
+            <section className="rounded-[16px] border border-[#77a9ff] bg-[#f7f7f5] px-8 py-8 dark:border-[#155fdd] dark:bg-[#1a1f31]">
+              <h2 className="text-[24px] font-bold leading-none tracking-[-0.03em] text-[#161616] dark:text-white">
                 Simple Contact Form
               </h2>
 
-              <ContactMessageForm />
+              <form className="mt-6 space-y-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <label className="block">
+                    <span className="text-[12px] font-semibold text-[#1c2440] dark:text-white">
+                      First Name <span className="text-[#ef4444]">*</span>
+                    </span>
+                    <input
+                      name="firstName"
+                      type="text"
+                      required
+                      placeholder="First name here"
+                      className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#c6c9df] dark:bg-[#514d73] dark:text-white dark:placeholder:text-[#9ca3d5]"
+                    />
+                  </label>
+
+                  <label className="block">
+                    <span className="text-[12px] font-semibold text-[#1c2440] dark:text-white">
+                      Last Name <span className="text-[#ef4444]">*</span>
+                    </span>
+                    <input
+                      name="lastName"
+                      type="text"
+                      required
+                      placeholder="Last name here"
+                      className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#c6c9df] dark:bg-[#514d73] dark:text-white dark:placeholder:text-[#9ca3d5]"
+                    />
+                  </label>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <label className="block">
+                    <span className="text-[12px] font-semibold text-[#1c2440] dark:text-white">
+                      Email Address <span className="text-[#ef4444]">*</span>
+                    </span>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="Add email"
+                      className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#c6c9df] dark:bg-[#514d73] dark:text-white dark:placeholder:text-[#9ca3d5]"
+                    />
+                  </label>
+
+                  <label className="block">
+                    <span className="text-[12px] font-semibold text-[#1c2440] dark:text-white">
+                      Subject <span className="text-[#ef4444]">*</span>
+                    </span>
+                    <input
+                      name="subject"
+                      type="text"
+                      required
+                      placeholder="How can we help you?"
+                      className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#c6c9df] dark:bg-[#514d73] dark:text-white dark:placeholder:text-[#9ca3d5]"
+                    />
+                  </label>
+                </div>
+
+                <label className="block">
+                  <span className="text-[12px] font-semibold text-[#1c2440] dark:text-white">
+                    Comments / Questions <span className="text-[#ef4444]">*</span>
+                  </span>
+                  <textarea
+                    name="message"
+                    required
+                    placeholder="Comments"
+                    className="mt-2 h-[140px] w-full resize-none rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 py-3 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#c6c9df] dark:bg-[#514d73] dark:text-white dark:placeholder:text-[#9ca3d5]"
+                  />
+                </label>
+
+                <div className="flex items-start">
+                  <button
+                    type="submit"
+                    className="inline-flex h-[42px] items-center justify-center rounded-[6px] bg-[#156ff3] px-6 text-[12px] font-medium text-white transition-opacity hover:opacity-90 dark:bg-[#2f86ff]"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
             </section>
 
-            <section className="h-fit rounded-[16px] bg-[#dfe4eb] px-8 py-9">
-              <h2 className="text-[22px] font-bold leading-none tracking-[-0.03em] text-[#111111]">
+            <section className="h-fit rounded-[16px] bg-[#dfe4eb] px-8 py-9 dark:bg-[#1e2338]">
+              <h2 className="text-[22px] font-bold leading-none tracking-[-0.03em] text-[#111111] dark:text-white">
                 Join the Community
               </h2>
-              <p className="mt-5 max-w-[300px] text-[18px] leading-[1.28] tracking-[-0.02em] text-[#161616]">
+              <p className="mt-5 max-w-[300px] text-[18px] leading-[1.28] tracking-[-0.02em] text-[#161616] dark:text-white">
                 Millions are already learning tech the simple way. Follow,
                 watch, and grow with us across platforms.
               </p>
 
               <div className="mt-8 flex items-center gap-2">
-                <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
-                  <Image src="/Facebook.png" alt="Facebook" width={52} height={52} className="h-[40px] w-auto object-contain" />
+                <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="rounded-[6px] dark:bg-[#2269de] dark:p-3">
+                  <Image src="/Facebook.png" alt="Facebook" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[20px]" />
                 </a>
-                <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
-                  <Image src="/Instgram.png" alt="Instagram" width={52} height={52} className="h-[40px] w-auto object-contain" />
+                <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="rounded-[6px] dark:bg-[#2269de] dark:p-3">
+                  <Image src="/Instgram.png" alt="Instagram" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[20px]" />
                 </a>
-                <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
-                  <Image src="/Tiktok.png" alt="TikTok" width={52} height={52} className="h-[40px] w-auto object-contain" />
+                <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="rounded-[6px] dark:bg-[#2269de] dark:p-3">
+                  <Image src="/Tiktok.png" alt="TikTok" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[20px]" />
                 </a>
-                <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
-                  <Image src="/youtubeRemoving.png" alt="YouTube" width={52} height={52} className="h-[40px] w-auto object-contain" />
+                <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="rounded-[6px] dark:bg-[#2269de] dark:p-3">
+                  <Image src="/youtubeRemoving.png" alt="YouTube" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[20px]" />
                 </a>
               </div>
             </section>
           </div>
 
-          <section className="mx-auto mt-16 w-full max-w-[920px] rounded-[16px] bg-[#dfe4eb] px-8 py-10">
+          <section className="mx-auto mt-16 w-full max-w-[920px] rounded-[16px] bg-[#dfe4eb] px-8 py-10 dark:bg-[#1e2338]">
             <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_220px]">
               <div className="max-w-[520px]">
-                <h2 className="text-[24px] font-bold leading-none tracking-[-0.03em] text-[#111111]">
+                <h2 className="text-[24px] font-bold leading-none tracking-[-0.03em] text-[#111111] dark:text-white">
                   Join My Newsletter
                 </h2>
-                <p className="mt-5 text-[18px] leading-[1.3] tracking-[-0.02em] text-[#161616]">
+                <p className="mt-5 text-[18px] leading-[1.3] tracking-[-0.02em] text-[#161616] dark:text-white">
                   Get practical tech tips, digital safety guides,
                   <br />
                   and AI insights straight to your inbox.
                 </p>
 
-                <NewsletterSignupForm />
+                <form className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="Email"
+                    className="h-[56px] w-full rounded-[2px] border border-[#e2e2e2] bg-[#f7f7f5] px-4 text-[14px] text-black outline-none placeholder:text-[#676767] dark:border-[#c6c9df] dark:bg-[#514d73] dark:text-white dark:placeholder:text-[#9ca3d5] sm:max-w-[360px]"
+                  />
+                  <button
+                    type="submit"
+                    className="inline-flex h-[56px] min-w-[112px] items-center justify-center rounded-[4px] bg-[#156ff3] px-6 text-[16px] font-semibold text-white transition-opacity hover:opacity-90 dark:bg-[#2f86ff]"
+                  >
+                    Submit
+                  </button>
+                </form>
               </div>
 
               <div className="flex justify-center lg:justify-end">
-                <div className="relative flex h-[120px] w-[120px] items-center justify-center rounded-full border-[8px] border-[#11a5ff] bg-white shadow-[0_0_0_6px_#156ff3]">
-                  <div className="relative flex h-[56px] w-[56px] items-center justify-center rounded-[10px] bg-[#156ff3]">
+                <div className="relative flex h-[140px] w-[140px] items-center justify-center rounded-full border-[8px] border-[#11a5ff] bg-white shadow-[0_0_0_8px_#156ff3] dark:border-[#27b3ff] dark:bg-[#131c36] dark:shadow-[0_0_0_10px_#0f72ff]">
+                  <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.55),transparent_35%),radial-gradient(circle_at_70%_70%,rgba(0,153,255,0.24),transparent_45%)] dark:opacity-100" />
+                  <div className="relative flex h-[58px] w-[58px] items-center justify-center rounded-[10px] bg-[#156ff3] dark:bg-[#0976ff]">
                     <div className="absolute inset-x-0 top-[14px] mx-auto h-[2px] w-[34px] bg-white/35" />
                     <div className="absolute left-[10px] top-[11px] h-[2px] w-[18px] rotate-[38deg] bg-white/65" />
                     <div className="absolute right-[10px] top-[11px] h-[2px] w-[18px] -rotate-[38deg] bg-white/65" />
                   </div>
-                  <div className="absolute bottom-[10px] h-[12px] w-[34px] rounded-b-[10px] rounded-t-[4px] border-b-[6px] border-white bg-transparent" />
+                  <div className="absolute bottom-[40px] h-[14px] w-[40px] rounded-b-[10px] rounded-t-[4px] border-b-[6px] border-white bg-transparent" />
+                  <div className="absolute bottom-[22px] left-[40px] h-[22px] w-[36px] rounded-b-[18px] border-b-[7px] border-l-[7px] border-[#131c36] dark:border-[#131c36]" />
                 </div>
               </div>
             </div>
