@@ -55,7 +55,7 @@ export default function ContactPage() {
               <ContactForm />
             </section>
 
-            <section className="h-fit rounded-[16px] bg-[#dfe4eb] px-8 py-9 dark:border dark:border-[#243b7a] dark:bg-[#1e2338] dark:shadow-[0_18px_40px_rgba(5,10,28,0.34)]">
+            <section className="about-reveal h-fit rounded-[16px] bg-[#dfe4eb] px-8 py-9 shadow-[0_18px_40px_rgba(15,35,78,0.08)] dark:border dark:border-[#243b7a] dark:bg-[#1e2338] dark:shadow-[0_18px_40px_rgba(5,10,28,0.34)]">
               <h2 className="text-[22px] font-bold leading-none tracking-[-0.03em] text-[#111111] dark:text-white">
                 Join the Community
               </h2>
@@ -65,16 +65,16 @@ export default function ContactPage() {
               </p>
 
               <div className="mt-8 flex items-center gap-2">
-                <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="rounded-[6px] dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
+                <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon-float-1 rounded-[6px] transition-transform duration-300 hover:scale-110 dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
                   <Image src="/Facebook.png" alt="Facebook" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[24px] dark:brightness-0 dark:invert" />
                 </a>
-                <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="rounded-[6px] dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
+                <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-2 rounded-[6px] transition-transform duration-300 hover:scale-110 dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
                   <Image src="/Instgram.png" alt="Instagram" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[24px] dark:brightness-0 dark:invert" />
                 </a>
-                <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="rounded-[6px] dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
-                  <Image src="/Tiktok.png" alt="TikTok" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[24px] dark:brightness-0 dark:invert" />
+                <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon-float-3 rounded-[6px] transition-transform duration-300 hover:scale-110 dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
+                  <Image src="/Tiktok.png" alt="TikTok" width={52} height={52} className="h-[40px] w-auto object-contain brightness-0 dark:h-[24px] dark:invert" />
                 </a>
-                <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="rounded-[6px] dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
+                <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon-float-4 rounded-[6px] transition-transform duration-300 hover:scale-110 dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
                   <Image src="/youtubeRemoving.png" alt="YouTube" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[24px] dark:brightness-0 dark:invert" />
                 </a>
               </div>

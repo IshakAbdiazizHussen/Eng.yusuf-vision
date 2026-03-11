@@ -1,15 +1,61 @@
+"use client"
+
 import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 import { ArrowRight } from "lucide-react"
-import { HighlightStats } from "@/components/highlight-stats"
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa"
 import { PageFrame } from "@/components/page-frame"
-import { SocialStats } from "@/components/social-stats"
 
 const partners = ["taran", "keshflip", "amka"]
+const highlights = [
+  { value: 600, suffix: "+", label: "Tech Videos" },
+  { value: 25, suffix: "+", label: "Countries" },
+  { value: 27, suffix: "+", label: "Million Views" },
+  { value: 10, suffix: "+", label: "Collaborate" },
+]
+const socialStats = [
+  {
+    platform: "youtube",
+    label: "Subscribers",
+    value: 148,
+    suffix: "k+",
+    href: "https://www.youtube.com/@engyuyu",
+  },
+  {
+    platform: "tiktok",
+    label: "Followers",
+    value: 506.3,
+    decimals: 1,
+    suffix: "k+",
+    href: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
+  },
+  {
+    platform: "facebook",
+    label: "Followers",
+    value: 276,
+    suffix: "k+",
+    href: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
+  },
+  {
+    platform: "instagram",
+    label: "Followers",
+    value: 276,
+    suffix: "k+",
+    href: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
+  },
+] as const
 const socialLinks = {
   youtube: "https://www.youtube.com/@engyuyu",
   tiktok: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
   instagram: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
   facebook: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
+}
+
+function formatValue(value: number, decimals = 0) {
+  return value.toLocaleString("en-US", {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  })
 }
 
 function PartnerLogo({ partner }: { partner: string }) {
@@ -62,8 +108,141 @@ function PartnerLogo({ partner }: { partner: string }) {
   )
 }
 
+function CountUpNumber({
+  value,
+  decimals = 0,
+  suffix,
+  start,
+  className,
+}: {
+  value: number
+  decimals?: number
+  suffix: string
+  start: boolean
+  className: string
+}) {
+  const [displayValue, setDisplayValue] = useState(0)
+
+  useEffect(() => {
+    if (!start) {
+      return
+    }
+
+    let frameId = 0
+    const duration = 1800
+    const startTime = performance.now()
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1)
+      const eased = 1 - (1 - progress) ** 3
+      setDisplayValue(value * eased)
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(tick)
+      }
+    }
+
+    frameId = window.requestAnimationFrame(tick)
+
+    return () => window.cancelAnimationFrame(frameId)
+  }, [start, value])
+
+  return (
+    <p className={className}>
+      {formatValue(start ? displayValue : 0, decimals)}
+      {suffix}
+    </p>
+  )
+}
+
+function SocialIcon({
+  platform,
+  index,
+}: {
+  platform: (typeof socialStats)[number]["platform"]
+  index: number
+}) {
+  const motionClass = `social-icon-float-${(index % 4) + 1}`
+
+  if (platform === "youtube") {
+    return (
+      <span className={`${motionClass} flex h-[58px] w-[78px] items-center justify-center rounded-[18px] bg-[#ff1307] text-white shadow-[0_10px_24px_rgba(255,19,7,0.25)]`}>
+        <FaYoutube className="h-8 w-8" />
+      </span>
+    )
+  }
+
+  if (platform === "tiktok") {
+    return (
+      <span className={`${motionClass} flex h-[64px] w-[64px] items-center justify-center text-[#161616] dark:text-white`}>
+        <FaTiktok className="h-14 w-14 drop-shadow-[0_8px_16px_rgba(0,0,0,0.18)]" />
+      </span>
+    )
+  }
+
+  if (platform === "facebook") {
+    return (
+      <span className={`${motionClass} flex h-[64px] w-[64px] items-center justify-center rounded-full bg-[#1d6cff] text-white shadow-[0_10px_24px_rgba(29,108,255,0.28)]`}>
+        <FaFacebookF className="h-10 w-10" />
+      </span>
+    )
+  }
+
+  return (
+    <span className={`${motionClass} flex h-[64px] w-[64px] items-center justify-center rounded-[18px] bg-[radial-gradient(circle_at_30%_110%,#fdf497_0%,#fdf497_8%,#fd5949_30%,#d6249f_60%,#285AEB_100%)] text-white shadow-[0_10px_24px_rgba(214,36,159,0.24)]`}>
+      <FaInstagram className="h-9 w-9" />
+    </span>
+  )
+}
+
 export default function HomePage() {
   const marqueePartners = [...partners, ...partners]
+  const highlightRef = useRef<HTMLDivElement | null>(null)
+  const socialRef = useRef<HTMLDivElement | null>(null)
+  const [highlightStarted, setHighlightStarted] = useState(false)
+  const [socialStarted, setSocialStarted] = useState(false)
+
+  useEffect(() => {
+    const node = highlightRef.current
+    if (!node) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setHighlightStarted(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.3 },
+    )
+
+    observer.observe(node)
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const node = socialRef.current
+    if (!node) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setSocialStarted(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.35 },
+    )
+
+    observer.observe(node)
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <PageFrame>
@@ -93,15 +272,13 @@ export default function HomePage() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
               href="#"
-              className="inline-flex h-[72px] min-w-[300px] items-center justify-center gap-3 rounded-[18px] border-2 border-[#1d6cff] bg-[#dce3ee] 
-              px-8 text-[22px] font-semibold text-[#1d6cff] transition-opacity hover:bg-blue-600 hover:text-white dark:border-[#3b87f6]"
+              className="inline-flex h-[72px] min-w-[300px] items-center justify-center gap-3 rounded-[18px] border-2 border-[#1d6cff] bg-[#dce3ee] px-8 text-[22px] font-semibold text-[#1d6cff] transition-opacity hover:bg-blue-600 hover:text-white dark:border-[#3b87f6]"
             >
-              Watch Latest Video <ArrowRight className="h-6 w-6 " />
+              Watch Latest Video <ArrowRight className="h-6 w-6" />
             </a>
             <a
               href="#"
-              className="inline-flex h-[72px] min-w-[300px] items-center justify-center gap-3 rounded-[18px] bg-[#1d6cff] px-8 
-              text-[22px] font-semibold text-white transition-opacity hover:bg-white hover:text-blue-600 dark:border-blue-400"
+              className="inline-flex h-[72px] min-w-[300px] items-center justify-center gap-3 rounded-[18px] bg-[#1d6cff] px-8 text-[22px] font-semibold text-white transition-opacity hover:bg-white hover:text-blue-600 dark:border-blue-400"
             >
               For Collaboration <ArrowRight className="h-6 w-6" />
             </a>
@@ -128,10 +305,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      
       <section className="mx-auto mb-10 max-w-[1310px]">
         <div className="rounded-[34px] bg-gray-300 px-8 py-14 dark:bg-[#25314b] sm:px-12 lg:px-18">
-          <HighlightStats />
+          <div ref={highlightRef} className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {highlights.map((item) => (
+              <div
+                key={item.label}
+                className="flex h-[190px] items-center justify-center rounded-[14px] border-[4px] border-[#1d6cff] dark:border-[#4c8fff]"
+              >
+                <div className="text-center">
+                  <CountUpNumber
+                    value={item.value}
+                    suffix={item.suffix}
+                    start={highlightStarted}
+                    className="text-[58px] font-bold leading-none text-[#1d6cff] dark:text-[#6ea2ff]"
+                  />
+                  <p className="mt-3 text-[24px] font-semibold leading-[1.1] text-[#1d6cff] dark:text-[#6ea2ff]">
+                    {item.label}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -143,12 +338,42 @@ export default function HomePage() {
             Learners Worldwide
           </h2>
 
-          <SocialStats />
+          <div ref={socialRef} className="mt-10 rounded-[16px] bg-gray-300 px-8 py-10 dark:bg-[#25314b] sm:px-12">
+            <div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
+              {socialStats.map((stat, index) => (
+                <div
+                  key={stat.platform}
+                  className="group flex items-center gap-5 rounded-[24px] border border-transparent p-3 transition-transform duration-300 hover:-translate-y-1 hover:border-black/6 dark:hover:border-white/10"
+                >
+                  <a
+                    href={stat.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={stat.platform[0].toUpperCase() + stat.platform.slice(1)}
+                    className="shrink-0"
+                  >
+                    <SocialIcon platform={stat.platform} index={index} />
+                  </a>
+                  <div className="text-left">
+                    <p className="text-[20px] leading-none text-[#121212] dark:text-white">
+                      {stat.label}
+                    </p>
+                    <CountUpNumber
+                      value={stat.value}
+                      decimals={stat.decimals}
+                      suffix={stat.suffix}
+                      start={socialStarted}
+                      className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen bg-[#156ff3] px-6 py-16 text-white 
-              sm:px-10 lg:px-16 lg:py-18">
+      <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen bg-[#156ff3] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-18">
         <div className="mx-auto flex w-full max-w-[980px] flex-col items-center text-center">
           <Image
             src="/Eng Yuyu Logo-21.png"
@@ -165,40 +390,16 @@ export default function HomePage() {
           </p>
 
           <div className="mt-10 flex items-center gap-4 sm:gap-5">
-            <a
-              href={socialLinks.youtube}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="YouTube"
-              className="social-icon-float-1 transition-transform duration-300 hover:scale-110"
-            >
+            <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon-float-1 transition-transform duration-300 hover:scale-110">
               <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
             </a>
-            <a
-              href={socialLinks.facebook}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              className="social-icon-float-2 transition-transform duration-300 hover:scale-110"
-            >
+            <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon-float-2 transition-transform duration-300 hover:scale-110">
               <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
             </a>
-            <a
-              href={socialLinks.tiktok}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="TikTok"
-              className="social-icon-float-3 transition-transform duration-300 hover:scale-110"
-            >
+            <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon-float-3 transition-transform duration-300 hover:scale-110">
               <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
             </a>
-            <a
-              href={socialLinks.instagram}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              className="social-icon-float-4 transition-transform duration-300 hover:scale-110"
-            >
+            <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-4 transition-transform duration-300 hover:scale-110">
               <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
             </a>
           </div>
@@ -208,7 +409,6 @@ export default function HomePage() {
           © 2025 Eng Yuyu Media - All Rights Reserved.
         </div>
       </div>
-
     </PageFrame>
   )
 }
