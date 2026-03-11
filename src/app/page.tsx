@@ -1,7 +1,8 @@
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
-import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa"
+import { HighlightStats } from "@/components/highlight-stats"
 import { PageFrame } from "@/components/page-frame"
+import { SocialStats } from "@/components/social-stats"
 
 const partners = ["taran", "keshflip", "amka"]
 const socialLinks = {
@@ -130,51 +131,7 @@ export default function HomePage() {
       
       <section className="mx-auto mb-10 max-w-[1310px]">
         <div className="rounded-[34px] bg-gray-300 px-8 py-14 dark:bg-[#25314b] sm:px-12 lg:px-18">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-            <div className="flex h-[190px] items-center justify-center rounded-[14px] border-[4px] border-[#1d6cff] dark:border-[#4c8fff]">
-              <div className="text-center">
-                <h3 className="text-[58px] font-bold leading-none text-[#1d6cff] dark:text-[#6ea2ff]">
-                  600+
-                </h3>
-                <p className="mt-3 text-[24px] font-semibold leading-[1.1] text-[#1d6cff] dark:text-[#6ea2ff]">
-                  Tech Videos
-                </p>
-              </div>
-            </div>
-
-            <div className="flex h-[190px] items-center justify-center rounded-[14px] border-[4px] border-[#1d6cff] dark:border-[#4c8fff]">
-              <div className="text-center">
-                <h3 className="text-[58px] font-bold leading-none text-[#1d6cff] dark:text-[#6ea2ff]">
-                  25+
-                </h3>
-                <p className="mt-3 text-[24px] font-semibold leading-[1.1] text-[#1d6cff] dark:text-[#6ea2ff]">
-                  Countries
-                </p>
-              </div>
-            </div>
-
-            <div className="flex h-[190px] items-center justify-center rounded-[14px] border-[4px] border-[#1d6cff] dark:border-[#4c8fff]">
-              <div className="text-center">
-                <h3 className="text-[58px] font-bold leading-none text-[#1d6cff] dark:text-[#6ea2ff]">
-                  27+
-                </h3>
-                <p className="mt-3 text-[24px] font-semibold leading-[1.1] text-[#1d6cff] dark:text-[#6ea2ff]">
-                  Million Views
-                </p>
-              </div>
-            </div>
-
-            <div className="flex h-[190px] items-center justify-center rounded-[14px] border-[4px] border-[#1d6cff] dark:border-[#4c8fff]">
-              <div className="text-center">
-                <h3 className="text-[58px] font-bold leading-none text-[#1d6cff] dark:text-[#6ea2ff]">
-                  10+
-                </h3>
-                <p className="mt-3 text-[24px] font-semibold leading-[1.1] text-[#1d6cff] dark:text-[#6ea2ff]">
-                  Collaborate
-                </p>
-              </div>
-            </div>
-          </div>
+          <HighlightStats />
         </div>
       </section>
 
@@ -186,89 +143,7 @@ export default function HomePage() {
             Learners Worldwide
           </h2>
 
-          <div className="mt-10 rounded-[16px] bg-gray-300 px-8 py-10 dark:bg-[#25314b] sm:px-12">
-            <div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
-              <div className="flex items-center gap-5">
-                <a
-                  href={socialLinks.youtube}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="YouTube"
-                  className="flex h-[58px] w-[78px] items-center justify-center rounded-[18px] bg-[#ff1307] text-white"
-                >
-                  <FaYoutube className="h-8 w-8" />
-                </a>
-                <div className="text-left">
-                  <p className="text-[20px] leading-none text-[#121212] dark:text-white">
-                    Subscribers
-                  </p>
-                  <p className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white">
-                    148k+
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-5">
-                <a
-                  href={socialLinks.tiktok}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="TikTok"
-                  className="text-[#161616] dark:text-white"
-                >
-                  <FaTiktok className="h-14 w-14" />
-                </a>
-                <div className="text-left">
-                  <p className="text-[20px] leading-none text-[#121212] dark:text-white">
-                    Followers
-                  </p>
-                  <p className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white">
-                    506.3k+
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-5">
-                <a
-                  href={socialLinks.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Facebook"
-                  className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-[#1d6cff] text-white"
-                >
-                  <FaFacebookF className="h-10 w-10" />
-                </a>
-                <div className="text-left">
-                  <p className="text-[20px] leading-none text-[#121212] dark:text-white">
-                    Followers
-                  </p>
-                  <p className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white">
-                    276k+
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-5">
-                <a
-                  href={socialLinks.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Instagram"
-                  className="flex h-[64px] w-[64px] items-center justify-center rounded-[18px] bg-[radial-gradient(circle_at_30%_110%,#fdf497_0%,#fdf497_8%,#fd5949_30%,#d6249f_60%,#285AEB_100%)] text-white"
-                >
-                  <FaInstagram className="h-9 w-9" />
-                </a>
-                <div className="text-left">
-                  <p className="text-[20px] leading-none text-[#121212] dark:text-white">
-                    Followers
-                  </p>
-                  <p className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white">
-                    276k+
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <SocialStats />
         </div>
       </section>
 
@@ -280,7 +155,7 @@ export default function HomePage() {
             alt="Eng Yuyu Logo"
             width={300}
             height={120}
-            className="h-[70px] w-auto object-contain sm:h-[82px]"
+            className="h-[120px] w-auto object-contain sm:h-[150px] lg:h-[170px]"
             style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
           />
 
@@ -290,16 +165,40 @@ export default function HomePage() {
           </p>
 
           <div className="mt-10 flex items-center gap-4 sm:gap-5">
-            <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+            <a
+              href={socialLinks.youtube}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="YouTube"
+              className="social-icon-float-1 transition-transform duration-300 hover:scale-110"
+            >
               <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
             </a>
-            <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+            <a
+              href={socialLinks.facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              className="social-icon-float-2 transition-transform duration-300 hover:scale-110"
+            >
               <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
             </a>
-            <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+            <a
+              href={socialLinks.tiktok}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok"
+              className="social-icon-float-3 transition-transform duration-300 hover:scale-110"
+            >
               <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
             </a>
-            <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a
+              href={socialLinks.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="social-icon-float-4 transition-transform duration-300 hover:scale-110"
+            >
               <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
             </a>
           </div>
