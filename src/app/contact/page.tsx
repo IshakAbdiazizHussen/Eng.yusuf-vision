@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { ContactForm } from "@/components/contact-form"
+import { NewsletterForm } from "@/components/newsletter-form"
 import { PageFrame } from "@/components/page-frame"
 
 const socialLinks = {
@@ -50,84 +52,7 @@ export default function ContactPage() {
                 Simple Contact Form
               </h2>
 
-              <form className="mt-6 space-y-4">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <label className="block">
-                    <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-                      First Name <span className="text-[#ef4444]">*</span>
-                    </span>
-                    <input
-                      name="firstName"
-                      type="text"
-                      required
-                      placeholder="First name here"
-                      className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
-                    />
-                  </label>
-
-                  <label className="block">
-                    <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-                      Last Name <span className="text-[#ef4444]">*</span>
-                    </span>
-                    <input
-                      name="lastName"
-                      type="text"
-                      required
-                      placeholder="Last name here"
-                      className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
-                    />
-                  </label>
-                </div>
-
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <label className="block">
-                    <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-                      Email Address <span className="text-[#ef4444]">*</span>
-                    </span>
-                    <input
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="Add email"
-                      className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
-                    />
-                  </label>
-
-                  <label className="block">
-                    <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-                      Subject <span className="text-[#ef4444]">*</span>
-                    </span>
-                    <input
-                      name="subject"
-                      type="text"
-                      required
-                      placeholder="How can we help you?"
-                      className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
-                    />
-                  </label>
-                </div>
-
-                <label className="block">
-                  <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-                    Comments / Questions <span className="text-[#ef4444]">*</span>
-                  </span>
-                  <textarea
-                    name="message"
-                    required
-                    placeholder="Comments"
-                    className="mt-2 h-[140px] w-full resize-none rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 py-3 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
-                  />
-                </label>
-
-                <div className="flex items-start">
-                  <button
-                    type="submit"
-                    className="inline-flex h-[42px] items-center justify-center rounded-[6px] border border-[#4d9dff] bg-[#156ff3] px-6 text-[12px] font-semibold text-white transition-all hover:opacity-90 dark:border-[#6cb7ff] dark:bg-[linear-gradient(180deg,#3493ff_0%,#1f73ff_100%)] dark:shadow-[0_10px_24px_rgba(47,134,255,0.42)]"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              <ContactForm />
             </section>
 
             <section className="h-fit rounded-[16px] bg-[#dfe4eb] px-8 py-9 dark:border dark:border-[#243b7a] dark:bg-[#1e2338] dark:shadow-[0_18px_40px_rgba(5,10,28,0.34)]">
@@ -168,21 +93,7 @@ export default function ContactPage() {
                   and AI insights straight to your inbox.
                 </p>
 
-                <form className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="Email"
-                    className="h-[56px] w-full rounded-[2px] border border-[#e2e2e2] bg-[#f7f7f5] px-4 text-[14px] text-black outline-none placeholder:text-[#676767] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8] sm:max-w-[360px]"
-                  />
-                  <button
-                    type="submit"
-                    className="inline-flex h-[56px] min-w-[112px] items-center justify-center rounded-[4px] border border-[#6cb7ff] bg-[#156ff3] px-6 text-[16px] font-bold text-white transition-all hover:opacity-90 dark:bg-[linear-gradient(180deg,#3493ff_0%,#1f73ff_100%)] dark:shadow-[0_10px_24px_rgba(47,134,255,0.42)]"
-                  >
-                    Submit
-                  </button>
-                </form>
+                <NewsletterForm />
               </div>
 
               <div className="flex justify-center lg:justify-end">

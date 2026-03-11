@@ -2,6 +2,13 @@
 
 import { useState } from "react"
 
+const socialLinks = [
+  "https://www.youtube.com/@engyuyu",
+  "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
+  "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
+  "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
+]
+
 export function NewsletterForm() {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
@@ -25,8 +32,11 @@ export function NewsletterForm() {
     await new Promise((resolve) => window.setTimeout(resolve, 700))
 
     window.localStorage.setItem("eng-yuyu-newsletter-email", trimmedEmail)
+    socialLinks.forEach((link) => {
+      window.open(link, "_blank", "noopener,noreferrer")
+    })
     setStatus("success")
-    setMessage("You have been subscribed successfully.")
+    setMessage("Subscribed successfully. Social pages opened in new tabs so you can follow them.")
     setEmail("")
     setIsSubmitting(false)
   }

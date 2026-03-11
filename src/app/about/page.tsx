@@ -242,7 +242,7 @@ export default function AboutPage() {
         </div>
 
         <div className="bg-[#f3f3f3] px-6 py-16 dark:bg-[#171b2b] sm:px-10 lg:px-16 lg:py-20">
-          <div className="mx-auto w-full max-w-[980px] rounded-[22px] bg-[#dfe4eb] px-10 py-12 dark:bg-[#1b1f30] sm:px-14 sm:py-14">
+          <div className="about-reveal mx-auto w-full max-w-[980px] rounded-[22px] bg-[#dfe4eb] px-10 py-12 shadow-[0_22px_50px_rgba(20,35,70,0.08)] dark:bg-[#1b1f30] sm:px-14 sm:py-14">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-[470px]">
                 <h2 className="text-[28px] font-bold leading-none tracking-[-0.03em] text-black dark:text-white sm:text-[32px]">
@@ -255,16 +255,16 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-center gap-2 sm:gap-3">
-                <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+                <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon-float-1 transition-transform duration-300 hover:scale-110">
                   <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[44px] w-auto object-contain sm:h-[50px]" />
                 </a>
-                <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+                <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-2 transition-transform duration-300 hover:scale-110">
                   <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[44px] w-auto object-contain sm:h-[50px]" />
                 </a>
-                <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
-                  <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[44px] w-auto object-contain sm:h-[50px]" />
+                <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon-float-3 transition-transform duration-300 hover:scale-110">
+                  <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[44px] w-auto object-contain brightness-0 sm:h-[50px] dark:invert" />
                 </a>
-                <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+                <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon-float-4 transition-transform duration-300 hover:scale-110">
                   <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[44px] w-auto object-contain sm:h-[50px]" />
                 </a>
               </div>
