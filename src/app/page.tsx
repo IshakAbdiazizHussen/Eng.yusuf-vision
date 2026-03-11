@@ -116,7 +116,7 @@ export default function HomePage() {
                 {marqueePartners.map((partner, index) => (
                   <div
                     key={`${partner}-${index}`}
-                    className="flex min-h-[112px] min-w-[250px] shrink-0 items-center justify-center rounded-[24px] border border-[#263655] bg-[#17243c] px-7 py-4 shadow-[0_12px_28px_rgba(24,53,107,0.16)] transition-colors dark:border-[#d8e2f2] dark:bg-white dark:shadow-[0_14px_30px_rgba(0,0,0,0.12)]"
+                    className="flex min-h-[112px] min-w-[250px] shrink-0 items-center justify-center rounded-[24px] border border-[#263655] bg-[#17243c] px-7 py-4 shadow-[0_12px_28px_rgba(24,53,107,0.16)] transition-colors dark:border-[#d8e2f2] dark:bg-[#ffffff] dark:shadow-[0_14px_30px_rgba(0,0,0,0.12)]"
                   >
                     <PartnerLogo partner={partner} />
                   </div>
