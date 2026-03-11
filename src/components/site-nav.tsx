@@ -12,7 +12,7 @@ const navItems = [
   { href: "/tech-blog", label: "Tech News" },
   { href: "/events", label: "Event" },
   { href: "/impact", label: "Impact" },
-  { href: "/contact", label: "My Contacts" },
+  { href: "/contact", label: "Contacts" },
 ]
 
 export function SiteNav() {
@@ -34,7 +34,7 @@ export function SiteNav() {
             <Image
               src="/Eng Yuyu Logo-21.png"
               alt="Eng Yuyu Logo"
-              width={344}
+              width={324}
               height={89}
               className="h-auto w-full scale-[2.35] object-contain sm:scale-[2.5]"
               style={{

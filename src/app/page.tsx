@@ -20,7 +20,7 @@ function PartnerLogo({ partner }: { partner: string }) {
           <span className="absolute -right-[3px] bottom-[6px] h-3 w-3 rounded-full bg-[#185eac]" />
           T
         </div>
-        <span className="text-[31px] font-semibold tracking-[-0.03em] text-[#1b4e8f] dark:text-white">
+        <span className="text-[31px] font-semibold tracking-[-0.03em] text-white dark:text-[#1b4e8f]">
           Taran <span className="text-[#2db85b]">App</span>
         </span>
       </div>
@@ -29,13 +29,18 @@ function PartnerLogo({ partner }: { partner: string }) {
 
   if (partner === "keshflip") {
     return (
-      <Image
-        src="/keshflip logo.png"
-        alt="Keshflip"
-        width={3282}
-        height={823}
-        className="h-[50px] w-auto object-contain"
-      />
+      <div className="flex items-center gap-4">
+        <Image
+          src="/keshflip icon.png"
+          alt="Keshflip"
+          width={512}
+          height={512}
+          className="h-[58px] w-[58px] object-contain"
+        />
+        <span className="text-[31px] font-semibold tracking-[-0.03em] text-white dark:text-[#121212]">
+          Keshflip
+        </span>
+      </div>
     )
   }
 
@@ -46,9 +51,9 @@ function PartnerLogo({ partner }: { partner: string }) {
         alt="Amka"
         width={500}
         height={499}
-        className="h-[92px] w-[92px] object-contain brightness-0 saturate-0 dark:invert dark:brightness-0"
+        className="h-[92px] w-[92px] object-contain brightness-0 invert dark:brightness-0 dark:invert-0"
       />
-      <div className="leading-none text-[#2f2929] dark:text-white">
+      <div className="leading-none text-white dark:text-[#2f2929]">
         <div className="text-3xl font-semibold tracking-[-0.04em]">amka</div>
         <div className="mt-1 text-3xl font-light tracking-[-0.04em]">stock</div>
       </div>
@@ -111,7 +116,7 @@ export default function HomePage() {
                 {marqueePartners.map((partner, index) => (
                   <div
                     key={`${partner}-${index}`}
-                    className="flex h-[94px] shrink-0 items-center justify-center"
+                    className="flex min-h-[112px] min-w-[250px] shrink-0 items-center justify-center rounded-[24px] border border-[#263655] bg-[#17243c] px-7 py-4 shadow-[0_12px_28px_rgba(24,53,107,0.16)] transition-colors dark:border-[#d8e2f2] dark:bg-white dark:shadow-[0_14px_30px_rgba(0,0,0,0.12)]"
                   >
                     <PartnerLogo partner={partner} />
                   </div>
