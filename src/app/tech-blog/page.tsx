@@ -1,8 +1,14 @@
 import { ArrowRight, Link2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { NewsletterForm } from "@/components/newsletter-form"
 import { PageFrame } from "@/components/page-frame"
-import { featuredArticle, techArticles } from "@/lib/tech-blog-data"
+import {
+  blogCategories,
+  featuredArticle,
+  isBlogCategory,
+  techArticles,
+} from "@/lib/tech-blog-data"
 
 const socialLinks = {
   youtube: "https://www.youtube.com/@engyuyu",
@@ -11,21 +17,26 @@ const socialLinks = {
   facebook: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
 }
 
-const categories = [
-  "All",
-  "Tech News",
-  "Tutorials & How-To",
-  "Digital Security",
-  "AI & Future Tech",
-  "Content Creation",
-  "Reviews",
-]
+type TechBlogPageProps = {
+  searchParams?: Promise<{ category?: string }>
+}
 
-export default function TechBlogPage() {
-  const latestArticles = techArticles.slice(0, 4)
-  const sidebarArticles = techArticles.slice(3)
-  const relatedArticles = techArticles.filter(
-    (article) => article.slug !== featuredArticle.slug,
+export default async function TechBlogPage({
+  searchParams,
+}: TechBlogPageProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined
+  const activeCategory = resolvedSearchParams?.category
+  const selectedCategory = activeCategory && isBlogCategory(activeCategory)
+    ? activeCategory
+    : "All"
+  const filteredArticles = selectedCategory === "All"
+    ? techArticles
+    : techArticles.filter((article) => article.category === selectedCategory)
+  const activeFeaturedArticle = filteredArticles[0] ?? featuredArticle
+  const latestArticles = filteredArticles.slice(0, 4)
+  const sidebarArticles = filteredArticles.slice(4)
+  const relatedArticles = filteredArticles.filter(
+    (article) => article.slug !== activeFeaturedArticle.slug,
   )
 
   const newsletterSection = (
@@ -41,19 +52,7 @@ export default function TechBlogPage() {
             and AI insights straight to your inbox.
           </p>
 
-          <form className="mt-8 flex flex-col gap-4 md:flex-row">
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="h-[72px] w-full rounded-[18px] bg-white px-7 text-[24px] font-semibold text-black outline-none placeholder:text-[#8f8f8f] md:max-w-[520px]"
-            />
-            <button
-              type="submit"
-              className="inline-flex h-[72px] min-w-[220px] items-center justify-center rounded-[18px] bg-[#1d6cff] px-8 text-2xl font-bold leading-none text-white transition-opacity hover:opacity-90 md:min-w-[300px]"
-            >
-              Subscribe
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
 
         <div className="flex justify-center lg:justify-end">
@@ -83,17 +82,18 @@ export default function TechBlogPage() {
           Categories
         </h2>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          {categories.map((category, index) => (
-            <span
+          {blogCategories.map((category) => (
+            <Link
               key={category}
+              href={category === "All" ? "/tech-blog" : `/tech-blog?category=${encodeURIComponent(category)}`}
               className={`rounded-full px-5 py-3 text-[16px] font-semibold ${
-                index === 0
+                selectedCategory === category
                   ? "bg-[#1d6cff] text-white"
-                  : "bg-white/80 text-[#21304f] dark:bg-[#2a3550] dark:text-[#dfe7fb]"
+                  : "bg-white/80 text-[#21304f] transition-colors hover:bg-[#cfe0ff] dark:bg-[#2a3550] dark:text-[#dfe7fb] dark:hover:bg-[#344466]"
               }`}
             >
               {category}
-            </span>
+            </Link>
           ))}
         </div>
 
@@ -143,27 +143,41 @@ export default function TechBlogPage() {
           </div>
 
           <div className="flex flex-col gap-6 sm:gap-8">
-            {sidebarArticles.map((article) => (
-              <Link
-                key={article.slug}
-                href={`/tech-blog/${article.slug}`}
-                className="group rounded-[34px] bg-[#1d6cff] p-6 text-white transition-transform hover:-translate-y-1 sm:p-8"
-              >
+            {sidebarArticles.length > 0 ? (
+              sidebarArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/tech-blog/${article.slug}`}
+                  className="group rounded-[34px] bg-[#1d6cff] p-6 text-white transition-transform hover:-translate-y-1 sm:p-8"
+                >
+                  <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-white/80">
+                    {article.category}
+                  </p>
+                  <h3 className="mt-4 text-[28px] font-bold leading-[1.08]">
+                    {article.title}
+                  </h3>
+                  <p className="mt-4 text-[18px] leading-[1.45] text-white/88">
+                    {article.summary}
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-[16px] font-semibold">
+                    Open article
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              ))
+            ) : (
+              <div className="rounded-[34px] bg-[#1d6cff] p-6 text-white sm:p-8">
                 <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-white/80">
-                  {article.category}
+                  {selectedCategory}
                 </p>
                 <h3 className="mt-4 text-[28px] font-bold leading-[1.08]">
-                  {article.title}
+                  More stories coming soon
                 </h3>
                 <p className="mt-4 text-[18px] leading-[1.45] text-white/88">
-                  {article.summary}
+                  This category is active, and more articles will appear here as the library grows.
                 </p>
-                <span className="mt-6 inline-flex items-center gap-2 text-[16px] font-semibold">
-                  Open article
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
-            ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -172,10 +186,10 @@ export default function TechBlogPage() {
         <div className="grid gap-10 xl:grid-cols-[1.75fr_0.85fr]">
           <div className="max-w-[760px]">
             <p className="mb-6 text-center text-xl font-light text-black dark:text-white sm:mb-8 sm:text-[30px]">
-              {featuredArticle.date} | {featuredArticle.category}
+              {activeFeaturedArticle.date} | {activeFeaturedArticle.category}
             </p>
 
-            <div className={`relative h-[240px] w-full rounded-[34px] bg-gradient-to-br ${featuredArticle.accent} p-[1px] sm:h-[320px] md:h-[360px]`}>
+            <div className={`relative h-[240px] w-full rounded-[34px] bg-gradient-to-br ${activeFeaturedArticle.accent} p-[1px] sm:h-[320px] md:h-[360px]`}>
               <div className="relative h-full rounded-[33px] bg-[#edf3ff] dark:bg-[#151d2d]">
                 <div className="absolute left-5 top-5 sm:left-6 sm:top-6">
                   <Image
@@ -193,18 +207,18 @@ export default function TechBlogPage() {
 
                 <div className="flex h-full items-end p-6 sm:p-8">
                   <p className="max-w-[660px] text-[24px] font-semibold leading-[1.18] text-[#1d6cff] dark:text-[#9ac1ff] sm:text-[34px]">
-                    {featuredArticle.summary}
+                    {activeFeaturedArticle.summary}
                   </p>
                 </div>
               </div>
             </div>
 
             <h2 className="mt-7 max-w-[980px] text-2xl font-semibold leading-[1.08] tracking-[-0.03em] text-black dark:text-white sm:mt-8 sm:text-5xl">
-              {featuredArticle.title}
+              {activeFeaturedArticle.title}
             </h2>
 
             <div className="mt-5 flex items-center justify-between text-lg text-black dark:text-white sm:mt-6 sm:text-[30px]">
-              <span className="font-light">{featuredArticle.readTime}</span>
+              <span className="font-light">{activeFeaturedArticle.readTime}</span>
               <span className="inline-flex items-center gap-3 font-light">
                 <Link2 className="h-6 w-6 rotate-45 sm:h-8 sm:w-8" />
                 Share
@@ -212,11 +226,11 @@ export default function TechBlogPage() {
             </div>
 
             <p className="mt-7 max-w-[980px] text-xl font-light leading-[1.4] tracking-[-0.02em] text-black dark:text-[#e4edff] sm:mt-8 sm:text-2xl md:text-[32px]">
-              {featuredArticle.excerpt}
+              {activeFeaturedArticle.excerpt}
             </p>
 
             <Link
-              href={`/tech-blog/${featuredArticle.slug}`}
+              href={`/tech-blog/${activeFeaturedArticle.slug}`}
               className="mt-8 inline-flex items-center gap-3 rounded-[18px] bg-[#1d6cff] px-8 py-4 text-[20px] font-semibold text-white transition-all hover:-translate-y-1"
             >
               Read full story
@@ -224,7 +238,7 @@ export default function TechBlogPage() {
             </Link>
 
             <h3 className="mt-12 text-2xl font-semibold text-[#1d6cff] sm:mt-14 sm:text-[28px]">
-              Latest Articles...
+              {selectedCategory === "All" ? "Latest Articles..." : `${selectedCategory} Articles`}
             </h3>
 
             <div className="mt-8 grid gap-6 sm:gap-8 md:grid-cols-3">
@@ -248,6 +262,13 @@ export default function TechBlogPage() {
                   </Link>
                 </article>
               ))}
+              {relatedArticles.length === 0 ? (
+                <div className="md:col-span-3 rounded-[24px] bg-white/80 p-6 text-center dark:bg-[#172033]">
+                  <p className="text-[18px] font-semibold text-[#1d6cff] dark:text-[#8ebfff]">
+                    This category currently has one featured article.
+                  </p>
+                </div>
+              ) : null}
             </div>
           </div>
 
@@ -256,7 +277,10 @@ export default function TechBlogPage() {
               Partners
             </h2>
             <div className="flex flex-col gap-6 sm:gap-8">
-              {techArticles.slice(0, 2).map((article) => (
+              {(filteredArticles.slice(0, 2).length > 0
+                ? filteredArticles.slice(0, 2)
+                : techArticles.slice(0, 2)
+              ).map((article) => (
                 <div
                   key={`partner-${article.slug}`}
                   className={`rounded-[42px] bg-gradient-to-br ${article.accent} p-[1px]`}
