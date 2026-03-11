@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react"
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa"
 import { PageFrame } from "@/components/page-frame"
 
-const partners = ["taran", "keshflip", "amka"]
+const partners = ["taran", "keshflip", "amka", "sanguuni"]
 const highlights = [
   { value: 600, suffix: "+", label: "Tech Videos" },
   { value: 25, suffix: "+", label: "Countries" },
@@ -87,6 +87,24 @@ function PartnerLogo({ partner }: { partner: string }) {
         <span className="text-[31px] font-semibold tracking-[-0.03em] text-white dark:text-[#121212]">
           Keshflip
         </span>
+      </div>
+    )
+  }
+
+  if (partner === "sanguuni") {
+    return (
+      <div className="flex items-center gap-4">
+        <Image
+          src="/Sanguuni Electronics Logos.png"
+          alt="Sanguuni Electronics"
+          width={1200}
+          height={400}
+          className="h-[66px] w-auto object-contain"
+        />
+        <div className="leading-none text-white dark:text-[#1b2436]">
+          <div className="text-[28px] font-semibold tracking-[-0.04em]">Sanguuni</div>
+          <div className="mt-1 text-[24px] font-medium tracking-[-0.03em]">Electronics</div>
+        </div>
       </div>
     )
   }

@@ -71,99 +71,6 @@ const milestones = [
   },
 ]
 
-function TimelineCard({
-  date,
-  title,
-  description,
-  badgeTop,
-  badgeMain,
-  badgeBottom,
-  circleClass,
-  position,
-}: (typeof milestones)[number]) {
-  const isTop = position === "top"
-
-  return (
-    <article className="flex flex-col items-center">
-      {isTop ? (
-        <h2 className="mb-4 text-center text-[28px] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff] xl:text-[30px]">
-          {date}
-        </h2>
-      ) : null}
-
-      <div className={`relative w-full max-w-[248px] ${isTop ? "pt-7" : "pb-7"}`}>
-        {isTop ? (
-          <>
-            <div className="absolute left-1/2 top-0 h-[34px] w-[34px] -translate-x-1/2 rounded-full bg-[#156ff3]" />
-          </>
-        ) : (
-          <>
-            <div className="absolute bottom-0 left-1/2 h-[34px] w-[34px] -translate-x-1/2 rounded-full bg-[#156ff3]" />
-          </>
-        )}
-
-        <div
-          className={`min-h-[620px] rounded-[132px] border-[12px] border-[#156ff3] bg-[#dfe4eb] px-5 dark:border-[#4c8fff] dark:bg-[#25314b] ${
-            isTop
-              ? "rounded-b-[72px] border-b-0 pt-5 pb-7"
-              : "rounded-t-[72px] border-t-0 pt-7 pb-5"
-          }`}
-        >
-          {isTop ? (
-            <>
-              <div className={`mx-auto flex h-[176px] w-[176px] items-center justify-center rounded-full ${circleClass}`}>
-                <div className="text-center">
-                  <p className="text-[11px] italic text-white/95">{badgeTop || " "}</p>
-                  <p className="mt-2 text-[50px] font-extrabold leading-none tracking-[-0.06em]">
-                    {badgeMain}
-                  </p>
-                  <p className="mt-2 text-[11px] font-semibold tracking-[0.12em] text-white/90">
-                    {badgeBottom}
-                  </p>
-                </div>
-              </div>
-
-              <h3 className="mt-7 whitespace-pre-line text-center text-[18px] font-bold leading-[1.08] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff] sm:text-[20px] xl:text-[22px]">
-                {title}
-              </h3>
-              <p className="mx-auto mt-7 max-w-[190px] text-center text-[13px] leading-[1.38] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8] sm:text-[14px] xl:text-[15px]">
-                {description}
-              </p>
-            </>
-          ) : (
-            <>
-              <h3 className="whitespace-pre-line text-center text-[18px] font-bold leading-[1.08] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff] sm:text-[20px] xl:text-[22px]">
-                {title}
-              </h3>
-              <p className="mx-auto mt-7 max-w-[190px] text-center text-[13px] leading-[1.38] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8] sm:text-[14px] xl:text-[15px]">
-                {description}
-              </p>
-
-              <div className={`mx-auto mt-7 flex h-[176px] w-[176px] items-center justify-center rounded-full ${circleClass}`}>
-                <div className="text-center">
-                  <p className="text-[11px] italic text-white/95">{badgeTop || " "}</p>
-                  <p className="mt-2 text-[50px] font-extrabold leading-none tracking-[-0.06em]">
-                    {badgeMain}
-                  </p>
-                  <p className="mt-2 text-[11px] font-semibold tracking-[0.12em] text-white/90">
-                    {badgeBottom}
-                  </p>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-
-      {!isTop ? (
-        <h2 className="mt-4 text-center text-[28px] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff] xl:text-[30px]">
-          {date}
-        </h2>
-      ) : null}
-    </article>
-  )
-}
-
 export default function ImpactPage() {
   return (
     <main className="min-h-screen bg-[#f5f5f5] text-white dark:bg-[#171b2b] dark:text-white">
@@ -176,12 +83,88 @@ export default function ImpactPage() {
           </h1>
 
           <div className="mx-auto mt-16 grid max-w-[1320px] grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5 xl:items-start xl:gap-5">
-            {milestones.map((milestone) => (
-              <TimelineCard
-                key={`${milestone.date}-${milestone.title}`}
-                {...milestone}
-              />
-            ))}
+            {milestones.map((milestone) => {
+              const isTop = milestone.position === "top"
+
+              return (
+                <article
+                  key={`${milestone.date}-${milestone.title}`}
+                  className="flex flex-col items-center"
+                >
+                  {isTop ? (
+                    <h2 className="mb-4 text-center text-[28px] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff] xl:text-[30px]">
+                      {milestone.date}
+                    </h2>
+                  ) : null}
+
+                  <div className={`relative w-full max-w-[248px] ${isTop ? "pt-7" : "pb-7"}`}>
+                    <div
+                      className={`absolute left-1/2 h-[34px] w-[34px] -translate-x-1/2 rounded-full bg-[#156ff3] ${
+                        isTop ? "top-0" : "bottom-0"
+                      }`}
+                    />
+
+                    <div
+                      className={`min-h-[620px] rounded-[132px] border-[12px] border-[#156ff3] bg-[#dfe4eb] px-5 dark:border-[#4c8fff] dark:bg-[#25314b] ${
+                        isTop
+                          ? "rounded-b-[72px] border-b-0 pt-5 pb-7"
+                          : "rounded-t-[72px] border-t-0 pt-7 pb-5"
+                      }`}
+                    >
+                      {isTop ? (
+                        <>
+                          <div className={`mx-auto flex h-[176px] w-[176px] items-center justify-center rounded-full ${milestone.circleClass}`}>
+                            <div className="text-center">
+                              <p className="text-[11px] italic text-white/95">{milestone.badgeTop || " "}</p>
+                              <p className="mt-2 text-[50px] font-extrabold leading-none tracking-[-0.06em]">
+                                {milestone.badgeMain}
+                              </p>
+                              <p className="mt-2 text-[11px] font-semibold tracking-[0.12em] text-white/90">
+                                {milestone.badgeBottom}
+                              </p>
+                            </div>
+                          </div>
+
+                          <h3 className="mt-7 whitespace-pre-line text-center text-[18px] font-bold leading-[1.08] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff] sm:text-[20px] xl:text-[22px]">
+                            {milestone.title}
+                          </h3>
+                          <p className="mx-auto mt-7 max-w-[190px] text-center text-[13px] leading-[1.38] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8] sm:text-[14px] xl:text-[15px]">
+                            {milestone.description}
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          <h3 className="whitespace-pre-line text-center text-[18px] font-bold leading-[1.08] tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff] sm:text-[20px] xl:text-[22px]">
+                            {milestone.title}
+                          </h3>
+                          <p className="mx-auto mt-7 max-w-[190px] text-center text-[13px] leading-[1.38] tracking-[-0.02em] text-[#131313] dark:text-[#e5ebf8] sm:text-[14px] xl:text-[15px]">
+                            {milestone.description}
+                          </p>
+
+                          <div className={`mx-auto mt-7 flex h-[176px] w-[176px] items-center justify-center rounded-full ${milestone.circleClass}`}>
+                            <div className="text-center">
+                              <p className="text-[11px] italic text-white/95">{milestone.badgeTop || " "}</p>
+                              <p className="mt-2 text-[50px] font-extrabold leading-none tracking-[-0.06em]">
+                                {milestone.badgeMain}
+                              </p>
+                              <p className="mt-2 text-[11px] font-semibold tracking-[0.12em] text-white/90">
+                                {milestone.badgeBottom}
+                              </p>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </div>
+
+                  {!isTop ? (
+                    <h2 className="mt-4 text-center text-[28px] font-bold leading-none tracking-[-0.04em] text-[#156ff3] dark:text-[#6ea2ff] xl:text-[30px]">
+                      {milestone.date}
+                    </h2>
+                  ) : null}
+                </article>
+              )
+            })}
           </div>
         </section>
 
