@@ -30,13 +30,13 @@ export function SiteNav() {
     >
       <div className="mx-auto flex w-full max-w-[1320px] flex-wrap items-center justify-between gap-4 lg:grid lg:grid-cols-[220px_1fr_130px] lg:gap-8">
         <Link href="/" aria-label="Go to homepage" className="justify-self-start">
-          <div className="flex h-[70px] w-[70px] items-center justify-center overflow-hidden sm:h-[80px] sm:w-[80px]">
+          <div className="flex h-[58px] w-[58px] items-center justify-center overflow-hidden sm:h-[66px] sm:w-[66px]">
             <Image
               src="/Eng Yuyu Logo-21.png"
               alt="Eng Yuyu Logo"
               width={324}
               height={89}
-              className="h-auto w-full scale-[2.35] object-contain sm:scale-[2.5]"
+              className="h-auto w-full scale-[1.95] object-contain sm:scale-[2.05]"
               style={{
                 filter:
                   "brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(2724%) hue-rotate(209deg) brightness(102%) contrast(98%)",

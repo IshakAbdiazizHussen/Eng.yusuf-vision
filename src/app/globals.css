@@ -160,6 +160,28 @@
     animation: social-icon-drift-4 4.4s ease-in-out infinite;
   }
 
+  .about-reveal {
+    animation: about-reveal 1s ease-out both;
+  }
+
+  .about-hug-motion {
+    animation: about-hug-motion 5.2s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .about-hug-motion-delayed {
+    animation: about-hug-motion 5.2s ease-in-out 0.8s infinite;
+    will-change: transform;
+  }
+
+  .about-pill-float {
+    animation: about-pill-float 4.2s ease-in-out infinite;
+  }
+
+  .about-pill-float-delayed {
+    animation: about-pill-float 4.2s ease-in-out 0.5s infinite;
+  }
+
   .dark .text-black {
     color: #ffffff !important;
   }
@@ -302,5 +324,47 @@
 
   72% {
     transform: translate3d(-4px, 3px, 0) rotate(-4deg);
+  }
+}
+
+@keyframes about-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes about-hug-motion {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  30% {
+    transform: translate3d(0, -7px, 0) scale(1.02);
+  }
+
+  55% {
+    transform: translate3d(4px, 0, 0) scale(0.995);
+  }
+
+  78% {
+    transform: translate3d(-4px, 3px, 0) scale(1.015);
+  }
+}
+
+@keyframes about-pill-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0);
   }
 }

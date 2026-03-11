@@ -25,14 +25,14 @@ export default function AboutPage() {
             />
           </div>
 
-          <div className="max-w-[760px]">
+          <div className="about-reveal max-w-[760px]">
             <div className="mb-8 flex flex-wrap gap-4">
               <span className="inline-flex h-12 items-center rounded-full bg-[#eef4ff] px-6 text-[18px] font-semibold 
-              text-[#1d6cff] transition-colors hover:bg-blue-400 hover:text-white dark:bg-white dark:bg-white dark:hover:bg-[#3b87f6] dark:hover:text-white">
+              text-[#1d6cff] transition-colors hover:bg-blue-400 hover:text-white dark:bg-white dark:bg-white dark:hover:bg-[#3b87f6] dark:hover:text-white about-pill-float">
                 Tech Influencer
               </span>
               <span className="inline-flex h-12 items-center rounded-full bg-[#eef4ff] px-6 text-[18px] font-semibold 
-              text-[#1d6cff] transition-colors hover:bg-blue-400 hover:text-white dark:bg-white dark:text-blue dark:hover:bg-[#3b87f6] dark:hover:text-white">
+              text-[#1d6cff] transition-colors hover:bg-blue-400 hover:text-white dark:bg-white dark:text-blue dark:hover:bg-[#3b87f6] dark:hover:text-white about-pill-float-delayed">
                 Digital Creator
               </span>
             </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto mt-12 grid max-w-[1180px] grid-cols-1 items-center gap-12 px-4 pb-10 sm:px-0 lg:grid-cols-[1fr_380px]">
-        <div className="max-w-[760px]">
+        <div className="about-reveal max-w-[760px]">
           <h2 className="text-[58px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff]">
             My Mission
           </h2>
@@ -78,7 +78,7 @@ export default function AboutPage() {
         </div>
 
         <div className="flex justify-center lg:justify-end">
-          <div className="relative flex h-[250px] w-[250px] items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#7dbdff_0%,#2b86ef_56%,#1258d6_100%)] shadow-[inset_0_10px_22px_rgba(255,255,255,0.28),0_10px_22px_rgba(29,108,255,0.18)] sm:h-[290px] sm:w-[290px]">
+          <div className="about-hug-motion relative flex h-[250px] w-[250px] items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#7dbdff_0%,#2b86ef_56%,#1258d6_100%)] shadow-[inset_0_10px_22px_rgba(255,255,255,0.28),0_10px_22px_rgba(29,108,255,0.18)] sm:h-[290px] sm:w-[290px]">
             <div className="flex h-[190px] w-[190px] items-center justify-center rounded-full bg-[radial-gradient(circle,#ffffff_0%,#efe5ff_46%,#d2c8ff_100%)] sm:h-[220px] sm:w-[220px]">
               <div className="flex h-[120px] w-[120px] items-center justify-center rounded-full bg-[radial-gradient(circle,#ffffff_0%,#d6d9ff_50%,#b8b6ff_100%)] shadow-[0_8px_20px_rgba(29,108,255,0.18)] sm:h-[140px] sm:w-[140px]">
                 <div className="flex h-[78px] w-[78px] items-center justify-center rounded-full bg-[#1d6cff] shadow-[0_8px_18px_rgba(29,108,255,0.2)] sm:h-[92px] sm:w-[92px]">
@@ -93,12 +93,12 @@ export default function AboutPage() {
       <section className="relative left-1/2 right-1/2 mt-6 ml-[-50vw] mr-[-50vw] w-screen bg-[#dfe5ef] px-6 py-12 sm:px-10 lg:px-16">
         <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-10 lg:grid-cols-[520px_1fr] lg:gap-14">
           <div className="flex justify-center">
-            <div className="flex h-[250px] w-[250px] items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#50b6ff_0%,#1777f7_58%,#0a56d5_100%)] shadow-[inset_0_10px_22px_rgba(255,255,255,0.26),0_10px_20px_rgba(29,108,255,0.16)] sm:h-[300px] sm:w-[300px]">
+            <div className="about-hug-motion-delayed flex h-[250px] w-[250px] items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#50b6ff_0%,#1777f7_58%,#0a56d5_100%)] shadow-[inset_0_10px_22px_rgba(255,255,255,0.26),0_10px_20px_rgba(29,108,255,0.16)] sm:h-[300px] sm:w-[300px]">
               <CircleHelp className="h-36 w-36 text-white/90 sm:h-44 sm:w-44" strokeWidth={2} />
             </div>
           </div>
 
-          <div className="max-w-[760px]">
+          <div className="about-reveal max-w-[760px]">
             <h2 className="text-[58px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff]">
               What I Do
             </h2>
@@ -116,7 +116,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto mt-14 grid max-w-[1180px] grid-cols-1 items-center gap-12 px-4 pb-10 sm:px-0 lg:grid-cols-[1fr_380px]">
-        <div className="max-w-[760px]">
+        <div className="about-reveal max-w-[760px]">
           <h2 className="text-[58px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff]">
             Why I Started
           </h2>
@@ -135,7 +135,7 @@ export default function AboutPage() {
         </div>
 
         <div className="flex justify-center lg:justify-end">
-          <div className="flex h-[250px] w-[250px] items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#4b96ff_0%,#2a73ec_58%,#1d5fde_100%)] shadow-[inset_0_10px_22px_rgba(255,255,255,0.26),0_10px_20px_rgba(29,108,255,0.16)] sm:h-[300px] sm:w-[300px]">
+          <div className="about-hug-motion flex h-[250px] w-[250px] items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#4b96ff_0%,#2a73ec_58%,#1d5fde_100%)] shadow-[inset_0_10px_22px_rgba(255,255,255,0.26),0_10px_20px_rgba(29,108,255,0.16)] sm:h-[300px] sm:w-[300px]">
             <Lightbulb className="h-28 w-28 text-white sm:h-32 sm:w-32" strokeWidth={2.3} />
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function AboutPage() {
         <div className="bg-[#dfe4eb] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
           <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-y-10 lg:grid-cols-[430px_1fr] lg:gap-x-24">
             <div className="flex justify-center lg:justify-end">
-              <div className="relative h-[240px] w-[240px] rounded-full bg-[radial-gradient(circle_at_50%_28%,#5a97f2_0%,#3a7fe8_48%,#0050cf_76%,#0044b3_100%)] shadow-[inset_0_10px_20px_rgba(255,255,255,0.18),inset_0_-12px_16px_rgba(0,61,170,0.45),0_6px_14px_rgba(13,86,209,0.18)] sm:h-[270px] sm:w-[270px]">
+              <div className="about-hug-motion-delayed relative h-[240px] w-[240px] rounded-full bg-[radial-gradient(circle_at_50%_28%,#5a97f2_0%,#3a7fe8_48%,#0050cf_76%,#0044b3_100%)] shadow-[inset_0_10px_20px_rgba(255,255,255,0.18),inset_0_-12px_16px_rgba(0,61,170,0.45),0_6px_14px_rgba(13,86,209,0.18)] sm:h-[270px] sm:w-[270px]">
                 <div className="absolute left-1/2 top-[52px] h-[50px] w-[50px] -translate-x-1/2 rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.28)] sm:top-[58px] sm:h-[52px] sm:w-[52px]" />
                 <div className="absolute bottom-[62px] left-[56px] h-[50px] w-[50px] rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.28)] sm:bottom-[70px] sm:left-[62px] sm:h-[52px] sm:w-[52px]" />
                 <div className="absolute bottom-[56px] right-[56px] h-[50px] w-[50px] rounded-full bg-[#efefef] shadow-[0_4px_8px_rgba(0,0,0,0.28)] sm:bottom-[64px] sm:right-[62px] sm:h-[52px] sm:w-[52px]" />
@@ -155,7 +155,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="max-w-[560px]">
+            <div className="about-reveal max-w-[560px]">
               <h2 className="text-[34px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff] sm:text-[40px]">
                 Community Impact
               </h2>
@@ -176,7 +176,7 @@ export default function AboutPage() {
 
         <div className="bg-[#f3f3f3] px-6 py-16 dark:bg-[#1b1f30] sm:px-10 lg:px-16 lg:py-20">
           <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-y-10 lg:grid-cols-[1fr_430px] lg:gap-x-24">
-            <div className="max-w-[620px] lg:justify-self-start lg:pl-2">
+            <div className="about-reveal max-w-[620px] lg:justify-self-start lg:pl-2">
               <h2 className="text-[34px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff] sm:text-[40px]">
                 Beyond Content
               </h2>
@@ -193,7 +193,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex justify-center lg:justify-center">
-              <div className="relative h-[250px] w-[250px] sm:h-[280px] sm:w-[280px]">
+              <div className="about-hug-motion relative h-[250px] w-[250px] sm:h-[280px] sm:w-[280px]">
                 <div className="absolute left-1/2 top-[6px] h-[170px] w-[170px] -translate-x-1/2 rounded-[18px] bg-[linear-gradient(180deg,#1871ee_0%,#0d67e6_100%)] shadow-[inset_0_8px_16px_rgba(255,255,255,0.18),0_5px_10px_rgba(24,113,238,0.18)] sm:h-[182px] sm:w-[182px]">
                   <div className="absolute left-1/2 top-[32px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#f1f1f1] shadow-[0_4px_8px_rgba(0,0,0,0.3)] dark:bg-[#f1f1f1]" />
                   <div className="absolute left-1/2 top-[64px] h-[11px] w-[92px] -translate-x-1/2 rounded-full bg-[#f1f1f1] shadow-[0_4px_8px_rgba(0,0,0,0.3)] dark:bg-[#f1f1f1]" />
@@ -211,7 +211,7 @@ export default function AboutPage() {
         <div className="bg-[#dfe4eb] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
           <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-y-10 lg:grid-cols-[430px_1fr] lg:gap-x-24">
             <div className="flex justify-center lg:justify-end">
-              <div className="relative h-[240px] w-[240px] rounded-full bg-[radial-gradient(circle_at_50%_28%,#1f80f3_0%,#0d6de8_48%,#075ee2_76%,#0854d3_100%)] shadow-[inset_0_3px_8px_rgba(255,255,255,0.25),inset_0_-10px_18px_rgba(0,74,194,0.35),0_6px_14px_rgba(13,86,209,0.15)] sm:h-[270px] sm:w-[270px]">
+              <div className="about-hug-motion-delayed relative h-[240px] w-[240px] rounded-full bg-[radial-gradient(circle_at_50%_28%,#1f80f3_0%,#0d6de8_48%,#075ee2_76%,#0854d3_100%)] shadow-[inset_0_3px_8px_rgba(255,255,255,0.25),inset_0_-10px_18px_rgba(0,74,194,0.35),0_6px_14px_rgba(13,86,209,0.15)] sm:h-[270px] sm:w-[270px]">
                 <svg
                   viewBox="0 0 120 120"
                   className="absolute left-1/2 top-1/2 h-[132px] w-[132px] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_4px_5px_rgba(0,0,0,0.28)] sm:h-[148px] sm:w-[148px]"
@@ -225,7 +225,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="max-w-[560px]">
+            <div className="about-reveal max-w-[560px]">
               <h2 className="text-[34px] font-bold leading-none tracking-[-0.04em] text-[#1d6cff] sm:text-[40px]">
                 Looking Ahead
               </h2>
@@ -279,7 +279,7 @@ export default function AboutPage() {
               alt="Eng Yuyu Logo"
               width={300}
               height={120}
-              className="h-[70px] w-auto object-contain sm:h-[82px]"
+              className="h-[120px] w-auto object-contain sm:h-[150px] lg:h-[170px]"
               style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
             />
 
@@ -289,16 +289,16 @@ export default function AboutPage() {
             </p>
 
             <div className="mt-10 flex items-center gap-4 sm:gap-5">
-              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon-float-1 transition-transform duration-300 hover:scale-110">
                 <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
               </a>
-              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon-float-2 transition-transform duration-300 hover:scale-110">
                 <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
               </a>
-              <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+              <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon-float-3 transition-transform duration-300 hover:scale-110">
                 <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
               </a>
-              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-4 transition-transform duration-300 hover:scale-110">
                 <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
               </a>
             </div>

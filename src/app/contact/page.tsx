@@ -208,7 +208,7 @@ export default function ContactPage() {
               alt="Eng Yuyu Logo"
               width={300}
               height={120}
-              className="h-[66px] w-auto object-contain sm:h-[76px]"
+              className="h-[120px] w-auto object-contain sm:h-[150px] lg:h-[170px]"
               style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
             />
 
@@ -218,16 +218,16 @@ export default function ContactPage() {
             </p>
 
             <div className="mt-8 flex items-center gap-4 sm:gap-5">
-              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon-float-1 transition-transform duration-300 hover:scale-110">
                 <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
               </a>
-              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
+              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon-float-2 transition-transform duration-300 hover:scale-110">
                 <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
               </a>
-              <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+              <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon-float-3 transition-transform duration-300 hover:scale-110">
                 <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
               </a>
-              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-4 transition-transform duration-300 hover:scale-110">
                 <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
               </a>
             </div>
