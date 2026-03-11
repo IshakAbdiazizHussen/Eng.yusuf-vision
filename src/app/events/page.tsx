@@ -1,6 +1,8 @@
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight, CalendarDays, Clock3, MapPin } from "lucide-react"
 import { PageFrame } from "@/components/page-frame"
+import { events } from "@/lib/events-data"
 
 const socialLinks = {
   youtube: "https://www.youtube.com/@engyuyu",
@@ -22,56 +24,65 @@ export default function EventsPage() {
         </div>
 
         <div className="bg-[#dfe4eb] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
-          <div className="mx-auto w-full max-w-[1160px] rounded-[18px] border-2 border-[#156ff3] bg-[#f7f7f5] px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-10">
-            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[400px_1fr] lg:gap-6">
-              <div className="overflow-hidden rounded-[18px] bg-black">
-                <Image
-                  src="/engY.png"
-                  alt="Tech Innovation and Digital Growth Summit 2025"
-                  width={1272}
-                  height={1614}
-                  className="h-[260px] w-full object-cover object-top sm:h-[300px] lg:h-[312px]"
-                  priority
-                />
-              </div>
-
-              <div className="max-w-[620px]">
-                <h2 className="text-[34px] font-bold leading-[1.08] tracking-[-0.04em] text-[#181818] sm:text-[44px]">
-                  Tech Innovation &amp; Digital Growth Summit 2025
-                </h2>
-
-                <p className="mt-7 text-[18px] leading-[1.45] tracking-[-0.02em] text-[#1b1b1b] sm:text-[22px]">
-                  A full-day event exploring the future of technology,
-                  creativity, and business. Join innovators, creators, and
-                  leaders shaping tomorrow.
-                </p>
-
-                <div className="mt-8 flex flex-col gap-4 text-[16px] font-semibold leading-none text-[#171717] sm:text-[18px] lg:flex-row lg:flex-wrap lg:items-center lg:gap-6">
-                  <div className="flex items-center gap-3">
-                    <CalendarDays className="h-5 w-5 text-[#156ff3]" strokeWidth={2.4} />
-                    <span>March 22, 2025</span>
+          <div className="mx-auto grid w-full max-w-[1160px] gap-8">
+            {events.map((event, index) => (
+              <article
+                key={event.title}
+                className="rounded-[18px] border-2 border-[#156ff3] bg-[#f7f7f5] px-6 py-8 shadow-[0_18px_36px_rgba(21,111,243,0.08)] dark:bg-[#1d2436] sm:px-8 sm:py-10 lg:px-10"
+              >
+                <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[400px_1fr] lg:gap-6">
+                  <div className="overflow-hidden rounded-[18px] bg-black">
+                    <Image
+                      src={event.image}
+                      alt={event.title}
+                      width={1272}
+                      height={1614}
+                      className={`w-full object-cover object-top ${
+                        event.format === "contain"
+                          ? "h-[260px] bg-[#d6e6ff] object-contain p-4 sm:h-[300px] lg:h-[312px]"
+                          : "h-[260px] sm:h-[300px] lg:h-[312px]"
+                      }`}
+                      priority={index === 0}
+                    />
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Clock3 className="h-5 w-5 text-[#156ff3]" strokeWidth={2.4} />
-                    <span>10:00 AM - 4:30 PM</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-[#156ff3]" strokeWidth={2.4} />
-                    <span>Mogadishu Innovation Hub</span>
+
+                  <div className="max-w-[620px]">
+                    <h2 className="text-[34px] font-bold leading-[1.08] tracking-[-0.04em] text-[#181818] dark:text-white sm:text-[44px]">
+                      {event.title}
+                    </h2>
+
+                    <p className="mt-7 text-[18px] leading-[1.45] tracking-[-0.02em] text-[#1b1b1b] dark:text-[#dfe7fb] sm:text-[22px]">
+                      {event.description}
+                    </p>
+
+                    <div className="mt-8 flex flex-col gap-4 text-[16px] font-semibold leading-none text-[#171717] dark:text-[#edf3ff] sm:text-[18px] lg:flex-row lg:flex-wrap lg:items-center lg:gap-6">
+                      <div className="flex items-center gap-3">
+                        <CalendarDays className="h-5 w-5 text-[#156ff3]" strokeWidth={2.4} />
+                        <span>{event.date}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Clock3 className="h-5 w-5 text-[#156ff3]" strokeWidth={2.4} />
+                        <span>{event.time}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <MapPin className="h-5 w-5 text-[#156ff3]" strokeWidth={2.4} />
+                        <span>{event.location}</span>
+                      </div>
+                    </div>
+
+                    <Link
+                      href={`/events/${event.slug}`}
+                      className="mt-8 inline-flex h-12 items-center gap-3 rounded-[6px] bg-[#156ff3] px-7 text-[18px] font-medium text-white transition-opacity hover:opacity-90"
+                    >
+                      <span>View Event</span>
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full border border-white">
+                        <ArrowRight className="h-3 w-3" strokeWidth={2.5} />
+                      </span>
+                    </Link>
                   </div>
                 </div>
-
-                <a
-                  href="#"
-                  className="mt-8 inline-flex h-12 items-center gap-3 rounded-[6px] bg-[#156ff3] px-7 text-[18px] font-medium text-white transition-opacity hover:opacity-90"
-                >
-                  <span>View Event</span>
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full border border-white">
-                    <ArrowRight className="h-3 w-3" strokeWidth={2.5} />
-                  </span>
-                </a>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
 

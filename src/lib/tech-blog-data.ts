@@ -11,11 +11,23 @@ export type TechArticle = {
   content: string[]
 }
 
+export const blogCategories = [
+  "All",
+  "Tech News",
+  "Tutorials & How-To",
+  "Digital Security",
+  "AI & Future Tech",
+  "Content Creation",
+  "Reviews",
+] as const
+
+export type BlogCategory = (typeof blogCategories)[number]
+
 export const techArticles: TechArticle[] = [
   {
     slug: "windows-10-support-ending",
     title: "Digniin Muhiim ah oo ku Socota Dadka Weli Adeegsada Windows 10!",
-    category: "Security",
+    category: "Tech News",
     date: "December 22, 2025",
     readTime: "6 min read",
     excerpt:
@@ -122,10 +134,36 @@ export const techArticles: TechArticle[] = [
       "People do not need to become experts to use smartphones well. They just need the right practical tips at the right moment.",
     ],
   },
+  {
+    slug: "best-budget-earbuds-review-2026",
+    title: "Best Budget Earbuds Review for Everyday Users",
+    category: "Reviews",
+    date: "March 6, 2026",
+    readTime: "6 min read",
+    excerpt:
+      "Not everyone needs premium audio gear. Most users just want clear calls, solid battery life, and dependable value.",
+    summary:
+      "A practical review mindset for choosing budget earbuds without wasting money on hype.",
+    accent: "from-[#1c6cff] via-[#5a86ff] to-[#ffd37b]",
+    bullets: [
+      "What matters more than marketing specs",
+      "How to judge comfort, battery, and call quality",
+      "Which buyers should stay simple and save money",
+    ],
+    content: [
+      "A good budget tech review should answer one main question: does this product actually improve daily life for the price? For earbuds, that usually means stable connection, comfortable fit, good-enough sound, and reliable battery before anything else.",
+      "Many buyers get distracted by terms that sound premium but do not change the experience much. Clear priorities help more than long spec lists.",
+      "The smartest review habit is to match the product to the person. Students, commuters, creators, and office workers often need different strengths, even at the same price point.",
+    ],
+  },
 ]
 
 export const featuredArticle = techArticles[1]
 
 export function getArticleBySlug(slug: string) {
   return techArticles.find((article) => article.slug === slug)
+}
+
+export function isBlogCategory(value: string): value is BlogCategory {
+  return blogCategories.includes(value as BlogCategory)
 }
