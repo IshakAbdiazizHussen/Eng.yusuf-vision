@@ -62,7 +62,7 @@ export default function ContactPage() {
   return (
     <PageFrame flushBottom>
       <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] mt-0 w-screen overflow-hidden bg-[#eef2fb] dark:bg-[#121829]">
-        <div className="relative overflow-hidden bg-gradient-to-r from-[#2f7df6] via-[#5a8df9] to-[#7aa6ff] px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-24">
+        <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-24">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14),transparent_44%)]" />
           <div className="absolute right-10 top-10 hidden h-64 w-80 rounded-[32px] border border-white/10 bg-white/10 lg:block" />
           <div className="absolute right-20 top-20 hidden h-5 w-32 rounded-full bg-white/12 lg:block" />
