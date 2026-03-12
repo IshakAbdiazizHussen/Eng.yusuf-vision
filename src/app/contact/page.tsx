@@ -66,19 +66,20 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14),transparent_44%)]" />
           <div className="pointer-events-none absolute right-8 top-6 hidden lg:block">
             <div className="relative h-[300px] w-[360px]">
-              <div className="absolute right-0 top-0 scale-[1.02] opacity-18">
-                <div className="relative h-[220px] w-[252px] rounded-[34px] bg-white/10">
-                  <div className="absolute left-1/2 top-[40px] h-[20px] w-[136px] -translate-x-1/2 rounded-full bg-white/22" />
-                  <div className="absolute left-[52px] top-[100px] h-[20px] w-[104px] rounded-full bg-white/18" />
-                  <div className="absolute bottom-[-20px] right-[24px] h-[110px] w-[156px] rotate-[34deg] rounded-[30px] bg-white/12" />
+              <div className="absolute right-0 top-0 scale-[1.02] opacity-25">
+                <div className="relative h-[220px] w-[252px] rounded-[34px] border border-white/10 bg-[#6ea0ff]/45 shadow-[0_20px_40px_rgba(120,168,255,0.18)]">
+                  <div className="absolute left-1/2 top-[40px] h-[20px] w-[136px] -translate-x-1/2 rounded-full bg-white/35" />
+                  <div className="absolute left-[52px] top-[100px] h-[20px] w-[104px] rounded-full bg-white/28" />
+                  <div className="absolute bottom-[-20px] right-[24px] h-[110px] w-[156px] rotate-[34deg] rounded-[30px] border border-white/8 bg-[#8ab1ff]/38" />
                 </div>
               </div>
 
-              <div className="absolute right-[72px] top-[26px] opacity-30">
-                <div className="relative h-[220px] w-[252px] rounded-[34px] bg-white/12">
-                  <div className="absolute left-1/2 top-[40px] h-[20px] w-[136px] -translate-x-1/2 rounded-full bg-white/26" />
-                  <div className="absolute left-[52px] top-[100px] h-[20px] w-[104px] rounded-full bg-white/22" />
-                  <div className="absolute bottom-[-20px] right-[24px] h-[110px] w-[156px] rotate-[34deg] rounded-[30px] bg-white/14" />
+              <div className="absolute right-[72px] top-[26px] opacity-95">
+                <div className="relative h-[220px] w-[252px] rounded-[34px] bg-gradient-to-b from-[#2f86ff] to-[#1f6ae8] shadow-[0_22px_42px_rgba(26,92,228,0.34)]">
+                  <div className="absolute left-1/2 top-[40px] h-[20px] w-[136px] -translate-x-1/2 rounded-full bg-white/85 shadow-[0_6px_14px_rgba(255,255,255,0.2)]" />
+                  <div className="absolute left-1/2 top-[98px] h-[20px] w-[136px] -translate-x-1/2 rounded-full bg-white/85 shadow-[0_6px_14px_rgba(255,255,255,0.2)]" />
+                  <div className="absolute left-1/2 top-[156px] h-[20px] w-[136px] -translate-x-1/2 rounded-full bg-white/85 shadow-[0_6px_14px_rgba(255,255,255,0.2)]" />
+                  <div className="absolute bottom-[-18px] left-[112px] h-[112px] w-[62px] -skew-x-[28deg] rounded-b-[26px] rounded-t-[10px] bg-gradient-to-b from-[#2878f5] to-[#1d67e4] shadow-[0_16px_26px_rgba(24,95,224,0.38)]" />
                 </div>
               </div>
             </div>
