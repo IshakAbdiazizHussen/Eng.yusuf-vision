@@ -1,26 +1,34 @@
 "use client"
 
 import { useState } from "react"
+import { ChevronDown } from "lucide-react"
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const inquiryOptions = [
+  "Business Partnership",
+  "Media / Interview Request",
+  "Event Invitation",
+  "Tech Support / Question",
+  "Collaboration Opportunity",
+  "Other Inquiry",
+]
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
-    subject: "",
+    inquiryType: "",
     message: "",
   })
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
-  const [message, setMessage] = useState("")
+  const [feedback, setFeedback] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const updateField = (field: keyof typeof formData, value: string) => {
     setFormData((current) => ({ ...current, [field]: value }))
     if (status !== "idle") {
       setStatus("idle")
-      setMessage("")
+      setFeedback("")
     }
   }
 
@@ -28,38 +36,35 @@ export function ContactForm() {
     event.preventDefault()
 
     const trimmedData = {
-      firstName: formData.firstName.trim(),
-      lastName: formData.lastName.trim(),
+      fullName: formData.fullName.trim(),
       email: formData.email.trim(),
-      subject: formData.subject.trim(),
+      inquiryType: formData.inquiryType.trim(),
       message: formData.message.trim(),
     }
 
-    const hasEmptyField = Object.values(trimmedData).some((value) => value.length === 0)
-
-    if (hasEmptyField) {
+    if (Object.values(trimmedData).some((value) => value.length === 0)) {
       setStatus("error")
-      setMessage("Please complete all required fields.")
+      setFeedback("Please complete all fields before sending.")
       return
     }
 
     if (!emailPattern.test(trimmedData.email)) {
       setStatus("error")
-      setMessage("Please enter a valid email address.")
+      setFeedback("Please enter a valid email address.")
       return
     }
 
     setIsSubmitting(true)
 
     const body = [
-      `First Name: ${trimmedData.firstName}`,
-      `Last Name: ${trimmedData.lastName}`,
+      `Full Name: ${trimmedData.fullName}`,
       `Email: ${trimmedData.email}`,
+      `Inquiry Type: ${trimmedData.inquiryType}`,
       "",
       trimmedData.message,
     ].join("\n")
 
-    const mailtoLink = `mailto:engyuyu.contact@gmail.com?subject=${encodeURIComponent(trimmedData.subject)}&body=${encodeURIComponent(body)}`
+    const mailtoLink = `mailto:contact@engyuyuu.com?subject=${encodeURIComponent(trimmedData.inquiryType)}&body=${encodeURIComponent(body)}`
 
     await new Promise((resolve) => window.setTimeout(resolve, 500))
 
@@ -73,115 +78,90 @@ export function ContactForm() {
     )
 
     setFormData({
-      firstName: "",
-      lastName: "",
+      fullName: "",
       email: "",
-      subject: "",
+      inquiryType: "",
       message: "",
     })
     setStatus("success")
-    setMessage("Your email app has been opened with the message ready to send.")
+    setFeedback("Your email app has been opened with the message ready to send.")
     setIsSubmitting(false)
   }
 
   return (
-    <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <label className="block">
-          <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-            First Name <span className="text-[#ef4444]">*</span>
-          </span>
+    <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
+      <label className="block">
           <input
-            name="firstName"
+            name="fullName"
             type="text"
             required
-            value={formData.firstName}
-            onChange={(event) => updateField("firstName", event.target.value)}
-            placeholder="First name here"
-            className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
+            value={formData.fullName}
+            onChange={(event) => updateField("fullName", event.target.value)}
+            placeholder="Full Name"
+            className="h-14 w-full rounded-[14px] border border-[#e5e7ef] bg-white px-5 text-[18px] text-[#1f2431] outline-none transition placeholder:text-[#b0b5c3] focus:border-[#4c88ff] dark:border-[#31405d] dark:bg-[#192238] dark:text-white dark:placeholder:text-[#8ea0c4]"
           />
-        </label>
+      </label>
 
-        <label className="block">
-          <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-            Last Name <span className="text-[#ef4444]">*</span>
-          </span>
-          <input
-            name="lastName"
-            type="text"
-            required
-            value={formData.lastName}
-            onChange={(event) => updateField("lastName", event.target.value)}
-            placeholder="Last name here"
-            className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
-          />
-        </label>
-      </div>
-
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <label className="block">
-          <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-            Email Address <span className="text-[#ef4444]">*</span>
-          </span>
+      <label className="block">
           <input
             name="email"
             type="email"
             required
             value={formData.email}
             onChange={(event) => updateField("email", event.target.value)}
-            placeholder="Add email"
-            className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
+            placeholder="Email Address"
+            className="h-14 w-full rounded-[14px] border border-[#e5e7ef] bg-white px-5 text-[18px] text-[#1f2431] outline-none transition placeholder:text-[#b0b5c3] focus:border-[#4c88ff] dark:border-[#31405d] dark:bg-[#192238] dark:text-white dark:placeholder:text-[#8ea0c4]"
           />
-        </label>
+      </label>
 
-        <label className="block">
-          <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-            Subject <span className="text-[#ef4444]">*</span>
-          </span>
-          <input
-            name="subject"
-            type="text"
-            required
-            value={formData.subject}
-            onChange={(event) => updateField("subject", event.target.value)}
-            placeholder="How can we help you?"
-            className="mt-2 h-[44px] w-full rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
-          />
-        </label>
-      </div>
+      <label className="relative block">
+        <select
+          name="inquiryType"
+          value={formData.inquiryType}
+          onChange={(event) => updateField("inquiryType", event.target.value)}
+          className="h-14 w-full appearance-none rounded-[14px] border border-[#e5e7ef] bg-white px-5 pr-14 text-[18px] font-medium text-[#1f2431] outline-none transition focus:border-[#4c88ff] dark:border-[#31405d] dark:bg-[#192238] dark:text-white"
+        >
+          <option value="" disabled>
+            Select Inquiry Type
+          </option>
+          {inquiryOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        <ChevronDown className="pointer-events-none absolute right-5 top-1/2 h-5 w-5 -translate-y-1/2 text-[#4c88ff]" />
+      </label>
 
       <label className="block">
-        <span className="text-[12px] font-semibold text-[#1c2440] dark:text-[#f5f7ff]">
-          Comments / Questions <span className="text-[#ef4444]">*</span>
-        </span>
         <textarea
           name="message"
           required
           value={formData.message}
           onChange={(event) => updateField("message", event.target.value)}
-          placeholder="Comments"
-          className="mt-2 h-[140px] w-full resize-none rounded-[6px] border border-[#e3e3e3] bg-[#f2f4f7] px-4 py-3 text-[12px] text-black outline-none placeholder:text-[#8b8b8b] dark:border-[#8f9de8] dark:bg-[#4f4b73] dark:text-[#ffffff] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] dark:placeholder:text-[#aab4e8]"
+          placeholder="Message"
+          className="h-40 w-full resize-none rounded-[14px] border border-[#e5e7ef] bg-white px-5 py-4 text-[18px] text-[#1f2431] outline-none transition placeholder:text-[#b0b5c3] focus:border-[#4c88ff] dark:border-[#31405d] dark:bg-[#192238] dark:text-white dark:placeholder:text-[#8ea0c4]"
         />
       </label>
 
-      <div className="flex items-start gap-4">
+      <div className="pt-4">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex h-[42px] items-center justify-center rounded-[6px] border border-[#4d9dff] bg-[#156ff3] px-6 text-[12px] font-semibold text-white transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70 dark:border-[#6cb7ff] dark:bg-[linear-gradient(180deg,#3493ff_0%,#1f73ff_100%)] dark:shadow-[0_10px_24px_rgba(47,134,255,0.42)]"
+          className="inline-flex min-h-14 min-w-[206px] items-center justify-center rounded-[14px] bg-[linear-gradient(90deg,#2b8cff_0%,#2865e7_100%)] px-8 text-[18px] font-semibold text-white shadow-[0_14px_30px_rgba(43,108,255,0.24)] transition hover:translate-y-[-1px] hover:shadow-[0_18px_34px_rgba(43,108,255,0.3)] disabled:cursor-not-allowed disabled:opacity-80"
         >
           {isSubmitting ? "Opening..." : "Send Message"}
         </button>
 
-        {message ? (
+        {feedback ? (
           <p
-            className={`max-w-[320px] text-[12px] font-semibold leading-[1.45] ${
+            className={`mt-4 max-w-[420px] text-sm font-medium ${
               status === "success"
-                ? "text-[#156ff3] dark:text-[#8ec0ff]"
-                : "text-[#c73636] dark:text-[#ff9c9c]"
+                ? "text-[#2d6ff7] dark:text-[#8ab0ff]"
+                : "text-[#c84040] dark:text-[#ffb0b0]"
             }`}
           >
-            {message}
+            {feedback}
           </p>
         ) : null}
       </div>

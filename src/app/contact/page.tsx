@@ -1,7 +1,22 @@
 import Image from "next/image"
+import Link from "next/link"
+import type { ReactNode } from "react"
+import {
+  CalendarDays,
+  ChevronDown,
+  Mail,
+  MapPin,
+  MessageSquareText,
+} from "lucide-react"
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6"
 import { ContactForm } from "@/components/contact-form"
-import { NewsletterForm } from "@/components/newsletter-form"
 import { PageFrame } from "@/components/page-frame"
+
+const faqs = [
+  "Do you accept product review requests?",
+  "How long does it take to receive a response?",
+  "Do you collaborate with tech brands?",
+]
 
 const socialLinks = {
   youtube: "https://www.youtube.com/@engyuyu",
@@ -10,144 +25,204 @@ const socialLinks = {
   facebook: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
 }
 
+function InfoRow({
+  icon,
+  title,
+  value,
+  note,
+}: {
+  icon: ReactNode
+  title: string
+  value: string
+  note?: string
+}) {
+  return (
+    <div className="flex items-start gap-4">
+      <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[linear-gradient(180deg,#4c98ff_0%,#2d72eb_100%)] text-white shadow-[0_8px_18px_rgba(48,112,239,0.2)]">
+        {icon}
+      </div>
+      <div>
+        <p className="text-[14px] font-semibold uppercase tracking-[0.18em] text-[#7d8799] dark:text-[#9ab0d9]">
+          {title}
+        </p>
+        <p className="mt-1 text-[18px] font-semibold leading-[1.4] text-[#1f2432] dark:text-white">
+          {value}
+        </p>
+        {note ? (
+          <p className="mt-1 text-[15px] leading-[1.5] text-[#8a92a3] dark:text-[#a9b7d3]">
+            {note}
+          </p>
+        ) : null}
+      </div>
+    </div>
+  )
+}
+
 export default function ContactPage() {
   return (
     <PageFrame flushBottom>
-      <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] mt-0 w-screen">
-        <div className="overflow-hidden bg-[#156ff3] px-6 py-16 text-white dark:bg-[#0b49c4] sm:px-10 lg:px-16 lg:py-18">
-          <div
-            className="absolute inset-0 hidden bg-cover bg-center opacity-60 dark:block"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg, rgba(7,50,163,0.88), rgba(29,105,223,0.72)), url('/engY.png')",
-            }}
-          />
-          <div className="absolute inset-0 opacity-45 dark:hidden">
-            <div className="absolute -left-10 top-[-30px] h-[240px] w-[240px] rounded-full bg-white/16 blur-[38px]" />
-            <div className="absolute left-[20%] top-[-40px] h-[260px] w-[120px] rotate-[20deg] rounded-full bg-white/18 blur-[24px]" />
-            <div className="absolute left-[38%] top-[-12px] h-[220px] w-[260px] rounded-full bg-white/14 blur-[46px]" />
-            <div className="absolute right-[16%] top-[-24px] h-[240px] w-[250px] rounded-full bg-white/16 blur-[40px]" />
-            <div className="absolute right-[-20px] top-[-18px] h-[230px] w-[160px] rounded-full bg-white/18 blur-[30px]" />
-          </div>
+      <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] mt-0 w-screen overflow-hidden bg-[#eef2fb] dark:bg-[#121829]">
+        <div className="relative overflow-hidden bg-[linear-gradient(90deg,#4f8ffb_0%,#6896fb_45%,#7ca5ff_100%)] px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-24">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.18),transparent_28%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.12),transparent_26%),radial-gradient(circle_at_50%_60%,rgba(255,255,255,0.1),transparent_32%)]" />
+          <div className="pointer-events-none absolute right-[6%] top-8 hidden h-[230px] w-[320px] rounded-[32px] border border-white/10 bg-white/8 backdrop-blur-[2px] lg:block" />
+          <div className="pointer-events-none absolute right-[10%] top-16 hidden h-[18px] w-[110px] rounded-full bg-white/12 lg:block" />
+          <div className="pointer-events-none absolute right-[10%] top-48 hidden h-[95px] w-[170px] rotate-[32deg] rounded-[24px] border border-white/10 bg-white/10 lg:block" />
+          <div className="pointer-events-none absolute right-[16%] top-28 hidden h-[18px] w-[110px] rounded-full bg-white/12 lg:block" />
+          <div className="pointer-events-none absolute right-[10%] top-[352px] hidden h-[18px] w-[110px] rounded-full bg-white/12 lg:block" />
 
-          <div className="relative mx-auto w-full max-w-[760px] text-center">
-            <h1 className="text-[44px] font-bold leading-none tracking-[-0.04em] text-white sm:text-[56px]">
-              Get in Touch
+          <div className="relative mx-auto max-w-[900px] text-center">
+            <h1 className="text-[42px] font-semibold tracking-[-0.04em] text-white sm:text-[56px]">
+              Contact Eng Yuyu
             </h1>
-            <p className="mx-auto mt-5 max-w-[720px] text-[18px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[20px]">
-              Have questions, collaboration ideas, or just want to say hi?
-              Reach out to Yuyu easily whether it&apos;s for tech advice,
-              projects, or partnerships, he&apos;s always happy to connect.
+            <p className="mx-auto mt-6 max-w-[700px] text-[19px] leading-[1.7] text-white/92 sm:text-[20px]">
+              Have a business inquiry, collaboration opportunity, or
+              tech-related question?
+              <br className="hidden sm:block" /> Feel free to reach out. I
+              usually respond within 24 - 48 hours.
             </p>
           </div>
         </div>
 
-        <div className="relative bg-[#f3f3f3] px-6 py-14 dark:bg-[#171b2b] sm:px-10 lg:px-16 lg:py-16">
-          <div className="pointer-events-none absolute inset-0 hidden dark:block">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(29,108,255,0.16),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(39,179,255,0.12),transparent_24%)]" />
+        <div className="relative px-6 py-14 sm:px-10 lg:px-16 lg:py-18">
+          <div className="pointer-events-none absolute inset-0 opacity-70">
+            <div
+              className="absolute bottom-0 left-0 right-0 top-[44%]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, rgba(96,126,184,0.14) 1px, transparent 1px)",
+                backgroundSize: "12px 12px",
+              }}
+            />
           </div>
-          <div className="mx-auto grid w-full max-w-[920px] grid-cols-1 gap-5 lg:grid-cols-[1.08fr_0.92fr]">
-            <section className="rounded-[16px] border border-[#77a9ff] bg-[#f7f7f5] px-8 py-8 dark:border-[#2d88ff] dark:bg-[#1b2033] dark:shadow-[0_0_0_1px_rgba(24,111,255,0.18),0_18px_40px_rgba(5,10,28,0.42)]">
-              <h2 className="text-[24px] font-bold leading-none tracking-[-0.03em] text-[#161616] dark:text-white">
-                Simple Contact Form
-              </h2>
 
-              <ContactForm />
-            </section>
+          <div className="relative mx-auto max-w-[940px]">
+            <div className="grid gap-5 lg:grid-cols-[1.6fr_1fr]">
+              <section className="rounded-[28px] border border-white/65 bg-white px-7 py-8 shadow-[0_18px_48px_rgba(42,72,130,0.08)] dark:border-[#283554] dark:bg-[#182033] dark:shadow-[0_18px_48px_rgba(3,7,20,0.45)] sm:px-8 sm:py-9">
+                <h2 className="text-[34px] font-semibold tracking-[-0.04em] text-[#1b2232] dark:text-white">
+                  Send a Message
+                </h2>
+                <ContactForm />
+              </section>
 
-            <section className="about-reveal h-fit rounded-[16px] bg-[#dfe4eb] px-8 py-9 shadow-[0_18px_40px_rgba(15,35,78,0.08)] dark:border dark:border-[#243b7a] dark:bg-[#1e2338] dark:shadow-[0_18px_40px_rgba(5,10,28,0.34)]">
-              <h2 className="text-[22px] font-bold leading-none tracking-[-0.03em] text-[#111111] dark:text-white">
-                Join the Community
+              <aside className="h-fit rounded-[28px] border border-white/65 bg-white px-7 py-8 shadow-[0_18px_48px_rgba(42,72,130,0.08)] dark:border-[#283554] dark:bg-[#182033] dark:shadow-[0_18px_48px_rgba(3,7,20,0.45)] sm:px-8 sm:py-9">
+                <h2 className="text-[34px] font-semibold tracking-[-0.04em] text-[#1b2232] dark:text-white">
+                  Direct Contact
+                </h2>
+
+                <div className="mt-8 space-y-7">
+                  <InfoRow
+                    icon={<Mail className="h-5 w-5" />}
+                    title="Email"
+                    value="contact@engyuyuu.com"
+                  />
+                  <InfoRow
+                    icon={<MessageSquareText className="h-5 w-5" />}
+                    title="Business"
+                    value="Business@engyuyuyu.com"
+                    note="Business inquiries ,admin"
+                  />
+                  <InfoRow
+                    icon={<MapPin className="h-5 w-5" />}
+                    title="Location"
+                    value="Mogadishu, Somalia"
+                    note="Response time: Within 24–48 hours"
+                  />
+                </div>
+
+                <Link
+                  href="mailto:contact@engyuyuu.com?subject=Book%20a%20Call"
+                  className="mt-9 inline-flex h-16 w-full items-center justify-center gap-3 rounded-[16px] bg-[linear-gradient(90deg,#264d9d_0%,#1d3777_100%)] px-6 text-[18px] font-semibold text-white shadow-[0_18px_30px_rgba(31,60,125,0.28)] transition hover:translate-y-[-1px]"
+                >
+                  <CalendarDays className="h-5 w-5" />
+                  Book a Call
+                </Link>
+              </aside>
+            </div>
+
+            <section className="mt-6 rounded-[28px] border border-white/65 bg-white px-7 py-8 shadow-[0_18px_48px_rgba(42,72,130,0.08)] dark:border-[#283554] dark:bg-[#182033] dark:shadow-[0_18px_48px_rgba(3,7,20,0.45)] sm:px-8 sm:py-9">
+              <h2 className="text-[34px] font-semibold tracking-[-0.04em] text-[#1b2232] dark:text-white">
+                Frequently Asked Questions
               </h2>
-              <p className="mt-5 max-w-[300px] text-[18px] leading-[1.28] tracking-[-0.02em] text-[#161616] dark:text-[#f1f5ff]">
-                Millions are already learning tech the simple way. Follow,
-                watch, and grow with us across platforms.
+              <p className="mt-4 text-[18px] leading-[1.6] text-[#8c93a4] dark:text-[#aab8d4]">
+                Follow Eng Yuyu for daily tech tips and updates.
               </p>
 
-              <div className="mt-8 flex items-center gap-2">
-                <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon-float-1 rounded-[6px] transition-transform duration-300 hover:scale-110 dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
-                  <Image src="/Facebook.png" alt="Facebook" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[24px] dark:brightness-0 dark:invert" />
-                </a>
-                <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-2 rounded-[6px] transition-transform duration-300 hover:scale-110 dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
-                  <Image src="/Instgram.png" alt="Instagram" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[24px] dark:brightness-0 dark:invert" />
-                </a>
-                <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon-float-3 rounded-[6px] transition-transform duration-300 hover:scale-110 dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
-                  <Image src="/Tiktok.png" alt="TikTok" width={52} height={52} className="h-[40px] w-auto object-contain brightness-0 dark:h-[24px] dark:invert" />
-                </a>
-                <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon-float-4 rounded-[6px] transition-transform duration-300 hover:scale-110 dark:border dark:border-[#3b8cff] dark:bg-[#2269de] dark:p-3 dark:shadow-[0_6px_18px_rgba(34,105,222,0.35)]">
-                  <Image src="/youtubeRemoving.png" alt="YouTube" width={52} height={52} className="h-[40px] w-auto object-contain dark:h-[24px] dark:brightness-0 dark:invert" />
-                </a>
+              <div className="mt-8 space-y-4">
+                {faqs.map((question) => (
+                  <details
+                    key={question}
+                    className="group rounded-[16px] border border-[#e8ebf3] bg-[#fbfcff] px-5 py-4 text-[#202636] shadow-[0_4px_18px_rgba(33,57,103,0.04)] dark:border-[#2d3a57] dark:bg-[#1b253b] dark:text-white"
+                  >
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[18px] font-semibold leading-[1.5]">
+                      {question}
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full text-[#a0a7b5] transition group-open:rotate-180 dark:text-[#8ea0c4]">
+                        <ChevronDown className="h-5 w-5" />
+                      </span>
+                    </summary>
+                    <p className="pt-3 text-[16px] leading-[1.7] text-[#7d8799] dark:text-[#aab8d4]">
+                      Reach out through the form or direct email and we&apos;ll
+                      get back to you with the right next step as soon as
+                      possible.
+                    </p>
+                  </details>
+                ))}
               </div>
             </section>
           </div>
-
-          <section className="mx-auto mt-16 w-full max-w-[920px] rounded-[16px] bg-[#dfe4eb] px-8 py-10 dark:border dark:border-[#243b7a] dark:bg-[#1e2338] dark:shadow-[0_18px_40px_rgba(5,10,28,0.34)]">
-            <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_220px]">
-              <div className="max-w-[520px]">
-                <h2 className="text-[24px] font-bold leading-none tracking-[-0.03em] text-[#111111] dark:text-white">
-                  Join My Newsletter
-                </h2>
-                <p className="mt-5 text-[18px] leading-[1.3] tracking-[-0.02em] text-[#161616] dark:text-[#f1f5ff]">
-                  Get practical tech tips, digital safety guides,
-                  <br />
-                  and AI insights straight to your inbox.
-                </p>
-
-                <NewsletterForm />
-              </div>
-
-              <div className="flex justify-center lg:justify-end">
-                <div className="relative flex h-[140px] w-[140px] items-center justify-center rounded-full border-[8px] border-[#11a5ff] bg-white shadow-[0_0_0_8px_#156ff3] dark:border-[#27b3ff] dark:bg-[#131c36] dark:shadow-[0_0_0_10px_#0f72ff]">
-                  <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.55),transparent_35%),radial-gradient(circle_at_70%_70%,rgba(0,153,255,0.24),transparent_45%)] dark:opacity-100" />
-                  <div className="relative flex h-[58px] w-[58px] items-center justify-center rounded-[10px] bg-[#156ff3] dark:bg-[#0976ff]">
-                    <div className="absolute inset-x-0 top-[14px] mx-auto h-[2px] w-[34px] bg-white/35" />
-                    <div className="absolute left-[10px] top-[11px] h-[2px] w-[18px] rotate-[38deg] bg-white/65" />
-                    <div className="absolute right-[10px] top-[11px] h-[2px] w-[18px] -rotate-[38deg] bg-white/65" />
-                  </div>
-                  <div className="absolute bottom-[40px] h-[14px] w-[40px] rounded-b-[10px] rounded-t-[4px] border-b-[6px] border-white bg-transparent" />
-                  <div className="absolute bottom-[22px] left-[40px] h-[22px] w-[36px] rounded-b-[18px] border-b-[7px] border-l-[7px] border-[#131c36] dark:border-[#131c36]" />
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
 
-        <div className="bg-[#1f5db8] px-6 py-14 text-white sm:px-10 lg:px-16 lg:py-16">
-          <div className="mx-auto flex w-full max-w-[980px] flex-col items-center text-center">
+        <footer className="relative overflow-hidden bg-[linear-gradient(90deg,#0d63ff_0%,#1f6fff_35%,#1e5cf6_100%)] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-18">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),transparent_40%)]" />
+          <div className="relative mx-auto flex max-w-[900px] flex-col items-center text-center">
             <Image
               src="/Eng Yuyu Logo-21.png"
-              alt="Eng Yuyu Logo"
-              width={300}
-              height={120}
-              className="h-[120px] w-auto object-contain sm:h-[150px] lg:h-[170px]"
-              style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
+              alt="Eng Yuyu logo"
+              width={160}
+              height={110}
+              className="h-[88px] w-auto object-contain brightness-0 invert"
             />
 
-            <p className="mt-5 max-w-[760px] text-[17px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[18px]">
+            <p className="mt-6 max-w-[760px] text-[18px] leading-[1.7] text-white/92">
               My Goal is Simple: to Educate, Inspire and Connect people through
-              technology: One video, one idea and one innovation at a time.....
+              technology. One vides, one idea, and one proson at a time.
             </p>
 
-            <div className="mt-8 flex items-center gap-4 sm:gap-5">
-              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon-float-1 transition-transform duration-300 hover:scale-110">
-                <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
-              </a>
-              <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon-float-2 transition-transform duration-300 hover:scale-110">
-                <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
-              </a>
-              <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon-float-3 transition-transform duration-300 hover:scale-110">
-                <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
-              </a>
-              <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-4 transition-transform duration-300 hover:scale-110">
-                <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[28px] w-auto object-contain brightness-0 invert sm:h-[32px]" />
-              </a>
+            <div className="mt-8 flex items-center gap-5 text-[28px]">
+              <Link
+                href={socialLinks.youtube}
+                aria-label="YouTube"
+                className="transition hover:scale-110"
+              >
+                <FaYoutube />
+              </Link>
+              <Link
+                href={socialLinks.facebook}
+                aria-label="Facebook"
+                className="transition hover:scale-110"
+              >
+                <FaFacebookF />
+              </Link>
+              <Link
+                href={socialLinks.tiktok}
+                aria-label="TikTok"
+                className="transition hover:scale-110"
+              >
+                <FaTiktok />
+              </Link>
+              <Link
+                href={socialLinks.instagram}
+                aria-label="Instagram"
+                className="transition hover:scale-110"
+              >
+                <FaInstagram />
+              </Link>
             </div>
-          </div>
 
-          <div className="mx-auto mt-12 w-screen border-t border-white/35 pt-6 text-center text-[16px] tracking-[-0.02em] text-white/95">
-            © 2025 Eng Yuyu Media - All Rights Reserved.
+            <p className="mt-10 text-[15px] text-white/80">
+              © 2024 Eng Yuyu Media - All Rights Reserved.
+            </p>
           </div>
-        </div>
+        </footer>
       </section>
     </PageFrame>
   )
