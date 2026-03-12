@@ -6,6 +6,15 @@ import { ArrowRight } from "lucide-react"
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa"
 import { PageFrame } from "@/components/page-frame"
 
+type SocialStat = {
+  platform: "youtube" | "tiktok" | "facebook" | "instagram"
+  label: string
+  value: number
+  decimals?: number
+  suffix: string
+  href: string
+}
+
 const partners = ["taran", "keshflip", "amka", "sanguuni"]
 const highlights = [
   { value: 600, suffix: "+", label: "Tech Videos" },
@@ -13,7 +22,7 @@ const highlights = [
   { value: 27, suffix: "+", label: "Million Views" },
   { value: 10, suffix: "+", label: "Collaborate" },
 ]
-const socialStats = [
+const socialStats: SocialStat[] = [
   {
     platform: "youtube",
     label: "Subscribers",
@@ -43,7 +52,7 @@ const socialStats = [
     suffix: "k+",
     href: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
   },
-] as const
+]
 const socialLinks = {
   youtube: "https://www.youtube.com/@engyuyu",
   tiktok: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
@@ -173,13 +182,7 @@ function CountUpNumber({
   )
 }
 
-function SocialIcon({
-  platform,
-  index,
-}: {
-  platform: (typeof socialStats)[number]["platform"]
-  index: number
-}) {
+function SocialIcon({ platform, index }: { platform: SocialStat["platform"]; index: number }) {
   const motionClass = `social-icon-float-${(index % 4) + 1}`
 
   if (platform === "youtube") {
