@@ -62,19 +62,18 @@ export default function ContactPage() {
   return (
     <PageFrame flushBottom>
       <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] mt-0 w-screen overflow-hidden bg-[#eef2fb] dark:bg-[#121829]">
-        <div className="relative overflow-hidden bg-[linear-gradient(90deg,#4f8ffb_0%,#6896fb_45%,#7ca5ff_100%)] px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.18),transparent_28%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.12),transparent_26%),radial-gradient(circle_at_50%_60%,rgba(255,255,255,0.1),transparent_32%)]" />
-          <div className="pointer-events-none absolute right-[6%] top-8 hidden h-[230px] w-[320px] rounded-[32px] border border-white/10 bg-white/8 backdrop-blur-[2px] lg:block" />
-          <div className="pointer-events-none absolute right-[10%] top-16 hidden h-[18px] w-[110px] rounded-full bg-white/12 lg:block" />
-          <div className="pointer-events-none absolute right-[10%] top-48 hidden h-[95px] w-[170px] rotate-[32deg] rounded-[24px] border border-white/10 bg-white/10 lg:block" />
-          <div className="pointer-events-none absolute right-[16%] top-28 hidden h-[18px] w-[110px] rounded-full bg-white/12 lg:block" />
-          <div className="pointer-events-none absolute right-[10%] top-[352px] hidden h-[18px] w-[110px] rounded-full bg-white/12 lg:block" />
+        <div className="relative overflow-hidden bg-gradient-to-r from-[#2f7df6] via-[#5a8df9] to-[#7aa6ff] px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-24">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14),transparent_44%)]" />
+          <div className="absolute right-10 top-10 hidden h-64 w-80 rounded-[32px] border border-white/10 bg-white/10 lg:block" />
+          <div className="absolute right-20 top-20 hidden h-5 w-32 rounded-full bg-white/12 lg:block" />
+          <div className="absolute right-28 top-44 hidden h-5 w-28 rounded-full bg-white/12 lg:block" />
+          <div className="absolute right-14 top-48 hidden h-28 w-44 rotate-[34deg] rounded-[28px] border border-white/10 bg-white/10 lg:block" />
 
           <div className="relative mx-auto max-w-[900px] text-center">
-            <h1 className="text-[42px] font-semibold tracking-[-0.04em] text-white sm:text-[56px]">
+            <h1 className="text-[44px] font-bold tracking-[-0.04em] text-white sm:text-[64px]">
               Contact Eng Yuyu
             </h1>
-            <p className="mx-auto mt-6 max-w-[700px] text-[19px] leading-[1.7] text-white/92 sm:text-[20px]">
+            <p className="mx-auto mt-7 max-w-[860px] text-[18px] font-medium leading-[1.9] text-white/95 sm:text-[20px]">
               Have a business inquiry, collaboration opportunity, or
               tech-related question?
               <br className="hidden sm:block" /> Feel free to reach out. I
