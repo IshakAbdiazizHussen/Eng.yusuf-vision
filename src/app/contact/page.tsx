@@ -183,8 +183,7 @@ export default function ContactPage() {
             />
 
             <p className="mt-6 max-w-[760px] text-[18px] leading-[1.7] text-white/92">
-              My Goal is Simple: to Educate, Inspire and Connect people through
-              technology. One vides, one idea, and one proson at a time.
+              Learn technology. Build the future. Stay connected with Eng Yuyu.
             </p>
 
             <div className="mt-8 flex items-center gap-5 text-[28px]">
