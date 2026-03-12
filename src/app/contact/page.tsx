@@ -64,10 +64,25 @@ export default function ContactPage() {
       <section className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] mt-0 w-screen overflow-hidden bg-[#eef2fb] dark:bg-[#121829]">
         <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-24">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14),transparent_44%)]" />
-          <div className="absolute right-10 top-10 hidden h-64 w-80 rounded-[32px] border border-white/10 bg-white/10 lg:block" />
-          <div className="absolute right-20 top-20 hidden h-5 w-32 rounded-full bg-white/12 lg:block" />
-          <div className="absolute right-28 top-44 hidden h-5 w-28 rounded-full bg-white/12 lg:block" />
-          <div className="absolute right-14 top-48 hidden h-28 w-44 rotate-[34deg] rounded-[28px] border border-white/10 bg-white/10 lg:block" />
+          <div className="pointer-events-none absolute right-8 top-6 hidden lg:block">
+            <div className="relative h-[300px] w-[360px]">
+              <div className="absolute right-0 top-0 scale-[1.02] opacity-18">
+                <div className="relative h-[220px] w-[252px] rounded-[34px] bg-white/10">
+                  <div className="absolute left-1/2 top-[40px] h-[20px] w-[136px] -translate-x-1/2 rounded-full bg-white/22" />
+                  <div className="absolute left-[52px] top-[100px] h-[20px] w-[104px] rounded-full bg-white/18" />
+                  <div className="absolute bottom-[-20px] right-[24px] h-[110px] w-[156px] rotate-[34deg] rounded-[30px] bg-white/12" />
+                </div>
+              </div>
+
+              <div className="absolute right-[72px] top-[26px] opacity-30">
+                <div className="relative h-[220px] w-[252px] rounded-[34px] bg-white/12">
+                  <div className="absolute left-1/2 top-[40px] h-[20px] w-[136px] -translate-x-1/2 rounded-full bg-white/26" />
+                  <div className="absolute left-[52px] top-[100px] h-[20px] w-[104px] rounded-full bg-white/22" />
+                  <div className="absolute bottom-[-20px] right-[24px] h-[110px] w-[156px] rotate-[34deg] rounded-[30px] bg-white/14" />
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="relative mx-auto max-w-[900px] text-center">
             <h1 className="text-[44px] font-bold tracking-[-0.04em] text-white sm:text-[64px]">
