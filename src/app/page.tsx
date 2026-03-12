@@ -99,11 +99,11 @@ function PartnerLogo({ partner }: { partner: string }) {
           alt="Sanguuni Electronics"
           width={1200}
           height={400}
-          className="h-[66px] w-auto object-contain"
+          className="h-[66px] w-auto object-contain brightness-0 invert dark:brightness-100 dark:invert-0"
         />
-        <div className="leading-none text-white dark:text-[#1b2436]">
+        <div className="leading-none text-white dark:text-[#24324d]">
           <div className="text-[28px] font-semibold tracking-[-0.04em]">Sanguuni</div>
-          <div className="mt-1 text-[24px] font-medium tracking-[-0.03em]">Electronics</div>
+          <div className="mt-1 text-[24px] font-medium tracking-[-0.03em] dark:text-[#24324d]">Electronics</div>
         </div>
       </div>
     )
