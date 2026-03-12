@@ -10,7 +10,7 @@ type SocialStat = {
   platform: "youtube" | "tiktok" | "facebook" | "instagram"
   label: string
   value: number
-  decimals?: number
+  decimals: number
   suffix: string
   href: string
 }
@@ -27,6 +27,7 @@ const socialStats: SocialStat[] = [
     platform: "youtube",
     label: "Subscribers",
     value: 148,
+    decimals: 0,
     suffix: "k+",
     href: "https://www.youtube.com/@engyuyu",
   },
@@ -42,6 +43,7 @@ const socialStats: SocialStat[] = [
     platform: "facebook",
     label: "Followers",
     value: 276,
+    decimals: 0,
     suffix: "k+",
     href: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
   },
@@ -49,6 +51,7 @@ const socialStats: SocialStat[] = [
     platform: "instagram",
     label: "Followers",
     value: 276,
+    decimals: 0,
     suffix: "k+",
     href: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
   },
@@ -143,7 +146,7 @@ function CountUpNumber({
   className,
 }: {
   value: number
-  decimals?: number
+  decimals: number
   suffix: string
   start: boolean
   className: string
@@ -337,6 +340,7 @@ export default function HomePage() {
                 <div className="text-center">
                   <CountUpNumber
                     value={item.value}
+                    decimals={0}
                     suffix={item.suffix}
                     start={highlightStarted}
                     className="text-[58px] font-bold leading-none text-[#1d6cff] dark:text-[#6ea2ff]"
@@ -362,38 +366,32 @@ export default function HomePage() {
           <div ref={socialRef} className="mt-10 rounded-[16px] bg-gray-300 px-8 py-10 dark:bg-[#25314b] sm:px-12">
             <div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
               {socialStats.map((stat, index) => (
-                (() => {
-                  const decimals = "decimals" in stat ? stat.decimals : undefined
-
-                  return (
-                    <div
-                      key={stat.platform}
-                      className="group flex items-center gap-5 rounded-[24px] border border-transparent p-3 transition-transform duration-300 hover:-translate-y-1 hover:border-black/6 dark:hover:border-white/10"
-                    >
-                      <a
-                        href={stat.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={stat.platform[0].toUpperCase() + stat.platform.slice(1)}
-                        className="shrink-0"
-                      >
-                        <SocialIcon platform={stat.platform} index={index} />
-                      </a>
-                      <div className="text-left">
-                        <p className="text-[20px] leading-none text-[#121212] dark:text-white">
-                          {stat.label}
-                        </p>
-                        <CountUpNumber
-                          value={stat.value}
-                          decimals={decimals}
-                          suffix={stat.suffix}
-                          start={socialStarted}
-                          className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white"
-                        />
-                      </div>
-                    </div>
-                  )
-                })()
+                <div
+                  key={stat.platform}
+                  className="group flex items-center gap-5 rounded-[24px] border border-transparent p-3 transition-transform duration-300 hover:-translate-y-1 hover:border-black/6 dark:hover:border-white/10"
+                >
+                  <a
+                    href={stat.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={stat.platform[0].toUpperCase() + stat.platform.slice(1)}
+                    className="shrink-0"
+                  >
+                    <SocialIcon platform={stat.platform} index={index} />
+                  </a>
+                  <div className="text-left">
+                    <p className="text-[20px] leading-none text-[#121212] dark:text-white">
+                      {stat.label}
+                    </p>
+                    <CountUpNumber
+                      value={stat.value}
+                      decimals={stat.decimals}
+                      suffix={stat.suffix}
+                      start={socialStarted}
+                      className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white"
+                    />
+                  </div>
+                </div>
               ))}
             </div>
           </div>
