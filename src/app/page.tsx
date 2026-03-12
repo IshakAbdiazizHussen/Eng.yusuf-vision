@@ -10,7 +10,6 @@ type SocialStat = {
   platform: "youtube" | "tiktok" | "facebook" | "instagram"
   label: string
   value: number
-  decimals: number
   suffix: string
   href: string
 }
@@ -27,7 +26,6 @@ const socialStats: SocialStat[] = [
     platform: "youtube",
     label: "Subscribers",
     value: 148,
-    decimals: 0,
     suffix: "k+",
     href: "https://www.youtube.com/@engyuyu",
   },
@@ -35,7 +33,6 @@ const socialStats: SocialStat[] = [
     platform: "tiktok",
     label: "Followers",
     value: 506.3,
-    decimals: 1,
     suffix: "k+",
     href: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
   },
@@ -43,7 +40,6 @@ const socialStats: SocialStat[] = [
     platform: "facebook",
     label: "Followers",
     value: 276,
-    decimals: 0,
     suffix: "k+",
     href: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
   },
@@ -51,7 +47,6 @@ const socialStats: SocialStat[] = [
     platform: "instagram",
     label: "Followers",
     value: 276,
-    decimals: 0,
     suffix: "k+",
     href: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
   },
@@ -385,7 +380,7 @@ export default function HomePage() {
                     </p>
                     <CountUpNumber
                       value={stat.value}
-                      decimals={stat.decimals}
+                      decimals={stat.platform === "tiktok" ? 1 : 0}
                       suffix={stat.suffix}
                       start={socialStarted}
                       className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white"
