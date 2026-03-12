@@ -191,28 +191,28 @@ export default function ContactPage() {
               <Link
                 href={socialLinks.youtube}
                 aria-label="YouTube"
-                className="transition hover:scale-110"
+                className="social-icon-float-1 transition hover:scale-110"
               >
                 <FaYoutube />
               </Link>
               <Link
                 href={socialLinks.facebook}
                 aria-label="Facebook"
-                className="transition hover:scale-110"
+                className="social-icon-float-2 transition hover:scale-110"
               >
                 <FaFacebookF />
               </Link>
               <Link
                 href={socialLinks.tiktok}
                 aria-label="TikTok"
-                className="transition hover:scale-110"
+                className="social-icon-float-3 transition hover:scale-110"
               >
                 <FaTiktok />
               </Link>
               <Link
                 href={socialLinks.instagram}
                 aria-label="Instagram"
-                className="transition hover:scale-110"
+                className="social-icon-float-4 transition hover:scale-110"
               >
                 <FaInstagram />
               </Link>
