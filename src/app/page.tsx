@@ -12,15 +12,18 @@ type SocialStat = {
   value: number
   suffix: string
   href: string
+  decimals?: number
 }
 
 const partners = ["taran", "keshflip", "amka", "sanguuni"]
+
 const highlights = [
   { value: 600, suffix: "+", label: "Tech Videos" },
   { value: 25, suffix: "+", label: "Countries" },
   { value: 27, suffix: "+", label: "Million Views" },
   { value: 10, suffix: "+", label: "Collaborate" },
 ]
+
 const socialStats: SocialStat[] = [
   {
     platform: "youtube",
@@ -28,6 +31,7 @@ const socialStats: SocialStat[] = [
     value: 148,
     suffix: "k+",
     href: "https://www.youtube.com/@engyuyu",
+    decimals: 0,
   },
   {
     platform: "tiktok",
@@ -35,6 +39,7 @@ const socialStats: SocialStat[] = [
     value: 506.3,
     suffix: "k+",
     href: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
+    decimals: 1,
   },
   {
     platform: "facebook",
@@ -42,6 +47,7 @@ const socialStats: SocialStat[] = [
     value: 276,
     suffix: "k+",
     href: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
+    decimals: 0,
   },
   {
     platform: "instagram",
@@ -49,8 +55,10 @@ const socialStats: SocialStat[] = [
     value: 276,
     suffix: "k+",
     href: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
+    decimals: 0,
   },
 ]
+
 const socialLinks = {
   youtube: "https://www.youtube.com/@engyuyu",
   tiktok: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
@@ -110,7 +118,9 @@ function PartnerLogo({ partner }: { partner: string }) {
         />
         <div className="leading-none text-white dark:text-[#24324d]">
           <div className="text-[28px] font-semibold tracking-[-0.04em]">Sanguuni</div>
-          <div className="mt-1 text-[24px] font-medium tracking-[-0.03em] dark:text-[#24324d]">Electronics</div>
+          <div className="mt-1 text-[24px] font-medium tracking-[-0.03em] dark:text-[#24324d]">
+            Electronics
+          </div>
         </div>
       </div>
     )
@@ -141,7 +151,7 @@ function CountUpNumber({
   className,
 }: {
   value: number
-  decimals: number
+  decimals?: number
   suffix: string
   start: boolean
   className: string
@@ -185,7 +195,9 @@ function SocialIcon({ platform, index }: { platform: SocialStat["platform"]; ind
 
   if (platform === "youtube") {
     return (
-      <span className={`${motionClass} flex h-[58px] w-[78px] items-center justify-center rounded-[18px] bg-[#ff1307] text-white shadow-[0_10px_24px_rgba(255,19,7,0.25)]`}>
+      <span
+        className={`${motionClass} flex h-[58px] w-[78px] items-center justify-center rounded-[18px] bg-[#ff1307] text-white shadow-[0_10px_24px_rgba(255,19,7,0.25)]`}
+      >
         <FaYoutube className="h-8 w-8" />
       </span>
     )
@@ -193,7 +205,9 @@ function SocialIcon({ platform, index }: { platform: SocialStat["platform"]; ind
 
   if (platform === "tiktok") {
     return (
-      <span className={`${motionClass} flex h-[64px] w-[64px] items-center justify-center text-[#161616] dark:text-white`}>
+      <span
+        className={`${motionClass} flex h-[64px] w-[64px] items-center justify-center text-[#161616] dark:text-white`}
+      >
         <FaTiktok className="h-14 w-14 drop-shadow-[0_8px_16px_rgba(0,0,0,0.18)]" />
       </span>
     )
@@ -201,14 +215,18 @@ function SocialIcon({ platform, index }: { platform: SocialStat["platform"]; ind
 
   if (platform === "facebook") {
     return (
-      <span className={`${motionClass} flex h-[64px] w-[64px] items-center justify-center rounded-full bg-[#1d6cff] text-white shadow-[0_10px_24px_rgba(29,108,255,0.28)]`}>
+      <span
+        className={`${motionClass} flex h-[64px] w-[64px] items-center justify-center rounded-full bg-[#1d6cff] text-white shadow-[0_10px_24px_rgba(29,108,255,0.28)]`}
+      >
         <FaFacebookF className="h-10 w-10" />
       </span>
     )
   }
 
   return (
-    <span className={`${motionClass} flex h-[64px] w-[64px] items-center justify-center rounded-[18px] bg-[radial-gradient(circle_at_30%_110%,#fdf497_0%,#fdf497_8%,#fd5949_30%,#d6249f_60%,#285AEB_100%)] text-white shadow-[0_10px_24px_rgba(214,36,159,0.24)]`}>
+    <span
+      className={`${motionClass} flex h-[64px] w-[64px] items-center justify-center rounded-[18px] bg-[radial-gradient(circle_at_30%_110%,#fdf497_0%,#fdf497_8%,#fd5949_30%,#d6249f_60%,#285AEB_100%)] text-white shadow-[0_10px_24px_rgba(214,36,159,0.24)]`}
+    >
       <FaInstagram className="h-9 w-9" />
     </span>
   )
@@ -283,9 +301,9 @@ export default function HomePage() {
           </h1>
 
           <p className="mt-7 max-w-[760px] text-[22px] font-normal leading-[1.5] text-[#121212] dark:text-white/88 sm:text-[28px] lg:text-[26px]">
-            I&apos;m Yusuf Mohamed (Eng Yuyu), a Somali Tech Influencer, Digital
-            Creator, and Educator with a mission to make technology simple,
-            practical, and empowering for everyone.
+            I&apos;m Yusuf Mohamed (Eng Yuyu), a Somali Tech Influencer, Digital Creator, and
+            Educator with a mission to make technology simple, practical, and empowering for
+            everyone.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -380,7 +398,7 @@ export default function HomePage() {
                     </p>
                     <CountUpNumber
                       value={stat.value}
-                      decimals={stat.platform === "tiktok" ? 1 : 0}
+                      decimals={stat.decimals ?? 0}
                       suffix={stat.suffix}
                       start={socialStarted}
                       className="mt-2 text-[34px] font-bold leading-none text-black dark:text-white"
@@ -405,22 +423,70 @@ export default function HomePage() {
           />
 
           <p className="mt-6 max-w-[760px] text-[18px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[20px]">
-            My Goal is Simple: to Educate, Inspire and Connect people through
-            technology: One video, one idea and one innovation at a time.....
+            My Goal is Simple: to Educate, Inspire and Connect people through technology: One
+            video, one idea and one innovation at a time.....
           </p>
 
           <div className="mt-10 flex items-center gap-4 sm:gap-5">
-            <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon-float-1 transition-transform duration-300 hover:scale-110">
-              <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            <a
+              href={socialLinks.youtube}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="YouTube"
+              className="social-icon-float-1 transition-transform duration-300 hover:scale-110"
+            >
+              <Image
+                src="/youtubeRemoving.png"
+                alt="YouTube"
+                width={58}
+                height={58}
+                className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]"
+              />
             </a>
-            <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon-float-2 transition-transform duration-300 hover:scale-110">
-              <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            <a
+              href={socialLinks.facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              className="social-icon-float-2 transition-transform duration-300 hover:scale-110"
+            >
+              <Image
+                src="/Facebook.png"
+                alt="Facebook"
+                width={58}
+                height={58}
+                className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]"
+              />
             </a>
-            <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon-float-3 transition-transform duration-300 hover:scale-110">
-              <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            <a
+              href={socialLinks.tiktok}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok"
+              className="social-icon-float-3 transition-transform duration-300 hover:scale-110"
+            >
+              <Image
+                src="/Tiktok.png"
+                alt="TikTok"
+                width={58}
+                height={58}
+                className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]"
+              />
             </a>
-            <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-4 transition-transform duration-300 hover:scale-110">
-              <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+            <a
+              href={socialLinks.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="social-icon-float-4 transition-transform duration-300 hover:scale-110"
+            >
+              <Image
+                src="/Instgram.png"
+                alt="Instagram"
+                width={58}
+                height={58}
+                className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]"
+              />
             </a>
           </div>
         </div>
