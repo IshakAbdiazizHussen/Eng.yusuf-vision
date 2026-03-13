@@ -5,8 +5,6 @@ import {
   CalendarDays,
   ChevronDown,
   Mail,
-  MapPin,
-  MessageSquareText,
 } from "lucide-react"
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6"
 import { ContactForm } from "@/components/contact-form"
@@ -128,7 +126,7 @@ export default function ContactPage() {
                   <InfoRow
                     icon={<Mail className="h-5 w-5" />}
                     title="Email"
-                    value="contact@engyuyuu.com"
+                    value="contact@engyuyu.com"
                   />
                 </div>
 
