@@ -14,151 +14,127 @@ export type TechArticle = {
 export const blogCategories = [
   "All",
   "Tech News",
-  "Tutorials & How-To",
-  "Digital Security",
   "AI & Future Tech",
+  "Digital Security",
   "Content Creation",
-  "Reviews",
 ] as const
 
 export type BlogCategory = (typeof blogCategories)[number]
 
 export const techArticles: TechArticle[] = [
   {
-    slug: "windows-10-support-ending",
-    title: "Digniin Muhiim ah oo ku Socota Dadka Weli Adeegsada Windows 10!",
+    slug: "tesla-model-pi-warbixin",
+    title: "Tesla Model Pi goorma ayuu soo bixi doonaa?",
     category: "Tech News",
-    date: "December 22, 2025",
-    readTime: "6 min read",
-    excerpt:
-      "Microsoft is closing the Windows 10 chapter, and that means many users need to plan their next step now instead of waiting for security risks to grow.",
-    summary:
-      "A simple guide to what the end of Windows 10 support means and how everyday users can stay safe.",
-    accent: "from-[#1d6cff] via-[#2d86ff] to-[#83b8ff]",
-    bullets: [
-      "What end-of-support means in practical daily use",
-      "Which users should upgrade first",
-      "The safest options if your device is older",
-    ],
-    content: [
-      "Windows 10 has been reliable for millions of people, but support timelines matter because they affect how secure a device stays over time. Once a system stops receiving important updates, even normal browsing, downloading files, or using email becomes riskier.",
-      "For many Somali users and small businesses, the biggest issue is not just the software itself but the habit of waiting too long before preparing. A late upgrade often means more stress, rushed decisions, and less time to back up files properly.",
-      "The best response is practical: check your device health, confirm whether Windows 11 is supported, back up important documents, and avoid unofficial workarounds that create bigger security problems later.",
-    ],
-  },
-  {
-    slug: "ai-changing-somali-tech-learning",
-    title: "How AI Is Changing the Way Somalis Learn Technology",
-    category: "AI & Future Tech",
-    date: "January 8, 2026",
-    readTime: "7 min read",
-    excerpt:
-      "Artificial intelligence is no longer something far away. It is already changing how people search, study, write, edit, and solve problems in everyday life.",
-    summary:
-      "Why AI tools are becoming learning partners and what that means for digital growth in our community.",
-    accent: "from-[#2555ff] via-[#6c63ff] to-[#8fd8ff]",
-    bullets: [
-      "Why AI lowers the barrier to learning",
-      "Where AI can save time for students and creators",
-      "How to avoid overtrusting AI answers",
-    ],
-    content: [
-      "AI can now explain difficult topics in simpler language, help summarize complex information, and offer faster starting points for people who are learning alone. That matters in communities where access to structured training is still uneven.",
-      "The opportunity is powerful, but AI should not replace thinking. It works best when people use it as a helper for drafts, study plans, and quick explanations while still verifying important claims and building real understanding.",
-      "For content creators, educators, and curious learners, the smart path is balance: use AI to save time on repetition, but keep human judgment for trust, context, and local relevance.",
-    ],
-  },
-  {
-    slug: "phone-privacy-checklist-2026",
-    title: "A Simple Phone Privacy Checklist for 2026",
-    category: "Digital Security",
-    date: "February 3, 2026",
+    date: "November 23, 2022",
     readTime: "5 min read",
     excerpt:
-      "Most privacy mistakes are not dramatic hacks. They are small settings, weak passwords, and permissions people forget to review.",
+      "Warbixin kooban oo eegaysa waxa laga sheegayo taleefanka Tesla Model Pi, astaamihiisa la hadal hayo, qiimaha suurtagalka ah, iyo in uu dhab ahaan soo bixi karo.",
     summary:
-      "A quick privacy reset guide that ordinary smartphone users can actually follow.",
-    accent: "from-[#0f7ff0] via-[#00a6c7] to-[#8ce6ff]",
+      "Faahfaahin sahlan oo ku saabsan xanta Tesla Model Pi iyo waxa ay uga dhigan tahay dadka jecel wararka teknoolojiyadda.",
+    accent: "from-[#1d6cff] via-[#2d86ff] to-[#83b8ff]",
     bullets: [
-      "Permissions you should review today",
-      "Why lock-screen privacy matters",
-      "The easiest security habits that make the biggest difference",
+      "Maxaa run ah, maxaase xanta ah",
+      "Astaamaha lagu sheegayo taleefanka",
+      "Qiimaha iyo waqtiga soo bixitaanka suurtagalka ah",
     ],
     content: [
-      "Privacy starts with visibility. If too many apps have access to location, microphone, photos, or contacts, your phone becomes more open than most people realize. Reviewing those permissions just once can make a big difference.",
-      "Another overlooked issue is notification privacy. Sensitive codes, banking alerts, or personal messages often appear on the lock screen where anyone nearby can see them. A small settings change solves that instantly.",
-      "Good privacy is not about fear. It is about using technology with confidence and reducing avoidable exposure in everyday moments.",
+      "Mid ka mid ah mowduucyada aadka looga hadal hayo wararka teknoolojiyadda waa Tesla Model Pi. Dad badan ayaa xiiseynaya haddii Tesla ay dhab ahaan soo saari doonto taleefan la tartama iPhone iyo Samsung.",
+      "Waxyaabaha lagu xuso warbixinnada noocan ah waxaa ka mid ah naqshad casri ah, xiriir wanaagsan oo lala yeesho adeegyada Tesla, iyo awood sare oo loogu talagalay isticmaaleyaasha jecel teknoolojiyadda cusub.",
+      "Qodobka ugu muhiimsan ee blog-kan waa in akhristuhu kala saaro xogta la xaqiijiyay iyo xanta internet-ka ku wareegaysa. Taasi waxay ka dhigeysaa maqaalka mid si fiican ula jaanqaadaya nooca fiidiyowyada wararka teknoolojiyadda ee kanaalka Eng Yuyu.",
     ],
   },
   {
-    slug: "content-creation-tools-that-save-time",
-    title: "Content Creation Tools That Actually Save Time",
-    category: "Content Creation",
-    date: "February 14, 2026",
-    readTime: "8 min read",
-    excerpt:
-      "Creators do not need more apps just because they are popular. They need tools that remove friction and support consistency.",
-    summary:
-      "A creator-focused breakdown of tools that help with recording, editing, planning, and publishing without overcomplicating the workflow.",
-    accent: "from-[#1d6cff] via-[#6a8dff] to-[#ffb86b]",
-    bullets: [
-      "What to automate and what to keep manual",
-      "Tools that improve consistency instead of adding clutter",
-      "How to build a workflow that survives busy weeks",
-    ],
-    content: [
-      "A strong creator workflow is less about having the newest app and more about removing repeated pain points. Caption templates, thumbnail systems, script outlines, and shared folders are often more valuable than flashy software.",
-      "Many creators lose time switching between too many tools. A lean setup usually performs better because it reduces decision fatigue and keeps publishing momentum high.",
-      "The right stack should help you record faster, organize ideas clearly, and publish with less last-minute stress.",
-    ],
-  },
-  {
-    slug: "smartphone-tricks-everyday-users-miss",
-    title: "Smartphone Tricks Everyday Users Still Miss",
-    category: "Tutorials & How-To",
-    date: "March 1, 2026",
-    readTime: "4 min read",
-    excerpt:
-      "Modern phones hide useful features in plain sight. Small shortcuts can improve battery life, reduce clutter, and make daily use feel much smoother.",
-    summary:
-      "Useful iPhone and Android habits that save time without needing advanced technical knowledge.",
-    accent: "from-[#2f71ff] via-[#3ec7ff] to-[#b0ecff]",
-    bullets: [
-      "Quick wins that improve daily phone use",
-      "Battery and storage habits that really matter",
-      "The settings most people forget exist",
-    ],
-    content: [
-      "A better phone experience often comes from tiny habits: clearing notification noise, controlling background refresh, using focus modes, and customizing quick settings for the actions you use most.",
-      "Battery anxiety is also often caused by poor charging habits and apps running more often than needed. A few checks can stretch device performance without buying anything new.",
-      "People do not need to become experts to use smartphones well. They just need the right practical tips at the right moment.",
-    ],
-  },
-  {
-    slug: "best-budget-earbuds-review-2026",
-    title: "Best Budget Earbuds Review for Everyday Users",
-    category: "Reviews",
-    date: "March 6, 2026",
+    slug: "ios-17-bandhigga-apple",
+    title: "iOS 17 ayaa soo baxay: Bandhigga Apple wax badan ka ogow",
+    category: "Tech News",
+    date: "March 23, 2024",
     readTime: "6 min read",
     excerpt:
-      "Not everyone needs premium audio gear. Most users just want clear calls, solid battery life, and dependable value.",
+      "Bandhigga Apple waxa uu keenay nidaamyo cusub iyo qalab cusub. Qoraalkan waxa uu soo koobayaa waxa ugu muhiimsan ee iOS 17 iyo qalabka kale lagu soo bandhigay.",
     summary:
-      "A practical review mindset for choosing budget earbuds without wasting money on hype.",
-    accent: "from-[#1c6cff] via-[#5a86ff] to-[#ffd37b]",
+      "Dulmar sahlan oo ku saabsan iOS 17, iPadOS 17, macOS Sonoma, iyo qalabkii Apple ee lagu soo bandhigay dhacdadaas.",
+    accent: "from-[#2555ff] via-[#6c63ff] to-[#8fd8ff]",
     bullets: [
-      "What matters more than marketing specs",
-      "How to judge comfort, battery, and call quality",
-      "Which buyers should stay simple and save money",
+      "Waxyaabaha ugu waaweyn ee Apple soo bandhigtay",
+      "Waxa iOS 17 cusub ka dhigay",
+      "Cidda ay wararkani ugu muhiimsan yihiin",
     ],
     content: [
-      "A good budget tech review should answer one main question: does this product actually improve daily life for the price? For earbuds, that usually means stable connection, comfortable fit, good-enough sound, and reliable battery before anything else.",
-      "Many buyers get distracted by terms that sound premium but do not change the experience much. Clear priorities help more than long spec lists.",
-      "The smartest review habit is to match the product to the person. Students, commuters, creators, and office workers often need different strengths, even at the same price point.",
+      "Markii Apple ay soo bandhigtay iOS 17, isla waqtigaas waxaa la arkay qalab iyo nidaamyo kale oo cusub sida iPadOS 17, macOS Sonoma, Mac Studio, iyo Mac Pro. Dadka la socda wararka teknoolojiyadda waxay rabaan hal meel oo si cad loogu sharaxay waxyaabahaas.",
+      "Qoraalkan gudaha blog-ga waxa uu xooga saarayaa isbeddellada ugu muuqda ee iOS 17 iyo sida ay uga faa'iideysan karaan dadka isticmaala iPhone, iPad, iyo Mac.",
+      "Qaabkan wuxuu la jaanqaadayaa fiidiyowga kanaalka oo ahaa warbixin degdeg ah oo ku saabsan bandhigga Apple iyo waxyaabihii ugu muhiimsanaa ee kasoo baxay.",
+    ],
+  },
+  {
+    slug: "chatgpt-somalia-maka-shaqeeyaa",
+    title: "ChatGPT en Somalie: Maka Shaqeeyaa?",
+    category: "AI & Future Tech",
+    date: "February 12, 2023",
+    readTime: "6 min read",
+    excerpt:
+      "Maqaalkan waxa uu sharxayaa sida ChatGPT iyo AI guud ahaan u shaqeeyaan, waxa ay faa'iido u leeyihiin, iyo sida si caqli leh loogu isticmaali karo bulshada Soomaaliyeed.",
+    summary:
+      "Hage fudud oo ku saabsan AI, sida ChatGPT u caawiyo waxbarashada iyo shaqada, iyo halka ay tahay in laga taxaddaro.",
+    accent: "from-[#0f7ff0] via-[#00a6c7] to-[#8ce6ff]",
+    bullets: [
+      "ChatGPT waa maxay, sideese u shaqeeyaa",
+      "Faa'iidooyinka AI ee barashada iyo shaqada",
+      "Khaladaadka ugu badan marka AI la isticmaalayo",
+    ],
+    content: [
+      "Dad badan ayaa is weydiinaya in ChatGPT si dhab ah uga shaqeyn karo baahidooda waxbarasho, ganacsi, iyo fahamka teknoolojiyadda. Taasi waa sababta mowduucan uu muhiim ugu yahay qaybta AI & Future Tech.",
+      "Qoraalkani waxa uu qeexayaa in AI uu ka caawin karo isticmaalaha sharaxaad, soo koobid, iyo fikrado bilow ah, balse aanu beddeli karin hubinta xogta iyo fahamka qofka.",
+      "Blog-gu waxa uu sii wadaa fariinta fiidiyowga kanaalka: AI waa aalad waxtar leh haddii loo adeegsado si mas'uuliyad leh, gaar ahaan dadka cusub ee doonaya inay fahmaan sida teknoolojiyaddu u shaqeyso.",
+    ],
+  },
+  {
+    slug: "apple-creator-studio",
+    title: "Apple Creator Studio: Apple ayaa si xooggan ugu soo biirtay suuqa barnaamajyada hal-abuurka!",
+    category: "Content Creation",
+    date: "February 2026",
+    readTime: "8 min read",
+    excerpt:
+      "Apple waxa ay isku dayaysaa inay si toos ah ula tartanto Adobe iyada oo hal meel ku mideyneysa qalabka creators-ka u baahan yihiin.",
+    summary:
+      "Warbixin creator-focused ah oo eegaysa Apple Creator Studio, waxa ku jira, qiimihiisa, iyo sababta uu muhiim ugu noqon karo dadka sameeya content.",
+    accent: "from-[#1d6cff] via-[#6a8dff] to-[#ffb86b]",
+    bullets: [
+      "Waxa ku jira Apple Creator Studio",
+      "Sida uu ula tartamayo Adobe",
+      "Qiimaha iyo cidda ka faa'iideysan karta",
+    ],
+    content: [
+      "Apple Creator Studio waxa hal subscription ku mideynaya barnaamijyo waaweyn sida Final Cut Pro, Logic Pro, Pixelmator Pro, iyo Motion. Arrintan waxa ay si gaar ah u xiiseyneysaa creators-ka raadinaya xal ka fudud ama ka jaban Adobe.",
+      "Marka laga eego dhinaca shaqo-abuurka, tartankan cusub wuxuu beddeli karaa sida creators-ku u doortaan aaladahooda tafatirka, codka, iyo design-ka.",
+      "Maqaalkan gudaha blog-ga waxa uu la jaanqaadayaa fiidiyowga kanaalka adiga oo sharaxaya qiimaha, faa'iidada, iyo su'aasha weyn ee taagan: creators-ku ma u wareegi doonaan Apple mise wali Adobe ayay la sii joogayaan?",
+    ],
+  },
+  {
+    slug: "digital-safety-phone-users",
+    title: "Digital Security: Qaladaadka yar yar ee taleefanka khatar geliya sirtaada",
+    category: "Digital Security",
+    date: "2026",
+    readTime: "5 min read",
+    excerpt:
+      "Amniga dijitaalka mar walba ma aha weerar weyn. Marar badan waxa dhibka keena rukhsado badan, fariimo aan la hubin, iyo settings aan dib loo eegin.",
+    summary:
+      "Qoraal si toos ah ugu habboon content-ka Eng Yuyu ee diiradda saara digital safety iyo talooyin sahlan oo dadka ka caawiya isticmaalka taleefankooda.",
+    accent: "from-[#1c6cff] via-[#3b8cff] to-[#9ed0ff]",
+    bullets: [
+      "Permissions-ka ay tahay inaad eegto",
+      "Fariimaha iyo links-ka aan la aamini karin",
+      "Hababka ugu fudud ee aad iskaga ilaalin karto xog lumis",
+    ],
+    content: [
+      "Qeybtan Digital Security waxaa loo qaabeeyey si ay ula jaanqaaddo nooca content-ka Eng Yuyu lagu yaqaan ee ku saabsan digital safety, smartphone tips, iyo tech hacks.",
+      "Waxaan diiradda saarnay arrimo ay dadka intooda badan si maalinle ah ula kulmaan sida apps-ka oggolaanshaha badan helay, links-ka shakiga leh, iyo fariimaha sirta ah ee kasoo muuqda lock screen-ka.",
+      "Qaabkan wuxuu blog-ga ka dhigayaa mid u dhow fiidiyowyada kanaalka, sababtoo ah wuxuu akhristaha siinayaa talooyin degdeg ah, fudud, oo si dhab ah loogu dabaqi karo isticmaalka taleefanka maalin kasta.",
     ],
   },
 ]
 
-export const featuredArticle = techArticles[1]
+export const featuredArticle = techArticles[0]
 
 export function getArticleBySlug(slug: string) {
   return techArticles.find((article) => article.slug === slug)
