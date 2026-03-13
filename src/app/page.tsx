@@ -114,7 +114,7 @@ function PartnerLogo({ partner }: { partner: string }) {
           alt="Sanguuni Electronics"
           width={1200}
           height={400}
-          className="h-[66px] w-auto object-contain brightness-0 invert dark:brightness-100 dark:invert-0"
+          className="h-[66px] w-auto object-contain brightness-0 invert dark:brightness-100 dark:invert-0 dark:text-yellow-400"
         />
         <div className="leading-none text-white dark:text-[#24324d]">
           <div className="text-[28px] font-semibold tracking-[-0.04em]">Sanguuni</div>
@@ -308,7 +308,9 @@ export default function HomePage() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#"
+              href="https://www.youtube.com/@engyuyu/videos"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex h-[72px] min-w-[300px] items-center justify-center gap-3 rounded-[18px] border-2 border-[#1d6cff] bg-[#dce3ee] px-8 text-[22px] font-semibold text-[#1d6cff] transition-opacity hover:bg-blue-600 hover:text-white dark:border-[#3b87f6]"
             >
               Watch Latest Video <ArrowRight className="h-6 w-6" />
