@@ -136,12 +136,7 @@ export default function ContactPage() {
                     value="Business@engyuyuyu.com"
                     note="Business inquiries ,admin"
                   />
-                  <InfoRow
-                    icon={<MapPin className="h-5 w-5" />}
-                    title="Location"
-                    value="Mogadishu, Somalia"
-                    note="Response time: Within 24–48 hours"
-                  />
+                  
                 </div>
 
                 <Link
