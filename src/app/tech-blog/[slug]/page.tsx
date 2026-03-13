@@ -6,19 +6,16 @@ import { notFound } from "next/navigation"
 import { ArticleReactions } from "@/components/article-reactions"
 import { PageFrame } from "@/components/page-frame"
 import {
+  TechBlogFooterBanner,
+  TechBlogNewsletterSection,
+} from "@/components/tech-blog-sections"
+import {
   getArticleBySlug,
   techArticles,
 } from "@/lib/tech-blog-data"
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>
-}
-
-const socialLinks = {
-  youtube: "https://www.youtube.com/@engyuyu",
-  tiktok: "https://www.tiktok.com/@eng_yuyu?_r=1&_t=ZS-94Xp4UIvowa",
-  instagram: "https://www.instagram.com/eng_yuyu?igsh=ZndnZXJuY252N2Jl",
-  facebook: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
 }
 
 export async function generateStaticParams() {
@@ -49,7 +46,15 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     notFound()
   }
 
-  const relatedArticles = techArticles.filter((item) => item.slug !== article.slug).slice(0, 3)
+  const relatedArticles = techArticles
+    .filter((item) => item.slug !== article.slug)
+    .sort((left, right) => {
+      const leftScore = left.category === article.category ? 0 : 1
+      const rightScore = right.category === article.category ? 0 : 1
+
+      return leftScore - rightScore
+    })
+    .slice(0, 3)
 
   return (
     <PageFrame flushBottom>
@@ -143,7 +148,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
             <div className="rounded-[30px] bg-[#dbe2ec] p-6 dark:bg-[#1b2438]">
               <h2 className="text-[24px] font-bold leading-none text-black dark:text-white">
-                Continue Reading
+                More in {article.category}
               </h2>
               <div className="mt-5 space-y-4">
                 {relatedArticles.map((relatedArticle) => (
@@ -169,43 +174,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </div>
         </div>
       </section>
-
-      <div className="relative left-1/2 right-1/2 mt-12 ml-[-50vw] mr-[-50vw] w-screen bg-[#156ff3] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-18">
-        <div className="mx-auto flex w-full max-w-[980px] flex-col items-center text-center">
-          <Image
-            src="/Eng Yuyu Logo-21.png"
-            alt="Eng Yuyu Logo"
-            width={300}
-            height={120}
-            className="h-[120px] w-auto object-contain sm:h-[150px] lg:h-[170px]"
-            style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
-          />
-
-          <p className="mt-6 max-w-[760px] text-[18px] leading-[1.45] tracking-[-0.02em] text-white/95 sm:text-[20px]">
-            My Goal is Simple: to Educate, Inspire and Connect people through
-            technology: One video, one idea and one innovation at a time.....
-          </p>
-
-          <div className="mt-10 flex items-center gap-4 sm:gap-5">
-            <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon-float-1 transition-transform duration-300 hover:scale-110">
-              <Image src="/youtubeRemoving.png" alt="YouTube" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
-            </a>
-            <a href={socialLinks.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon-float-2 transition-transform duration-300 hover:scale-110">
-              <Image src="/Facebook.png" alt="Facebook" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
-            </a>
-            <a href={socialLinks.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon-float-3 transition-transform duration-300 hover:scale-110">
-              <Image src="/Tiktok.png" alt="TikTok" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
-            </a>
-            <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-4 transition-transform duration-300 hover:scale-110">
-              <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
-            </a>
-          </div>
-        </div>
-
-        <div className="mx-auto mt-16 w-full border-t border-white/55 pt-7 text-center text-[16px] tracking-[-0.02em] text-white/95">
-          © 2025 Eng Yuyu Media - All Rights Reserved.
-        </div>
-      </div>
+      <TechBlogNewsletterSection />
+      <TechBlogFooterBanner />
     </PageFrame>
   )
 }
