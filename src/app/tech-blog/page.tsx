@@ -1,6 +1,7 @@
-import { ArrowRight, Link2 } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { ArticleShareButton } from "@/components/article-share-button"
 import { PageFrame } from "@/components/page-frame"
 import {
   TechBlogFooterBanner,
@@ -188,10 +189,13 @@ export default async function TechBlogPage({
 
             <div className="mt-5 flex items-center justify-between text-lg text-black dark:text-white sm:mt-6 sm:text-[30px]">
               <span className="font-light">{activeFeaturedArticle.readTime}</span>
-              <span className="inline-flex items-center gap-3 font-light">
-                <Link2 className="h-6 w-6 rotate-45 sm:h-8 sm:w-8" />
-                Share
-              </span>
+              <ArticleShareButton
+                title={activeFeaturedArticle.title}
+                url={`/tech-blog/${activeFeaturedArticle.slug}`}
+                label="Share"
+                className="inline-flex items-center gap-3 font-light text-black transition-colors hover:text-[#1d6cff] dark:text-white dark:hover:text-[#8ebfff] sm:text-[30px]"
+                messageAlignClassName="items-end"
+              />
             </div>
 
             <p className="mt-7 max-w-[980px] text-xl font-light leading-[1.4] tracking-[-0.02em] text-black dark:text-[#e4edff] sm:mt-8 sm:text-2xl md:text-[32px]">

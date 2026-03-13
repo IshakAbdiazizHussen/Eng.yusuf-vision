@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, Clock3, Share2 } from "lucide-react"
+import { ArrowLeft, ArrowRight, Clock3 } from "lucide-react"
 import { notFound } from "next/navigation"
 import { ArticleReactions } from "@/components/article-reactions"
+import { ArticleShareButton } from "@/components/article-share-button"
 import { PageFrame } from "@/components/page-frame"
 import {
   TechBlogFooterBanner,
@@ -89,10 +90,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <Clock3 className="h-4 w-4" />
                 {article.readTime}
               </span>
-              <span className="inline-flex items-center gap-2">
-                <Share2 className="h-4 w-4" />
-                Share with your community
-              </span>
+              <ArticleShareButton title={article.title} />
             </div>
 
             <div className="mt-10 grid gap-8 lg:grid-cols-[1.45fr_0.8fr]">
