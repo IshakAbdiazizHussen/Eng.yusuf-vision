@@ -130,13 +130,6 @@ export default function ContactPage() {
                     title="Email"
                     value="contact@engyuyuu.com"
                   />
-                  <InfoRow
-                    icon={<MessageSquareText className="h-5 w-5" />}
-                    title="Business"
-                    value="Business@engyuyuyu.com"
-                    note="Business inquiries ,admin"
-                  />
-                  
                 </div>
 
                 <Link
