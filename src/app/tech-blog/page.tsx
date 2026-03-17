@@ -41,11 +41,11 @@ export default async function TechBlogPage({
 
   return (
     <PageFrame flushBottom>
-      <section className="mt-8 rounded-[40px] border border-[#d8deeb] bg-[linear-gradient(180deg,#f7f8fc_0%,#eef2fb_100%)] shadow-[0_24px_70px_rgba(35,62,124,0.08)] dark:border-[#283554] dark:bg-[#20283b]">
+      <section className="mt-8 rounded-[40px] border border-[#d8deeb] bg-[linear-gradient(180deg,#f7f8fc_0%,#eef2fb_100%)] shadow-[0_24px_70px_rgba(35,62,124,0.08)] dark:border-[#283554] dark:bg-[linear-gradient(180deg,#1f2739_0%,#171e2d_100%)] dark:shadow-[0_24px_70px_rgba(3,8,20,0.45)]">
         <div className="grid gap-0 xl:grid-cols-[minmax(0,1fr)_320px]">
           <div className="px-6 py-8 sm:px-8 md:px-12 md:py-12">
             <div className="text-center">
-              <h1 className="text-4xl font-bold leading-none text-[#1d3f92] sm:text-[62px]">
+              <h1 className="text-4xl font-bold leading-none text-[#1d3f92] dark:text-[#8ebfff] sm:text-[62px]">
                 Tech Blog
               </h1>
               <p className="mt-3 text-2xl font-medium leading-none text-[#1c1f28] dark:text-white sm:text-[32px]">
@@ -53,8 +53,8 @@ export default async function TechBlogPage({
               </p>
             </div>
 
-            <div className="mt-10 rounded-[34px] bg-[linear-gradient(180deg,#eef2fb_0%,#e7edf8_100%)] px-4 py-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] dark:bg-[#1d2638] sm:px-6 md:px-8">
-              <h2 className="text-center text-3xl font-bold leading-none text-[#162d6a] dark:text-white">
+            <div className="mt-10 rounded-[34px] bg-[linear-gradient(180deg,#eef2fb_0%,#e7edf8_100%)] px-4 py-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] dark:bg-[linear-gradient(180deg,#232d42_0%,#1a2234_100%)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:px-6 md:px-8">
+              <h2 className="text-center text-3xl font-bold leading-none text-[#162d6a] dark:text-[#f3f7ff]">
                 Featured
               </h2>
 
@@ -74,7 +74,7 @@ export default async function TechBlogPage({
                 ))}
               </div>
 
-              <div className="mt-8 rounded-[30px] border border-[#dce3f1] bg-[linear-gradient(180deg,#ffffff_0%,#f8faff_100%)] p-4 shadow-[0_18px_40px_rgba(42,72,130,0.08)] dark:border-[#31415c] dark:bg-[#182033] sm:p-6">
+              <div className="mt-8 rounded-[30px] border border-[#dce3f1] bg-[linear-gradient(180deg,#ffffff_0%,#f8faff_100%)] p-4 shadow-[0_18px_40px_rgba(42,72,130,0.08)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)] dark:shadow-[0_18px_40px_rgba(4,10,22,0.42)] sm:p-6">
                 <div className="flex items-center gap-3">
                   <div className="rounded-full bg-[#f2f6ff] px-3 py-2 dark:bg-[#243049]">
                     <Image
@@ -104,7 +104,7 @@ export default async function TechBlogPage({
 
                 <div className="mt-5 rounded-[26px] border border-[#d9e3f4] bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.95),rgba(225,234,251,0.85)_40%,rgba(205,218,245,0.92)_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] dark:border-[#2f3f5d] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(70,92,140,0.45),rgba(31,45,70,0.92)_100%)] sm:p-6">
                   <div className="relative h-[170px] overflow-hidden rounded-[22px] bg-[linear-gradient(180deg,#dfe8fb_0%,#cbdaf7_100%)] dark:bg-[linear-gradient(180deg,#23324f_0%,#182234_100%)] sm:h-[260px]">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.85),transparent_42%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.85),transparent_42%)] dark:bg-[radial-gradient(circle_at_left,rgba(125,153,215,0.2),transparent_42%)]" />
                     <div className="absolute bottom-0 left-0 right-0 h-[42%] bg-[linear-gradient(180deg,rgba(189,203,233,0)_0%,rgba(173,188,220,0.95)_100%)] dark:bg-[linear-gradient(180deg,rgba(30,41,63,0)_0%,rgba(25,36,54,0.95)_100%)]" />
                     <div className="absolute bottom-[24px] left-[50%] h-[74px] w-[220px] -translate-x-1/2 rounded-[40px_58px_28px_28px] border border-white/80 bg-white shadow-[0_22px_36px_rgba(55,78,126,0.22)] sm:bottom-[34px] sm:h-[112px] sm:w-[400px]">
                       <div className="absolute left-[26px] top-[26px] h-[18px] w-[64px] skew-x-[-22deg] rounded-full bg-[#dce8ff] sm:left-[52px] sm:top-[34px] sm:h-[22px] sm:w-[100px]" />
@@ -115,7 +115,7 @@ export default async function TechBlogPage({
                   </div>
                 </div>
 
-                <h4 className="mt-6 text-[30px] font-medium leading-[1.18] text-[#111827] dark:text-white sm:text-[34px]">
+                <h4 className="mt-6 text-[30px] font-medium leading-[1.18] text-[#111827] dark:text-[#f3f7ff] sm:text-[34px]">
                   {activeFeaturedArticle.title}
                 </h4>
 
@@ -136,7 +136,7 @@ export default async function TechBlogPage({
                 </Link>
               </div>
 
-              <h3 className="mt-10 text-[32px] font-bold text-[#1d53d8] sm:text-[40px]">
+              <h3 className="mt-10 text-[32px] font-bold text-[#1d53d8] dark:text-[#8ebfff] sm:text-[40px]">
                 Latest
               </h3>
 
@@ -144,10 +144,10 @@ export default async function TechBlogPage({
                 {latestArticles.map((article) => (
                   <article
                     key={article.slug}
-                    className="rounded-[22px] border border-[#d8e0ef] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fd_100%)] p-4 shadow-[0_14px_32px_rgba(44,71,126,0.08)] dark:border-[#31415c] dark:bg-[#182033]"
+                    className="rounded-[22px] border border-[#d8e0ef] bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fd_100%)] p-4 shadow-[0_14px_32px_rgba(44,71,126,0.08)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)] dark:shadow-[0_14px_32px_rgba(4,10,22,0.36)]"
                   >
                     <div className={`h-[138px] rounded-[18px] bg-gradient-to-br ${article.accent} p-[1px]`}>
-                      <div className="flex h-full items-end rounded-[17px] bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.9),rgba(226,235,250,0.92)_100%)] p-4 dark:bg-[linear-gradient(180deg,#253450_0%,#182234_100%)]">
+                      <div className="flex h-full items-end rounded-[17px] bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.9),rgba(226,235,250,0.92)_100%)] p-4 dark:bg-[radial-gradient(circle_at_20%_20%,rgba(85,110,166,0.38),rgba(24,34,52,0.96)_100%)]">
                         <span className="rounded-full bg-[#f5f8ff] px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.08em] text-[#2452d5] dark:bg-[#243049] dark:text-[#9ec0ff]">
                           {article.category}
                         </span>
@@ -170,7 +170,7 @@ export default async function TechBlogPage({
                   </article>
                 ))}
                 {latestArticles.length === 0 ? (
-                  <div className="md:col-span-3 rounded-[22px] border border-[#d8e0ef] bg-white/80 p-6 text-center dark:border-[#31415c] dark:bg-[#182033]">
+                  <div className="md:col-span-3 rounded-[22px] border border-[#d8e0ef] bg-white/80 p-6 text-center dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
                     <p className="text-[18px] font-semibold text-[#1d53d8] dark:text-[#8ebfff]">
                       This category currently has one featured article.
                     </p>
@@ -214,8 +214,8 @@ export default async function TechBlogPage({
                 </Link>
               </div>
 
-              <div className="rounded-[14px] border border-[#dde3ef] bg-[linear-gradient(180deg,#f9fbff_0%,#f1f4fb_100%)] px-6 py-6 shadow-[0_10px_26px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[#182033]">
-                <h2 className="text-[30px] font-bold leading-none text-[#172d67] dark:text-white">
+              <div className="rounded-[14px] border border-[#dde3ef] bg-[linear-gradient(180deg,#f9fbff_0%,#f1f4fb_100%)] px-6 py-6 shadow-[0_10px_26px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)] dark:shadow-[0_10px_26px_rgba(4,10,22,0.34)]">
+                <h2 className="text-[30px] font-bold leading-none text-[#172d67] dark:text-[#f3f7ff]">
                   Popular Articles
                 </h2>
                 <div className="mt-5 space-y-4">
@@ -241,8 +241,8 @@ export default async function TechBlogPage({
                 </div>
               </div>
 
-              <div className="rounded-[14px] border border-[#dde3ef] bg-[linear-gradient(180deg,#f9fbff_0%,#f1f4fb_100%)] px-6 py-6 shadow-[0_10px_26px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[#182033]">
-                <h2 className="text-[30px] font-bold leading-none text-[#172d67] dark:text-white">
+              <div className="rounded-[14px] border border-[#dde3ef] bg-[linear-gradient(180deg,#f9fbff_0%,#f1f4fb_100%)] px-6 py-6 shadow-[0_10px_26px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)] dark:shadow-[0_10px_26px_rgba(4,10,22,0.34)]">
+                <h2 className="text-[30px] font-bold leading-none text-[#172d67] dark:text-[#f3f7ff]">
                   Popular Articles
                 </h2>
                 <div className="mt-5 space-y-4">
