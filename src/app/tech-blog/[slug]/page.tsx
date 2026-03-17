@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Clock3, Flame, Heart, MessageCircle, Sparkles } from "lucide-react"
+import { ArrowRight, Clock3 } from "lucide-react"
 import { notFound } from "next/navigation"
+import { ArticleDiscussion } from "@/components/article-discussion"
 import { ArticleShareButton } from "@/components/article-share-button"
 import { PageFrame } from "@/components/page-frame"
 import {
@@ -22,13 +23,6 @@ const articleComments = [
   { name: "Ahmed", text: "Great explanation!", time: "2 hours ago" },
   { name: "Fatima", text: "Looking forward to Tesla phone.", time: "3 hours ago" },
 ]
-
-const reactionOptions = [
-  { label: "Helpful", icon: Sparkles, accent: "text-[#2f5ef0]" },
-  { label: "Love", icon: Heart, accent: "text-[#ef4b7b]" },
-  { label: "Interesting", icon: Flame, accent: "text-[#ff9b3d]" },
-  { label: "Discuss", icon: MessageCircle, accent: "text-[#49566f]" },
-] as const
 
 export async function generateStaticParams() {
   return techArticles.map((article) => ({ slug: article.slug }))
@@ -174,55 +168,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   <div className="absolute left-[50%] top-[50%] h-0 w-0 -translate-x-1/2 -translate-y-1/2 border-b-[10px] border-l-[16px] border-t-[10px] border-b-transparent border-l-white border-t-transparent" />
                 </div>
               </div>
-
-              <div className="mt-8">
-                <h2 className="text-[26px] font-semibold text-[#172038] dark:text-[#f3f7ff] sm:text-[32px]">
-                  Comments
-                </h2>
-
-                <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                  {reactionOptions.map((reaction) => {
-                    const Icon = reaction.icon
-
-                    return (
-                      <button
-                        key={reaction.label}
-                        type="button"
-                        className="inline-flex items-center justify-center gap-2 rounded-[12px] border border-[#dce5f4] bg-[#fbfcff] px-4 py-3 text-[15px] font-medium text-[#25324c] shadow-[0_8px_18px_rgba(35,58,108,0.05)] transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#1b2436] dark:text-[#e5edff]"
-                      >
-                        <Icon className={`h-5 w-5 ${reaction.accent}`} />
-                        {reaction.label}
-                      </button>
-                    )
-                  })}
-                </div>
-
-                <div className="mt-5 space-y-3">
-                  {articleComments.map((comment) => (
-                    <div
-                      key={comment.name}
-                      className="flex items-start gap-4 rounded-[16px] border border-[#dce5f4] bg-[linear-gradient(180deg,#ffffff_0%,#f6f8fd_100%)] px-4 py-4 shadow-[0_10px_24px_rgba(30,57,113,0.05)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]"
-                    >
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(180deg,#7e90b2_0%,#566580_100%)] text-[18px] font-semibold text-white">
-                        {comment.name.charAt(0)}
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center justify-between gap-4">
-                          <p className="text-[18px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
-                            {comment.name}
-                          </p>
-                          <p className="text-[14px] text-[#7c88a3] dark:text-[#9eb0d1]">
-                            {comment.time}
-                          </p>
-                        </div>
-                        <p className="mt-1 text-[16px] text-[#2b3854] dark:text-[#d6e0f7]">
-                          {comment.text}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
 
             <aside className="border-t border-[#dce5f4] px-4 py-5 xl:border-l xl:border-t-0 dark:border-[#2d3851]">
@@ -306,100 +251,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               ))}
             </div>
           </div>
-
-          <div className="rounded-[22px] border border-[#dce5f4] bg-[linear-gradient(180deg,#fbfcff_0%,#f1f5fc_100%)] px-5 py-5 shadow-[0_10px_24px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
-            <h2 className="text-[22px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
-              Leave a Comment
-            </h2>
-            <form className="mt-4 space-y-3">
-              <div>
-                <label className="mb-1 block text-[14px] font-medium text-[#2e3b57] dark:text-[#d5dff7]">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="h-11 w-full rounded-[12px] border border-[#dce5f4] bg-white px-4 text-[15px] text-[#172038] outline-none transition focus:border-[#2f5ef0] dark:border-[#31415c] dark:bg-[#1a2234] dark:text-white"
-                />
-              </div>
-              <div>
-                <label className="mb-1 block text-[14px] font-medium text-[#2e3b57] dark:text-[#d5dff7]">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="h-11 w-full rounded-[12px] border border-[#dce5f4] bg-white px-4 text-[15px] text-[#172038] outline-none transition focus:border-[#2f5ef0] dark:border-[#31415c] dark:bg-[#1a2234] dark:text-white"
-                />
-              </div>
-              <div>
-                <label className="mb-1 block text-[14px] font-medium text-[#2e3b57] dark:text-[#d5dff7]">
-                  Comment
-                </label>
-                <textarea
-                  placeholder="Comment"
-                  rows={4}
-                  className="w-full rounded-[12px] border border-[#dce5f4] bg-white px-4 py-3 text-[15px] text-[#172038] outline-none transition focus:border-[#2f5ef0] dark:border-[#31415c] dark:bg-[#1a2234] dark:text-white"
-                />
-              </div>
-              <button
-                type="submit"
-                className="inline-flex h-12 w-full items-center justify-center rounded-[12px] bg-[linear-gradient(180deg,#4d7df6_0%,#2553dd_100%)] text-[16px] font-semibold text-white shadow-[0_12px_24px_rgba(42,84,209,0.24)] transition hover:-translate-y-0.5"
-              >
-                Post Comment
-              </button>
-            </form>
-          </div>
         </div>
 
-        <div className="mt-8 rounded-[22px] border border-[#dce5f4] bg-[linear-gradient(180deg,#fbfcff_0%,#f1f5fc_100%)] px-5 py-5 shadow-[0_10px_24px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
-          <h2 className="text-[26px] font-semibold text-[#172038] dark:text-[#f3f7ff] sm:text-[32px]">
-            Comments
-          </h2>
-
-          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {reactionOptions.map((reaction) => {
-              const Icon = reaction.icon
-
-              return (
-                <button
-                  key={reaction.label}
-                  type="button"
-                  className="inline-flex items-center justify-center gap-2 rounded-[12px] border border-[#dce5f4] bg-[#fbfcff] px-4 py-3 text-[15px] font-medium text-[#25324c] shadow-[0_8px_18px_rgba(35,58,108,0.05)] transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#1b2436] dark:text-[#e5edff]"
-                >
-                  <Icon className={`h-5 w-5 ${reaction.accent}`} />
-                  {reaction.label}
-                </button>
-              )
-            })}
-          </div>
-
-          <div className="mt-5 space-y-3">
-            {articleComments.map((comment) => (
-              <div
-                key={comment.name}
-                className="flex items-start gap-4 rounded-[16px] border border-[#dce5f4] bg-[linear-gradient(180deg,#ffffff_0%,#f6f8fd_100%)] px-4 py-4 shadow-[0_10px_24px_rgba(30,57,113,0.05)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]"
-              >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(180deg,#7e90b2_0%,#566580_100%)] text-[18px] font-semibold text-white">
-                  {comment.name.charAt(0)}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center justify-between gap-4">
-                    <p className="text-[18px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
-                      {comment.name}
-                    </p>
-                    <p className="text-[14px] text-[#7c88a3] dark:text-[#9eb0d1]">
-                      {comment.time}
-                    </p>
-                  </div>
-                  <p className="mt-1 text-[16px] text-[#2b3854] dark:text-[#d6e0f7]">
-                    {comment.text}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <ArticleDiscussion slug={article.slug} initialComments={articleComments} />
       </section>
       <TechBlogNewsletterSection />
       <TechBlogFooterBanner />
