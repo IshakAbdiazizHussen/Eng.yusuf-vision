@@ -12,6 +12,7 @@ import {
   isBlogCategory,
   techArticles,
 } from "@/lib/tech-blog-data"
+import { getLatestYouTubeVideos, hasYouTubeConfig } from "@/lib/youtube"
 
 type TechBlogPageProps = {
   searchParams?: Promise<{ category?: string }>
@@ -20,6 +21,7 @@ type TechBlogPageProps = {
 export default async function TechBlogPage({
   searchParams,
 }: TechBlogPageProps) {
+  const youtubeVideos = await getLatestYouTubeVideos(3)
   const resolvedSearchParams = searchParams ? await searchParams : undefined
   const activeCategory = resolvedSearchParams?.category
   const selectedCategory = activeCategory && isBlogCategory(activeCategory)
@@ -52,6 +54,54 @@ export default async function TechBlogPage({
                 Simple tech, real impact
               </p>
             </div>
+
+            {hasYouTubeConfig && youtubeVideos.length > 0 ? (
+              <div className="mt-10 rounded-[30px] border border-[#d8e1f2] bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fe_100%)] p-5 shadow-[0_16px_34px_rgba(31,55,113,0.07)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-[#1d6cff] dark:text-[#8ebfff]">
+                      Latest from YouTube
+                    </p>
+                    <h2 className="mt-2 text-[28px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
+                      New tech videos now update here automatically
+                    </h2>
+                  </div>
+                  <Link
+                    href="/watch"
+                    className="inline-flex h-[46px] items-center justify-center rounded-[12px] bg-[#2f5ef0] px-5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5"
+                  >
+                    Open Watch Page
+                  </Link>
+                </div>
+
+                <div className="mt-5 grid gap-4 md:grid-cols-3">
+                  {youtubeVideos.map((video) => (
+                    <Link
+                      key={video.id}
+                      href={video.watchUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-[20px] border border-[#dce5f4] bg-[#fbfcff] p-3 transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#1a2234]"
+                    >
+                      <div className="relative h-[160px] overflow-hidden rounded-[14px]">
+                        <Image
+                          src={video.thumbnail}
+                          alt={video.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <h3 className="mt-3 line-clamp-2 text-[18px] font-semibold leading-[1.3] text-[#172038] dark:text-white">
+                        {video.title}
+                      </h3>
+                      <p className="mt-2 line-clamp-3 text-[14px] leading-[1.5] text-[#66718b] dark:text-[#b6c7ea]">
+                        {video.description || "Latest upload from your YouTube tech news videos."}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : null}
 
             <div className="mt-10 rounded-[34px] bg-[linear-gradient(180deg,#eef2fb_0%,#e7edf8_100%)] px-4 py-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] dark:bg-[linear-gradient(180deg,#232d42_0%,#1a2234_100%)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] sm:px-6 md:px-8">
               <h2 className="text-center text-3xl font-bold leading-none text-[#162d6a] dark:text-[#f3f7ff]">
