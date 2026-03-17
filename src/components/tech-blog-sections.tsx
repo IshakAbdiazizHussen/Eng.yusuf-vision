@@ -10,25 +10,24 @@ const socialLinks = {
 
 export function TechBlogNewsletterSection() {
   return (
-    <section className="mt-10 rounded-[44px] bg-[#dbe2ec] px-8 py-10 dark:bg-[#20283b] md:px-14 md:py-12">
+    <section className="mt-10 rounded-[32px] border border-[#d8deeb] bg-[linear-gradient(180deg,#f7f8fc_0%,#eef2fb_100%)] px-8 py-10 shadow-[0_18px_40px_rgba(35,62,124,0.08)] dark:border-[#283554] dark:bg-[#20283b] md:px-10 md:py-10">
       <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-[760px]">
-          <h2 className="text-3xl font-bold leading-none text-black dark:text-white">
-            Join My Newsletter
+          <h2 className="text-3xl font-bold leading-none text-[#1b2d63] dark:text-white md:text-[32px]">
+            Join My Tech Newsletter
           </h2>
-          <p className="mt-5 max-w-[700px] text-2xl font-light leading-[1.2] text-[#1d1d1d] dark:text-[#dde6fb] md:text-[30px]">
-            Get practical tech tips, digital safety guides,
-            <br />
-            and AI insights straight to your inbox.
+          <p className="mt-5 max-w-[700px] text-[18px] leading-[1.5] text-[#303a52] dark:text-[#dde6fb] md:text-[20px]">
+            Get practical tech insights, AI updates, and digital safety
+            guides directly in your inbox.
           </p>
 
           <NewsletterForm />
         </div>
 
         <div className="flex justify-center lg:justify-end">
-          <div className="relative flex h-[170px] w-[170px] items-center justify-center rounded-full border-[12px] border-[#00a8ff] bg-white shadow-[0_0_0_8px_#1d6cff] md:h-[210px] md:w-[210px]">
-            <div className="flex h-[82px] w-[82px] items-center justify-center rounded-[16px] bg-[#1d6cff] text-[44px] text-white md:h-[104px] md:w-[104px] md:text-[56px]">
-              ✉
+          <div className="relative flex h-[150px] w-[150px] items-center justify-center rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.95),rgba(221,230,247,0.95))] shadow-[0_0_0_16px_rgba(217,225,242,0.7)] md:h-[180px] md:w-[180px]">
+            <div className="flex h-[86px] w-[86px] items-center justify-center rounded-[22px] bg-[linear-gradient(180deg,#4d7df6_0%,#2553dd_100%)] shadow-[0_16px_26px_rgba(42,84,209,0.25)] md:h-[104px] md:w-[104px]">
+              <div className="h-0 w-0 border-l-[18px] border-r-[18px] border-t-[24px] border-l-transparent border-r-transparent border-t-white md:border-l-[22px] md:border-r-[22px] md:border-t-[30px]" />
             </div>
           </div>
         </div>
