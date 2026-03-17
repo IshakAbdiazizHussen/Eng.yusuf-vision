@@ -10,7 +10,7 @@ const socialLinks = {
 
 export function TechBlogNewsletterSection() {
   return (
-    <section className="mt-10 rounded-[32px] border border-[#d8deeb] bg-[linear-gradient(180deg,#f7f8fc_0%,#eef2fb_100%)] px-8 py-10 shadow-[0_18px_40px_rgba(35,62,124,0.08)] dark:border-[#283554] dark:bg-[#20283b] md:px-10 md:py-10">
+    <section className="mt-10 rounded-[32px] border border-[#d8deeb] bg-[linear-gradient(180deg,#f7f8fc_0%,#eef2fb_100%)] px-8 py-10 shadow-[0_18px_40px_rgba(35,62,124,0.08)] dark:border-[#283554] dark:bg-[linear-gradient(180deg,#1f2739_0%,#171e2d_100%)] dark:shadow-[0_18px_40px_rgba(3,8,20,0.42)] md:px-10 md:py-10">
       <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-[760px]">
           <h2 className="text-3xl font-bold leading-none text-[#1b2d63] dark:text-white md:text-[32px]">
@@ -25,8 +25,8 @@ export function TechBlogNewsletterSection() {
         </div>
 
         <div className="flex justify-center lg:justify-end">
-          <div className="relative flex h-[150px] w-[150px] items-center justify-center rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.95),rgba(221,230,247,0.95))] shadow-[0_0_0_16px_rgba(217,225,242,0.7)] md:h-[180px] md:w-[180px]">
-            <div className="flex h-[86px] w-[86px] items-center justify-center rounded-[22px] bg-[linear-gradient(180deg,#4d7df6_0%,#2553dd_100%)] shadow-[0_16px_26px_rgba(42,84,209,0.25)] md:h-[104px] md:w-[104px]">
+          <div className="relative flex h-[150px] w-[150px] items-center justify-center rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.95),rgba(221,230,247,0.95))] shadow-[0_0_0_16px_rgba(217,225,242,0.7)] dark:bg-[radial-gradient(circle,rgba(51,69,105,0.96),rgba(28,38,58,0.96))] dark:shadow-[0_0_0_16px_rgba(32,45,70,0.6)] md:h-[180px] md:w-[180px]">
+            <div className="flex h-[86px] w-[86px] items-center justify-center rounded-[22px] bg-[linear-gradient(180deg,#4d7df6_0%,#2553dd_100%)] shadow-[0_16px_26px_rgba(42,84,209,0.25)] dark:shadow-[0_16px_26px_rgba(5,10,24,0.45)] md:h-[104px] md:w-[104px]">
               <div className="h-0 w-0 border-l-[18px] border-r-[18px] border-t-[24px] border-l-transparent border-r-transparent border-t-white md:border-l-[22px] md:border-r-[22px] md:border-t-[30px]" />
             </div>
           </div>
