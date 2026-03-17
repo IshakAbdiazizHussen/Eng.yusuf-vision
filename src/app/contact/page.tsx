@@ -139,49 +139,49 @@ export default function ContactPage() {
               </p>
 
               <div className="mt-8 space-y-4">
-                <div className="rounded-[16px] border border-[#e8ebf3] bg-[#fbfcff] px-5 py-5 text-[#202636] shadow-[0_4px_18px_rgba(33,57,103,0.04)] dark:border-[#2d3a57] dark:bg-[#1b253b] dark:text-white">
-                  <h3 className="flex items-center justify-between gap-4 text-[18px] font-semibold leading-[1.5]">
+                <details className="group rounded-[16px] border border-[#e8ebf3] bg-[#fbfcff] px-5 py-5 text-[#202636] shadow-[0_4px_18px_rgba(33,57,103,0.04)] dark:border-[#2d3a57] dark:bg-[#1b253b] dark:text-white">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[18px] font-semibold leading-[1.5]">
                     <span>Do you collaborate with tech brands?</span>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full text-[#a0a7b5] dark:text-[#8ea0c4]">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full text-[#a0a7b5] transition group-open:rotate-180 dark:text-[#8ea0c4]">
                       <ChevronDown className="h-5 w-5" />
                     </span>
-                  </h3>
+                  </summary>
                   <p className="pt-3 text-[16px] leading-[1.7] text-[#7d8799] dark:text-[#aab8d4]">
                     Yes. I work with technology companies, startups, and digital
                     platforms on partnerships, product reviews, sponsored
                     content, and educational campaigns that provide value to my
                     audience.
                   </p>
-                </div>
+                </details>
 
-                <div className="rounded-[16px] border border-[#e8ebf3] bg-[#fbfcff] px-5 py-5 text-[#202636] shadow-[0_4px_18px_rgba(33,57,103,0.04)] dark:border-[#2d3a57] dark:bg-[#1b253b] dark:text-white">
-                  <h3 className="flex items-center justify-between gap-4 text-[18px] font-semibold leading-[1.5]">
+                <details className="group rounded-[16px] border border-[#e8ebf3] bg-[#fbfcff] px-5 py-5 text-[#202636] shadow-[0_4px_18px_rgba(33,57,103,0.04)] dark:border-[#2d3a57] dark:bg-[#1b253b] dark:text-white">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[18px] font-semibold leading-[1.5]">
                     <span>Do you accept product review requests?</span>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full text-[#a0a7b5] dark:text-[#8ea0c4]">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full text-[#a0a7b5] transition group-open:rotate-180 dark:text-[#8ea0c4]">
                       <ChevronDown className="h-5 w-5" />
                     </span>
-                  </h3>
+                  </summary>
                   <p className="pt-3 text-[16px] leading-[1.7] text-[#7d8799] dark:text-[#aab8d4]">
                     Yes. I review technology products, apps, and digital
                     platforms that are relevant to my audience. If you represent
                     a brand or company, please contact me through this page with
                     details about your product or service.
                   </p>
-                </div>
+                </details>
 
-                <div className="rounded-[16px] border border-[#e8ebf3] bg-[#fbfcff] px-5 py-5 text-[#202636] shadow-[0_4px_18px_rgba(33,57,103,0.04)] dark:border-[#2d3a57] dark:bg-[#1b253b] dark:text-white">
-                  <h3 className="flex items-center justify-between gap-4 text-[18px] font-semibold leading-[1.5]">
+                <details className="group rounded-[16px] border border-[#e8ebf3] bg-[#fbfcff] px-5 py-5 text-[#202636] shadow-[0_4px_18px_rgba(33,57,103,0.04)] dark:border-[#2d3a57] dark:bg-[#1b253b] dark:text-white">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[18px] font-semibold leading-[1.5]">
                     <span>How long does it take to receive a response?</span>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full text-[#a0a7b5] dark:text-[#8ea0c4]">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full text-[#a0a7b5] transition group-open:rotate-180 dark:text-[#8ea0c4]">
                       <ChevronDown className="h-5 w-5" />
                     </span>
-                  </h3>
+                  </summary>
                   <p className="pt-3 text-[16px] leading-[1.7] text-[#7d8799] dark:text-[#aab8d4]">
                     I usually respond to business inquiries and collaboration
                     requests within 24-48 hours. For urgent matters, please
                     include clear details in your message.
                   </p>
-                </div>
+                </details>
               </div>
             </section>
           </div>
