@@ -259,101 +259,145 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   </Link>
                 </div>
 
-                <div className="rounded-[16px] border border-[#dce5f4] bg-[linear-gradient(180deg,#fbfcff_0%,#f1f5fc_100%)] px-4 py-5 shadow-[0_10px_24px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
-                  <h2 className="text-[22px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
-                    React to this article
-                  </h2>
-                  <div className="mt-4 grid grid-cols-2 gap-3">
-                    {reactionOptions.map((reaction) => {
-                      const Icon = reaction.icon
-
-                      return (
-                        <button
-                          key={`sidebar-${reaction.label}`}
-                          type="button"
-                          className="inline-flex items-center justify-center gap-2 rounded-[12px] border border-[#dce5f4] bg-[#fbfcff] px-3 py-3 text-[15px] font-medium text-[#25324c] shadow-[0_8px_18px_rgba(35,58,108,0.05)] transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#1b2436] dark:text-[#e5edff]"
-                        >
-                          <Icon className={`h-5 w-5 ${reaction.accent}`} />
-                          {reaction.label}
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
-
-                <div className="rounded-[16px] border border-[#dce5f4] bg-[linear-gradient(180deg,#fbfcff_0%,#f1f5fc_100%)] px-4 py-5 shadow-[0_10px_24px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
-                  <h2 className="text-[22px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
-                    Comments
-                  </h2>
-                  <form className="mt-4 space-y-3">
-                    <div>
-                      <label className="mb-1 block text-[14px] font-medium text-[#2e3b57] dark:text-[#d5dff7]">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Name"
-                        className="h-11 w-full rounded-[12px] border border-[#dce5f4] bg-white px-4 text-[15px] text-[#172038] outline-none transition focus:border-[#2f5ef0] dark:border-[#31415c] dark:bg-[#1a2234] dark:text-white"
-                      />
-                    </div>
-                    <div>
-                      <label className="mb-1 block text-[14px] font-medium text-[#2e3b57] dark:text-[#d5dff7]">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        className="h-11 w-full rounded-[12px] border border-[#dce5f4] bg-white px-4 text-[15px] text-[#172038] outline-none transition focus:border-[#2f5ef0] dark:border-[#31415c] dark:bg-[#1a2234] dark:text-white"
-                      />
-                    </div>
-                    <div>
-                      <label className="mb-1 block text-[14px] font-medium text-[#2e3b57] dark:text-[#d5dff7]">
-                        Comment
-                      </label>
-                      <textarea
-                        placeholder="Comment"
-                        rows={4}
-                        className="w-full rounded-[12px] border border-[#dce5f4] bg-white px-4 py-3 text-[15px] text-[#172038] outline-none transition focus:border-[#2f5ef0] dark:border-[#31415c] dark:bg-[#1a2234] dark:text-white"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      className="inline-flex h-12 w-full items-center justify-center rounded-[12px] bg-[linear-gradient(180deg,#4d7df6_0%,#2553dd_100%)] text-[16px] font-semibold text-white shadow-[0_12px_24px_rgba(42,84,209,0.24)] transition hover:-translate-y-0.5"
-                    >
-                      Post Comment
-                    </button>
-                  </form>
-                </div>
-
-                <div className="rounded-[16px] border border-[#dce5f4] bg-[linear-gradient(180deg,#fbfcff_0%,#f1f5fc_100%)] px-4 py-5 shadow-[0_10px_24px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
-                  <h2 className="text-[22px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
-                    More in {article.category}
-                  </h2>
-                  <div className="mt-4 space-y-3">
-                    {relatedArticles.map((relatedArticle, index) => (
-                      <Link
-                        key={relatedArticle.slug}
-                        href={`/tech-blog/${relatedArticle.slug}`}
-                        className="flex gap-3 rounded-[14px] border border-[#dce5f4] bg-white/80 p-3 transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#1a2234]"
-                      >
-                        <div className={`h-[74px] w-[86px] shrink-0 rounded-[10px] bg-gradient-to-br ${relatedArticle.accent}`} />
-                        <div className="min-w-0">
-                          <p className="text-[13px] font-medium text-[#2f5ef0] dark:text-[#95bbff]">
-                            {index + 1}
-                          </p>
-                          <h3 className="line-clamp-2 text-[15px] font-medium leading-[1.35] text-[#172038] dark:text-[#f3f7ff]">
-                            {relatedArticle.title}
-                          </h3>
-                          <p className="mt-1 text-[12px] text-[#6c7892] dark:text-[#9fb1d2]">
-                            {relatedArticle.readTime} - {relatedArticle.category}
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                <div className="rounded-[14px] border border-[#234bc9] bg-[linear-gradient(180deg,#2f5ef0_0%,#2a4ec8_100%)] px-6 py-7 text-center text-white shadow-[0_16px_34px_rgba(29,80,215,0.22)]">
+                  <p className="text-[18px] text-white/88">Campaign Slot</p>
+                  <p className="mt-5 text-[30px] font-semibold leading-[1.05] sm:text-[40px]">
+                    Advertise Here
+                  </p>
+                  <p className="mt-6 text-[24px] font-medium sm:text-[34px]">300 × 250</p>
+                  <Link
+                    href="/contact"
+                    className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#f4cd64] px-6 py-3 text-[16px] font-semibold text-[#17306b] transition hover:-translate-y-1"
+                  >
+                    Book This Slot
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </aside>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-8 xl:grid-cols-[minmax(0,1fr)_320px]">
+          <div className="rounded-[22px] border border-[#dce5f4] bg-[linear-gradient(180deg,#fbfcff_0%,#f1f5fc_100%)] px-5 py-5 shadow-[0_10px_24px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
+            <h2 className="text-[22px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
+              More in {article.category}
+            </h2>
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              {relatedArticles.map((relatedArticle, index) => (
+                <Link
+                  key={relatedArticle.slug}
+                  href={`/tech-blog/${relatedArticle.slug}`}
+                  className="flex gap-3 rounded-[14px] border border-[#dce5f4] bg-white/80 p-3 transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#1a2234]"
+                >
+                  <div className={`h-[74px] w-[86px] shrink-0 rounded-[10px] bg-gradient-to-br ${relatedArticle.accent}`} />
+                  <div className="min-w-0">
+                    <p className="text-[13px] font-medium text-[#2f5ef0] dark:text-[#95bbff]">
+                      {index + 1}
+                    </p>
+                    <h3 className="line-clamp-2 text-[15px] font-medium leading-[1.35] text-[#172038] dark:text-[#f3f7ff]">
+                      {relatedArticle.title}
+                    </h3>
+                    <p className="mt-1 text-[12px] text-[#6c7892] dark:text-[#9fb1d2]">
+                      {relatedArticle.readTime} - {relatedArticle.category}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[22px] border border-[#dce5f4] bg-[linear-gradient(180deg,#fbfcff_0%,#f1f5fc_100%)] px-5 py-5 shadow-[0_10px_24px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
+            <h2 className="text-[22px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
+              Leave a Comment
+            </h2>
+            <form className="mt-4 space-y-3">
+              <div>
+                <label className="mb-1 block text-[14px] font-medium text-[#2e3b57] dark:text-[#d5dff7]">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="h-11 w-full rounded-[12px] border border-[#dce5f4] bg-white px-4 text-[15px] text-[#172038] outline-none transition focus:border-[#2f5ef0] dark:border-[#31415c] dark:bg-[#1a2234] dark:text-white"
+                />
+              </div>
+              <div>
+                <label className="mb-1 block text-[14px] font-medium text-[#2e3b57] dark:text-[#d5dff7]">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="h-11 w-full rounded-[12px] border border-[#dce5f4] bg-white px-4 text-[15px] text-[#172038] outline-none transition focus:border-[#2f5ef0] dark:border-[#31415c] dark:bg-[#1a2234] dark:text-white"
+                />
+              </div>
+              <div>
+                <label className="mb-1 block text-[14px] font-medium text-[#2e3b57] dark:text-[#d5dff7]">
+                  Comment
+                </label>
+                <textarea
+                  placeholder="Comment"
+                  rows={4}
+                  className="w-full rounded-[12px] border border-[#dce5f4] bg-white px-4 py-3 text-[15px] text-[#172038] outline-none transition focus:border-[#2f5ef0] dark:border-[#31415c] dark:bg-[#1a2234] dark:text-white"
+                />
+              </div>
+              <button
+                type="submit"
+                className="inline-flex h-12 w-full items-center justify-center rounded-[12px] bg-[linear-gradient(180deg,#4d7df6_0%,#2553dd_100%)] text-[16px] font-semibold text-white shadow-[0_12px_24px_rgba(42,84,209,0.24)] transition hover:-translate-y-0.5"
+              >
+                Post Comment
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div className="mt-8 rounded-[22px] border border-[#dce5f4] bg-[linear-gradient(180deg,#fbfcff_0%,#f1f5fc_100%)] px-5 py-5 shadow-[0_10px_24px_rgba(30,57,113,0.06)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]">
+          <h2 className="text-[26px] font-semibold text-[#172038] dark:text-[#f3f7ff] sm:text-[32px]">
+            Comments
+          </h2>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {reactionOptions.map((reaction) => {
+              const Icon = reaction.icon
+
+              return (
+                <button
+                  key={reaction.label}
+                  type="button"
+                  className="inline-flex items-center justify-center gap-2 rounded-[12px] border border-[#dce5f4] bg-[#fbfcff] px-4 py-3 text-[15px] font-medium text-[#25324c] shadow-[0_8px_18px_rgba(35,58,108,0.05)] transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#1b2436] dark:text-[#e5edff]"
+                >
+                  <Icon className={`h-5 w-5 ${reaction.accent}`} />
+                  {reaction.label}
+                </button>
+              )
+            })}
+          </div>
+
+          <div className="mt-5 space-y-3">
+            {articleComments.map((comment) => (
+              <div
+                key={comment.name}
+                className="flex items-start gap-4 rounded-[16px] border border-[#dce5f4] bg-[linear-gradient(180deg,#ffffff_0%,#f6f8fd_100%)] px-4 py-4 shadow-[0_10px_24px_rgba(30,57,113,0.05)] dark:border-[#31415c] dark:bg-[linear-gradient(180deg,#1b2436_0%,#151c2b_100%)]"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(180deg,#7e90b2_0%,#566580_100%)] text-[18px] font-semibold text-white">
+                  {comment.name.charAt(0)}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-[18px] font-semibold text-[#172038] dark:text-[#f3f7ff]">
+                      {comment.name}
+                    </p>
+                    <p className="text-[14px] text-[#7c88a3] dark:text-[#9eb0d1]">
+                      {comment.time}
+                    </p>
+                  </div>
+                  <p className="mt-1 text-[16px] text-[#2b3854] dark:text-[#d6e0f7]">
+                    {comment.text}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
