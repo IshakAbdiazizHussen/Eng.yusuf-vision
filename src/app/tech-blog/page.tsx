@@ -44,7 +44,7 @@ export default async function TechBlogPage({
   return (
     <PageFrame flushBottom>
       <section className="mt-8 rounded-[40px] border border-[#b9d0ff] bg-[linear-gradient(180deg,#dcebff_0%,#eef4ff_100%)] shadow-[0_24px_70px_rgba(35,62,124,0.08)] dark:border-[#283554] dark:bg-[linear-gradient(180deg,#1f2739_0%,#171e2d_100%)] dark:shadow-[0_24px_70px_rgba(3,8,20,0.45)]">
-        <div className="grid gap-0 xl:grid-cols-[minmax(0,1fr)_340px]">
+        <div className="grid gap-0 xl:grid-cols-[minmax(0,1fr)_380px]">
           <div className="px-6 py-8 sm:px-8 md:px-12 md:py-12">
             <div className="text-center">
               <h1 className="text-4xl font-bold leading-none text-[#1d3f92] dark:text-[#8ebfff] sm:text-[62px]">
@@ -228,47 +228,47 @@ export default async function TechBlogPage({
 
           <aside className="border-t border-[#c9daf8] px-4 py-6 xl:border-l xl:border-t-0 xl:px-5 xl:py-5 dark:border-[#2d3851]">
             <div className="flex flex-col gap-5">
-              <div className="rounded-[18px] border border-[#234bc9] bg-[linear-gradient(180deg,#2f5ef0_0%,#2a4ec8_100%)] px-6 py-10 text-center text-white shadow-[0_16px_34px_rgba(29,80,215,0.22)]">
-                <p className="text-[40px] font-semibold leading-[1.02] sm:text-[52px]">
+              <div className="rounded-[20px] border border-[#234bc9] bg-[linear-gradient(180deg,#2f5ef0_0%,#2a4ec8_100%)] px-7 py-12 text-center text-white shadow-[0_18px_38px_rgba(29,80,215,0.24)]">
+                <p className="text-[44px] font-semibold leading-[1.02] sm:text-[58px]">
                   Advertise
                   <br />
                   Here
                 </p>
-                <p className="mt-8 text-[30px] font-medium sm:text-[42px]">300 × 600</p>
-                <p className="mt-5 text-[18px] text-white/88">Premium Placement</p>
+                <p className="mt-8 text-[34px] font-medium sm:text-[46px]">300 × 600</p>
+                <p className="mt-5 text-[19px] text-white/88">Premium Placement</p>
                 <Link
                   href="/contact"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#f4cd64] px-6 py-3 text-[16px] font-semibold text-[#17306b] transition hover:-translate-y-1"
+                  className="mt-9 inline-flex items-center gap-2 rounded-full bg-[#f4cd64] px-7 py-3.5 text-[17px] font-semibold text-[#17306b] transition hover:-translate-y-1"
                 >
                   Advertise Here
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
 
-              <div className="rounded-[18px] border border-[#234bc9] bg-[linear-gradient(180deg,#2f5ef0_0%,#2a4ec8_100%)] px-6 py-10 text-center text-white shadow-[0_16px_34px_rgba(29,80,215,0.22)]">
-                <p className="text-[18px] text-white/88">Sponsored</p>
-                <p className="mt-5 text-[36px] font-semibold leading-[1.05] sm:text-[46px]">
+              <div className="rounded-[20px] border border-[#234bc9] bg-[linear-gradient(180deg,#2f5ef0_0%,#2a4ec8_100%)] px-7 py-12 text-center text-white shadow-[0_18px_38px_rgba(29,80,215,0.24)]">
+                <p className="text-[20px] text-white/88">Sponsored</p>
+                <p className="mt-5 text-[40px] font-semibold leading-[1.05] sm:text-[50px]">
                   Advertise Here
                 </p>
-                <p className="mt-6 text-[28px] font-medium sm:text-[40px]">300 × 450</p>
+                <p className="mt-6 text-[32px] font-medium sm:text-[44px]">300 × 450</p>
                 <Link
                   href="/contact"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#f4cd64] px-6 py-3 text-[16px] font-semibold text-[#17306b] transition hover:-translate-y-1"
+                  className="mt-9 inline-flex items-center gap-2 rounded-full bg-[#f4cd64] px-7 py-3.5 text-[17px] font-semibold text-[#17306b] transition hover:-translate-y-1"
                 >
                   Advertise Here
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
 
-              <div className="rounded-[18px] border border-[#234bc9] bg-[linear-gradient(180deg,#2f5ef0_0%,#2a4ec8_100%)] px-6 py-10 text-center text-white shadow-[0_16px_34px_rgba(29,80,215,0.22)]">
-                <p className="text-[18px] text-white/88">Sponsored</p>
-                <p className="mt-5 text-[36px] font-semibold leading-[1.05] sm:text-[46px]">
+              <div className="rounded-[20px] border border-[#234bc9] bg-[linear-gradient(180deg,#2f5ef0_0%,#2a4ec8_100%)] px-7 py-12 text-center text-white shadow-[0_18px_38px_rgba(29,80,215,0.24)]">
+                <p className="text-[20px] text-white/88">Sponsored</p>
+                <p className="mt-5 text-[40px] font-semibold leading-[1.05] sm:text-[50px]">
                   Advertise Here
                 </p>
-                <p className="mt-6 text-[28px] font-medium sm:text-[40px]">300 × 450</p>
+                <p className="mt-6 text-[32px] font-medium sm:text-[44px]">300 × 450</p>
                 <Link
                   href="/contact"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#f4cd64] px-6 py-3 text-[16px] font-semibold text-[#17306b] transition hover:-translate-y-1"
+                  className="mt-9 inline-flex items-center gap-2 rounded-full bg-[#f4cd64] px-7 py-3.5 text-[17px] font-semibold text-[#17306b] transition hover:-translate-y-1"
                 >
                   Advertise Here
                   <ArrowRight className="h-4 w-4" />
