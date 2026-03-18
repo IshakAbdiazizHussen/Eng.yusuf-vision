@@ -64,7 +64,7 @@ export function ContactForm() {
       trimmedData.message,
     ].join("\n")
 
-    const mailtoLink = `mailto:contact@engyuyuu.com?subject=${encodeURIComponent(trimmedData.inquiryType)}&body=${encodeURIComponent(body)}`
+    const mailtoLink = `mailto:contact@engyuyu.com?subject=${encodeURIComponent(trimmedData.inquiryType)}&body=${encodeURIComponent(body)}`
 
     await new Promise((resolve) => window.setTimeout(resolve, 500))
 

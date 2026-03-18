@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import type { ReactNode } from "react"
-import { CalendarDays, ChevronDown, Mail } from "lucide-react"
+import { ArrowRight, CalendarDays, ChevronDown, Mail } from "lucide-react"
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6"
 import { ContactForm } from "@/components/contact-form"
 import { PageFrame } from "@/components/page-frame"
@@ -117,11 +117,32 @@ export default function ContactPage() {
                     icon={<Mail className="h-5 w-5" />}
                     title="Email"
                     value="contact@engyuyu.com"
+                    note="Best for business inquiries, collaborations, sponsorships, and general questions."
                   />
                 </div>
 
                 <Link
-                  href="mailto:contact@engyuyuu.com?subject=Book%20a%20Call"
+                  href="mailto:contact@engyuyu.com"
+                  className="mt-6 flex items-center justify-between gap-4 rounded-[18px] border border-[#d9e2f4] bg-[#f7faff] px-5 py-4 text-left shadow-[0_10px_24px_rgba(31,55,113,0.05)] transition hover:-translate-y-0.5 dark:border-[#30415f] dark:bg-[#1b253b]"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[linear-gradient(180deg,#4c98ff_0%,#2d72eb_100%)] text-white shadow-[0_8px_18px_rgba(48,112,239,0.2)]">
+                      <Mail className="h-5 w-5" />
+                    </span>
+                    <span className="block">
+                      <span className="block text-[13px] font-semibold uppercase tracking-[0.12em] text-[#6f7d98] dark:text-[#9ab0d9]">
+                        Send Email
+                      </span>
+                      <span className="mt-1 block text-[18px] font-semibold text-[#1f2432] dark:text-white">
+                        contact@engyuyu.com
+                      </span>
+                    </span>
+                  </div>
+                  <ArrowRight className="h-5 w-5 shrink-0 text-[#2d72eb] dark:text-[#8ebfff]" />
+                </Link>
+
+                <Link
+                  href="mailto:contact@engyuyu.com?subject=Book%20a%20Call"
                   className="mt-9 inline-flex h-16 w-full items-center justify-center gap-3 rounded-[16px] bg-[linear-gradient(90deg,#264d9d_0%,#1d3777_100%)] px-6 text-[18px] font-semibold text-white shadow-[0_18px_30px_rgba(31,60,125,0.28)] transition hover:translate-y-[-1px]"
                 >
                   <CalendarDays className="h-5 w-5" />
