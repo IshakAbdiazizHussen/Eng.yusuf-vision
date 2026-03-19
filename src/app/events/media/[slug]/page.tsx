@@ -4,6 +4,7 @@ import Link from "next/link"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { notFound } from "next/navigation"
 import { PageFrame } from "@/components/page-frame"
+import { PodcastAudioButton } from "@/components/podcast-audio-button"
 import {
   getMediaAppearanceBySlug,
   mediaAppearances,
@@ -40,6 +41,14 @@ export default async function MediaAppearancePage({ params }: MediaPageProps) {
   if (!item) {
     notFound()
   }
+
+  const audioText = [
+    item.title,
+    item.description,
+    item.overview,
+    "Key topics covered.",
+    ...item.topics,
+  ].join(" ")
 
   return (
     <PageFrame flushBottom>
@@ -101,15 +110,21 @@ export default async function MediaAppearancePage({ params }: MediaPageProps) {
           </ul>
 
           <div className="mt-10 border-t border-[#e7edf7] pt-6 dark:border-[#2f3b58]">
-            <Link
-              href={item.buttonHref}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-14 items-center gap-3 rounded-[14px] bg-[linear-gradient(90deg,#2f6fed_0%,#4a7cf0_100%)] px-7 text-[18px] font-semibold text-white shadow-[0_14px_30px_rgba(47,111,237,0.24)] transition hover:-translate-y-0.5"
-            >
-              {item.buttonLabel}
-              <ArrowRight className="h-5 w-5" />
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <PodcastAudioButton
+                text={audioText}
+                label={item.buttonLabel}
+              />
+              <Link
+                href={item.buttonHref}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-14 items-center gap-3 rounded-[14px] border border-[#dbe4f2] bg-white px-7 text-[18px] font-semibold text-[#2f6fed] shadow-[0_10px_24px_rgba(31,55,113,0.05)] transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#202a40] dark:text-[#8ebfff]"
+              >
+                Open Original Video
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
