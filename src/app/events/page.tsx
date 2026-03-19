@@ -28,8 +28,8 @@ export default function EventsPage() {
   return (
     <PageFrame flushBottom>
       <section className="relative left-1/2 right-1/2 mt-0 ml-[-50vw] mr-[-50vw] w-screen">
-        <div className="bg-[linear-gradient(180deg,#f7f9ff_0%,#eef4ff_100%)] px-6 py-10 sm:px-10 lg:px-16 lg:py-12">
-          <div className="mx-auto w-full max-w-[1280px] rounded-[34px] border border-[#e1e8f6] bg-[linear-gradient(180deg,#ffffff_0%,#f6f9ff_100%)] px-7 py-8 shadow-[0_24px_60px_rgba(29,80,215,0.08)] sm:px-10 sm:py-10 lg:px-12">
+        <div className="bg-[linear-gradient(180deg,#f7f9ff_0%,#eef4ff_100%)] px-6 py-10 dark:bg-[linear-gradient(180deg,#171e2d_0%,#131927_100%)] sm:px-10 lg:px-16 lg:py-12">
+          <div className="mx-auto w-full max-w-[1280px] rounded-[34px] border border-[#e1e8f6] bg-[linear-gradient(180deg,#ffffff_0%,#f6f9ff_100%)] px-7 py-8 shadow-[0_24px_60px_rgba(29,80,215,0.08)] dark:border-[#2b3750] dark:bg-[linear-gradient(180deg,#1f2739_0%,#171e2d_100%)] dark:shadow-[0_24px_60px_rgba(3,8,20,0.45)] sm:px-10 sm:py-10 lg:px-12">
             <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div className="relative">
                 <div
@@ -48,12 +48,12 @@ export default function EventsPage() {
                   }}
                 />
 
-                <h1 className="text-[42px] font-bold leading-[0.98] tracking-[-0.05em] text-[#202737] sm:text-[54px] lg:text-[62px]">
+                <h1 className="text-[42px] font-bold leading-[0.98] tracking-[-0.05em] text-[#202737] dark:text-[#f4f7ff] sm:text-[54px] lg:text-[62px]">
                   Events &{" "}
                   <span className="text-[#2d72eb]">Media</span>
                 </h1>
 
-                <p className="mt-7 max-w-[620px] text-[22px] font-medium leading-[1.35] tracking-[-0.03em] text-[#2c3344] sm:text-[30px]">
+                <p className="mt-7 max-w-[620px] text-[22px] font-medium leading-[1.35] tracking-[-0.03em] text-[#2c3344] dark:text-[#e3ebff] sm:text-[30px]">
                   Where{" "}
                   <span className="text-[#2d72eb]">Technology</span>{" "}
                   Meets{" "}
@@ -62,7 +62,7 @@ export default function EventsPage() {
                   <span className="text-[#2d72eb]">Innovation</span> &amp; Conversation
                 </p>
 
-                <p className="mt-7 max-w-[700px] text-[18px] leading-[1.7] text-[#5d667b] sm:text-[20px]">
+                <p className="mt-7 max-w-[700px] text-[18px] leading-[1.7] text-[#5d667b] dark:text-[#b8c8e8] sm:text-[20px]">
                   Exploring events, workshops, conferences, and media appearances shaping the future of digital growth in Somalia and beyond.
                 </p>
               </div>
@@ -72,7 +72,7 @@ export default function EventsPage() {
                 <div className="pointer-events-none absolute left-[10%] top-[24%] hidden h-28 w-20 rounded-[26px] bg-[#2d72eb] opacity-18 lg:block" />
 
                 <div className="grid grid-cols-[1.25fr_0.95fr] gap-4">
-                  <div className="relative overflow-hidden rounded-[28px] border border-white bg-[#dfe8fb] shadow-[0_20px_40px_rgba(31,55,113,0.12)]">
+                  <div className="relative overflow-hidden rounded-[28px] border border-white bg-[#dfe8fb] shadow-[0_20px_40px_rgba(31,55,113,0.12)] dark:border-[#31415c] dark:bg-[#243049] dark:shadow-[0_20px_40px_rgba(3,8,20,0.35)]">
                     <Image
                       src={heroEvent.image}
                       alt={heroEvent.title}
@@ -80,7 +80,7 @@ export default function EventsPage() {
                       height={1614}
                       className={`h-[320px] w-full ${
                         heroEvent.format === "contain"
-                          ? "bg-[#dfe8fb] object-contain p-4"
+                          ? "bg-[#dfe8fb] object-contain p-4 dark:bg-[#243049]"
                           : "object-cover object-top"
                       }`}
                       priority
@@ -91,7 +91,7 @@ export default function EventsPage() {
                     {heroSideEvents.map((event) => (
                       <div
                         key={event.slug}
-                        className="relative overflow-hidden rounded-[24px] border border-white bg-[#e6edfb] shadow-[0_18px_32px_rgba(31,55,113,0.1)]"
+                        className="relative overflow-hidden rounded-[24px] border border-white bg-[#e6edfb] shadow-[0_18px_32px_rgba(31,55,113,0.1)] dark:border-[#31415c] dark:bg-[#243049] dark:shadow-[0_18px_32px_rgba(3,8,20,0.32)]"
                       >
                         <Image
                           src={event.image}
@@ -100,7 +100,7 @@ export default function EventsPage() {
                           height={1614}
                           className={`h-[98px] w-full ${
                             event.format === "contain"
-                              ? "bg-[#e6edfb] object-contain p-3"
+                              ? "bg-[#e6edfb] object-contain p-3 dark:bg-[#243049]"
                               : "object-cover object-top"
                           }`}
                         />
@@ -111,30 +111,30 @@ export default function EventsPage() {
               </div>
             </div>
 
-            <div className="mt-10 rounded-[28px] border border-[#e7edf8] bg-[#fbfcff] p-2 shadow-[0_10px_30px_rgba(31,55,113,0.06)]">
+            <div className="mt-10 rounded-[28px] border border-[#e7edf8] bg-[#fbfcff] p-2 shadow-[0_10px_30px_rgba(31,55,113,0.06)] dark:border-[#2b3750] dark:bg-[#1b2436] dark:shadow-[0_10px_30px_rgba(3,8,20,0.3)]">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#2f6fed] px-5 py-3 text-[18px] font-semibold text-white shadow-[0_12px_24px_rgba(47,111,237,0.24)]">
                   <CalendarDays className="h-5 w-5" />
                   All
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
-                  <CalendarDays className="h-5 w-5 text-[#6c758d]" />
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
+                  <CalendarDays className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
                   Events
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
-                  <Users className="h-5 w-5 text-[#6c758d]" />
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
+                  <Users className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
                   Workshops
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
-                  <Presentation className="h-5 w-5 text-[#6c758d]" />
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
+                  <Presentation className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
                   Conferences
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
-                  <MonitorPlay className="h-5 w-5 text-[#6c758d]" />
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
+                  <MonitorPlay className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
                   Media
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
-                  <Podcast className="h-5 w-5 text-[#6c758d]" />
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
+                  <Podcast className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
                   Podcasts
                 </span>
               </div>
