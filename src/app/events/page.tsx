@@ -29,28 +29,28 @@ type EventsPageProps = {
 const eventAccentStyles = [
   {
     pill: "bg-[#eef5ff] text-[#2d72eb]",
-    button: "bg-[#2f6fed] text-white border-[#2f6fed]",
+    button: "bg-[#2f6fed] text-white border-[#2f6fed] hover:bg-[#255ed0] hover:border-[#255ed0]",
     icon: "text-[#2d72eb]",
     word: "text-[#2d72eb]",
     label: "Speaker",
   },
   {
     pill: "bg-[#eef8ef] text-[#357c43]",
-    button: "bg-white text-[#357c43] border-[#dbe8dc]",
+    button: "bg-white text-[#357c43] border-[#dbe8dc] hover:bg-[#2f6fed] hover:text-white hover:border-[#2f6fed]",
     icon: "text-[#357c43]",
     word: "text-[#357c43]",
     label: "Workshop",
   },
   {
     pill: "bg-[#fff3e9] text-[#e18a33]",
-    button: "bg-white text-[#e18a33] border-[#f0dbc8]",
+    button: "bg-white text-[#e18a33] border-[#f0dbc8] hover:bg-[#2f6fed] hover:text-white hover:border-[#2f6fed]",
     icon: "text-[#e18a33]",
     word: "text-[#e18a33]",
     label: "Bootcamp",
   },
   {
     pill: "bg-[#f6efff] text-[#8e49d9]",
-    button: "bg-white text-[#5d47bd] border-[#ddd5f2]",
+    button: "bg-white text-[#5d47bd] border-[#ddd5f2] hover:bg-[#2f6fed] hover:text-white hover:border-[#2f6fed]",
     icon: "text-[#8e49d9]",
     word: "text-[#5d47bd]",
     label: "Community",
