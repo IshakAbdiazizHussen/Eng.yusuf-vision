@@ -3,6 +3,7 @@ import Link from "next/link"
 import {
   ArrowRight,
   CalendarDays,
+  Headphones,
   MapPin,
   Mic,
   MonitorPlay,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react"
 import { PageFrame } from "@/components/page-frame"
 import { events } from "@/lib/events-data"
+import { mediaAppearances } from "@/lib/media-data"
 
 const socialLinks = {
   youtube: "https://www.youtube.com/@engyuyu",
@@ -27,7 +29,7 @@ export default function EventsPage() {
   return (
     <PageFrame flushBottom>
       <section className="relative left-1/2 right-1/2 mt-0 ml-[-50vw] mr-[-50vw] w-screen">
-        <div className="bg-[linear-gradient(180deg,#f8faff_0%,#f3f7ff_100%)] px-6 py-10 dark:bg-[linear-gradient(180deg,#171e2d_0%,#131927_100%)] sm:px-10 lg:px-16 lg:py-12">
+        <div className="px-6 py-10 sm:px-10 lg:px-16 lg:py-12">
           <div className="mx-auto w-full max-w-[1280px] px-1 sm:px-2">
             <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div className="relative">
@@ -141,7 +143,7 @@ export default function EventsPage() {
           </div>
         </div>
 
-        <div className="bg-[linear-gradient(180deg,#f3f7ff_0%,#eef4ff_100%)] px-6 py-14 dark:bg-[linear-gradient(180deg,#131927_0%,#101522_100%)] sm:px-10 lg:px-16 lg:py-18">
+        <div className="px-6 py-14 sm:px-10 lg:px-16 lg:py-18">
           <div className="mx-auto w-full max-w-[1280px]">
             <section className="px-1 py-2">
               <div className="text-center">
@@ -290,32 +292,7 @@ export default function EventsPage() {
                 </div>
 
                 <div className="mt-8 grid gap-5 xl:grid-cols-3">
-                  {[
-                    {
-                      label: "Guest Appearance",
-                      title: "Tech Talk Somalia",
-                      subtitle: "The Future of AI in Somalia",
-                      buttonLabel: "Watch Episode",
-                      image: events[0]?.image ?? "/engY.png",
-                      format: events[0]?.format ?? "cover",
-                    },
-                    {
-                      label: "Digital Creators Show",
-                      title: "Digital Creators Show",
-                      subtitle: "Building a Tech Brand",
-                      buttonLabel: "Listen Now",
-                      image: events[1]?.image ?? "/engY-removebg-preview.png",
-                      format: events[1]?.format ?? "contain",
-                    },
-                    {
-                      label: "Startup & Innovation Podcast",
-                      title: "Startup & Innovation",
-                      subtitle: "Youth & Innovation",
-                      buttonLabel: "Listen Now",
-                      image: events[3]?.image ?? "/engY.png",
-                      format: events[3]?.format ?? "cover",
-                    },
-                  ].map((item) => (
+                  {mediaAppearances.map((item) => (
                     <article
                       key={item.title}
                       className="overflow-hidden rounded-[24px] border border-[#e5eaf5] bg-white shadow-[0_14px_32px_rgba(31,55,113,0.07)] dark:border-[#31415c] dark:bg-[#1c2437] dark:shadow-[0_14px_32px_rgba(3,8,20,0.3)]"
@@ -332,8 +309,9 @@ export default function EventsPage() {
                               : "object-cover object-top"
                           }`}
                         />
-                        <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/95 px-4 py-2 text-[14px] font-semibold text-[#454d61] shadow-[0_8px_18px_rgba(255,255,255,0.3)] dark:bg-[#f5f7ff]">
-                          {item.label}
+                        <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-[14px] font-semibold text-[#454d61] shadow-[0_8px_18px_rgba(255,255,255,0.3)] dark:bg-[#f5f7ff]">
+                          <Headphones className="h-4 w-4" />
+                          {item.series}
                         </span>
                       </div>
 
@@ -345,13 +323,13 @@ export default function EventsPage() {
                           {item.subtitle}
                         </p>
 
-                        <button
-                          type="button"
+                        <Link
+                          href={`/events/media/${item.slug}`}
                           className="mt-6 inline-flex h-14 w-full items-center justify-center gap-3 rounded-[16px] border border-[#dbe4f2] bg-white text-[18px] font-semibold text-[#2d72eb] shadow-[0_10px_24px_rgba(31,55,113,0.05)] transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#202a40] dark:text-[#8ebfff]"
                         >
                           {item.buttonLabel}
                           <ArrowRight className="h-5 w-5" />
-                        </button>
+                        </Link>
                       </div>
                     </article>
                   ))}

@@ -51,7 +51,7 @@ export function SiteNav() {
               ? pathname === "/"
               : item.href.includes("#")
                 ? false
-                : pathname === item.href
+                : pathname === item.href || pathname.startsWith(`${item.href}/`)
 
             return (
               <li key={item.href} className="shrink-0">
