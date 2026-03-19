@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Clock3 } from "lucide-react"
 import { notFound } from "next/navigation"
@@ -72,7 +71,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 {article.category}
               </span>
 
-              <h1 className="mt-5 max-w-[760px] text-[42px] font-medium leading-[1.08] tracking-[-0.04em] text-[#131b31] dark:text-[#f4f7ff] sm:text-[56px]">
+              <h1 className="mt-5 max-w-[760px] text-2xl font-medium leading-[1.08] tracking-[-0.04em] text-[#131b31] dark:text-[#f4f7ff] sm:text-2xl">
                 {article.title}
               </h1>
 

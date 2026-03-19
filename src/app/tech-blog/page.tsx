@@ -47,7 +47,7 @@ export default async function TechBlogPage({
         <div className="grid gap-0 xl:grid-cols-[minmax(0,1fr)_340px]">
           <div className="px-6 py-8 sm:px-8 md:px-12 md:py-12">
             <div className="text-center">
-              <h1 className="text-4xl font-bold leading-none text-[#1d3f92] dark:text-[#8ebfff] sm:text-[62px]">
+              <h1 className="text-2xl font-bold leading-none text-[#1d3f92] dark:text-[#8ebfff] sm:text-2xl">
                 Tech Blog
               </h1>
               <p className="mt-3 text-2xl font-medium leading-none text-[#1c1f28] dark:text-white sm:text-[32px]">
