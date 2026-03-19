@@ -1,6 +1,16 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CalendarDays, Clock3, MapPin } from "lucide-react"
+import {
+  ArrowRight,
+  CalendarDays,
+  Clock3,
+  MapPin,
+  Mic,
+  MonitorPlay,
+  Podcast,
+  Presentation,
+  Users,
+} from "lucide-react"
 import { PageFrame } from "@/components/page-frame"
 import { events } from "@/lib/events-data"
 
@@ -12,14 +22,123 @@ const socialLinks = {
 }
 
 export default function EventsPage() {
+  const heroEvent = events[0]
+  const heroSideEvents = events.slice(1, 4)
+
   return (
     <PageFrame flushBottom>
       <section className="relative left-1/2 right-1/2 mt-0 ml-[-50vw] mr-[-50vw] w-screen">
-        <div className="bg-[#156ff3] px-6 py-14 sm:px-10 lg:px-16 lg:py-16">
-          <div className="mx-auto w-full max-w-[1280px] text-center">
-            <h1 className="text-[44px] font-bold leading-none tracking-[-0.04em] text-white sm:text-[58px]">
-              Event and Conference
-            </h1>
+        <div className="bg-[linear-gradient(180deg,#f7f9ff_0%,#eef4ff_100%)] px-6 py-10 sm:px-10 lg:px-16 lg:py-12">
+          <div className="mx-auto w-full max-w-[1280px] rounded-[34px] border border-[#e1e8f6] bg-[linear-gradient(180deg,#ffffff_0%,#f6f9ff_100%)] px-7 py-8 shadow-[0_24px_60px_rgba(29,80,215,0.08)] sm:px-10 sm:py-10 lg:px-12">
+            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+              <div className="relative">
+                <div
+                  className="pointer-events-none absolute left-[58%] top-[10%] h-28 w-28 rounded-full opacity-70"
+                  style={{
+                    background:
+                      "radial-gradient(circle, rgba(54,115,255,0.16) 0%, rgba(54,115,255,0) 72%)",
+                  }}
+                />
+                <div
+                  className="pointer-events-none absolute left-[68%] top-[30%] hidden h-24 w-24 opacity-60 lg:block"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle, rgba(64,120,245,0.18) 1.3px, transparent 1.3px)",
+                    backgroundSize: "8px 8px",
+                  }}
+                />
+
+                <h1 className="text-[42px] font-bold leading-[0.98] tracking-[-0.05em] text-[#202737] sm:text-[54px] lg:text-[62px]">
+                  Events &{" "}
+                  <span className="text-[#2d72eb]">Media</span>
+                </h1>
+
+                <p className="mt-7 max-w-[620px] text-[22px] font-medium leading-[1.35] tracking-[-0.03em] text-[#2c3344] sm:text-[30px]">
+                  Where{" "}
+                  <span className="text-[#2d72eb]">Technology</span>{" "}
+                  Meets{" "}
+                  <span className="text-[#2d72eb]">Community</span>,
+                  <br />
+                  <span className="text-[#2d72eb]">Innovation</span> &amp; Conversation
+                </p>
+
+                <p className="mt-7 max-w-[700px] text-[18px] leading-[1.7] text-[#5d667b] sm:text-[20px]">
+                  Exploring events, workshops, conferences, and media appearances shaping the future of digital growth in Somalia and beyond.
+                </p>
+              </div>
+
+              <div className="relative">
+                <div className="pointer-events-none absolute left-[2%] top-[8%] hidden h-[170px] w-[110px] rounded-[28px] bg-[linear-gradient(180deg,#8fb8ff_0%,#5b95ff_100%)] opacity-18 lg:block" />
+                <div className="pointer-events-none absolute left-[10%] top-[24%] hidden h-28 w-20 rounded-[26px] bg-[#2d72eb] opacity-18 lg:block" />
+
+                <div className="grid grid-cols-[1.25fr_0.95fr] gap-4">
+                  <div className="relative overflow-hidden rounded-[28px] border border-white bg-[#dfe8fb] shadow-[0_20px_40px_rgba(31,55,113,0.12)]">
+                    <Image
+                      src={heroEvent.image}
+                      alt={heroEvent.title}
+                      width={1272}
+                      height={1614}
+                      className={`h-[320px] w-full ${
+                        heroEvent.format === "contain"
+                          ? "bg-[#dfe8fb] object-contain p-4"
+                          : "object-cover object-top"
+                      }`}
+                      priority
+                    />
+                  </div>
+
+                  <div className="grid gap-4">
+                    {heroSideEvents.map((event) => (
+                      <div
+                        key={event.slug}
+                        className="relative overflow-hidden rounded-[24px] border border-white bg-[#e6edfb] shadow-[0_18px_32px_rgba(31,55,113,0.1)]"
+                      >
+                        <Image
+                          src={event.image}
+                          alt={event.title}
+                          width={1272}
+                          height={1614}
+                          className={`h-[98px] w-full ${
+                            event.format === "contain"
+                              ? "bg-[#e6edfb] object-contain p-3"
+                              : "object-cover object-top"
+                          }`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10 rounded-[28px] border border-[#e7edf8] bg-[#fbfcff] p-2 shadow-[0_10px_30px_rgba(31,55,113,0.06)]">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#2f6fed] px-5 py-3 text-[18px] font-semibold text-white shadow-[0_12px_24px_rgba(47,111,237,0.24)]">
+                  <CalendarDays className="h-5 w-5" />
+                  All
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
+                  <CalendarDays className="h-5 w-5 text-[#6c758d]" />
+                  Events
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
+                  <Users className="h-5 w-5 text-[#6c758d]" />
+                  Workshops
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
+                  <Presentation className="h-5 w-5 text-[#6c758d]" />
+                  Conferences
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
+                  <MonitorPlay className="h-5 w-5 text-[#6c758d]" />
+                  Media
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61]">
+                  <Podcast className="h-5 w-5 text-[#6c758d]" />
+                  Podcasts
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -114,6 +233,9 @@ export default function EventsPage() {
               </a>
               <a href={socialLinks.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon-float-4 transition-transform duration-300 hover:scale-110">
                 <Image src="/Instgram.png" alt="Instagram" width={58} height={58} className="h-[36px] w-auto object-contain brightness-0 invert sm:h-[42px]" />
+              </a>
+              <a href={socialLinks.youtube} target="_blank" rel="noreferrer" aria-label="Media microphone" className="social-icon-float-3 transition-transform duration-300 hover:scale-110">
+                <Mic className="h-[36px] w-[36px] text-white sm:h-[42px] sm:w-[42px]" />
               </a>
             </div>
           </div>
