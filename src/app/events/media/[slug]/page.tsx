@@ -5,10 +5,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import { notFound } from "next/navigation"
 import { PageFrame } from "@/components/page-frame"
 import { PodcastAudioButton } from "@/components/podcast-audio-button"
-import {
-  getMediaAppearanceBySlug,
-  mediaAppearances,
-} from "@/lib/media-data"
+import { getMediaAppearanceBySlug, mediaAppearances } from "@/lib/media-data"
+
 
 type MediaPageProps = {
   params: Promise<{ slug: string }>
@@ -50,7 +48,6 @@ export default async function MediaAppearancePage({ params }: MediaPageProps) {
     `${item.overview}.`,
     "Key topics covered.",
     ...item.topics.map((topic) => `${topic}.`),
-    `${item.buttonLabel}.`,
   ].join(" ... ")
 
   return (
