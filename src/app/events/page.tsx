@@ -3,7 +3,6 @@ import Link from "next/link"
 import {
   ArrowRight,
   CalendarDays,
-  Clock3,
   MapPin,
   Mic,
   MonitorPlay,
@@ -28,8 +27,8 @@ export default function EventsPage() {
   return (
     <PageFrame flushBottom>
       <section className="relative left-1/2 right-1/2 mt-0 ml-[-50vw] mr-[-50vw] w-screen">
-        <div className="bg-[linear-gradient(180deg,#f7f9ff_0%,#eef4ff_100%)] px-6 py-10 dark:bg-[linear-gradient(180deg,#171e2d_0%,#131927_100%)] sm:px-10 lg:px-16 lg:py-12">
-          <div className="mx-auto w-full max-w-[1280px] rounded-[34px] border border-[#e1e8f6] bg-[linear-gradient(180deg,#ffffff_0%,#f6f9ff_100%)] px-7 py-8 shadow-[0_24px_60px_rgba(29,80,215,0.08)] dark:border-[#2b3750] dark:bg-[linear-gradient(180deg,#1f2739_0%,#171e2d_100%)] dark:shadow-[0_24px_60px_rgba(3,8,20,0.45)] sm:px-10 sm:py-10 lg:px-12">
+        <div className="bg-[linear-gradient(180deg,#f8faff_0%,#f3f7ff_100%)] px-6 py-10 dark:bg-[linear-gradient(180deg,#171e2d_0%,#131927_100%)] sm:px-10 lg:px-16 lg:py-12">
+          <div className="mx-auto w-full max-w-[1280px] px-1 sm:px-2">
             <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div className="relative">
                 <div
@@ -72,7 +71,7 @@ export default function EventsPage() {
                 <div className="pointer-events-none absolute left-[10%] top-[24%] hidden h-28 w-20 rounded-[26px] bg-[#2d72eb] opacity-18 lg:block" />
 
                 <div className="grid grid-cols-[1.25fr_0.95fr] gap-4">
-                  <div className="relative overflow-hidden rounded-[28px] border border-white bg-[#dfe8fb] shadow-[0_20px_40px_rgba(31,55,113,0.12)] dark:border-[#31415c] dark:bg-[#243049] dark:shadow-[0_20px_40px_rgba(3,8,20,0.35)]">
+                  <div className="relative overflow-hidden rounded-[28px] border border-white bg-[#dfe8fb] shadow-[0_16px_34px_rgba(31,55,113,0.1)] dark:border-[#31415c] dark:bg-[#243049] dark:shadow-[0_16px_34px_rgba(3,8,20,0.32)]">
                     <Image
                       src={heroEvent.image}
                       alt={heroEvent.title}
@@ -91,7 +90,7 @@ export default function EventsPage() {
                     {heroSideEvents.map((event) => (
                       <div
                         key={event.slug}
-                        className="relative overflow-hidden rounded-[24px] border border-white bg-[#e6edfb] shadow-[0_18px_32px_rgba(31,55,113,0.1)] dark:border-[#31415c] dark:bg-[#243049] dark:shadow-[0_18px_32px_rgba(3,8,20,0.32)]"
+                        className="relative overflow-hidden rounded-[24px] border border-white bg-[#e6edfb] shadow-[0_16px_28px_rgba(31,55,113,0.09)] dark:border-[#31415c] dark:bg-[#243049] dark:shadow-[0_16px_28px_rgba(3,8,20,0.28)]"
                       >
                         <Image
                           src={event.image}
@@ -111,8 +110,8 @@ export default function EventsPage() {
               </div>
             </div>
 
-            <div className="mt-10 rounded-[28px] border border-[#e7edf8] bg-[#fbfcff] p-2 shadow-[0_10px_30px_rgba(31,55,113,0.06)] dark:border-[#2b3750] dark:bg-[#1b2436] dark:shadow-[0_10px_30px_rgba(3,8,20,0.3)]">
-              <div className="flex flex-wrap items-center gap-3">
+            <div className="mx-auto mt-10 max-w-[940px] rounded-[28px] border border-[#e7edf8] bg-[#fbfcff] p-2 shadow-[0_10px_30px_rgba(31,55,113,0.06)] dark:border-[#2b3750] dark:bg-[#1b2436] dark:shadow-[0_10px_30px_rgba(3,8,20,0.3)]">
+              <div className="flex flex-wrap items-center justify-center gap-3">
                 <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#2f6fed] px-5 py-3 text-[18px] font-semibold text-white shadow-[0_12px_24px_rgba(47,111,237,0.24)]">
                   <CalendarDays className="h-5 w-5" />
                   All
@@ -142,66 +141,224 @@ export default function EventsPage() {
           </div>
         </div>
 
-        <div className="bg-[#dfe4eb] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
-          <div className="mx-auto grid w-full max-w-[1160px] gap-8">
-            {events.map((event, index) => (
-              <article
-                key={event.title}
-                className="rounded-[18px] border-2 border-[#156ff3] bg-[#f7f7f5] px-6 py-8 shadow-[0_18px_36px_rgba(21,111,243,0.08)] dark:bg-[#1d2436] sm:px-8 sm:py-10 lg:px-10"
-              >
-                <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[400px_1fr] lg:gap-6">
-                  <div className="overflow-hidden rounded-[18px] bg-black">
-                    <Image
-                      src={event.image}
-                      alt={event.title}
-                      width={1272}
-                      height={1614}
-                      className={`w-full object-cover object-top ${
-                        event.format === "contain"
-                          ? "h-[260px] bg-[#d6e6ff] object-contain p-4 sm:h-[300px] lg:h-[312px]"
-                          : "h-[260px] sm:h-[300px] lg:h-[312px]"
-                      }`}
-                      priority={index === 0}
-                    />
-                  </div>
+        <div className="bg-[linear-gradient(180deg,#f3f7ff_0%,#eef4ff_100%)] px-6 py-14 dark:bg-[linear-gradient(180deg,#131927_0%,#101522_100%)] sm:px-10 lg:px-16 lg:py-18">
+          <div className="mx-auto w-full max-w-[1280px]">
+            <section className="px-1 py-2">
+              <div className="text-center">
+                <h2 className="text-[34px] font-bold leading-none tracking-[-0.04em] text-[#202737] dark:text-[#f4f7ff] sm:text-[46px]">
+                  Featured Events
+                </h2>
+                <div className="mx-auto mt-4 h-[3px] w-[180px] rounded-full bg-[linear-gradient(90deg,transparent_0%,#2d72eb_24%,#2d72eb_76%,transparent_100%)]" />
+              </div>
 
-                  <div className="max-w-[620px]">
-                    <h2 className="text-[34px] font-bold leading-[1.08] tracking-[-0.04em] text-[#181818] dark:text-white sm:text-[44px]">
-                      {event.title}
-                    </h2>
+              <div className="mt-8 grid gap-5 xl:grid-cols-4">
+                {events.map((event, index) => {
+                  const accentStyles = [
+                    {
+                      pill: "bg-[#eef5ff] text-[#2d72eb]",
+                      button: "bg-[#2f6fed] text-white border-[#2f6fed]",
+                      icon: "text-[#2d72eb]",
+                      word: "text-[#2d72eb]",
+                      label: "Speaker",
+                    },
+                    {
+                      pill: "bg-[#eef8ef] text-[#357c43]",
+                      button: "bg-white text-[#357c43] border-[#dbe8dc]",
+                      icon: "text-[#357c43]",
+                      word: "text-[#357c43]",
+                      label: "Workshop",
+                    },
+                    {
+                      pill: "bg-[#fff3e9] text-[#e18a33]",
+                      button: "bg-white text-[#e18a33] border-[#f0dbc8]",
+                      icon: "text-[#e18a33]",
+                      word: "text-[#e18a33]",
+                      label: "Bootcamp",
+                    },
+                    {
+                      pill: "bg-[#f6efff] text-[#8e49d9]",
+                      button: "bg-white text-[#5d47bd] border-[#ddd5f2]",
+                      icon: "text-[#8e49d9]",
+                      word: "text-[#5d47bd]",
+                      label: "Community",
+                    },
+                  ][index]
 
-                    <p className="mt-7 text-[18px] leading-[1.45] tracking-[-0.02em] text-[#1b1b1b] dark:text-[#dfe7fb] sm:text-[22px]">
-                      {event.description}
-                    </p>
+                  const highlightedWord = event.title.split(" ").slice(-1)[0] ?? ""
+                  const titleBase = highlightedWord
+                    ? event.title.slice(0, -highlightedWord.length).trimEnd()
+                    : event.title
 
-                    <div className="mt-8 flex flex-col gap-4 text-[16px] font-semibold leading-none text-[#171717] dark:text-[#edf3ff] sm:text-[18px] lg:flex-row lg:flex-wrap lg:items-center lg:gap-6">
-                      <div className="flex items-center gap-3">
-                        <CalendarDays className="h-5 w-5 text-[#156ff3]" strokeWidth={2.4} />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Clock3 className="h-5 w-5 text-[#156ff3]" strokeWidth={2.4} />
-                        <span>{event.time}</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <MapPin className="h-5 w-5 text-[#156ff3]" strokeWidth={2.4} />
-                        <span>{event.location}</span>
-                      </div>
-                    </div>
-
-                    <Link
-                      href={`/events/${event.slug}`}
-                      className="mt-8 inline-flex h-12 items-center gap-3 rounded-[6px] bg-[#156ff3] px-7 text-[18px] font-medium text-white transition-opacity hover:opacity-90"
+                  return (
+                    <article
+                      key={event.slug}
+                      className="overflow-hidden rounded-[24px] border border-[#e5eaf5] bg-white shadow-[0_14px_32px_rgba(31,55,113,0.07)] dark:border-[#31415c] dark:bg-[#1c2437] dark:shadow-[0_14px_32px_rgba(3,8,20,0.3)]"
                     >
-                      <span>View Event</span>
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full border border-white">
-                        <ArrowRight className="h-3 w-3" strokeWidth={2.5} />
-                      </span>
-                    </Link>
+                      <div className="relative">
+                        <Image
+                          src={event.image}
+                          alt={event.title}
+                          width={1272}
+                          height={1614}
+                          className={`h-[205px] w-full ${
+                            event.format === "contain"
+                              ? "bg-[#e8eefb] object-contain p-4 dark:bg-[#243049]"
+                              : "object-cover object-top"
+                          }`}
+                        />
+                        <span className={`absolute left-4 top-4 inline-flex items-center rounded-full px-4 py-2 text-[14px] font-semibold shadow-[0_8px_18px_rgba(255,255,255,0.3)] ${accentStyles.pill}`}>
+                          {accentStyles.label}
+                        </span>
+                      </div>
+
+                      <div className="px-5 pb-5 pt-4">
+                        <h3 className="min-h-[112px] text-center text-[24px] font-semibold leading-[1.35] tracking-[-0.03em] text-[#21283a] dark:text-[#f3f7ff]">
+                          {titleBase ? (
+                            <>
+                              {titleBase}{" "}
+                              <span className={accentStyles.word}>{highlightedWord}</span>
+                            </>
+                          ) : (
+                            event.title
+                          )}
+                        </h3>
+
+                        <div className="mt-4 space-y-3 text-[16px] text-[#44506a] dark:text-[#cbd7f1]">
+                          <div className="flex items-center gap-3">
+                            <CalendarDays className={`h-5 w-5 ${accentStyles.icon}`} />
+                            <span>{event.date}</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <MapPin className={`h-5 w-5 ${accentStyles.icon}`} />
+                            <span>{event.location}</span>
+                          </div>
+                        </div>
+
+                        <Link
+                          href={`/events/${event.slug}`}
+                          className={`mt-6 inline-flex h-14 w-full items-center justify-center gap-3 rounded-[16px] border text-[18px] font-semibold transition hover:-translate-y-0.5 ${accentStyles.button}`}
+                        >
+                          View Details
+                          <ArrowRight className="h-5 w-5" />
+                        </Link>
+                      </div>
+                    </article>
+                  )
+                })}
+              </div>
+
+              <div className="mx-auto mt-10 max-w-[1100px] rounded-[28px] border border-[#e6ebf6] bg-white px-6 py-7 shadow-[0_12px_28px_rgba(31,55,113,0.06)] dark:border-[#31415c] dark:bg-[#1b2436] dark:shadow-[0_12px_28px_rgba(3,8,20,0.26)]">
+                <div className="grid gap-6 text-center md:grid-cols-3 md:divide-x md:divide-[#e6ebf6] dark:md:divide-[#31415c]">
+                  <div>
+                    <p className="text-[46px] font-bold leading-none tracking-[-0.04em] text-[#141c30] dark:text-white sm:text-[56px]">
+                      1M+
+                    </p>
+                    <p className="mt-3 text-[20px] font-medium text-[#4b556d] dark:text-[#c8d6f2]">
+                      People Reached
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[46px] font-bold leading-none tracking-[-0.04em] text-[#141c30] dark:text-white sm:text-[56px]">
+                      50+
+                    </p>
+                    <p className="mt-3 text-[20px] font-medium text-[#4b556d] dark:text-[#c8d6f2]">
+                      Events &amp; Workshops
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[46px] font-bold leading-none tracking-[-0.04em] text-[#141c30] dark:text-white sm:text-[56px]">
+                      500K+
+                    </p>
+                    <p className="mt-3 text-[20px] font-medium text-[#4b556d] dark:text-[#c8d6f2]">
+                      Live Audience
+                    </p>
                   </div>
                 </div>
-              </article>
-            ))}
+              </div>
+
+              <section className="mt-14 px-1 py-2">
+                <div className="text-center">
+                  <div className="inline-flex items-center gap-3 text-[#202737] dark:text-[#f4f7ff]">
+                    <Mic className="h-8 w-8 text-[#5a6277] dark:text-[#c9d7f4]" />
+                    <h2 className="text-[32px] font-bold leading-none tracking-[-0.04em] sm:text-[42px]">
+                      Podcasts &amp; Media Appearances
+                    </h2>
+                  </div>
+                  <p className="mt-4 text-[20px] text-[#667089] dark:text-[#bccbe9] sm:text-[24px]">
+                    Conversations and interviews across platforms
+                  </p>
+                </div>
+
+                <div className="mt-8 grid gap-5 xl:grid-cols-3">
+                  {[
+                    {
+                      label: "Guest Appearance",
+                      title: "Tech Talk Somalia",
+                      subtitle: "The Future of AI in Somalia",
+                      buttonLabel: "Watch Episode",
+                      image: events[0]?.image ?? "/engY.png",
+                      format: events[0]?.format ?? "cover",
+                    },
+                    {
+                      label: "Digital Creators Show",
+                      title: "Digital Creators Show",
+                      subtitle: "Building a Tech Brand",
+                      buttonLabel: "Listen Now",
+                      image: events[1]?.image ?? "/engY-removebg-preview.png",
+                      format: events[1]?.format ?? "contain",
+                    },
+                    {
+                      label: "Startup & Innovation Podcast",
+                      title: "Startup & Innovation",
+                      subtitle: "Youth & Innovation",
+                      buttonLabel: "Listen Now",
+                      image: events[3]?.image ?? "/engY.png",
+                      format: events[3]?.format ?? "cover",
+                    },
+                  ].map((item) => (
+                    <article
+                      key={item.title}
+                      className="overflow-hidden rounded-[24px] border border-[#e5eaf5] bg-white shadow-[0_14px_32px_rgba(31,55,113,0.07)] dark:border-[#31415c] dark:bg-[#1c2437] dark:shadow-[0_14px_32px_rgba(3,8,20,0.3)]"
+                    >
+                      <div className="relative">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          width={1272}
+                          height={1614}
+                          className={`h-[210px] w-full ${
+                            item.format === "contain"
+                              ? "bg-[#e8eefb] object-contain p-4 dark:bg-[#243049]"
+                              : "object-cover object-top"
+                          }`}
+                        />
+                        <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/95 px-4 py-2 text-[14px] font-semibold text-[#454d61] shadow-[0_8px_18px_rgba(255,255,255,0.3)] dark:bg-[#f5f7ff]">
+                          {item.label}
+                        </span>
+                      </div>
+
+                      <div className="px-5 pb-5 pt-4 text-center">
+                        <h3 className="text-[24px] font-semibold leading-[1.25] tracking-[-0.03em] text-[#202737] dark:text-[#f4f7ff] sm:text-[28px]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-4 text-[18px] text-[#5f6880] dark:text-[#c2d0ec] sm:text-[20px]">
+                          {item.subtitle}
+                        </p>
+
+                        <button
+                          type="button"
+                          className="mt-6 inline-flex h-14 w-full items-center justify-center gap-3 rounded-[16px] border border-[#dbe4f2] bg-white text-[18px] font-semibold text-[#2d72eb] shadow-[0_10px_24px_rgba(31,55,113,0.05)] transition hover:-translate-y-0.5 dark:border-[#31415c] dark:bg-[#202a40] dark:text-[#8ebfff]"
+                        >
+                          {item.buttonLabel}
+                          <ArrowRight className="h-5 w-5" />
+                        </button>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </section>
+
           </div>
         </div>
 
