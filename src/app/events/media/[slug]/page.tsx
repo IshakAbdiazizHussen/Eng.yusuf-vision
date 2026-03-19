@@ -43,12 +43,12 @@ export default async function MediaAppearancePage({ params }: MediaPageProps) {
   }
 
   const audioText = [
-    item.title,
-    item.description,
-    item.overview,
+    `${item.title}.`,
+    `${item.description}.`,
+    `${item.overview}.`,
     "Key topics covered.",
-    ...item.topics,
-  ].join(" ")
+    ...item.topics.map((topic) => `${topic}.`),
+  ].join(" ... ")
 
   return (
     <PageFrame flushBottom>
