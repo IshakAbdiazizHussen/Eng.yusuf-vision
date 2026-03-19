@@ -101,7 +101,7 @@ export default async function EventPage({ params }: EventPageProps) {
 
           <div className="mt-10 border-t border-[#e7edf7] pt-6 dark:border-[#2f3b58]">
             <Link
-              href="https://www.youtube.com/@engyuyu"
+              href={event.youtubeUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-14 items-center gap-3 rounded-[14px] bg-[linear-gradient(90deg,#2f6fed_0%,#4a7cf0_100%)] px-7 text-[18px] font-semibold text-white shadow-[0_14px_30px_rgba(47,111,237,0.24)] transition hover:-translate-y-0.5"
