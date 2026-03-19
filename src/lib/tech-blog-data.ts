@@ -32,7 +32,7 @@ export const techArticles: TechArticle[] = [
       "Warbixin kooban oo sharxaysa waxa ay tahay GENERAX Power, noocyada generators-ka ay bixiso, iyo sababta xalalka tamarta joogtada ahi muhiim ugu yihiin guryaha iyo ganacsiyada.",
     summary:
       "Dulmar sahlan oo ku saabsan GENERAX Power, qalabka korontada ee ay bixiso, iyo sida teknoolojiyadda energy backup-ku uga mid noqotay wararka muhiimka ah ee tech-ga.",
-    accent: "from-[#1d6cff] via-[#2d86ff] to-[#83b8ff]",
+    accent: "from-[#1453d1] via-[#2780ff] to-[#84d8ff]",
     bullets: [
       "Maxay tahay GENERAX Power",
       "Noocyada generators-ka iyo xalalka tamarta",
@@ -46,68 +46,68 @@ export const techArticles: TechArticle[] = [
   },
   {
     slug: "ios-17-bandhigga-apple",
-    title: "iOS 17 ayaa soo baxay: Bandhigga Apple wax badan ka ogow",
+    title: "iOS 17 ayaa sooo baxay: Bandhigga Apple June 2023 wax badan ka ogow",
     category: "Tech News",
     date: "March 23, 2024",
     readTime: "6 min read",
     excerpt:
-      "Bandhigga Apple waxa uu keenay nidaamyo cusub iyo qalab cusub. Qoraalkan waxa uu soo koobayaa waxa ugu muhiimsan ee iOS 17 iyo qalabka kale lagu soo bandhigay.",
+      "Bandhigga Apple waxa uu keenay iOS 17, iPadOS 17, macOS Sonoma, watchOS 10, iyo qalab cusub sida 15-inch MacBook Air, Mac Studio, iyo Mac Pro.",
     summary:
-      "Dulmar sahlan oo ku saabsan iOS 17, iPadOS 17, macOS Sonoma, iyo qalabkii Apple ee lagu soo bandhigay dhacdadaas.",
+      "Dulmar sahlan oo ku saabsan waxyaabihii ugu waaweynaa ee Apple kusoo bandhigtay, iyo waxa iOS 17 cusub ka dhigay war muhiim ah.",
     accent: "from-[#2555ff] via-[#6c63ff] to-[#8fd8ff]",
     bullets: [
       "Waxyaabaha ugu waaweyn ee Apple soo bandhigtay",
-      "Waxa iOS 17 cusub ka dhigay",
-      "Cidda ay wararkani ugu muhiimsan yihiin",
+      "Waxa iOS 17 iyo watchOS 10 cusub ka dhigay",
+      "Qalabka cusub ee kusoo baxay bandhigga",
     ],
     content: [
-      "Markii Apple ay soo bandhigtay iOS 17, isla waqtigaas waxaa la arkay qalab iyo nidaamyo kale oo cusub sida iPadOS 17, macOS Sonoma, Mac Studio, iyo Mac Pro. Dadka la socda wararka teknoolojiyadda waxay rabaan hal meel oo si cad loogu sharaxay waxyaabahaas.",
-      "Qoraalkan gudaha blog-ga waxa uu xooga saarayaa isbeddellada ugu muuqda ee iOS 17 iyo sida ay uga faa'iideysan karaan dadka isticmaala iPhone, iPad, iyo Mac.",
-      "Qaabkan wuxuu la jaanqaadayaa fiidiyowga kanaalka oo ahaa warbixin degdeg ah oo ku saabsan bandhigga Apple iyo waxyaabihii ugu muhiimsanaa ee kasoo baxay.",
+      "Bandhigga Apple wuxuu isu keenay nidaamyo badan oo hal mar la cusbooneysiiyay, sida iOS 17, iPadOS 17, macOS Sonoma, iyo watchOS 10. Waxaa sidoo kale goobta lagu arkay qalab cusub oo ay ka mid yihiin 15-inch MacBook Air, Mac Studio, iyo Mac Pro.",
+      "Qoraalkan waxa uu xoogga saaraya isbeddellada dadka isticmaala iPhone iyo Apple ecosystem-ka si toos ah u dareemi karaan, sida astaamaha cusub ee iOS 17 iyo horumarka la xiriira continuity-ga qalabka Apple.",
+      "Waxa uu la jaanqaadayaa nooca tech-news ee Eng Yuyu: war kooban, cad, oo dadka si degdeg ah uga caawinaya inay fahmaan waxa Apple dhab ahaantii soo kordhisay iyo sababta ay u muhiim tahay.",
     ],
   },
   {
     slug: "chatgpt-somalia-maka-shaqeeyaa",
-    title: "ChatGPT en Somalie: Maka Shaqeeyaa?",
+    title: "ChatGPT en Somalie: sidee ayuu uga caawin karaa waxbarashada iyo shaqada?",
     category: "AI & Future Tech",
     date: "February 12, 2023",
     readTime: "6 min read",
     excerpt:
-      "Maqaalkan waxa uu sharxayaa sida ChatGPT iyo AI guud ahaan u shaqeeyaan, waxa ay faa'iido u leeyihiin, iyo sida si caqli leh loogu isticmaali karo bulshada Soomaaliyeed.",
+      "Maqaalkan waxa uu sharxayaa sida ChatGPT iyo AI guud ahaan uga caawin karaan qorista, fahamka casharrada, tarjumaadda, iyo fikradaha shaqo ee dadka Soomaaliyeed.",
     summary:
-      "Hage fudud oo ku saabsan AI, sida ChatGPT u caawiyo waxbarashada iyo shaqada, iyo halka ay tahay in laga taxaddaro.",
+      "Hage fudud oo ku saabsan sida ChatGPT loo isticmaali karo si wax ku ool ah, iyo halka ay tahay in laga taxaddaro marka xog muhiim ah lala shaqeynayo.",
     accent: "from-[#0f7ff0] via-[#00a6c7] to-[#8ce6ff]",
     bullets: [
       "ChatGPT waa maxay, sideese u shaqeeyaa",
-      "Faa'iidooyinka AI ee barashada iyo shaqada",
-      "Khaladaadka ugu badan marka AI la isticmaalayo",
+      "Sida uu uga caawin karo waxbarashada iyo shaqada",
+      "Waxa ay tahay inaad hubiso ka hor intaadan ku tiirsanaan AI",
     ],
     content: [
-      "Dad badan ayaa is weydiinaya in ChatGPT si dhab ah uga shaqeyn karo baahidooda waxbarasho, ganacsi, iyo fahamka teknoolojiyadda. Taasi waa sababta mowduucan uu muhiim ugu yahay qaybta AI & Future Tech.",
-      "Qoraalkani waxa uu qeexayaa in AI uu ka caawin karo isticmaalaha sharaxaad, soo koobid, iyo fikrado bilow ah, balse aanu beddeli karin hubinta xogta iyo fahamka qofka.",
-      "Blog-gu waxa uu sii wadaa fariinta fiidiyowga kanaalka: AI waa aalad waxtar leh haddii loo adeegsado si mas'uuliyad leh, gaar ahaan dadka cusub ee doonaya inay fahmaan sida teknoolojiyaddu u shaqeyso.",
+      "Dad badan ayaa maanta doonaya inay ogaadaan in ChatGPT uu ka caawin karo shaqooyinka maalinlaha ah sida email writing, idea generation, sharaxaadda casharrada, iyo diyaarinta qoraallo kooban. Taasi waa sababta mowduucani uu muhiim ugu yahay qaybta AI & Future Tech.",
+      "Qoraalkani waxa uu muujinayaa in AI uu noqon karo caawiye degdeg ah marka aad rabto sharaxaad, tarjumaad, ama bilow qoraal, balse aanu ahayn beddel buuxa oo go'aan ama xaqiijin xogeed.",
+      "Fariinta ugu weyn ee maqaalku waa tan: ChatGPT waa aalad faa'iido leh haddii loo isticmaalo si caqli leh, gaar ahaan dadka cusub ee doonaya inay la jaanqaadaan isbeddelka AI iyo shaqada casriga ah.",
     ],
   },
   {
     slug: "apple-creator-studio",
-    title: "Apple Creator Studio: Apple ayaa si xooggan ugu soo biirtay suuqa barnaamajyada hal-abuurka!",
+    title: "Apple Creator Studio: Apple ma la tartami kartaa Adobe ee suuqa creators-ka?",
     category: "Content Creation",
     date: "February 2026",
     readTime: "8 min read",
     excerpt:
-      "Apple waxa ay isku dayaysaa inay si toos ah ula tartanto Adobe iyada oo hal meel ku mideyneysa qalabka creators-ka u baahan yihiin.",
+      "Apple waxa ay isku dayaysaa inay hal meel ku mideyso aaladaha creators-ka, taas oo si toos ah cadaadis ugu keenaysa Adobe iyo adeegyada kale ee design-ka iyo editing-ka.",
     summary:
-      "Warbixin creator-focused ah oo eegaysa Apple Creator Studio, waxa ku jira, qiimihiisa, iyo sababta uu muhiim ugu noqon karo dadka sameeya content.",
+      "Warbixin creator-focused ah oo eegaysa Apple Creator Studio, waxa ku jira, qiimihiisa, iyo sababta creators badan u xiiseyn karaan.",
     accent: "from-[#1d6cff] via-[#6a8dff] to-[#ffb86b]",
     bullets: [
       "Waxa ku jira Apple Creator Studio",
       "Sida uu ula tartamayo Adobe",
-      "Qiimaha iyo cidda ka faa'iideysan karta",
+      "Cidda ugu badan ee ka faa'iideysan karta",
     ],
     content: [
-      "Apple Creator Studio waxa hal subscription ku mideynaya barnaamijyo waaweyn sida Final Cut Pro, Logic Pro, Pixelmator Pro, iyo Motion. Arrintan waxa ay si gaar ah u xiiseyneysaa creators-ka raadinaya xal ka fudud ama ka jaban Adobe.",
-      "Marka laga eego dhinaca shaqo-abuurka, tartankan cusub wuxuu beddeli karaa sida creators-ku u doortaan aaladahooda tafatirka, codka, iyo design-ka.",
-      "Maqaalkan gudaha blog-ga waxa uu la jaanqaadayaa fiidiyowga kanaalka adiga oo sharaxaya qiimaha, faa'iidada, iyo su'aasha weyn ee taagan: creators-ku ma u wareegi doonaan Apple mise wali Adobe ayay la sii joogayaan?",
+      "Apple Creator Studio waxa hal subscription ku mideynaya barnaamijyo muhiim u ah creators-ka sida Final Cut Pro, Logic Pro, Pixelmator Pro, iyo Motion. Tani waxay si gaar ah u xiiseyneysaa dadka sameeya video, audio, iyo design oo raadinaya xal isku xiran.",
+      "Marka laga eego dhinaca content creation-ka, tartankan cusub wuxuu beddeli karaa sida creators-ku u doortaan software-kooda, gaar ahaan haddii qiimaha, performance-ka, iyo isku xirnaanta Apple devices-ku noqdaan faa'iido muuqata.",
+      "Qoraalkani waxa uu si fiican ula jaanqaadayaa mowduucyada Eng Yuyu ee creators-ka khuseeya, sababtoo ah wuxuu sharxayaa faa'iidada, qiimaha, iyo su'aasha weyn ee taagan: creators-ku ma u wareegi doonaan Apple mise wali Adobe ayay la sii joogayaan?",
     ],
   },
   {
