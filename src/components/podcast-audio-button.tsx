@@ -36,8 +36,8 @@ export function PodcastAudioButton({
     window.speechSynthesis.cancel()
 
     const utterance = new SpeechSynthesisUtterance(text)
-    utterance.rate = 0.78
-    utterance.pitch = 0.92
+    utterance.rate = 0.68
+    utterance.pitch = 0.9
     utterance.lang = "en-US"
     utterance.onend = () => {
       setIsPlaying(false)

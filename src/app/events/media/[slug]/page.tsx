@@ -43,11 +43,14 @@ export default async function MediaAppearancePage({ params }: MediaPageProps) {
   }
 
   const audioText = [
+    `${item.series}.`,
     `${item.title}.`,
     `${item.description}.`,
+    "Episode overview.",
     `${item.overview}.`,
     "Key topics covered.",
     ...item.topics.map((topic) => `${topic}.`),
+    `${item.buttonLabel}.`,
   ].join(" ... ")
 
   return (
