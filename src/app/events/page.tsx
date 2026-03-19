@@ -29,28 +29,28 @@ type EventsPageProps = {
 const eventAccentStyles = [
   {
     pill: "bg-[#eef5ff] text-[#2d72eb]",
-    button: "bg-[#2f6fed] text-white border-[#2f6fed] hover:bg-[#255ed0] hover:border-[#255ed0]",
+    button: "bg-[#eef5ff] text-[#2f6fed] border-[#cfe0ff] hover:bg-[#2f6fed] hover:text-white hover:border-[#2f6fed]",
     icon: "text-[#2d72eb]",
     word: "text-[#2d72eb]",
     label: "Speaker",
   },
   {
     pill: "bg-[#eef8ef] text-[#357c43]",
-    button: "bg-white text-[#357c43] border-[#dbe8dc] hover:bg-[#2f6fed] hover:text-white hover:border-[#2f6fed]",
+    button: "bg-[#eef8ef] text-[#357c43] border-[#dbe8dc] hover:bg-[#357c43] hover:text-white hover:border-[#357c43]",
     icon: "text-[#357c43]",
     word: "text-[#357c43]",
     label: "Workshop",
   },
   {
     pill: "bg-[#fff3e9] text-[#e18a33]",
-    button: "bg-white text-[#e18a33] border-[#f0dbc8] hover:bg-[#2f6fed] hover:text-white hover:border-[#2f6fed]",
+    button: "bg-[#fff3e9] text-[#e18a33] border-[#f0dbc8] hover:bg-[#e18a33] hover:text-white hover:border-[#e18a33]",
     icon: "text-[#e18a33]",
     word: "text-[#e18a33]",
     label: "Bootcamp",
   },
   {
     pill: "bg-[#f6efff] text-[#8e49d9]",
-    button: "bg-white text-[#5d47bd] border-[#ddd5f2] hover:bg-[#2f6fed] hover:text-white hover:border-[#2f6fed]",
+    button: "bg-[#f6efff] text-[#5d47bd] border-[#ddd5f2] hover:bg-[#5d47bd] hover:text-white hover:border-[#5d47bd]",
     icon: "text-[#8e49d9]",
     word: "text-[#5d47bd]",
     label: "Community",
