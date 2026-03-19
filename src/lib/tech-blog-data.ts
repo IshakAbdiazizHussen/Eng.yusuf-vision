@@ -23,25 +23,25 @@ export type BlogCategory = (typeof blogCategories)[number]
 
 export const techArticles: TechArticle[] = [
   {
-    slug: "tesla-model-pi-warbixin",
-    title: "Tesla Model Pi goorma ayuu soo bixi doonaa?",
+    slug: "generax-power-warbixin",
+    title: "GENERAX Power: maxay shirkaddani ka qabataa tamarta iyo generators-ka casriga ah?",
     category: "Tech News",
-    date: "November 23, 2022",
+    date: "March 19, 2026",
     readTime: "5 min read",
     excerpt:
-      "Warbixin kooban oo eegaysa waxa laga sheegayo taleefanka Tesla Model Pi, astaamihiisa la hadal hayo, qiimaha suurtagalka ah, iyo in uu dhab ahaan soo bixi karo.",
+      "Warbixin kooban oo sharxaysa waxa ay tahay GENERAX Power, noocyada generators-ka ay bixiso, iyo sababta xalalka tamarta joogtada ahi muhiim ugu yihiin guryaha iyo ganacsiyada.",
     summary:
-      "Faahfaahin sahlan oo ku saabsan xanta Tesla Model Pi iyo waxa ay uga dhigan tahay dadka jecel wararka teknoolojiyadda.",
+      "Dulmar sahlan oo ku saabsan GENERAX Power, qalabka korontada ee ay bixiso, iyo sida teknoolojiyadda energy backup-ku uga mid noqotay wararka muhiimka ah ee tech-ga.",
     accent: "from-[#1d6cff] via-[#2d86ff] to-[#83b8ff]",
     bullets: [
-      "Maxaa run ah, maxaase xanta ah",
-      "Astaamaha lagu sheegayo taleefanka",
-      "Qiimaha iyo waqtiga soo bixitaanka suurtagalka ah",
+      "Maxay tahay GENERAX Power",
+      "Noocyada generators-ka iyo xalalka tamarta",
+      "Sababta teknoolojiyaddan ay muhiim ugu tahay isticmaalayaasha maanta",
     ],
     content: [
-      "Mid ka mid ah mowduucyada aadka looga hadal hayo wararka teknoolojiyadda waa Tesla Model Pi. Dad badan ayaa xiiseynaya haddii Tesla ay dhab ahaan soo saari doonto taleefan la tartama iPhone iyo Samsung.",
-      "Waxyaabaha lagu xuso warbixinnada noocan ah waxaa ka mid ah naqshad casri ah, xiriir wanaagsan oo lala yeesho adeegyada Tesla, iyo awood sare oo loogu talagalay isticmaaleyaasha jecel teknoolojiyadda cusub.",
-      "Qodobka ugu muhiimsan ee blog-kan waa in akhristuhu kala saaro xogta la xaqiijiyay iyo xanta internet-ka ku wareegaysa. Taasi waxay ka dhigeysaa maqaalka mid si fiican ula jaanqaadaya nooca fiidiyowyada wararka teknoolojiyadda ee kanaalka Eng Yuyu.",
+      "GENERAX Power waa shirkad diiradda saarta generators, transformers, iyo xalal tamareed oo loogu talagalay guryaha, ganacsiyada, iyo warshadaha u baahan koronto joogto ah. Tani waxay ka dhigeysaa mowduuc ka duwan wararka taleefannada, balse si dhab ah ula xiriira teknoolojiyadda nolosha iyo ganacsiga taabanaysa.",
+      "Waxyaabaha ugu badan ee lagu xuso GENERAX waxaa ka mid ah generators diesel, gas, iyo qalab taageera automatic start, remote monitoring, iyo xalal loogu talagalay emergency power. Dad badan oo daawanaya content-ka tech-ga maanta waxay rabaan inay fahmaan sida teknoolojiyadda korontadu uga shaqeyso meel ka baxsan mobilada iyo laptops-ka.",
+      "Qoraalkan waxa uu bogga tech-ga ka dhigaya mid leh mowduucyo kala duwan oo dhab ah: AI, Apple, digital safety, iyo sidoo kale energy technology. Taasi waxay ka caawinaysaa akhristaha inuu arko in teknoolojiyaddu aysan ku ekaan software oo keliya, balse ay ku jirto kaabayaal nololeed oo muhiim ah.",
     ],
   },
   {
