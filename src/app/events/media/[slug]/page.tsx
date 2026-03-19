@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: MediaPageProps): Promise<Metadata> {
+}: MediaPageProps): Promise <Metadata> {
   const { slug } = await params
   const item = getMediaAppearanceBySlug(slug)
 

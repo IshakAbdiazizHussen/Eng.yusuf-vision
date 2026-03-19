@@ -39,6 +39,27 @@ export function PodcastAudioButton({
     utterance.rate = 0.68
     utterance.pitch = 0.9
     utterance.lang = "en-US"
+
+    const voices = window.speechSynthesis.getVoices()
+    const preferredVoiceNames = [
+      "Victoria",
+      "Microsoft Aria Online (Natural) - English (United States)",
+      "Microsoft Aria Online (Natural)",
+      "Microsoft Aria - English (United States)",
+      "Microsoft Aria",
+      "Google UK English Female",
+      "Samantha",
+    ]
+
+    const matchedVoice = preferredVoiceNames
+      .map((voiceName) => voices.find((voice) => voice.name === voiceName))
+      .find((voice) => voice)
+
+    if (matchedVoice) {
+      utterance.voice = matchedVoice
+      utterance.lang = matchedVoice.lang || "en-US"
+    }
+
     utterance.onend = () => {
       setIsPlaying(false)
       utteranceRef.current = null
