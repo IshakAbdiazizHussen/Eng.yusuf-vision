@@ -69,7 +69,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 {article.title}
               </h1>
 
-              <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-4 text-[16px] text-[#3e4a66] dark:text-[#c7d5f3]">
+              <div className="mt-6  flex flex-wrap items-center gap-x-3 gap-y-4 text-[16px] text-[#3e4a66] dark:text-[#c7d5f3]">
                 <span>{article.date}</span>
                 <span className="text-[#9aa6bf] dark:text-[#6f83ac]">·</span>
                 <span>By Eng Yuyu</span>
@@ -78,10 +78,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   <Clock3 className="h-4 w-4" />
                   {article.readTime}
                 </span>
-                <ArticleShareButton
+                <ArticleShareButton 
                   title={article.title}
                   label="Share"
-                  className="ml-auto inline-flex items-center gap-2 rounded-full border border-[#dbe4f2] bg-[#f8fbff] px-4 py-2 text-[15px] font-medium text-[#4a5b7b] transition-colors hover:bg-[#edf3ff] dark:border-[#354661] dark:bg-[#243049] dark:text-[#dce7ff] dark:hover:bg-[#2d3a56]"
+                  className="inline-flex ml-74 items-center gap-2 rounded-full border border-[#dbe4f2] bg-[#f8fbff] px-4 py-2 text-[15px] font-medium text-[#4a5b7b] transition-colors hover:bg-[#edf3ff] dark:border-[#354661] dark:bg-[#243049] dark:text-[#dce7ff] dark:hover:bg-[#2d3a56]"
                   messageAlignClassName="items-start"
                 />
               </div>
