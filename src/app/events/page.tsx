@@ -22,9 +22,72 @@ const socialLinks = {
   facebook: "https://www.facebook.com/share/1LymomoL4L/?mibextid=wwXIfr",
 }
 
-export default function EventsPage() {
+type EventsPageProps = {
+  searchParams?: Promise<{ tab?: string }>
+}
+
+const eventAccentStyles = [
+  {
+    pill: "bg-[#eef5ff] text-[#2d72eb]",
+    button: "bg-[#2f6fed] text-white border-[#2f6fed]",
+    icon: "text-[#2d72eb]",
+    word: "text-[#2d72eb]",
+    label: "Speaker",
+  },
+  {
+    pill: "bg-[#eef8ef] text-[#357c43]",
+    button: "bg-white text-[#357c43] border-[#dbe8dc]",
+    icon: "text-[#357c43]",
+    word: "text-[#357c43]",
+    label: "Workshop",
+  },
+  {
+    pill: "bg-[#fff3e9] text-[#e18a33]",
+    button: "bg-white text-[#e18a33] border-[#f0dbc8]",
+    icon: "text-[#e18a33]",
+    word: "text-[#e18a33]",
+    label: "Bootcamp",
+  },
+  {
+    pill: "bg-[#f6efff] text-[#8e49d9]",
+    button: "bg-white text-[#5d47bd] border-[#ddd5f2]",
+    icon: "text-[#8e49d9]",
+    word: "text-[#5d47bd]",
+    label: "Community",
+  },
+] as const
+
+const tabs = [
+  { id: "all", label: "All", icon: CalendarDays },
+  { id: "events", label: "Events", icon: CalendarDays },
+  { id: "workshops", label: "Workshops", icon: Users },
+  { id: "conferences", label: "Conferences", icon: Presentation },
+  { id: "media", label: "Media", icon: MonitorPlay },
+  { id: "podcasts", label: "Podcasts", icon: Podcast },
+] as const
+
+export default async function EventsPage({ searchParams }: EventsPageProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined
+  const requestedTab = resolvedSearchParams?.tab?.toLowerCase()
+  const activeTab = tabs.some((tab) => tab.id === requestedTab) ? requestedTab as typeof tabs[number]["id"] : "all"
   const heroEvent = events[0]
   const heroSideEvents = events.slice(1, 4)
+  const featuredEventCards = events.map((event, index) => ({
+    event,
+    accent: eventAccentStyles[index],
+  }))
+  const filteredFeaturedEventCards = activeTab === "all" || activeTab === "events"
+    ? featuredEventCards
+    : activeTab === "workshops"
+      ? featuredEventCards.filter(({ accent }) => accent.label === "Workshop" || accent.label === "Bootcamp")
+      : activeTab === "conferences"
+        ? featuredEventCards.filter(({ accent }) => accent.label === "Speaker" || accent.label === "Community")
+        : []
+  const filteredMediaAppearances = activeTab === "all" || activeTab === "media"
+    ? mediaAppearances
+    : activeTab === "podcasts"
+      ? mediaAppearances.filter((item) => item.buttonLabel === "Listen Now")
+      : []
 
   return (
     <PageFrame flushBottom>
@@ -114,30 +177,25 @@ export default function EventsPage() {
 
             <div className="mx-auto mt-10 max-w-[940px] rounded-[28px] border border-[#e7edf8] bg-[#fbfcff] p-2 shadow-[0_10px_30px_rgba(31,55,113,0.06)] dark:border-[#2b3750] dark:bg-[#1b2436] dark:shadow-[0_10px_30px_rgba(3,8,20,0.3)]">
               <div className="flex flex-wrap items-center justify-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#2f6fed] px-5 py-3 text-[18px] font-semibold text-white shadow-[0_12px_24px_rgba(47,111,237,0.24)]">
-                  <CalendarDays className="h-5 w-5" />
-                  All
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
-                  <CalendarDays className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
-                  Events
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
-                  <Users className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
-                  Workshops
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
-                  <Presentation className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
-                  Conferences
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
-                  <MonitorPlay className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
-                  Media
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-[14px] bg-[#f4f6fb] px-5 py-3 text-[18px] font-medium text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]">
-                  <Podcast className="h-5 w-5 text-[#6c758d] dark:text-[#9fb1d2]" />
-                  Podcasts
-                </span>
+                {tabs.map((tab) => {
+                  const Icon = tab.icon
+                  const isActive = activeTab === tab.id
+
+                  return (
+                    <Link
+                      key={tab.id}
+                      href={tab.id === "all" ? "/events" : `/events?tab=${tab.id}`}
+                      className={`inline-flex items-center gap-2 rounded-[14px] px-5 py-3 text-[18px] font-medium transition ${
+                        isActive
+                          ? "bg-[#2f6fed] font-semibold text-white shadow-[0_12px_24px_rgba(47,111,237,0.24)]"
+                          : "bg-[#f4f6fb] text-[#434c61] dark:bg-[#243049] dark:text-[#dce7ff]"
+                      }`}
+                    >
+                      <Icon className={`h-5 w-5 ${isActive ? "text-white" : "text-[#6c758d] dark:text-[#9fb1d2]"}`} />
+                      {tab.label}
+                    </Link>
+                  )
+                })}
               </div>
             </div>
           </div>
@@ -145,6 +203,7 @@ export default function EventsPage() {
 
         <div className="px-6 py-14 sm:px-10 lg:px-16 lg:py-18">
           <div className="mx-auto w-full max-w-[1280px]">
+            {filteredFeaturedEventCards.length > 0 ? (
             <section className="px-1 py-2">
               <div className="text-center">
                 <h2 className="text-[34px] font-bold leading-none tracking-[-0.04em] text-[#202737] dark:text-[#f4f7ff] sm:text-[46px]">
@@ -154,38 +213,7 @@ export default function EventsPage() {
               </div>
 
               <div className="mt-8 grid gap-5 xl:grid-cols-4">
-                {events.map((event, index) => {
-                  const accentStyles = [
-                    {
-                      pill: "bg-[#eef5ff] text-[#2d72eb]",
-                      button: "bg-[#2f6fed] text-white border-[#2f6fed]",
-                      icon: "text-[#2d72eb]",
-                      word: "text-[#2d72eb]",
-                      label: "Speaker",
-                    },
-                    {
-                      pill: "bg-[#eef8ef] text-[#357c43]",
-                      button: "bg-white text-[#357c43] border-[#dbe8dc]",
-                      icon: "text-[#357c43]",
-                      word: "text-[#357c43]",
-                      label: "Workshop",
-                    },
-                    {
-                      pill: "bg-[#fff3e9] text-[#e18a33]",
-                      button: "bg-white text-[#e18a33] border-[#f0dbc8]",
-                      icon: "text-[#e18a33]",
-                      word: "text-[#e18a33]",
-                      label: "Bootcamp",
-                    },
-                    {
-                      pill: "bg-[#f6efff] text-[#8e49d9]",
-                      button: "bg-white text-[#5d47bd] border-[#ddd5f2]",
-                      icon: "text-[#8e49d9]",
-                      word: "text-[#5d47bd]",
-                      label: "Community",
-                    },
-                  ][index]
-
+                {filteredFeaturedEventCards.map(({ event, accent: accentStyles }) => {
                   const highlightedWord = event.title.split(" ").slice(-1)[0] ?? ""
                   const titleBase = highlightedWord
                     ? event.title.slice(0, -highlightedWord.length).trimEnd()
@@ -249,6 +277,7 @@ export default function EventsPage() {
                 })}
               </div>
 
+              {activeTab === "all" || activeTab === "events" ? (
               <div className="mx-auto mt-10 max-w-[1100px] rounded-[28px] border border-[#e6ebf6] bg-white px-6 py-7 shadow-[0_12px_28px_rgba(31,55,113,0.06)] dark:border-[#31415c] dark:bg-[#1b2436] dark:shadow-[0_12px_28px_rgba(3,8,20,0.26)]">
                 <div className="grid gap-6 text-center md:grid-cols-3 md:divide-x md:divide-[#e6ebf6] dark:md:divide-[#31415c]">
                   <div>
@@ -277,7 +306,11 @@ export default function EventsPage() {
                   </div>
                 </div>
               </div>
+              ) : null}
+            </section>
+            ) : null}
 
+            {filteredMediaAppearances.length > 0 ? (
               <section className="mt-14 px-1 py-2">
                 <div className="text-center">
                   <div className="inline-flex items-center gap-3 text-[#202737] dark:text-[#f4f7ff]">
@@ -292,7 +325,7 @@ export default function EventsPage() {
                 </div>
 
                 <div className="mt-8 grid gap-5 xl:grid-cols-3">
-                  {mediaAppearances.map((item) => (
+                  {filteredMediaAppearances.map((item) => (
                     <article
                       key={item.title}
                       className="overflow-hidden rounded-[24px] border border-[#e5eaf5] bg-white shadow-[0_14px_32px_rgba(31,55,113,0.07)] dark:border-[#31415c] dark:bg-[#1c2437] dark:shadow-[0_14px_32px_rgba(3,8,20,0.3)]"
@@ -335,7 +368,7 @@ export default function EventsPage() {
                   ))}
                 </div>
               </section>
-            </section>
+            ) : null}
 
           </div>
         </div>
