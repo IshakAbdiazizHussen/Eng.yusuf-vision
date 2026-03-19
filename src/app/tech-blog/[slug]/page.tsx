@@ -5,14 +5,8 @@ import { notFound } from "next/navigation"
 import { ArticleDiscussion } from "@/components/article-discussion"
 import { ArticleShareButton } from "@/components/article-share-button"
 import { PageFrame } from "@/components/page-frame"
-import {
-  TechBlogFooterBanner,
-  TechBlogNewsletterSection,
-} from "@/components/tech-blog-sections"
-import {
-  getArticleBySlug,
-  techArticles,
-} from "@/lib/tech-blog-data"
+import { TechBlogFooterBanner, TechBlogNewsletterSection } from "@/components/tech-blog-sections"
+import { getArticleBySlug, techArticles } from "@/lib/tech-blog-data"
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>
@@ -71,11 +65,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 {article.category}
               </span>
 
-              <h1 className="mt-5 max-w-[760px] text-2xl font-medium leading-[1.08] tracking-[-0.04em] text-[#131b31] dark:text-[#f4f7ff] sm:text-2xl">
+              <h1 className="mt-5 max-w-[760px] text-2xl underline font-medium leading-tight tracking-[-0.04em] text-[#131b31] dark:text-[#f4f7ff] ">
                 {article.title}
               </h1>
 
-              <div className="mt-6 flex flex-wrap items-center gap-3 text-[16px] text-[#3e4a66] dark:text-[#c7d5f3]">
+              <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-4 text-[16px] text-[#3e4a66] dark:text-[#c7d5f3]">
                 <span>{article.date}</span>
                 <span className="text-[#9aa6bf] dark:text-[#6f83ac]">·</span>
                 <span>By Eng Yuyu</span>
@@ -87,7 +81,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <ArticleShareButton
                   title={article.title}
                   label="Share"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#dbe4f2] bg-[#f8fbff] px-4 py-2 text-[15px] font-medium text-[#4a5b7b] transition-colors hover:bg-[#edf3ff] dark:border-[#354661] dark:bg-[#243049] dark:text-[#dce7ff] dark:hover:bg-[#2d3a56]"
+                  className="ml-auto inline-flex items-center gap-2 rounded-full border border-[#dbe4f2] bg-[#f8fbff] px-4 py-2 text-[15px] font-medium text-[#4a5b7b] transition-colors hover:bg-[#edf3ff] dark:border-[#354661] dark:bg-[#243049] dark:text-[#dce7ff] dark:hover:bg-[#2d3a56]"
                   messageAlignClassName="items-start"
                 />
               </div>
