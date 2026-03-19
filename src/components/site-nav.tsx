@@ -10,7 +10,7 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About me" },
   { href: "/tech-blog", label: "Tech News" },
-  { href: "/events", label: "Event" },
+  { href: "/events", label: "Events & Media" },
   { href: "/impact", label: "Impact" },
   { href: "/contact", label: "Contacts" },
 ]
